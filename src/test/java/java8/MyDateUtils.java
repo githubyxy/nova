@@ -1,5 +1,7 @@
 package java8;
 
+import ch.qos.logback.core.util.TimeUtil;
+
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -62,8 +64,12 @@ public class MyDateUtils {
     }
 
     public static void main(String[] args) {
-        System.out.println(formatDate(new Date(), "yyyy-MM-dd"));
-        System.out.println(formatDate(new Date(), "yyyy-MM-dd HH:mm:ss"));
+        // System.out.println(parseDateTime("2019-10-10 10:10:10", "yyyy-MM-dd HH:mm"));
+        System.out.println(parseDateTime("2019-10-10 10:10", "yyyy-MM-dd HH:mm"));
+        // System.out.println(parseDateTime("2019-10-10 10", "yyyy-MM-dd HH:mm"));
+        // System.out.println(parseDateTime("2019-10-10", "yyyy-MM-dd HH:mm"));
+        // System.out.println(parseDateTime("10:10", "yyyy-MM-dd HH:mm"));
+
     }
 
 }

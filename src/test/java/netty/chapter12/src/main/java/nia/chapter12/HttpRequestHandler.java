@@ -24,12 +24,12 @@ public class HttpRequestHandler extends SimpleChannelInboundHandler<FullHttpRequ
                 .getProtectionDomain()
                 .getCodeSource().getLocation();
         try {
-            String path = location.toURI() + "index.html";
+            String path = location.toURI() + "index.ftl";
             path = !path.contains("file:") ? path : path.substring(5);
             INDEX = new File(path);
         } catch (URISyntaxException e) {
             throw new IllegalStateException(
-                    "Unable to locate index.html", e);
+                    "Unable to locate index.ftl", e);
         }
     }
 

@@ -1,9 +1,9 @@
 package com.yxy.nova.web;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author yuxiaoyu
@@ -11,12 +11,18 @@ import org.springframework.web.servlet.ModelAndView;
  * @date 2019-07-05 15:39
  */
 @Controller
-@EnableAutoConfiguration
 public class YxyController {
 
-    @GetMapping(value = "page")
-    public ModelAndView gotoPage(){
-        return new ModelAndView("index");
+    @GetMapping(value = "index")
+    public String gotoPage(){
+        return "index";
+    }
+    @GetMapping(value = "index/test1")
+    @ResponseBody
+    public JSONObject test1(){
+        JSONObject object = new JSONObject();
+        object.put("name", "my");
+        return object;
     }
 
 }
