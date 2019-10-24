@@ -1,4 +1,4 @@
-package com.yxy.nova;
+package com.yxy.nova.util;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -20,9 +20,9 @@ public class LinuxUtil {
                 .redirectErrorStream(true)
                 .start();
 
-        ArrayList<String> output = new ArrayList<String>();
+        ArrayList<String> output = new ArrayList<>();
         BufferedReader br = new BufferedReader(new InputStreamReader(proc.getInputStream()));
-        String line = null;
+        String line;
         while ((line = br.readLine()) != null){
             output.add(line);
         }
