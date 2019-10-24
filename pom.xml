@@ -40,6 +40,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>qr-code</groupId>
+            <artifactId>QRCode</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
             <version>${spring.version}</version>
