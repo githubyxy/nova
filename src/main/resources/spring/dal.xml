@@ -11,7 +11,7 @@
 >
 
 	<bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.share.blog.dal.mysql.mapper"/>
+		<property name="basePackage" value="com.yxy.nova.dal.mysql.mapper"/>
 		<property name="sqlSessionFactoryBeanName" value="novaSqlSessionFactory"/>
 		<property name="properties">
 			<value>
