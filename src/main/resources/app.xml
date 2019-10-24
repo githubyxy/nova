@@ -7,6 +7,7 @@
 
 
     <!-- biz -->
-    <!--<import resource="spring/biz.xml"/>-->
+    <import resource="spring/biz.xml"/>
+    <import resource="spring/dal.xml"/>
 
 </beans>

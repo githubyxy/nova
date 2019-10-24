@@ -8,49 +8,49 @@
        http://www.springframework.org/schema/context/spring-context.xsd ">
 
 
-    <!--添加自定义参数解析器-->
-    <bean id="requestMappingHandlerAdapter" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter" scope="prototype">
-        <!--<property name="customArgumentResolvers">-->
+    <!--&lt;!&ndash;添加自定义参数解析器&ndash;&gt;-->
+    <!--<bean id="requestMappingHandlerAdapter" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter" scope="prototype">-->
+        <!--&lt;!&ndash;<property name="customArgumentResolvers">&ndash;&gt;-->
+            <!--&lt;!&ndash;<list>&ndash;&gt;-->
+                <!--&lt;!&ndash;<bean id="beanAttributeArgumentResolver" class="cn.tongdun.hertz.web.argumentresolver.BeanAttributeArgumentResolver"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;</list>&ndash;&gt;-->
+        <!--&lt;!&ndash;</property>&ndash;&gt;-->
+
+        <!--<property name="messageConverters" >-->
             <!--<list>-->
-                <!--<bean id="beanAttributeArgumentResolver" class="cn.tongdun.hertz.web.argumentresolver.BeanAttributeArgumentResolver"/>-->
+                <!--<bean  class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">-->
+                    <!--<property name="supportedMediaTypes">-->
+                        <!--<list>-->
+                            <!--<value>text/html;charset=UTF-8</value>-->
+                            <!--<value>application/json</value>-->
+                        <!--</list>-->
+                    <!--</property>-->
+
+                    <!--&lt;!&ndash;解决属性为空时不返回字段的问题&ndash;&gt;-->
+                    <!--<property name="fastJsonConfig">-->
+                        <!--<bean  class="com.alibaba.fastjson.support.config.FastJsonConfig">-->
+                            <!--<property name="serializerFeatures">-->
+                                <!--<array>-->
+                                    <!--&lt;!&ndash; 将Collection类型字段的字段空值输出为[] &ndash;&gt;-->
+                                    <!--<value>WriteNullListAsEmpty</value>-->
+
+                                    <!--&lt;!&ndash; 将字符串类型字段的空值输出为空字符串 "" &ndash;&gt;-->
+                                    <!--<value>WriteNullStringAsEmpty</value>-->
+
+                                    <!--&lt;!&ndash; 将Boolean类型字段的空值输出为false &ndash;&gt;-->
+                                    <!--<value>WriteNullBooleanAsFalse</value>-->
+                                    <!--<value>DisableCircularReferenceDetect</value>-->
+                                <!--</array>-->
+
+                            <!--</property>-->
+                        <!--</bean>-->
+                    <!--</property>-->
+                <!--</bean>-->
+                <!--<bean class="org.springframework.http.converter.StringHttpMessageConverter"/>-->
+                <!--<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>-->
+
             <!--</list>-->
         <!--</property>-->
-
-        <property name="messageConverters" >
-            <list>
-                <bean  class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
-                    <property name="supportedMediaTypes">
-                        <list>
-                            <value>text/html;charset=UTF-8</value>
-                            <value>application/json</value>
-                        </list>
-                    </property>
-
-                    <!--解决属性为空时不返回字段的问题-->
-                    <property name="fastJsonConfig">
-                        <bean  class="com.alibaba.fastjson.support.config.FastJsonConfig">
-                            <property name="serializerFeatures">
-                                <array>
-                                    <!-- 将Collection类型字段的字段空值输出为[] -->
-                                    <value>WriteNullListAsEmpty</value>
-
-                                    <!-- 将字符串类型字段的空值输出为空字符串 "" -->
-                                    <value>WriteNullStringAsEmpty</value>
-
-                                    <!-- 将Boolean类型字段的空值输出为false -->
-                                    <value>WriteNullBooleanAsFalse</value>
-                                    <value>DisableCircularReferenceDetect</value>
-                                </array>
-
-                            </property>
-                        </bean>
-                    </property>
-                </bean>
-                <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
-                <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
-
-            </list>
-        </property>
-    </bean>
+    <!--</bean>-->
 
 </beans>

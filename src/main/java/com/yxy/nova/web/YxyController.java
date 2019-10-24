@@ -1,5 +1,6 @@
 package com.yxy.nova.web;
 
+import com.yxy.nova.LinuxUtil;
 import com.yxy.nova.bean.TestVo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +16,10 @@ public class YxyController {
 
     @GetMapping(value = "index")
     public String gotoPage(Model model){
-        model.addAttribute("name", "yuxiaoyu");
+        try {
+            model.addAttribute("fortune", LinuxUtil.fortune());
+        } catch (Exception e) {
+        }
         return "index";
     }
 
