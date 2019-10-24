@@ -3,6 +3,8 @@ package com.yxy.nova;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.yxy.nova.conf.CustomizedFastJsonHttpMessageConverter;
+import org.springframework.boot.web.servlet.MultipartConfigFactory;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -11,6 +13,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import javax.servlet.MultipartConfigElement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,5 +68,20 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler(new String[]{"/**"}).addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS);
+    }
+
+    /**
+     * 文件上传配置
+     *
+     * @return
+     */
+    @Bean
+    public MultipartConfigElement multipartConfigElement() {
+        MultipartConfigFactory factory = new MultipartConfigFactory();
+        // 单个数据大小 KB,MB
+        factory.setMaxFileSize("10240KB");
+        /// 总上传数据大小
+        factory.setMaxRequestSize("102400KB");
+        return factory.createMultipartConfig();
     }
 }

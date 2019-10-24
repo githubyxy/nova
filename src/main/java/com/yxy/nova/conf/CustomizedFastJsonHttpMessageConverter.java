@@ -32,7 +32,8 @@ public class CustomizedFastJsonHttpMessageConverter extends FastJsonHttpMessageC
             // List字段如果为null,输出为[],而非null
             SerializerFeature.WriteNullListAsEmpty,
             // 循环引用
-            SerializerFeature.DisableCircularReferenceDetect};
+            SerializerFeature.DisableCircularReferenceDetect
+    };
 
     private static final SerializerFeature[] hertzWebFeatures = new SerializerFeature[] {
             // 是否输出为null的字段,若为null 则显示该字段

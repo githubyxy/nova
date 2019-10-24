@@ -12,6 +12,14 @@
 <body>
 hello world!!!
 ${name}
+
+<form action="upload" id="domeform" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" value="选择文件">
+    <input type="submit" value="表单提交">
+    <input type="button" value="ajax提交" id="ajaxsub">
+    <input type="button" value="formdata提交" id="ormdatasub">
+</form>
+
 </body>
 </html>
 

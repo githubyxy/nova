@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: com.yxy.nova.targer.classes
+Main-Class: com.yxy.nova.NovaApplication
+
