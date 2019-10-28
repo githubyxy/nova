@@ -47,7 +47,7 @@ public class BaseFilter implements Filter {
         UserDO userDO = cache.get(token);
         String requestURI = request.getRequestURI();
 
-        if (requestURI.startsWith("/auth")) {
+        if (requestURI.contains("/auth")) {
             if (userDO != null) {
                 response.sendRedirect(request.getContextPath() + "/biz/index");
                 return;
