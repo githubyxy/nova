@@ -43,7 +43,7 @@
     </div>
 </div>
 <!-- Main  -->
-<script src="${basepath}/js/jquery-1.11.2.min.js"></script>
+<script src="/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
    function login () {
        var postData = {};
@@ -53,11 +53,11 @@
             type: "POST",//方法类型
             contentType:'application/json',
             dataType: "json",//预期服务器返回的数据类型
-            url: '${basepath}/auth/login',
+            url: '/auth/login',
             data: JSON.stringify(postData),
             success: function (result) {
                 if (result && result.success) {
-                    window.location.href = '${basepath}/biz/index';
+                    window.location.href = '/biz/index';
                 } else {
                     alert(result.msg);
                 }
