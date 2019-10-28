@@ -1,8 +1,6 @@
 package com.yxy.nova.web;
 
-import com.yxy.nova.bean.Constants;
-import com.yxy.nova.bean.UserLoginDTO;
-import com.yxy.nova.bean.WebResponse;
+import com.yxy.nova.bean.*;
 import com.yxy.nova.dal.mysql.dataobject.UserDO;
 import com.yxy.nova.service.UserService;
 import com.yxy.nova.util.MapCache;
@@ -33,7 +31,7 @@ public class AuthController {
 
 
     @GetMapping(value = "/gotoLogin")
-    public String gotoLogin(Model model){
+    public String gotoLogin(){
         return "login";
     }
 
@@ -41,21 +39,28 @@ public class AuthController {
     @ResponseBody
     public WebResponse login(@RequestBody UserLoginDTO userLoginDTO, HttpServletRequest request, HttpServletResponse response){
 
-        UserDO userDO = userService.login(userLoginDTO);
-        request.setAttribute("login_user", userDO);
+        try {
+            UserDO userDO = userService.login(userLoginDTO);
+            request.setAttribute("login_user", userDO);
 
-        String token = Md5Encrypt.encrypt(UUID.randomUUID().toString());
-        boolean isSSL = request.getProtocol().startsWith("https");
-        Cookie cookie = new Cookie(Constants.login_cookie_name, token);
-        cookie.setHttpOnly(true);
-        cookie.setSecure(isSSL);
-        cookie.setMaxAge(30*60);
-        cookie.setPath("/");
-        response.addCookie(cookie);
+            String token = Md5Encrypt.encrypt(UUID.randomUUID().toString());
+            boolean isSSL = request.getProtocol().startsWith("https");
+            Cookie cookie = new Cookie(Constants.login_cookie_name, token);
+            cookie.setHttpOnly(true);
+            cookie.setSecure(isSSL);
+            cookie.setMaxAge(30 * 60);
+            cookie.setPath("/");
+            response.addCookie(cookie);
 
-        mapCache.set(token, userDO, 30*60);
+            mapCache.set(token, userDO, 30 * 60);
 
-        return WebResponse.success();
+            return WebResponse.success();
+        } catch (BizException e) {
+
+            return WebResponse.fail(e.getReasonDesc(), e.getMessage());
+        } catch (Exception e) {
+            return WebResponse.fail(ReasonCode.SYS_ERROR.getDesc(), "系统异常");
+        }
     }
 
 
