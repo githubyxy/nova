@@ -4,13 +4,11 @@ import com.alibaba.fastjson.JSON;
 import com.yxy.nova.bean.TestVo;
 import com.yxy.nova.util.LinuxUtil;
 import com.yxy.nova.util.QRCode;
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,8 +16,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 /**
@@ -28,6 +24,7 @@ import java.util.UUID;
  * @date 2019-07-05 15:39
  */
 @Controller
+@RequestMapping(value = "biz")
 public class NovaController {
 
     @GetMapping(value = "index")
@@ -82,6 +79,7 @@ public class NovaController {
         }
 
     }
+
 
     @GetMapping(value = "index/test1")
     @ResponseBody
