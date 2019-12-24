@@ -13,11 +13,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FilterConfig {
 
-    @Bean
-    public FilterRegistrationBean filterRegistrationBean(){
-        FilterRegistrationBean bean = new FilterRegistrationBean();
-        bean.setFilter(new BaseFilter());
-        bean.addUrlPatterns("/auth/*", "/biz/*");
-        return bean;
-    }
+//    @Bean
+//    public FilterRegistrationBean filterRegistrationBean(){
+////        FilterRegistrationBean bean = new FilterRegistrationBean();
+//////        bean.setFilter(new BaseFilter());
+////        bean.addUrlPatterns("/auth/*", "/biz/*");
+////        return bean;
+//    }
 }

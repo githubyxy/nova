@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>宅技术不宅生活</title>
 </head>
-
+<script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="/js/util.js"></script>
 <body>
 <div>
     fortune：
@@ -22,9 +23,15 @@
         <textarea type="text" id="text" name="text"></textarea>
     </form>
 </div>
-
-
-
+<div>---------------------------------------------------------------</div>
+<div>
+    <td>原文：<input type="text" id="plaintext" name="plaintext"></input><br></td>
+    <td>加密方式：<input type="radio" name="encryModeEnum" value="MD5">MD5</input> </td>
+    <td><input type="radio" name="encryModeEnum" value="SHA256">SHA256</input><br></td>
+    <td><input type="button" onclick="encrypt()" value="加密"></input><br></td>
+    <td>密文：<input type="text" id="encrypt" name="encrypt" style="width: 400px"></input></td>
+</div>
+<div>---------------------------------------------------------------</div>
 <#--<form action="upload" id="domeform" method="post" enctype="multipart/form-data">-->
     <#--<input type="file" name="file" value="选择文件">-->
     <#--<input type="submit" value="表单提交">-->
@@ -32,6 +39,24 @@
     <#--<input type="button" value="formdata提交" id="ormdatasub">-->
 <#--</form>-->
 
+
+<script>
+    function encrypt(){
+        var data = {};
+        data.plaintext=$("#plaintext").val();
+        data.encryModeEnum=$("input[name='encryModeEnum']:checked").val();
+
+        nova.postJson("encrypt", data, encryptSuccess, encryptFail, null);
+    }
+
+    function encryptSuccess(data) {
+        $("#encrypt").val(data);
+    }
+    function encryptFail() {
+        alert("加密失败");
+    }
+
+</script>
 </body>
 </html>
 

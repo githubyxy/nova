@@ -1,10 +1,15 @@
 package com.yxy.nova.web;
 
 import com.alibaba.fastjson.JSON;
+import com.yxy.nova.bean.EncryModeEnum;
+import com.yxy.nova.bean.EncryptRequest;
 import com.yxy.nova.bean.TestVo;
+import com.yxy.nova.bean.WebResponse;
+import com.yxy.nova.service.encryption.EncryptFactory;
 import com.yxy.nova.util.LinuxUtil;
 import com.yxy.nova.util.QRCode;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +31,9 @@ import java.util.UUID;
 @Controller
 @RequestMapping(value = "biz")
 public class NovaController {
+
+    @Autowired
+    private EncryptFactory encryptFactory;
 
     @GetMapping(value = "index")
     public String gotoPage(Model model){
@@ -81,11 +89,11 @@ public class NovaController {
     }
 
 
-    @GetMapping(value = "index/test1")
+    @PostMapping(value = "encrypt")
     @ResponseBody
-    public TestVo test1(@RequestParam(required = false) String str){
-        // System.out.println(str);
-        return new TestVo();
+    public WebResponse encrypt(@RequestBody EncryptRequest encryptRequest){
+        String encrypt = encryptFactory.createInstance(EncryModeEnum.valueOf(encryptRequest.getEncryModeEnum())).encrypt(encryptRequest.getPlaintext());
+        return WebResponse.successData(encrypt);
     }
 
     @PostMapping(value = "index/test2")
