@@ -29,7 +29,7 @@ import java.util.UUID;
  * @date 2019-07-05 15:39
  */
 @Controller
-@RequestMapping(value = "biz")
+@RequestMapping(value = "novaWeb")
 public class NovaController {
 
     @Autowired

@@ -52,8 +52,8 @@
     function encryptSuccess(data) {
         $("#encrypt").val(data);
     }
-    function encryptFail() {
-        alert("加密失败");
+    function encryptFail(message) {
+        alert(message);
     }
 
 </script>

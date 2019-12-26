@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>用户登录</title>
 </head>
+<script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="/js/util.js"></script>
 <body>
 
 <div style="margin: 0 auto; padding-bottom: 0%; padding-top: 7.5%; width: 380px;">
@@ -43,28 +45,21 @@
     </div>
 </div>
 <!-- Main  -->
-<script src="/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
    function login () {
        var postData = {};
-       postData.username=$("#username").val();
+       postData.loginId=$("#username").val();
        postData.password=$("#password").val();
-        $.ajax({
-            type: "POST",//方法类型
-            contentType:'application/json',
-            dataType: "json",//预期服务器返回的数据类型
-            url: '/auth/login',
-            data: JSON.stringify(postData),
-            success: function (result) {
-                if (result && result.success) {
-                    window.location.href = '/biz/index';
-                } else {
-                    alert(result.msg);
-                }
-            }
-        });
-        return false;
+       nova.postJson("novaWeb/login", postData, success, fail, null);
     };
+
+   function success(data) {
+       window.location.href = '/novaWeb/index';
+   }
+   function fail(message) {
+       alert(message);
+   }
+
 </script>
 </body>
 </html>

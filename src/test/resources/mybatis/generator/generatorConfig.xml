@@ -16,9 +16,10 @@
         </plugin>
 
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.6.70:3306/test_dep?characterEncoding=utf8"
-                        userId="sm_work"
-                        password="zg8n8cF0yy9nmM7eENoR">
+                        connectionURL="jdbc:mysql://192.168.6.70:3306/hertz_local_oper?characterEncoding=utf8&amp;serverTimezone=UTC"
+                        userId="hertz_local_oper"
+                        password="phfumftl">
+            <property name="nullCatalogMeansCurrent" value="true" />
         </jdbcConnection>
 
         <javaModelGenerator targetPackage="${targetModelPackage}" targetProject="${targetJavaProject}">
@@ -29,7 +30,7 @@
 
         <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}" type="XMLMAPPER" />
 
-        <table tableName="nova_user" domainObjectName="UserDO" mapperName="UserMapper"/>
+        <table tableName="user" domainObjectName="UserDO" mapperName="UserMapper"/>
 
     </context>
 </generatorConfiguration>

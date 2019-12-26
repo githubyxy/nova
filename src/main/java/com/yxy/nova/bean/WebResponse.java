@@ -21,7 +21,7 @@ public class WebResponse<T> implements Serializable {
 
     private String            code;
 
-    private String            msg;
+    private String            message;
 
     /**
      * 返回单值对象
@@ -30,7 +30,7 @@ public class WebResponse<T> implements Serializable {
      */
     public static <T> WebResponse<T> successData(T t, String msg) {
         WebResponse<T> result = successData(t);
-        result.setMsg(msg);
+        result.setMessage(msg);
 
         return result;
     }
@@ -72,7 +72,7 @@ public class WebResponse<T> implements Serializable {
     public static WebResponse success(){
         WebResponse webResponse = new WebResponse();
         webResponse.setSuccess(true);
-        webResponse.setMsg(ReasonCode.SUCCESS.getDesc());
+        webResponse.setMessage(ReasonCode.SUCCESS.getDesc());
 
         return webResponse;
     }
@@ -100,7 +100,7 @@ public class WebResponse<T> implements Serializable {
     public static WebResponse fail(String msg){
         WebResponse webResponse = new WebResponse();
         webResponse.setSuccess(false);
-        webResponse.setMsg(msg);
+        webResponse.setMessage(msg);
 
         return webResponse;
     }
@@ -114,7 +114,7 @@ public class WebResponse<T> implements Serializable {
         WebResponse webResponse = new WebResponse();
         webResponse.setSuccess(false);
         webResponse.setCode(code);
-        webResponse.setMsg(msg);
+        webResponse.setMessage(msg);
 
         return webResponse;
     }

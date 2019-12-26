@@ -5,12 +5,24 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <result column="id" jdbcType="INTEGER" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_uuid" jdbcType="VARCHAR" property="userUuid" />
+    <result column="login_id" jdbcType="VARCHAR" property="loginId" />
+    <result column="employee_no" jdbcType="VARCHAR" property="employeeNo" />
     <result column="real_name" jdbcType="VARCHAR" property="realName" />
-    <result column="mail" jdbcType="VARCHAR" property="mail" />
+    <result column="partner_code" jdbcType="VARCHAR" property="partnerCode" />
+    <result column="department_uuid" jdbcType="VARCHAR" property="departmentUuid" />
+    <result column="contact_tel" jdbcType="VARCHAR" property="contactTel" />
+    <result column="agent_tel" jdbcType="VARCHAR" property="agentTel" />
+    <result column="call_type" jdbcType="VARCHAR" property="callType" />
+    <result column="virtual_tel" jdbcType="VARCHAR" property="virtualTel" />
+    <result column="standby_tel" jdbcType="VARCHAR" property="standbyTel" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="role_uuid" jdbcType="VARCHAR" property="roleUuid" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="salt" jdbcType="VARCHAR" property="salt" />
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modify" jdbcType="TIMESTAMP" property="gmtModify" />
+    <result column="owned_partner" jdbcType="LONGVARCHAR" property="ownedPartner" />
   </resultMap>
 </mapper>
