@@ -11,8 +11,8 @@ import java.io.IOException;
  * Created with IntelliJ IDEA.
  *
  * @description: 拦截openapi请求
- * @author: shui.ren
- * @date: 2018-04-22 下午8:58
+ * @author: yuxiaoyu
+ * @date: 2019-04-22 下午8:58
  */
 public class OpenApiFilter implements Filter {
 
