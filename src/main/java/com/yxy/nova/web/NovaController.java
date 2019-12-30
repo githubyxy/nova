@@ -96,11 +96,9 @@ public class NovaController {
         return WebResponse.successData(encrypt);
     }
 
-    @PostMapping(value = "index/test2")
-    @ResponseBody
-    public TestVo test2(@RequestBody TestVo vo){
-        // System.out.println(JSON.toJSONString(vo));
-        return new TestVo();
+    @GetMapping(value = "imagemask")
+    public String gotoImageMask(Model model){
+        return "imagemask";
     }
 
     /**

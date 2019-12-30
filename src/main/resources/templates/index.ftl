@@ -32,12 +32,8 @@
     <td>密文：<input type="text" id="encrypt" name="encrypt" style="width: 400px"></input></td>
 </div>
 <div>---------------------------------------------------------------</div>
-<#--<form action="upload" id="domeform" method="post" enctype="multipart/form-data">-->
-    <#--<input type="file" name="file" value="选择文件">-->
-    <#--<input type="submit" value="表单提交">-->
-    <#--<input type="button" value="ajax提交" id="ajaxsub">-->
-    <#--<input type="button" value="formdata提交" id="ormdatasub">-->
-<#--</form>-->
+
+<div><a href="javascript:void(0);" onclick="gotoImageMask()">gotoImageMask</a></div>
 
 
 <script>
@@ -54,6 +50,10 @@
     }
     function encryptFail(message) {
         alert(message);
+    }
+    
+    function gotoImageMask() {
+        window.open('/novaWeb/imagemask');
     }
 
 </script>
