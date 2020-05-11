@@ -116,13 +116,6 @@ public class RedisConfig {
     }
 
 
-    @Bean
-    public RedisMessageListenerContainer robotEngineMessageListenerContainer(RedisConnectionFactory robotEngineRedisConnectionFactory){
-        RedisMessageListenerContainer container = new RedisMessageListenerContainer();
-        container.setConnectionFactory(robotEngineRedisConnectionFactory);
-        return container;
-    }
-
     /**
      * 序列化时固定加前缀，反序列化时固定去掉前缀
      */

@@ -112,7 +112,7 @@ public class UserDO implements Serializable {
     private Date gmtModify;
 
     /**
-     * 管理的合作方编码，用逗号分隔, 只有同盾运营账号可能有值
+     * 管理的合作方编码，用逗号分隔, 只有运营账号可能有值
      */
     @Column(name = "owned_partner")
     private String ownedPartner;
@@ -444,18 +444,18 @@ public class UserDO implements Serializable {
     }
 
     /**
-     * 获取管理的合作方编码，用逗号分隔, 只有同盾运营账号可能有值
+     * 获取管理的合作方编码，用逗号分隔, 只有运营账号可能有值
      *
-     * @return owned_partner - 管理的合作方编码，用逗号分隔, 只有同盾运营账号可能有值
+     * @return owned_partner - 管理的合作方编码，用逗号分隔, 只有运营账号可能有值
      */
     public String getOwnedPartner() {
         return ownedPartner;
     }
 
     /**
-     * 设置管理的合作方编码，用逗号分隔, 只有同盾运营账号可能有值
+     * 设置管理的合作方编码，用逗号分隔, 只有运营账号可能有值
      *
-     * @param ownedPartner 管理的合作方编码，用逗号分隔, 只有同盾运营账号可能有值
+     * @param ownedPartner 管理的合作方编码，用逗号分隔, 只有运营账号可能有值
      */
     public void setOwnedPartner(String ownedPartner) {
         this.ownedPartner = ownedPartner == null ? null : ownedPartner.trim();

@@ -30,4 +30,8 @@ public class LinuxUtil {
         return StringUtils.join(output, System.lineSeparator());
     }
 
+    public static void main(String[] args) {
+        System.out.println(Long.toBinaryString(-10L));
+    }
+
 }
