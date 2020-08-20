@@ -3,7 +3,6 @@ package com.yxy.nova.web.util;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
-import com.yxy.nova.bean.UserStatusEnum;
 import com.yxy.nova.dal.mysql.dataobject.UserDO;
 import com.yxy.nova.util.SpringApplicationContext;
 import com.yxy.nova.web.shiro.sesssion.NovaPrincipal;
@@ -13,7 +12,6 @@ import org.apache.shiro.session.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -28,7 +26,7 @@ public class SecurityUtil {
     /**
      * 存储loginId与HertzPrincipal的对应关系
      */
-    private static LoadingCache<String, NovaPrincipal> hertzPrincipalCache = CacheBuilder.newBuilder()
+    private static LoadingCache<String, NovaPrincipal> novaPrincipalCache = CacheBuilder.newBuilder()
             .maximumSize(1000)
             .expireAfterWrite(5, TimeUnit.MINUTES)
             .build(new CacheLoader<String, NovaPrincipal>() {
@@ -68,7 +66,7 @@ public class SecurityUtil {
      * @return
      */
     public static NovaPrincipal getPrincipalByloginId(String loginId) {
-        return hertzPrincipalCache.getUnchecked(loginId);
+        return novaPrincipalCache.getUnchecked(loginId);
     }
 
     /**
@@ -76,7 +74,7 @@ public class SecurityUtil {
      * @param loginId
      */
     public static void removeCache(String loginId){
-        hertzPrincipalCache.invalidate(loginId);
+        novaPrincipalCache.invalidate(loginId);
     }
 
     /**
