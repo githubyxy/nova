@@ -1,13 +1,10 @@
 package com.yxy.nova;
 
 import com.yxy.nova.web.shiro.sesssion.GodSessionSerializer;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.connection.RedisPassword;
-import org.springframework.data.redis.connection.RedisSentinelConfiguration;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -16,8 +13,8 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.lang.Nullable;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.net.URI;
+import java.util.Properties;
 
 /**
  * Created with IntelliJ IDEA.
@@ -44,6 +41,9 @@ public class RedisConfig {
     private Integer port;
     @Value("${redis.password}")
     private String password;
+
+    @Value("${hermes.cache.jcache.config}")
+    private String redisUri;
 
 
     @Bean
@@ -147,5 +147,48 @@ public class RedisConfig {
         }
     }
 
+
+
+    //---------------- webSocket----------------//
+//    @Bean
+//    public RedisConnectionFactory webSocketRedisConnectionFactory() throws Exception {
+//        RedisStandaloneConfiguration config = new RedisStandaloneConfiguration();
+//        config.setHostName(host);
+//        config.setPort(port);
+//        config.setPassword(password);
+//
+//        return new JedisConnectionFactory(config);
+////        return new JedisConnectionFactory(new URI(redisUri), new Properties());
+//    }
+    @Bean
+    public RedisMessageListenerContainer webSocketMessageListenerContainer(RedisConnectionFactory novaRedisConnectionFactory){
+        RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+        container.setConnectionFactory(novaRedisConnectionFactory);
+        return container;
+    }
+
+//    @Bean
+//    public RedisMessageListenerContainer robotMessageListenerContainer(RedisConnectionFactory novaRedisConnectionFactory){
+//        RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+//        container.setConnectionFactory(novaRedisConnectionFactory);
+//        return container;
+//    }
+
+    @Bean("webSocketRedisTemplate")
+    public RedisTemplate<?, ?> webSocketRedisTemplate() throws Exception {
+        RedisTemplate<?, ?> redisTemplate = new RedisTemplate();
+        redisTemplate.setConnectionFactory(novaRedisConnectionFactory());
+        redisTemplate.setKeySerializer(prefixedRedisKeySerializer());
+        redisTemplate.setHashKeySerializer(redisKeySerializer());
+        redisTemplate.setHashValueSerializer(webSocketRedisValueSerializer());
+        redisTemplate.setValueSerializer(webSocketRedisValueSerializer());
+        redisTemplate.afterPropertiesSet();
+        return redisTemplate;
+    }
+
+    @Bean("webSocketRedisValueSerializer")
+    public RedisSerializer<?> webSocketRedisValueSerializer() {
+        return new StringRedisSerializer();
+    }
 
 }

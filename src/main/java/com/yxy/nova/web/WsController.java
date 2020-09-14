@@ -1,8 +1,10 @@
 package com.yxy.nova.web;
 
 import com.yxy.nova.socket.SocketManager;
+import com.yxy.nova.socket.WebSocketRedisSubscriber;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.socket.WebSocketSession;
 
+import javax.annotation.Resource;
 import java.util.Map;
 
 /**
@@ -25,7 +28,11 @@ import java.util.Map;
 public class WsController {
 
     @Autowired
+    private WebSocketRedisSubscriber webSocketRedisSubscriber;
+    @Autowired
     private SimpMessagingTemplate template;
+    @Resource(name = "webSocketRedisTemplate")
+    private RedisTemplate<String, String> redisTemplate;
 
     @GetMapping("/websocket")
     public ModelAndView websocket() {
@@ -92,7 +99,11 @@ public class WsController {
         WebSocketSession webSocketSession = SocketManager.get(map.get("name"));
         if (webSocketSession != null) {
             log.info("sessionId = {}", webSocketSession.getId());
-            template.convertAndSendToUser(map.get("name"), "/queue/sendUser", map.get("message"));
+
+            webSocketRedisSubscriber.subscribeBizId(map.get("name"));
+
+//            template.convertAndSendToUser(map.get("name"), "/queue/sendUser", map.get("message"));
+            redisTemplate.convertAndSend(map.get("name"), "yuxiaoyu");
         }
     }
 
