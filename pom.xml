@@ -38,6 +38,16 @@
         <targetXMLPackage>mybatis/mapper</targetXMLPackage>
 
         <shiro.version>1.3.2</shiro.version>
+
+        <!-- 日志相关 -->
+        <logback-version>1.2.3</logback-version>
+        <slf4j-api-version>1.7.5</slf4j-api-version>
+        <jcl-over-slf4j-version>1.7.5</jcl-over-slf4j-version>
+        <commons-logging-version>1.1.3</commons-logging-version>
+        <commons-codec-version>1.11</commons-codec-version>
+        <logback-classic-version>1.2.3</logback-classic-version>
+        <janino-version>3.0.6</janino-version>
+        <log4j-version>1.2.16</log4j-version>
     </properties>
 
     <dependencies>
@@ -120,29 +130,37 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api-version}</version>
         </dependency>
         <!-- 将现有的jakarta commons logging的调用转换成lsf4j的调用。 -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
+            <version>${jcl-over-slf4j-version}</version>
         </dependency>
         <!-- Hack：确保commons-logging的jar包不被引入，否则将和jcl-over-slf4j冲突 -->
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
+            <version>${commons-logging-version}</version>
+            <scope>provided</scope>
         </dependency>
         <!-- slf4j的实现：logback，用来取代log4j。更快、更强！ -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
+            <version>${logback-version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.codehaus.janino</groupId>
             <artifactId>janino</artifactId>
+            <version>${janino-version}</version>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
+            <version>${log4j-version}</version>
         </dependency>
 
         <!-- lombok -->
