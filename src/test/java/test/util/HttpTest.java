@@ -83,7 +83,7 @@ public class HttpTest {
 	 * @throws Exception
 	 */
 	public static void listLineUnitCode() throws Exception{
-		String url = "http://106.13.148.83:8028/openapi/call/listEnabledLineUnit/v1";
+		String url = "http://120.48.8.74:8028/openapi/call/listEnabledLineUnit/v1";
 
 		String partnerCode = "dingsheng_main";
 		String openapiSecret = "11dbea52";
@@ -100,7 +100,7 @@ public class HttpTest {
 	 * @throws Exception
 	 */
 	public static void doubleCall()throws Exception{
-		String url = "http://106.13.148.83:8028/openapi/call/manualCall/v1";
+		String url = "http://120.48.8.74:8028/openapi/call/manualCall/v1";
 
 		String partnerCode = "dingsheng_main";
 		String openapiSecret = "11dbea52";

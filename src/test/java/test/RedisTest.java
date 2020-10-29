@@ -13,7 +13,7 @@ public class RedisTest {
     @Test
     public void test() {
 
-        Jedis jedis = new Jedis("106.13.148.83", 6379);
+        Jedis jedis = new Jedis("120.48.8.74", 6379);
         jedis.set("a","b");
     }
 
