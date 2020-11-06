@@ -7,7 +7,7 @@
 
     <!-- biz -->
     <import resource="spring/biz.xml"/>
-<!--    <import resource="spring/dal.xml"/>-->
+    <import resource="spring/dal.xml"/>
     <import resource="spring/elastic-job.xml"/>
 
 </beans>
