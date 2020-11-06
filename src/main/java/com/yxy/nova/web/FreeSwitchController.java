@@ -28,7 +28,8 @@ import java.util.Map;
  * @date 2020/11/6 上午11:05
  * @Description
  */
-@Controller(value = "fs")
+@Controller
+@RequestMapping("fs")
 public class FreeSwitchController {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
