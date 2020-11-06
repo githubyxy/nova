@@ -37,9 +37,9 @@ public class FreeSwitchController {
 //        createDirection();
 //    }
 
-    @RequestMapping("/direction")
-    public String direction(HttpServletRequest request) throws IOException, DocumentException {
-        logger.info("direction ………………");
+    @RequestMapping("/directory")
+    public String directory(HttpServletRequest request) throws IOException, DocumentException {
+        logger.info("directory ………………");
         Map<String, String> map = new HashMap<>();
         map.put("sip", "66600000");
         map.put("password", "1234");
