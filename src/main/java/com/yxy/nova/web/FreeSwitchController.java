@@ -29,7 +29,7 @@ import java.util.Map;
  * @Description
  */
 @Controller
-@RequestMapping(value = "fs")
+@RequestMapping(value = "/fs")
 public class FreeSwitchController {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -37,7 +37,7 @@ public class FreeSwitchController {
 //        createDirection();
 //    }
 
-    @RequestMapping("/directory")
+    @RequestMapping(value = "/directory")
     public Document directory(HttpServletRequest request) throws IOException, DocumentException {
         logger.info("directory ………………");
         Map<String, String> map = new HashMap<>();
