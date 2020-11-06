@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -35,12 +36,12 @@ public class FreeSwitchController {
 //    }
 
     @GetMapping("/direction")
-    public String direction() throws IOException, DocumentException {
+    public String direction(HttpServletRequest request) throws IOException, DocumentException {
         Map<String, String> map = new HashMap<>();
         map.put("sip", "66600000");
         map.put("password", "1234");
 
-        Path path = Paths.get("/tmp/direction_example.xml");
+        Path path = Paths.get("/etc/freeswitch/directory/direction_example.xml");
         String template = MyStringUtil.replaceArgsNew(new String(Files.readAllBytes(path)), map);
 
         return generateXml("/tmp/66600000.xml", template).asXML();
