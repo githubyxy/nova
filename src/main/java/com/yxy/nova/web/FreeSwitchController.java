@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -38,8 +39,9 @@ public class FreeSwitchController {
 //    }
 
     @RequestMapping(value = "/directory")
-    public Document directory(HttpServletRequest request) throws IOException, DocumentException {
-        logger.info("directory ………………");
+    @ResponseBody
+    public String directory(HttpServletRequest request) throws IOException, DocumentException {
+        logger.info("directory ………………{}", request.getQueryString());
         Map<String, String> map = new HashMap<>();
         map.put("sip", "66600000");
         map.put("password", "1234");
@@ -47,7 +49,7 @@ public class FreeSwitchController {
         Path path = Paths.get("/etc/freeswitch/directory/direction_example.xml");
         String template = MyStringUtil.replaceArgsNew(new String(Files.readAllBytes(path)), map);
 
-        return generateXml("/tmp/66600000.xml", template);
+        return generateXml("/tmp/66600000.xml", template).asXML();
 
     }
 
