@@ -29,7 +29,7 @@ import java.util.Map;
  * @Description
  */
 @Controller
-@RequestMapping("fs")
+@RequestMapping(value = "fs")
 public class FreeSwitchController {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
