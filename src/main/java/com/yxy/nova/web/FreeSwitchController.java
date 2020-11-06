@@ -38,7 +38,7 @@ public class FreeSwitchController {
 //    }
 
     @RequestMapping("/directory")
-    public String directory(HttpServletRequest request) throws IOException, DocumentException {
+    public Document directory(HttpServletRequest request) throws IOException, DocumentException {
         logger.info("directory ………………");
         Map<String, String> map = new HashMap<>();
         map.put("sip", "66600000");
@@ -47,7 +47,7 @@ public class FreeSwitchController {
         Path path = Paths.get("/etc/freeswitch/directory/direction_example.xml");
         String template = MyStringUtil.replaceArgsNew(new String(Files.readAllBytes(path)), map);
 
-        return generateXml("/tmp/66600000.xml", template).asXML();
+        return generateXml("/tmp/66600000.xml", template);
 
     }
 
