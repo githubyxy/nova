@@ -58,7 +58,7 @@ public class ShiroConfig {
                                               OpenApiFilter openapiFilter) {
         ShiroFilterFactoryBean shiroFilter = new ShiroFilterFactoryBean();
         shiroFilter.setSecurityManager(securityManager);
-        shiroFilter.setLoginUrl("/login");
+//        shiroFilter.setLoginUrl("/login");
 
         // 处理ajax请求未登录
         CustomizedFormAuthenticationFilter customizedFormAuthenticationFilter = new CustomizedFormAuthenticationFilter();
