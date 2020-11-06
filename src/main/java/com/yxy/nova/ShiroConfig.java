@@ -86,7 +86,7 @@ public class ShiroConfig {
         filterMap.put("/novaWeb/login", "anon");
         filterMap.put("/logout", "logout");
         filterMap.put("/error/**", "anon");
-        filterMap.put("/fs", "anon");
+        filterMap.put("/fs/", "anon");
         filterMap.put("/**", "authc");
 
         shiroFilter.setFilterChainDefinitionMap(filterMap);
