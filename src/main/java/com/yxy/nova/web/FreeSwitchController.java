@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,8 +36,9 @@ public class FreeSwitchController {
 //        createDirection();
 //    }
 
-    @GetMapping("/direction")
+    @RequestMapping("/direction")
     public String direction(HttpServletRequest request) throws IOException, DocumentException {
+        logger.info("direction ………………");
         Map<String, String> map = new HashMap<>();
         map.put("sip", "66600000");
         map.put("password", "1234");
