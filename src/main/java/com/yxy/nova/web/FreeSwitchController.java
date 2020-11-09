@@ -1,5 +1,7 @@
 package com.yxy.nova.web;
 
+import com.yxy.nova.freeswitch.cmd.Sofia;
+import com.yxy.nova.freeswitch.esl.SimpleFreeSwitchClient;
 import com.yxy.nova.web.util.MyStringUtil;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -8,6 +10,7 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,9 +37,23 @@ import java.util.Map;
 public class FreeSwitchController {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
+    @Autowired
+    private SimpleFreeSwitchClient fsClient;
+
 //    public static void main(String[] args) throws IOException, DocumentException {
 //        createDirection();
 //    }
+
+    @RequestMapping(value = "/sofia_gw")
+    @ResponseBody
+    public String sofia_gw(String gateway) {
+        Sofia sofia = new Sofia("profile " + gateway + " restart");
+        fsClient.executeAsync(sofia);
+        return "success";
+    }
+
+
+
 
     @RequestMapping(value = "/directory")
     @ResponseBody
@@ -49,13 +66,9 @@ public class FreeSwitchController {
         Path path = Paths.get("/etc/freeswitch/directory/direction_example.xml");
         String template = MyStringUtil.replaceArgsNew(new String(Files.readAllBytes(path)), map);
 
-        return generateXml("/tmp/66600000.xml", template).asXML();
+        return generateXml("/tmp/66600000.xml", template).getRootElement().asXML();
 
     }
-
-
-
-
 
 
     @GetMapping("/createdirection")
