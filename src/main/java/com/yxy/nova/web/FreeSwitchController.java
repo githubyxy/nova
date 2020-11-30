@@ -48,7 +48,8 @@ public class FreeSwitchController {
     @ResponseBody
     public String sofia_gw(String gateway) {
         Sofia sofia = new Sofia("profile " + gateway + " restart");
-        fsClient.executeAsync(sofia);
+        String execute = fsClient.execute(sofia);
+        logger.info("execute:" , execute);
         return "success";
     }
 
@@ -84,7 +85,7 @@ public class FreeSwitchController {
 
     }
 
-    private Document generateXml(String s, String template) throws DocumentException {
+    private static Document generateXml(String s, String template) throws DocumentException {
         Document document = DocumentHelper.parseText(template);
         OutputFormat format = OutputFormat.createPrettyPrint();
         format.setNewLineAfterDeclaration(false);
@@ -103,5 +104,6 @@ public class FreeSwitchController {
         }
         return document;
     }
+
 
 }
