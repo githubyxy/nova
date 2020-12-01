@@ -1,5 +1,41 @@
 var nova = {};
 
+
+nova.upload = function(url,data,success,error,complete){
+	$.ajax({
+		url:url,
+		type:'post',
+		data:data,
+		timeout : 15000,
+		dataType:'json',
+		processData:false,
+		contentType:false,
+		traditional:true,
+		success : function(response) {
+			if (response.success) {
+				if (success != undefined)
+					success(response.data);
+			} else {
+				if (error != undefined)
+					error(response.message);
+			}
+		},
+		error : function(response){
+			if(error != undefined)
+				error('网络异常!');
+			else
+				nova.alert('网络异常!');
+		},
+		complete : function(response){
+			if(complete != undefined)
+				complete(response.data);
+		},
+		timeout : function(){
+			nova.alert("请求超时!");
+		}
+	});
+};
+
 nova.post = function(url,data,success,error,complete){
 	$.ajax({
 		url:url,
