@@ -28,7 +28,7 @@
         var formData = new FormData();
         formData.append("file", file);
 
-        nova.post("doc2pdf", data, encryptSuccess, encryptFail, null);
+        nova.post("doc2pdf", formData, encryptSuccess, encryptFail, null);
     }
 
     function encryptSuccess(data) {
