@@ -25,9 +25,9 @@
 <script type="text/javascript">
     function doc2pdf(){
         var data = {};
-        data.file=$("#file").val();
+        data.file=$("#file").file;
 
-        nova.postJson("doc2pdf", data, encryptSuccess, encryptFail, null);
+        nova.postJson("novaWeb/doc2pdf", data, encryptSuccess, encryptFail, null);
     }
 
     function encryptSuccess(data) {
