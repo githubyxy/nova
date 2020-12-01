@@ -27,7 +27,7 @@
         var data = {};
         data.file=$("#file").val();
 
-        nova.get("doc2pdf", data, encryptSuccess, encryptFail, null);
+        nova.postJson("doc2pdf", data, encryptSuccess, encryptFail, null);
     }
 
     function encryptSuccess(data) {
