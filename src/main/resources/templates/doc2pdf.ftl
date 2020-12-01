@@ -19,15 +19,15 @@
 </div>
 
 <div>
-    <td><input type="button" onclick="doc2pdf()" value="加密"></input><br></td>
+    <td><input type="button" onclick="doc2pdf()" value="转pdf"></input><br></td>
 </div>
 
 <script type="text/javascript">
     function doc2pdf(){
         var data = {};
-        data.file=$("#file").get(0).files[0];
+        data.file=document.getElementById("file").files[0];
 
-        nova.postJson("novaWeb/doc2pdf", data, encryptSuccess, encryptFail, null);
+        nova.postJson("doc2pdf", data, encryptSuccess, encryptFail, null);
     }
 
     function encryptSuccess(data) {
