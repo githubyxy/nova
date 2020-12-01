@@ -116,7 +116,7 @@ public class NovaController {
      * @param file
      */
      @PostMapping(value = "doc2pdf")
-    public void doc2pdf(@RequestParam("file") MultipartFile file, HttpServletResponse response) throws Exception{
+    public void doc2pdf(MultipartFile file, HttpServletResponse response) throws Exception{
         // System.out.println(file.getSize());
 
          try {

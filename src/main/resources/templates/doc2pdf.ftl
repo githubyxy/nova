@@ -24,10 +24,11 @@
 
 <script type="text/javascript">
     function doc2pdf(){
-        var data = {};
-        data.file=document.getElementById("file").files[0];
+        var file = document.getElementById("file").files[0];
+        var formData = new FormData();
+        formData.append("file", file);
 
-        nova.postJson("doc2pdf", data, encryptSuccess, encryptFail, null);
+        nova.post("doc2pdf", data, encryptSuccess, encryptFail, null);
     }
 
     function encryptSuccess(data) {
