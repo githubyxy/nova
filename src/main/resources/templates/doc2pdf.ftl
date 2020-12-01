@@ -32,7 +32,6 @@
     }
 
     function encryptSuccess(data) {
-        $("#encrypt").val(data);
     }
     function encryptFail(message) {
         alert(message);
