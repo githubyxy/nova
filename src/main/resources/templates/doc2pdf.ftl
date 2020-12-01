@@ -25,8 +25,8 @@
 <script type="text/javascript">
     function doc2pdf(){
         var file = document.getElementById("file").files[0];
-        var formData = new FormData();
-        formData.append("file", file);
+        var data = {};
+        data.file=file;
 
         nova.post("doc2pdf", formData, encryptSuccess, encryptFail, null);
     }
