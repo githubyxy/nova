@@ -7,13 +7,17 @@ import com.yxy.nova.bean.TestVo;
 import com.yxy.nova.bean.WebResponse;
 import com.yxy.nova.service.encryption.EncryptFactory;
 import com.yxy.nova.util.LinuxUtil;
+import com.yxy.nova.util.PDFUtil;
 import com.yxy.nova.util.QRCode;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,6 +32,7 @@ import java.util.UUID;
  * @Description:
  * @date 2019-07-05 15:39
  */
+@Slf4j
 @Controller
 @RequestMapping(value = "novaWeb")
 public class NovaController {
@@ -101,13 +106,30 @@ public class NovaController {
         return "imagemask";
     }
 
+    @GetMapping(value = "gotoDoc2pdf")
+    public String gotoDoc2pdf(Model model){
+        return "doc2pdf";
+    }
+
     /**
      * 用于接收前端上传文件
      * @param file
      */
-    // @RequestMapping(value = "upload", method = RequestMethod.POST)
-    // public void dome1(MultipartFile file) throws Exception{
-    //     // System.out.println(file.getSize());
-    // }
+     @PostMapping(value = "upload")
+    public void doc2pdf(@RequestParam("file") MultipartFile file, HttpServletResponse response) throws Exception{
+        // System.out.println(file.getSize());
+
+         try {
+            byte[] pdf = PDFUtil.toPDF(file.getBytes(), file.getOriginalFilename());
+
+             response.addHeader("Content-Type", MediaType.APPLICATION_OCTET_STREAM_VALUE+";charset=UTF-8");
+             response.setHeader("Content-disposition", "attachment; filename=" + file.getOriginalFilename());
+             response.setContentLength(pdf.length);
+
+             IOUtils.write(pdf, response.getOutputStream());
+         } catch (Throwable thr) {
+             log.error("doc2pdf异常", thr);
+         }
+     }
 
 }

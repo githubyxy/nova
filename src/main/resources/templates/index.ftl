@@ -35,6 +35,10 @@
 
 <div><a href="javascript:void(0);" onclick="gotoImageMask()">gotoImageMask</a></div>
 
+<div>---------------------------------------------------------------</div>
+
+<div><a href="javascript:void(0);" onclick="gotoDoc2pdf()">doc 转 pdf</a></div>
+
 
 <script>
     function encrypt(){
@@ -54,6 +58,10 @@
     
     function gotoImageMask() {
         window.open('/novaWeb/imagemask');
+    }
+
+    function gotoDoc2pdf() {
+        window.open('/novaWeb/gotoDoc2pdf');
     }
 
 </script>
