@@ -1,6 +1,5 @@
 package com.yxy.nova.cmpp;
 
-import cn.guixi.sms.core.biz.service.SmsErrorCodeService;
 import com.yxy.nova.cmpp.pojo.SmsReplyResult;
 import com.yxy.nova.cmpp.pojo.SmsReportResult;
 import com.yxy.nova.cmpp.pojo.SmsSendResult;
@@ -57,7 +56,7 @@ public class CmppSmsClient implements SmsClient {
      */
     private int status;
 
-    protected SmsErrorCodeService smsErrorCodeService;
+//    protected SmsErrorCodeService smsErrorCodeService;
     private static final Logger log = LoggerFactory.getLogger(CmppSmsClient.class);
     public SmsProxy smsProxy;
 
@@ -259,14 +258,14 @@ public class CmppSmsClient implements SmsClient {
         this.channelId = channelId;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
-    }
-    public SmsErrorCodeService getSmsErrorCodeService() {
-        return smsErrorCodeService;
-    }
-
-    public void setSmsErrorCodeService(SmsErrorCodeService smsErrorCodeService) {
-        this.smsErrorCodeService = smsErrorCodeService;
-    }
+//    public void setStatus(int status) {
+//        this.status = status;
+//    }
+//    public SmsErrorCodeService getSmsErrorCodeService() {
+//        return smsErrorCodeService;
+//    }
+//
+//    public void setSmsErrorCodeService(SmsErrorCodeService smsErrorCodeService) {
+//        this.smsErrorCodeService = smsErrorCodeService;
+//    }
 }
