@@ -76,7 +76,7 @@ public class CMPPConnection extends PSocketConnection
         try
         {
 //            Resource resource = new Resource(getClass(), "resource");
-            URL url = Thread.currentThread().getContextClassLoader().getResource("cmpp/resource.xml");
+            URL url = getClass().getClassLoader().getResource("cmpp/resource.xml");
             Resource resource = new Resource(url.getPath().substring(0, url.getPath().length() -4));
             return resource;
         }
