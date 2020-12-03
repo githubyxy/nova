@@ -46,7 +46,7 @@ public class SmsClientFactoryImpl implements SmsClientFactory {
         smsClient.setSmsOperator(channel.getSmsOperator());
         smsClient.setUnsubscribeInfo(channel.getUnsubscribeInfo());
         smsClient.setChannelId(channel.getId());
-        smsClient.setSmsErrorCodeService(null);
+//        smsClient.setSmsErrorCodeService(null);
         smsClient.setStatus(channel.getStatus());
         smsClient.setReplyFlag(channel.isReplyFlag());
         smsClient.setReportFlag(channel.isReportFlag());
