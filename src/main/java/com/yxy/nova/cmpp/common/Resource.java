@@ -18,6 +18,11 @@ public class Resource {
     /** 使用的资源包。实际是用配置类来实现的，资源文件只读。*/
     private Cfg resource;
 
+    public Resource(InputStream inputStream) throws IOException {
+        resource = new Cfg(inputStream,false);
+    }
+
+
     /**
      * 根据URL获取资源对象。该方法可从jar文件或classpath中获得资源。
      * @param url 资源位置URL，不包含语言后缀和.xml

@@ -78,9 +78,8 @@ public class CMPPConnection extends PSocketConnection
         try
         {
             ClassPathResource cpr = new ClassPathResource("cmpp/resource.xml");
-            File file = cpr.getFile();
-
-            Resource resource = new Resource(cpr.getURL().toString());
+            InputStream inputStream = cpr.getInputStream();
+            Resource resource = new Resource(inputStream);
             return resource;
         }
         catch(IOException e)

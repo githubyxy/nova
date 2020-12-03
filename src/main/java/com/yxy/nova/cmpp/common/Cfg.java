@@ -48,6 +48,43 @@ public class Cfg{
   /** 配置文件名。*/
   private String file;
 
+  public Cfg(InputStream inputStream, boolean create) throws IOException {
+
+    //得到配置信息
+    if (inputStream==null) {
+      throw new IllegalArgumentException("inputStream is null");
+    }
+    try {
+      load(inputStream); //读取配置文件
+    } catch (FileNotFoundException ex) {
+    }
+  }
+
+  public void load(InputStream inputStream) throws IOException{
+
+    loadXMLParser();
+
+    //解析配置文件
+    try {
+      InputSource is = new InputSource(new InputStreamReader(inputStream, Charsets.UTF_8));
+      is.setEncoding(System.getProperty("file.encoding"));
+      this.doc = builder.parse(is);
+    } catch (SAXException ex) {
+      ex.printStackTrace();
+      String message = ex.getMessage();
+      Exception e = ex.getException();
+      if (e!=null) {
+        message += "embedded exception:" + e;
+      }
+      throw new IOException("XML file parse error:" + message);
+    }
+    root = doc.getDocumentElement();
+    if (!"config".equals(root.getNodeName())) {
+      throw new IOException("Config file format error, " +
+              "root node must be <config>");
+    }
+  }
+
   /**
    * 创建配置读取对象。
    * @param url 保存配置信息的XML文件路径。
