@@ -8,6 +8,7 @@ package com.yxy.nova.cmpp;
 
 import com.yxy.nova.cmpp.common.*;
 import com.yxy.nova.cmpp.message.*;
+import org.springframework.core.io.ClassPathResource;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -75,7 +76,8 @@ public class CMPPConnection extends PSocketConnection
     {
         try
         {
-            Resource resource = new Resource(getClass(), "resource");
+            ClassPathResource cpr = new ClassPathResource("cmpp/resource.xml");
+            Resource resource = new Resource(cpr.getURL().toString());
             return resource;
         }
         catch(IOException e)
