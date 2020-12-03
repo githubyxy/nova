@@ -258,6 +258,10 @@ public class CmppSmsClient implements SmsClient {
         this.channelId = channelId;
     }
 
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
 //    public void setStatus(int status) {
 //        this.status = status;
 //    }

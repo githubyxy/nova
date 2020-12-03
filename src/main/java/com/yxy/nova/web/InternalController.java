@@ -40,7 +40,7 @@ public class InternalController {
         smsClient.setSmsOperator("CMCC");
         smsClient.setUnsubscribeInfo("channel.getUnsubscribeInfo()");
         smsClient.setChannelId(1L);
-        smsClient.setSmsErrorCodeService(null);
+//        smsClient.setSmsErrorCodeService(null);
         smsClient.setStatus(1);
         smsClient.setReplyFlag(false);
         smsClient.setReportFlag(false);
