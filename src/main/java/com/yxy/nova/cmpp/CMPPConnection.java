@@ -12,6 +12,7 @@ import com.yxy.nova.cmpp.message.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.URL;
 import java.util.Date;
 
 // Referenced classes of package com.huawei.insa2.comm.cmpp:
@@ -74,7 +75,9 @@ public class CMPPConnection extends PSocketConnection
     {
         try
         {
-            Resource resource = new Resource(getClass(), "resource");
+//            Resource resource = new Resource(getClass(), "resource");
+            URL url = Thread.currentThread().getContextClassLoader().getResource("cmpp/resource.xml");
+            Resource resource = new Resource(url.getPath().substring(0, url.getPath().length() -4));
             return resource;
         }
         catch(IOException e)
