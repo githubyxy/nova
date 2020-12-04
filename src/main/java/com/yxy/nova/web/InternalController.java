@@ -32,13 +32,14 @@ public class InternalController {
         //登录密码 默认为空
         configMap.put("shared-secret","Fgjhjk");
         configMap.put("msgSrc","30001");
-        configMap.put("srcTerminalId","01");
+        configMap.put("srcTerminalId","01"); //Src_Id
         setCmccDefaultConfig(configMap);
+
 
         CmppSmsClient smsClient = new CmppSmsClient(configMap, 1L);
         smsClient.setSign("【360保险】");
         smsClient.setSmsOperator("CMCC");
-        smsClient.setUnsubscribeInfo("channel.getUnsubscribeInfo()");
+        smsClient.setUnsubscribeInfo("");
         smsClient.setChannelId(1L);
 //        smsClient.setSmsErrorCodeService(null);
         smsClient.setStatus(1);
