@@ -70,7 +70,9 @@ public class WechatServiceImpl implements WechatService {
             // 文本消息
             if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)) {
                 //这里根据关键字执行相应的逻辑，只有你想不到的，没有做不到的
-                if(CityID.map.get(content) !=null){
+
+                CityID ci = new CityID();
+                if(ci.getCityIDMap().get(content) !=null){
                     TextMessage text = new TextMessage();
                     text.setContent(WeatherHelper.getWeatherReportByCityName(content));
                     text.setToUserName(fromUserName);
