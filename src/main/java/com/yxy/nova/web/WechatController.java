@@ -34,10 +34,6 @@ public class WechatController {
 
     private final String CREATE_MENU_URL = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=";
 
-    @Value("${wechat-AppId}")
-    private String appleId;
-    @Value("${wechat-AppSecret}")
-    private String appSecret;
     @Autowired
     private SimpleHttpClient simpleHttpClient;
     @Autowired
@@ -59,13 +55,14 @@ public class WechatController {
         JSONArray button = new JSONArray();
         JSONObject memo = new JSONObject();
         memo.put("type", "click");
-        memo.put("name", "备忘录");
-        memo.put("key", "memo");
+        memo.put("name", "今日天气");
+        memo.put("key", "weather");
 
         button.add(memo);
 
         data.put("button", button.toJSONString());
         String result = simpleHttpClient.postJson(CREATE_MENU_URL + accessToken, data);
+        LOGGER.info("connectWeixin result={}", result);
     }
 
 

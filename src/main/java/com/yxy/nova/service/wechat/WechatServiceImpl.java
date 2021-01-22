@@ -5,6 +5,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.yxy.nova.bean.wechat.TextMessage;
 import com.yxy.nova.util.MessageUtil;
 import com.yxy.nova.util.SimpleHttpClient;
+import com.yxy.nova.util.wechat.weather.CityID;
+import com.yxy.nova.util.wechat.weather.WeatherHelper;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -68,8 +70,14 @@ public class WechatServiceImpl implements WechatService {
             // 文本消息
             if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)) {
                 //这里根据关键字执行相应的逻辑，只有你想不到的，没有做不到的
-                if(content.equals("xxx")){
-
+                if(CityID.map.get(content) !=null){
+                    TextMessage text = new TextMessage();
+                    text.setContent(WeatherHelper.getWeatherReportByCityName(content));
+                    text.setToUserName(fromUserName);
+                    text.setFromUserName(toUserName);
+                    text.setCreateTime(System.currentTimeMillis() + "");
+                    text.setMsgType(msgType);
+                    respMessage = MessageUtil.textMessageToXml(text);
                 }
 
                 //自动回复
@@ -81,39 +89,40 @@ public class WechatServiceImpl implements WechatService {
 //                text.setMsgType(msgType);
 //                respMessage = MessageUtil.textMessageToXml(text);
 
-            } /*else if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_EVENT)) {// 事件推送
-                String eventType = requestMap.get("Event");// 事件类型
-
-                if (eventType.equals(MessageUtil.EVENT_TYPE_SUBSCRIBE)) {// 订阅
-                    respContent = "欢迎关注xxx公众号！";
-                    return MessageResponse.getTextMessage(fromUserName , toUserName , respContent);
-                } else if (eventType.equals(MessageUtil.EVENT_TYPE_CLICK)) {// 自定义菜单点击事件
-                    String eventKey = requestMap.get("EventKey");// 事件KEY值，与创建自定义菜单时指定的KEY值对应
-                    logger.info("eventKey is:" +eventKey);
-                    return xxx;
-                }
             }
+//            else if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_EVENT)) {// 事件推送
+//                String eventType = requestMap.get("Event");// 事件类型
+//
+//                if (eventType.equals(MessageUtil.EVENT_TYPE_SUBSCRIBE)) {// 订阅
+//                    respContent = "欢迎关注xxx公众号！";
+//                    return MessageResponse.getTextMessage(fromUserName , toUserName , respContent);
+//                } else if (eventType.equals(MessageUtil.EVENT_TYPE_CLICK)) {// 自定义菜单点击事件
+//                    String eventKey = requestMap.get("EventKey");// 事件KEY值，与创建自定义菜单时指定的KEY值对应
+//                    logger.info("eventKey is:" +eventKey);
+//                    return xxx;
+//                }
+//            }
             //开启微信声音识别测试 2015-3-30
-            else if(msgType.equals("voice"))
-            {
-                String recvMessage = requestMap.get("Recognition");
-                //respContent = "收到的语音解析结果："+recvMessage;
-                if(recvMessage!=null){
-                    respContent = TulingApiProcess.getTulingResult(recvMessage);
-                }else{
-                    respContent = "您说的太模糊了，能不能重新说下呢？";
-                }
-                return MessageResponse.getTextMessage(fromUserName , toUserName , respContent);
-            }
+//            else if(msgType.equals("voice"))
+//            {
+//                String recvMessage = requestMap.get("Recognition");
+//                //respContent = "收到的语音解析结果："+recvMessage;
+//                if(recvMessage!=null){
+//                    respContent = TulingApiProcess.getTulingResult(recvMessage);
+//                }else{
+//                    respContent = "您说的太模糊了，能不能重新说下呢？";
+//                }
+//                return MessageResponse.getTextMessage(fromUserName , toUserName , respContent);
+//            }
             //拍照功能
-            else if(msgType.equals("pic_sysphoto"))
-            {
-
-            }
-            else
-            {
-                return MessageResponse.getTextMessage(fromUserName , toUserName , "返回为空");
-            }*/
+//            else if(msgType.equals("pic_sysphoto"))
+//            {
+//
+//            }
+//            else
+//            {
+//                return MessageResponse.getTextMessage(fromUserName , toUserName , "返回为空");
+//            }
             // 事件推送
             else if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_EVENT)) {
                 String eventType = requestMap.get("Event");// 事件类型
@@ -137,9 +146,9 @@ public class WechatServiceImpl implements WechatService {
                 // 自定义菜单点击事件
                 else if (eventType.equals(MessageUtil.EVENT_TYPE_CLICK)) {
                     String eventKey = requestMap.get("EventKey");// 事件KEY值，与创建自定义菜单时指定的KEY值对应
-                    if (eventKey.equals("memo")) {
+                    if (eventKey.equals("weather")) {
                         TextMessage text = new TextMessage();
-                        text.setContent("设置自定义的备忘录");
+                        text.setContent("请输入城市名称");
                         text.setToUserName(fromUserName);
                         text.setFromUserName(toUserName);
                         text.setCreateTime(System.currentTimeMillis() + "");

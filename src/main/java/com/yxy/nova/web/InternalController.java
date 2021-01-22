@@ -100,7 +100,6 @@ public class InternalController {
         PrintWriter out = response.getWriter();
 
         try {
-//            boolean isGet = request.getMethod().toLowerCase().equals("get");
             if (RequestMethod.GET.name().equals(request.getMethod())) {
                 String signature = request.getParameter("signature");// 微信加密签名
                 String timestamp = request.getParameter("timestamp");// 时间戳
@@ -123,12 +122,11 @@ public class InternalController {
                     LOGGER.info("The request completed successfully");
                     LOGGER.info("to weixin server "+respMessage);
                 } catch (Exception e) {
-                    LOGGER.error("Failed to convert the message from weixin!");
+                    LOGGER.error("Failed to convert the message from weixin!", e);
                 }
-
             }
         } catch (Exception e) {
-            LOGGER.error("Connect the weixin server is error.");
+            LOGGER.error("Connect the weixin server is error.", e);
         }finally{
             out.close();
         }
