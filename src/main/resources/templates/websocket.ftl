@@ -27,7 +27,7 @@
 <script type="text/javascript">
     var stompClient = null;
     //gateway网关的地址
-    var host="http://127.0.0.1:8080";
+    var host="http://127.0.0.1:80";
     function setConnected(connected) {
         document.getElementById('connect').disabled = connected;
         document.getElementById('disconnect').disabled = !connected;
