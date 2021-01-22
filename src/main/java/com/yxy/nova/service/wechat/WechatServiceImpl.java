@@ -6,7 +6,10 @@ import com.yxy.nova.bean.wechat.TextMessage;
 import com.yxy.nova.util.MessageUtil;
 import com.yxy.nova.util.SimpleHttpClient;
 import com.yxy.nova.util.wechat.weather.CityID;
+import com.yxy.nova.util.wechat.weather.TianQiCityID;
+import com.yxy.nova.util.wechat.weather.TianQiWeatherHelper;
 import com.yxy.nova.util.wechat.weather.WeatherHelper;
+import com.yxy.nova.web.util.WebUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -71,10 +74,19 @@ public class WechatServiceImpl implements WechatService {
             if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)) {
                 //这里根据关键字执行相应的逻辑，只有你想不到的，没有做不到的
 
-                CityID ci = new CityID();
+                TianQiCityID ci = new TianQiCityID();
                 if(ci.getCityIDMap().get(content) !=null){
                     TextMessage text = new TextMessage();
-                    text.setContent(WeatherHelper.getWeatherReportByCityName(content));
+                    text.setContent(new TianQiWeatherHelper(simpleHttpClient).getWeatherReportByCityName(content, WebUtil.getRemoteAddr(request)));
+                    text.setToUserName(fromUserName);
+                    text.setFromUserName(toUserName);
+                    text.setCreateTime(System.currentTimeMillis() + "");
+                    text.setMsgType(msgType);
+                    respMessage = MessageUtil.textMessageToXml(text);
+                }
+                if ("天气".equals(content)) {
+                    TextMessage text = new TextMessage();
+                    text.setContent(new TianQiWeatherHelper(simpleHttpClient).getWeatherReportByCityName("", WebUtil.getRemoteAddr(request)));
                     text.setToUserName(fromUserName);
                     text.setFromUserName(toUserName);
                     text.setCreateTime(System.currentTimeMillis() + "");

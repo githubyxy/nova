@@ -18,6 +18,7 @@ import java.util.logging.Logger;
  */
 public class WeatherHelper {
 
+
     public static void main(String[] args) {
 
 
