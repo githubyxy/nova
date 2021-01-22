@@ -82,6 +82,7 @@ public class ShiroConfig {
         filterMap.put("/innercallback/**", "anon");
         filterMap.put("/innerapi/**", "anon");
         filterMap.put("/openapi/**", "openapiFilter");
+//        filterMap.put("/wechat/**", "anon");
         filterMap.put("/login", "anon");
         filterMap.put("/novaWeb/login", "anon");
         filterMap.put("/logout", "logout");

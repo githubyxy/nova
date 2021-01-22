@@ -10,4 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 public interface WechatService {
 
     String weixinPost(HttpServletRequest request);
+
+    String getAccessToken();
 }

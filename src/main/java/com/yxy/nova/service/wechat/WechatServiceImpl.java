@@ -1,12 +1,21 @@
 package com.yxy.nova.service.wechat;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.yxy.nova.bean.wechat.TextMessage;
 import com.yxy.nova.util.MessageUtil;
+import com.yxy.nova.util.SimpleHttpClient;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.Date;
 import java.util.Map;
 
@@ -19,6 +28,17 @@ import java.util.Map;
 public class WechatServiceImpl implements WechatService {
 
     private final Logger LOGGER = LoggerFactory.getLogger(getClass());
+
+    private static JSONObject accessToken = new JSONObject();
+
+    @Value("${wechat-AppId}")
+    private String appleId;
+    @Value("${wechat-AppSecret}")
+    private String appSecret;
+    @Autowired
+    private SimpleHttpClient simpleHttpClient;
+
+
 
     /**
      * 处理微信发来的请求
@@ -53,14 +73,13 @@ public class WechatServiceImpl implements WechatService {
                 }
 
                 //自动回复
-                TextMessage text = new TextMessage();
-                text.setContent("the text is" + content);
-                text.setToUserName(fromUserName);
-                text.setFromUserName(toUserName);
-                text.setCreateTime(System.currentTimeMillis() + "");
-                text.setMsgType(msgType);
-
-                respMessage = MessageUtil.textMessageToXml(text);
+//                TextMessage text = new TextMessage();
+//                text.setContent("the text is" + content);
+//                text.setToUserName(fromUserName);
+//                text.setFromUserName(toUserName);
+//                text.setCreateTime(System.currentTimeMillis() + "");
+//                text.setMsgType(msgType);
+//                respMessage = MessageUtil.textMessageToXml(text);
 
             } /*else if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_EVENT)) {// 事件推送
                 String eventType = requestMap.get("Event");// 事件类型
@@ -118,9 +137,9 @@ public class WechatServiceImpl implements WechatService {
                 // 自定义菜单点击事件
                 else if (eventType.equals(MessageUtil.EVENT_TYPE_CLICK)) {
                     String eventKey = requestMap.get("EventKey");// 事件KEY值，与创建自定义菜单时指定的KEY值对应
-                    if (eventKey.equals("customer_telephone")) {
+                    if (eventKey.equals("memo")) {
                         TextMessage text = new TextMessage();
-                        text.setContent("0755-86671980");
+                        text.setContent("设置自定义的备忘录");
                         text.setToUserName(fromUserName);
                         text.setFromUserName(toUserName);
                         text.setCreateTime(System.currentTimeMillis() + "");
@@ -135,5 +154,44 @@ public class WechatServiceImpl implements WechatService {
             LOGGER.error("error......");
         }
         return respMessage;
+    }
+
+    @Override
+    public String getAccessToken() {
+
+        String access_token = accessToken.getString("access_token");
+        if (StringUtils.isBlank(access_token)) {
+            flushWechatAccessToken();
+            return accessToken.getString("access_token");
+        } else {
+            // 判断是否过期
+            if (accessToken.getLongValue("expires_in") <= System.currentTimeMillis()) {
+                flushWechatAccessToken();
+            }
+            return accessToken.getString("access_token");
+        }
+    }
+
+    private void flushWechatAccessToken() {
+        String url = "https://api.weixin.qq.com/cgi-bin/token";
+        NameValuePair[] data ={
+                new BasicNameValuePair("grant_type ","client_credential"),
+                new BasicNameValuePair("appid",appleId),
+                new BasicNameValuePair("secret",appSecret)
+        };
+
+        String result = null;
+        try {
+            result = simpleHttpClient.get(url, data);
+        } catch (IOException e) {
+        }
+        if (StringUtils.isNotBlank(result)) {
+            JSONObject jsonObject = JSON.parseObject(result);
+            if (StringUtils.isNotBlank(jsonObject.getString("access_token"))) {
+                // 刷新accessToken
+                accessToken.put("access_token", jsonObject.getString("access_token"));
+                accessToken.put("expires_in", System.currentTimeMillis() + jsonObject.getLong("expires_in")*1000);
+            }
+        }
     }
 }
