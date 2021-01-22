@@ -32,8 +32,7 @@ public class TianQiWeatherHelper {
     public String getWeatherReportByCityName(String cityName, String ip){
         TianQiCityID ci = new TianQiCityID();
         HashMap<String,String> mp=ci.getCityIDMap();
-        TianQiWeatherHelper bae2= new TianQiWeatherHelper();
-        String x=bae2.getWeatherReport(mp.get(cityName), ip);
+        String x=getWeatherReport(mp.get(cityName), ip);
         return x;
     }
 
