@@ -31,7 +31,7 @@ public class TianQiWeatherHelper {
     @SuppressWarnings("unchecked")
     public String getWeatherReportByCityName(String cityName, String ip){
         TianQiCityID ci = new TianQiCityID();
-        HashMap mp=ci.getCityIDMap();
+        HashMap<String,String> mp=ci.getCityIDMap();
         TianQiWeatherHelper bae2= new TianQiWeatherHelper();
         String x=bae2.getWeatherReport(mp.get(cityName), ip);
         return x;
