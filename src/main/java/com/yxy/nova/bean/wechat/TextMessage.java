@@ -12,10 +12,10 @@ import java.io.Serializable;
 @Data
 public class TextMessage implements Serializable {
 
-    private String toUserName;
-    private String fromUserName;
-    private String createTime;
-    private String content;
-    private String msgType;
-    private String msgId;
+    private String ToUserName;
+    private String FromUserName;
+    private String CreateTime;
+    private String Content;
+    private String MsgType;
+    private String MsgId;
 }
