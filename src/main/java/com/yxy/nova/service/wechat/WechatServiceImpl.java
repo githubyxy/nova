@@ -77,7 +77,9 @@ public class WechatServiceImpl implements WechatService {
                 TianQiCityID ci = new TianQiCityID();
                 if(ci.getCityIDMap().get(content) !=null){
                     TextMessage text = new TextMessage();
-                    text.setContent(new TianQiWeatherHelper(simpleHttpClient).getWeatherReportByCityName(content, WebUtil.getRemoteAddr(request)));
+                    TianQiWeatherHelper tianQiWeatherHelper = new TianQiWeatherHelper();
+                    tianQiWeatherHelper.setSimpleHttpClient(simpleHttpClient);
+                    text.setContent(tianQiWeatherHelper.getWeatherReportByCityName(content, WebUtil.getRemoteAddr(request)));
                     text.setToUserName(fromUserName);
                     text.setFromUserName(toUserName);
                     text.setCreateTime(System.currentTimeMillis() + "");
@@ -86,7 +88,9 @@ public class WechatServiceImpl implements WechatService {
                 }
                 if ("天气".equals(content)) {
                     TextMessage text = new TextMessage();
-                    text.setContent(new TianQiWeatherHelper(simpleHttpClient).getWeatherReportByCityName("", WebUtil.getRemoteAddr(request)));
+                    TianQiWeatherHelper tianQiWeatherHelper = new TianQiWeatherHelper();
+                    tianQiWeatherHelper.setSimpleHttpClient(simpleHttpClient);
+                    text.setContent(tianQiWeatherHelper.getWeatherReportByCityName("", WebUtil.getRemoteAddr(request)));
                     text.setToUserName(fromUserName);
                     text.setFromUserName(toUserName);
                     text.setCreateTime(System.currentTimeMillis() + "");

@@ -26,9 +26,6 @@ public class TianQiWeatherHelper {
 
     public TianQiWeatherHelper () {
     }
-    public TianQiWeatherHelper (SimpleHttpClient simpleHttpClient) {
-        this.simpleHttpClient = simpleHttpClient;
-    }
 
     /**根据城市名称查询城市天气*/
     @SuppressWarnings("unchecked")
@@ -36,7 +33,7 @@ public class TianQiWeatherHelper {
         TianQiCityID ci = new TianQiCityID();
         HashMap mp=ci.getCityIDMap();
         TianQiWeatherHelper bae2= new TianQiWeatherHelper();
-        String x=bae2.getWeatherReport((String) mp.get(cityName), ip);
+        String x=bae2.getWeatherReport(mp.get(cityName), ip);
         return x;
     }
 
