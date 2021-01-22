@@ -184,7 +184,7 @@ public class WechatServiceImpl implements WechatService {
     private void flushWechatAccessToken() {
         String url = "https://api.weixin.qq.com/cgi-bin/token";
         NameValuePair[] data ={
-                new BasicNameValuePair("grant_type ","client_credential"),
+                new BasicNameValuePair("grant_type","client_credential"),
                 new BasicNameValuePair("appid",appleId),
                 new BasicNameValuePair("secret",appSecret)
         };
