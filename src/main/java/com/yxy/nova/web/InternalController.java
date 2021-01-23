@@ -114,8 +114,7 @@ public class InternalController {
                     LOGGER.error("Failed to verify the signature!");
                 }
             }else{
-                String respMessage = "异常消息！";
-
+                String respMessage = "";
                 try {
                     respMessage = wechatService.weixinPost(request);
                     out.write(respMessage);
@@ -130,7 +129,7 @@ public class InternalController {
         }finally{
             out.close();
         }
-}
+    }
 
 
 }

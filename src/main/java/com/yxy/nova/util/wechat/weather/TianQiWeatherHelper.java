@@ -29,10 +29,17 @@ public class TianQiWeatherHelper {
 
     /**根据城市名称查询城市天气*/
     @SuppressWarnings("unchecked")
-    public String getWeatherReportByCityName(String cityName, String ip){
+    public String getWeatherReportByCityName(String cityName){
         TianQiCityID ci = new TianQiCityID();
         HashMap<String,String> mp=ci.getCityIDMap();
-        String x=getWeatherReport(mp.get(cityName), ip);
+        String x=getWeatherReport(mp.get(cityName), "");
+        return x;
+    }
+
+    /**根据ip查询城市天气*/
+    @SuppressWarnings("unchecked")
+    public String getWeatherReportByIP(String ip){
+        String x=getWeatherReport("", ip);
         return x;
     }
 

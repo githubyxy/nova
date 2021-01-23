@@ -79,7 +79,7 @@ public class WechatServiceImpl implements WechatService {
                     TextMessage text = new TextMessage();
                     TianQiWeatherHelper tianQiWeatherHelper = new TianQiWeatherHelper();
                     tianQiWeatherHelper.setSimpleHttpClient(simpleHttpClient);
-                    text.setContent(tianQiWeatherHelper.getWeatherReportByCityName(content, WebUtil.getRemoteAddr(request)));
+                    text.setContent(tianQiWeatherHelper.getWeatherReportByCityName(content));
                     text.setToUserName(fromUserName);
                     text.setFromUserName(toUserName);
                     text.setCreateTime(System.currentTimeMillis() + "");
@@ -90,7 +90,7 @@ public class WechatServiceImpl implements WechatService {
                     TextMessage text = new TextMessage();
                     TianQiWeatherHelper tianQiWeatherHelper = new TianQiWeatherHelper();
                     tianQiWeatherHelper.setSimpleHttpClient(simpleHttpClient);
-                    text.setContent(tianQiWeatherHelper.getWeatherReportByCityName("", WebUtil.getRemoteAddr(request)));
+                    text.setContent(tianQiWeatherHelper.getWeatherReportByIP(WebUtil.getRemoteAddr(request)));
                     text.setToUserName(fromUserName);
                     text.setFromUserName(toUserName);
                     text.setCreateTime(System.currentTimeMillis() + "");
