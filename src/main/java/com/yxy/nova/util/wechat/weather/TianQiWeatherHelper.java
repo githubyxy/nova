@@ -60,7 +60,7 @@ public class TianQiWeatherHelper {
         JSONObject obj = JSON.parseObject(jsonStr);
         //System.out.println(obj1.get("temp1"));
         weather="地区："+(String)obj.get("city")+" \n"+"天气："+(String)obj.get("wea")+"\n" +
-                "气温："+(String)obj.get("temp2")+"~"+(String)obj.get("temp1")+"\n"+
+                "气温："+(String)obj.get("tem2")+"~"+(String)obj.get("tem1")+"\n"+
                 "实时温度："+(String)obj.get("tem")+"\n"+
                 "当前建议："+(String)obj.get("air_tips");
 
