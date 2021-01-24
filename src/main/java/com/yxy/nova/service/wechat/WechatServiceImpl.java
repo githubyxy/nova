@@ -5,10 +5,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.yxy.nova.bean.wechat.TextMessage;
 import com.yxy.nova.util.MessageUtil;
 import com.yxy.nova.util.SimpleHttpClient;
-import com.yxy.nova.util.wechat.weather.CityID;
 import com.yxy.nova.util.wechat.weather.TianQiCityID;
 import com.yxy.nova.util.wechat.weather.TianQiWeatherHelper;
-import com.yxy.nova.util.wechat.weather.WeatherHelper;
 import com.yxy.nova.web.util.WebUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.NameValuePair;
@@ -21,7 +19,6 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.util.Date;
 import java.util.Map;
 
 /**
