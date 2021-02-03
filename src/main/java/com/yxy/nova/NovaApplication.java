@@ -1,18 +1,19 @@
 package com.yxy.nova;
 
-import com.alibaba.fastjson.JSON;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.connector.Connector;
 import org.apache.tomcat.util.threads.ThreadPoolExecutor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeansException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
@@ -28,17 +29,31 @@ import java.util.concurrent.TimeUnit;
 @EnableWebMvc
 @ServletComponentScan
 @ImportResource(locations = {"classpath*:app.xml"})
-public class NovaApplication extends SpringBootServletInitializer {
+@Slf4j
+public class NovaApplication implements ApplicationContextAware {
 
-    public static void main(String[] args) {
-        SpringApplication.run(NovaApplication.class, args);
+    private static ApplicationContext context;
+
+    public static ApplicationContext context() {
+        return context;
+    }
+
+    public static void main(String[] args) throws Exception {
+        log.warn("nova started");
+        try {
+            SpringApplication.run(NovaApplication.class, args);
+        } catch (Throwable e) {
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(NovaApplication.class);
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        if (NovaApplication.context == null) {
+            NovaApplication.context = applicationContext;
+        }
     }
-
     /**
      * 用于接受 shutdown 事件
      */
