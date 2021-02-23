@@ -2,8 +2,8 @@ package com.yxy.nova.mwh.kafka.producer;
 
 import com.yxy.nova.mwh.kafka.object.ProducerException;
 import com.yxy.nova.mwh.kafka.object.QueueJob;
+import com.yxy.nova.mwh.kafka.tape2.QueueFile;
 import com.yxy.nova.mwh.kafka.util.ErrorHelper;
-import com.squareup.tape2.QueueFile;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.RecordMetadata;

@@ -1,6 +1,6 @@
 package com.yxy.nova.mwh.utils.exception;
 
-import com.yxy.nova.mwh.client.reasoncode.ReasonCode;
+import com.yxy.nova.mwh.ReasonCode;
 
 /**
  * @author: shui.ren

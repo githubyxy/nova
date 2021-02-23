@@ -1,6 +1,7 @@
 package com.yxy.nova.mwh.kafka.util;
 
-import com.squareup.tape2.QueueFile;
+
+import com.yxy.nova.mwh.kafka.tape2.QueueFile;
 
 import java.io.File;
 import java.io.IOException;
