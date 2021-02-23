@@ -9,11 +9,18 @@ import com.yxy.nova.cmpp.CmppSmsClient;
 import com.yxy.nova.cmpp.pojo.SmsSendResult;
 import com.yxy.nova.dal.mysql.dataobject.TaskItemExecCallDO;
 import com.yxy.nova.dal.mysql.mapper.TaskItemExecCallMapper;
+import com.yxy.nova.mwh.elasticsearch.AggregationClient;
 import com.yxy.nova.mwh.elasticsearch.SearchService;
+import com.yxy.nova.mwh.elasticsearch.basic.agg.AggregationBuilder;
 import com.yxy.nova.mwh.elasticsearch.dto.InsertAction;
+import com.yxy.nova.mwh.elasticsearch.dto.SearchResult;
 import com.yxy.nova.mwh.elasticsearch.exception.ElasticsearchClientException;
+import com.yxy.nova.mwh.utils.exception.BizException;
+import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import com.yxy.nova.service.wechat.WechatService;
 import com.yxy.nova.util.SignUtil;
+import org.apache.commons.lang3.StringUtils;
+import org.elasticsearch.action.bulk.BulkResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +49,8 @@ public class InternalController {
     private TaskItemExecCallMapper taskItemExecCallMapper;
     @Autowired
     private SearchService searchService;
+    @Autowired
+    private AggregationClient aggregationClient;
 
     @PostMapping("/execCallTest")
     @ResponseBody
@@ -49,11 +58,33 @@ public class InternalController {
         taskItemExecCallMapper.insert(taskItemExecCallDO);
         InsertAction insertAction = convertToInsertAction(taskItemExecCallDO);
         try {
-            searchService.bulkInsert(Arrays.asList(insertAction));
+            BulkResponse bulkItemResponses = searchService.bulkInsert(Arrays.asList(insertAction));
+            LOGGER.info("bulkItemResponses:{}", JSON.toJSONString(bulkItemResponses));
         } catch (ElasticsearchClientException e) {
             LOGGER.error("es bulkInsert error", e);
         }
         return "ok";
+    }
+
+    @GetMapping("/esQuery")
+    @ResponseBody
+    public String esQuery(String startTime, String endTime) throws ElasticsearchClientException {
+        AggregationBuilder builder = new AggregationBuilder(aggregationClient, "task_item_exec_call");
+        if (StringUtils.isNotBlank(startTime)) {
+            builder.whereGreaterOrEqual("gmtCreate", DateTimeUtil.parseDatetime18(startTime).getTime());
+        }
+
+        if (StringUtils.isNotBlank(endTime)) {
+            builder.whereLessOrEqual("gmtCreate", DateTimeUtil.parseDatetime18(endTime).getTime());
+        }
+        // 请求es查询
+        SearchResult searchResult = builder.get();
+
+        // 解析查询结果
+        if (!searchResult.getSuccess()) {
+            throw BizException.instance("查询出错");
+        }
+        return JSON.toJSONString(searchResult);
     }
 
     private InsertAction convertToInsertAction(TaskItemExecCallDO execCallDO) {
