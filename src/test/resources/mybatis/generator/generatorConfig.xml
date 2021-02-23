@@ -31,6 +31,7 @@
         <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}" type="XMLMAPPER" />
 
         <table tableName="user" domainObjectName="UserDO" mapperName="UserMapper"/>
+        <table tableName="task_item_exec_call" domainObjectName="TaskItemExecCallDO" mapperName="TaskItemExecCallMapper"/>
 
     </context>
 </generatorConfiguration>

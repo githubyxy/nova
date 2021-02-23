@@ -7,6 +7,11 @@ package com.yxy.nova.web;
 import com.alibaba.fastjson.JSON;
 import com.yxy.nova.cmpp.CmppSmsClient;
 import com.yxy.nova.cmpp.pojo.SmsSendResult;
+import com.yxy.nova.dal.mysql.dataobject.TaskItemExecCallDO;
+import com.yxy.nova.dal.mysql.mapper.TaskItemExecCallMapper;
+import com.yxy.nova.mwh.elasticsearch.SearchService;
+import com.yxy.nova.mwh.elasticsearch.dto.InsertAction;
+import com.yxy.nova.mwh.elasticsearch.exception.ElasticsearchClientException;
 import com.yxy.nova.service.wechat.WechatService;
 import com.yxy.nova.util.SignUtil;
 import org.slf4j.Logger;
@@ -18,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,6 +38,31 @@ public class InternalController {
 
     @Autowired
     private WechatService wechatService;
+    @Autowired
+    private TaskItemExecCallMapper taskItemExecCallMapper;
+    @Autowired
+    private SearchService searchService;
+
+    @PostMapping("/execCallTest")
+    @ResponseBody
+    public String test(@RequestBody TaskItemExecCallDO taskItemExecCallDO) {
+        taskItemExecCallMapper.insert(taskItemExecCallDO);
+        InsertAction insertAction = convertToInsertAction(taskItemExecCallDO);
+        try {
+            searchService.bulkInsert(Arrays.asList(insertAction));
+        } catch (ElasticsearchClientException e) {
+            LOGGER.error("es bulkInsert error", e);
+        }
+        return "ok";
+    }
+
+    private InsertAction convertToInsertAction(TaskItemExecCallDO execCallDO) {
+        InsertAction action = new InsertAction();
+        action.setId(execCallDO.getTaskItemExecUuid());
+        action.setTable("task_item_exec_call");
+        action.setJson(JSON.parseObject(JSON.toJSONString(execCallDO)));
+        return action;
+    }
 
     @GetMapping("/testcmpp")
     @ResponseBody
