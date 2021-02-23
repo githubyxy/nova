@@ -68,7 +68,7 @@ public class InternalController {
 
     @GetMapping("/esQuery")
     @ResponseBody
-    public String esQuery(String startTime, String endTime) throws ElasticsearchClientException {
+    public Object esQuery(String startTime, String endTime) throws ElasticsearchClientException {
         AggregationBuilder builder = new AggregationBuilder(aggregationClient, "task_item_exec_call");
         if (StringUtils.isNotBlank(startTime)) {
             builder.whereGreaterOrEqual("gmtCreate", DateTimeUtil.parseDatetime18(startTime).getTime());
@@ -84,7 +84,7 @@ public class InternalController {
         if (!searchResult.getSuccess()) {
             throw BizException.instance("查询出错");
         }
-        return JSON.toJSONString(searchResult);
+        return searchResult;
     }
 
     private InsertAction convertToInsertAction(TaskItemExecCallDO execCallDO) {
