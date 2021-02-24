@@ -15,6 +15,7 @@ import com.yxy.nova.mwh.elasticsearch.basic.agg.AggregationBuilder;
 import com.yxy.nova.mwh.elasticsearch.dto.InsertAction;
 import com.yxy.nova.mwh.elasticsearch.dto.SearchResult;
 import com.yxy.nova.mwh.elasticsearch.exception.ElasticsearchClientException;
+import com.yxy.nova.mwh.elasticsearch.util.ESLogger;
 import com.yxy.nova.mwh.utils.exception.BizException;
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import com.yxy.nova.service.wechat.WechatService;
@@ -93,6 +94,13 @@ public class InternalController {
         action.setTable("task_item_exec_call");
         action.setJson(JSON.parseObject(JSON.toJSONString(execCallDO)));
         return action;
+    }
+
+    @GetMapping("/changeEsLogLevel")
+    @ResponseBody
+    public String changeEsLogLevel(@RequestParam("level") String level) throws Exception {
+        ESLogger.setLoggerLevel(level);
+        return "OK";
     }
 
     @GetMapping("/testcmpp")
