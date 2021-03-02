@@ -69,8 +69,12 @@ public class InternalController {
 
     @GetMapping("/esQuery")
     @ResponseBody
-    public Object esQuery(String startTime, String endTime) throws ElasticsearchClientException {
+    public Object esQuery(String startTime, String endTime,String taskItemExecUuid) throws ElasticsearchClientException {
         AggregationBuilder builder = new AggregationBuilder(aggregationClient, "task_item_exec_call");
+
+        if (StringUtils.isNotBlank(taskItemExecUuid)) {
+            builder.whereEquals("taskItemExecUuid", taskItemExecUuid);
+        }
         if (StringUtils.isNotBlank(startTime)) {
             builder.whereGreaterOrEqual("gmtCreate", DateTimeUtil.parseDatetime18(startTime).getTime());
         }
