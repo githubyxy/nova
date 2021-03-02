@@ -73,7 +73,7 @@ public class InternalController {
         AggregationBuilder builder = new AggregationBuilder(aggregationClient, "task_item_exec_call");
 
         if (StringUtils.isNotBlank(taskItemExecUuid)) {
-            builder.whereEquals("taskItemExecUuid", taskItemExecUuid);
+            builder.whereEquals("_id", taskItemExecUuid);
         }
         if (StringUtils.isNotBlank(startTime)) {
             builder.whereGreaterOrEqual("gmtCreate", DateTimeUtil.parseDatetime18(startTime).getTime());
