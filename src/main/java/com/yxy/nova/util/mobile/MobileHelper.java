@@ -2,6 +2,7 @@ package com.yxy.nova.util.mobile;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.yxy.nova.mwh.utils.MobileUtil;
 import com.yxy.nova.util.SimpleHttpClient;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.NameValuePair;
@@ -45,9 +46,10 @@ public class MobileHelper {
                 StringBuffer sb = new StringBuffer();
                 sb.append("手机号码：").append(phoneNumber).append("\n");
                 sb.append("省份：").append(dataObject.getString("province")).append("\n");
-                sb.append("城市：").append(dataObject.getString("areaCode")).append("\n");
+                sb.append("城市：").append(dataObject.getString("city")).append("\n");
                 sb.append("城市行政编码：").append(dataObject.getString("cityCode").substring(1)).append("\n");
-                sb.append("区域代码：").append(dataObject.getString("areaCode"));
+                sb.append("区域代码：").append(dataObject.getString("areaCode")).append("\n");
+                sb.append("运营商：").append(MobileUtil.getOperator(phoneNumber).getDesc());
                 return sb.toString();
             }
         } catch (Exception e) {
