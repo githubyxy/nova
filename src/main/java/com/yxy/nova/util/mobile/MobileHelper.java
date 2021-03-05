@@ -35,6 +35,9 @@ public class MobileHelper {
         SimpleHttpClient simpleHttpClient = new SimpleHttpClient();
         paramList.add(new BasicNameValuePair("phone", phoneNumber));
 
+        StringBuffer sb = new StringBuffer();
+        sb.append("手机号码：").append(phoneNumber).append("\n");
+
         try {
             log.info("查询手机号码归属地");
             String result = simpleHttpClient.post("http://www.189.cn/trade/recharge/captcha/type.do", paramList);
@@ -43,20 +46,17 @@ public class MobileHelper {
             JSONObject jsonObject = JSON.parseObject(result);
             if (jsonObject.getString("code").equals("0")) {
                 JSONObject dataObject = jsonObject.getJSONObject("dataObject");
-                StringBuffer sb = new StringBuffer();
-                sb.append("手机号码：").append(phoneNumber).append("\n");
                 sb.append("省份：").append(dataObject.getString("province")).append("\n");
                 sb.append("城市：").append(dataObject.getString("city")).append("\n");
                 sb.append("城市行政编码：").append(dataObject.getString("cityCode").substring(1)).append("\n");
                 sb.append("区域代码：").append(dataObject.getString("areaCode")).append("\n");
-                sb.append("运营商：").append(MobileUtil.getOperator(phoneNumber).getDesc());
                 return sb.toString();
             }
         } catch (Exception e) {
             log.error("查询手机号码归属地异常", e);
-            return null;
         }
-        return null;
+        sb.append("运营商：").append(MobileUtil.getOperator(phoneNumber).getDesc());
+        return sb.toString();
     }
 
 }
