@@ -19,9 +19,9 @@ public class MobileUtil {
     private static Map<ISPEnum, List<String>> operatorPrefixLib = new HashMap<>(4);
 
     static {
-        operatorPrefixLib.put(ISPEnum.CMCC, Arrays.asList(new String[] {"134","135","136","137","138","139","147","150","151","152","157","158","159","172","178","182","183","184","187","188","195","198","1705"}));
+        operatorPrefixLib.put(ISPEnum.CMCC, Arrays.asList(new String[] {"134","135","136","137","138","139","147","150","151","152","157","158","159","172","178","182","183","184","187","188","195","197","198","1705"}));
         operatorPrefixLib.put(ISPEnum.CUCC, Arrays.asList(new String[] {"130","131","132","145","155","156","166","167","171","175","176","185","186","196","1709"}));
-        operatorPrefixLib.put(ISPEnum.CTCC, Arrays.asList(new String[] {"133","149","153","1700","173","174","177","180","181","189","191","199"}));
+        operatorPrefixLib.put(ISPEnum.CTCC, Arrays.asList(new String[] {"133","149","153","1700","173","174","177","180","181","189","190","191","193","199"}));
     }
 
     /**
