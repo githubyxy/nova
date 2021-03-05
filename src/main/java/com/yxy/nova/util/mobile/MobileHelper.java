@@ -32,7 +32,6 @@ public class MobileHelper {
         }
 
         List<NameValuePair> paramList = new ArrayList<>();
-        SimpleHttpClient simpleHttpClient = new SimpleHttpClient();
         paramList.add(new BasicNameValuePair("phone", phoneNumber));
 
         StringBuffer sb = new StringBuffer();
