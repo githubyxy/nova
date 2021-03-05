@@ -6,6 +6,7 @@ import com.dangdang.ddframe.job.plugin.job.type.simple.AbstractSimpleElasticJob;
 import com.yxy.nova.dal.mysql.dataobject.TaskItemExecCallDO;
 import com.yxy.nova.dal.mysql.mapper.TaskItemExecCallMapper;
 import com.yxy.nova.mwh.utils.UUIDGenerator;
+import com.yxy.nova.mwh.utils.concurrent.AsyncUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -30,28 +31,34 @@ public class TestJob extends AbstractSimpleElasticJob {
 //        while (System.currentTimeMillis() < c + (60 * 1000)) {
 //
 //        }
-        List<TaskItemExecCallDO> list = new ArrayList<>();
-        for (int i=0; i< 500; i++) {
-            TaskItemExecCallDO taskItemExecCallDO = new TaskItemExecCallDO();
-            taskItemExecCallDO.setTaskItemExecUuid(UUIDGenerator.generate());
-            taskItemExecCallDO.setTaskItemUuid(UUIDGenerator.generate());
-            taskItemExecCallDO.setPolicyUuid("12391gehjqe1237i");
-            taskItemExecCallDO.setTaskBatchUuid(i + 1);
-            taskItemExecCallDO.setTaskUuid("100");
-            taskItemExecCallDO.setPartnerCode("p");
-            taskItemExecCallDO.setAppCode("a");
-            taskItemExecCallDO.setRobotDuration(20);
-            taskItemExecCallDO.setCustomerDuration(10);
-            taskItemExecCallDO.setStatus("COMPLETED");
-            taskItemExecCallDO.setInteractionDetail("contentcontentcontentcontentcontentcontentcontentcontent");
-            taskItemExecCallDO.setIsHalted(false);
-            taskItemExecCallDO.setTalkType("AI");
-            taskItemExecCallDO.setRobotPhone("13585934620");
-            taskItemExecCallDO.setGmtCreate(new Date());
-            taskItemExecCallDO.setGmtModify(new Date());
-            list.add(taskItemExecCallDO);
-        }
-        taskItemExecCallMapper.insertList(list);
+
+        AsyncUtil.execute(new Runnable() {
+            @Override
+            public void run() {
+                List<TaskItemExecCallDO> list = new ArrayList<>();
+                for (int i=0; i< 1000; i++) {
+                    TaskItemExecCallDO taskItemExecCallDO = new TaskItemExecCallDO();
+                    taskItemExecCallDO.setTaskItemExecUuid(UUIDGenerator.generate());
+                    taskItemExecCallDO.setTaskItemUuid(UUIDGenerator.generate());
+                    taskItemExecCallDO.setPolicyUuid("12391gehjqe1237i");
+                    taskItemExecCallDO.setTaskBatchUuid(i + 1);
+                    taskItemExecCallDO.setTaskUuid("100");
+                    taskItemExecCallDO.setPartnerCode("p");
+                    taskItemExecCallDO.setAppCode("a");
+                    taskItemExecCallDO.setRobotDuration(20);
+                    taskItemExecCallDO.setCustomerDuration(10);
+                    taskItemExecCallDO.setStatus("COMPLETED");
+                    taskItemExecCallDO.setInteractionDetail("contentcontentcontentcontentcontentcontentcontentcontent");
+                    taskItemExecCallDO.setIsHalted(false);
+                    taskItemExecCallDO.setTalkType("AI");
+                    taskItemExecCallDO.setRobotPhone("13585934620");
+                    taskItemExecCallDO.setGmtCreate(new Date());
+                    taskItemExecCallDO.setGmtModify(new Date());
+                    list.add(taskItemExecCallDO);
+                }
+                taskItemExecCallMapper.insertList(list);
+            }
+        });
         log.info("处理业务结束……");
     }
 }
