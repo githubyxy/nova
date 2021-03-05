@@ -2,11 +2,15 @@ package com.yxy.nova.service.impl;
 
 import com.yxy.nova.dal.mysql.dataobject.MyPowerDO;
 import com.yxy.nova.dal.mysql.mapper.MyPowerMapper;
+import com.yxy.nova.mwh.utils.DataUtil;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -45,8 +49,14 @@ public class MyPowerServiceImpl implements MyPowerService {
         StringBuffer sb = new StringBuffer();
         if (StringUtils.isNotBlank(content)) {
             Example example = new Example(MyPowerDO.class);
-            example.createCriteria().andLike("content", "%" + content + "%");
-            List<MyPowerDO> myPowerDOS = myPowerMapper.selectByExample(example);
+            List<MyPowerDO> myPowerDOS = new ArrayList<>();
+            if (NumberUtils.isDigits(content)) {
+                int page = Integer.valueOf(content);
+                myPowerDOS = myPowerMapper.selectByExampleAndRowBounds(example, new RowBounds((page-1)*5, 5));
+            } else {
+                example.createCriteria().andLike("content", "%" + content + "%");
+                myPowerDOS = myPowerMapper.selectByExample(example);
+            }
             myPowerDOS.forEach(myPowerDO -> {
                 sb.append(myPowerDO.getContent()).append("\n").append("\n");
             });
