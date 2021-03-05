@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.yxy.nova.bean.wechat.TextMessage;
 import com.yxy.nova.mwh.utils.DataUtil;
+import com.yxy.nova.service.impl.MyPowerService;
 import com.yxy.nova.util.MessageUtil;
 import com.yxy.nova.util.SimpleHttpClient;
 import com.yxy.nova.util.mobile.MobileHelper;
@@ -43,6 +44,8 @@ public class WechatServiceImpl implements WechatService {
     private SimpleHttpClient simpleHttpClient;
     @Autowired
     private MobileHelper mobileHelper;
+    @Autowired
+    private MyPowerService myPowerService;
 
 
 
@@ -93,6 +96,16 @@ public class WechatServiceImpl implements WechatService {
                 }
                 if (DataUtil.strongValidateMobile(content)) {
                     text.setContent(mobileHelper.queryMobileInfo(content));
+                }
+                if (content.startsWith("mp")) {
+                    if (content.startsWith("mp+")) {
+                        myPowerService.insert(content.substring(3));
+                        text.setContent("添加成功");
+                    } else if (content.startsWith("mp=")) {
+                        text.setContent(myPowerService.fuzzyQuery(content.substring(3)));
+                    } else {
+                        text.setContent(myPowerService.getAllPower());
+                    }
                 }
 
                 respMessage = MessageUtil.textMessageToXml(text);

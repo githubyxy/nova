@@ -16,7 +16,7 @@
         </plugin>
 
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://106.13.148.83:3306/hermes?characterEncoding=utf8&amp;serverTimezone=UTC"
+                        connectionURL="jdbc:mysql://106.13.38.56:3306/hermes?characterEncoding=utf8&amp;serverTimezone=UTC"
                         userId="root"
                         password="Abcd12345">
             <property name="nullCatalogMeansCurrent" value="true" />
@@ -30,8 +30,9 @@
 
         <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}" type="XMLMAPPER" />
 
-        <table tableName="user" domainObjectName="UserDO" mapperName="UserMapper"/>
-        <table tableName="task_item_exec_call" domainObjectName="TaskItemExecCallDO" mapperName="TaskItemExecCallMapper"/>
+<!--        <table tableName="user" domainObjectName="UserDO" mapperName="UserMapper"/>-->
+<!--        <table tableName="task_item_exec_call" domainObjectName="TaskItemExecCallDO" mapperName="TaskItemExecCallMapper"/>-->
+        <table tableName="my_power" domainObjectName="MyPowerDO" mapperName="MyPowerMapper"/>
 
     </context>
 </generatorConfiguration>
