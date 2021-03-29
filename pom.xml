@@ -254,6 +254,17 @@
             <artifactId>elastic-job-core</artifactId>
             <version>1.1.1</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.shardingsphere.elasticjob</groupId>-->
+<!--            <artifactId>elasticjob-lite-core</artifactId>-->
+<!--            <version>3.0.0-beta</version>-->
+<!--        </dependency>-->
+        <!-- Elastic Job -->
+        <dependency>
+            <groupId>org.apache.shardingsphere.elasticjob</groupId>
+            <artifactId>elasticjob-lite-spring-boot-starter</artifactId>
+            <version>3.0.0-beta</version>
+        </dependency>
         <!-- 使用springframework自定义命名空间时引入 -->
         <dependency>
             <groupId>com.dangdang</groupId>

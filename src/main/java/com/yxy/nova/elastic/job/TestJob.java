@@ -32,33 +32,33 @@ public class TestJob extends AbstractSimpleElasticJob {
 //
 //        }
 
-        AsyncUtil.execute(new Runnable() {
-            @Override
-            public void run() {
-                List<TaskItemExecCallDO> list = new ArrayList<>();
-                for (int i=0; i< 1000; i++) {
-                    TaskItemExecCallDO taskItemExecCallDO = new TaskItemExecCallDO();
-                    taskItemExecCallDO.setTaskItemExecUuid(UUIDGenerator.generate());
-                    taskItemExecCallDO.setTaskItemUuid(UUIDGenerator.generate());
-                    taskItemExecCallDO.setPolicyUuid("12391gehjqe1237i");
-                    taskItemExecCallDO.setTaskBatchUuid(i + 1);
-                    taskItemExecCallDO.setTaskUuid("100");
-                    taskItemExecCallDO.setPartnerCode("p");
-                    taskItemExecCallDO.setAppCode("a");
-                    taskItemExecCallDO.setRobotDuration(20);
-                    taskItemExecCallDO.setCustomerDuration(10);
-                    taskItemExecCallDO.setStatus("COMPLETED");
-                    taskItemExecCallDO.setInteractionDetail("contentcontentcontentcontentcontentcontentcontentcontent");
-                    taskItemExecCallDO.setIsHalted(false);
-                    taskItemExecCallDO.setTalkType("AI");
-                    taskItemExecCallDO.setRobotPhone("13585934620");
-                    taskItemExecCallDO.setGmtCreate(new Date());
-                    taskItemExecCallDO.setGmtModify(new Date());
-                    list.add(taskItemExecCallDO);
-                }
-                taskItemExecCallMapper.insertList(list);
-            }
-        });
+//        AsyncUtil.execute(new Runnable() {
+//            @Override
+//            public void run() {
+//                List<TaskItemExecCallDO> list = new ArrayList<>();
+//                for (int i=0; i< 1000; i++) {
+//                    TaskItemExecCallDO taskItemExecCallDO = new TaskItemExecCallDO();
+//                    taskItemExecCallDO.setTaskItemExecUuid(UUIDGenerator.generate());
+//                    taskItemExecCallDO.setTaskItemUuid(UUIDGenerator.generate());
+//                    taskItemExecCallDO.setPolicyUuid("12391gehjqe1237i");
+//                    taskItemExecCallDO.setTaskBatchUuid(i + 1);
+//                    taskItemExecCallDO.setTaskUuid("100");
+//                    taskItemExecCallDO.setPartnerCode("p");
+//                    taskItemExecCallDO.setAppCode("a");
+//                    taskItemExecCallDO.setRobotDuration(20);
+//                    taskItemExecCallDO.setCustomerDuration(10);
+//                    taskItemExecCallDO.setStatus("COMPLETED");
+//                    taskItemExecCallDO.setInteractionDetail("contentcontentcontentcontentcontentcontentcontentcontent");
+//                    taskItemExecCallDO.setIsHalted(false);
+//                    taskItemExecCallDO.setTalkType("AI");
+//                    taskItemExecCallDO.setRobotPhone("13585934620");
+//                    taskItemExecCallDO.setGmtCreate(new Date());
+//                    taskItemExecCallDO.setGmtModify(new Date());
+//                    list.add(taskItemExecCallDO);
+//                }
+//                taskItemExecCallMapper.insertList(list);
+//            }
+//        });
         log.info("处理业务结束……");
     }
 }
