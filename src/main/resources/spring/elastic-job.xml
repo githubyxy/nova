@@ -29,17 +29,6 @@
 
     <bean id="testJob" class="com.yxy.nova.elastic.job.TestJob" />
 
-    <job:simple id="apacheTestJob"
-                class="com.yxy.nova.elastic.job.ApacheTestJob"
-                registry-center-ref="regCenter" sharding-total-count="${testJob.shardingTotalCount}"
-                cron="${apacheTestJob.cron}"
-                monitor-execution="${apacheTestJob.monitorExecution}"
-                monitor-port="${apacheTestJob.monitorPort}"
-                failover="${apacheTestJob.failover}" description="${apacheTestJob.description}"
-                disabled="${apacheTestJob.disabled}"
-                overwrite="${apacheTestJob.overwrite}"/>
-
-    <bean id="apacheTestJob" class="com.yxy.nova.elastic.job.ApacheTestJob" />
 
 
 </beans>
