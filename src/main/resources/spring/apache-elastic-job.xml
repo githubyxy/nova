@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:elasticjob="http://shardingsphere.apache.org/schema/elasticjob"
+       >
+
+    <elasticjob:zookeeper id="regCenter" server-lists="${zkHost}" namespace="${elastic.job.namespace}"
+                   base-sleep-time-milliseconds="${elastic.job.baseSleepTimeMilliseconds}"
+                   max-sleep-time-milliseconds="${elastic.job.maxSleepTimeMilliseconds}" max-retries="${elastic.job.maxRetries}"/>
+
+
+    <elasticjob:job id="apacheTestJob"
+                job-ref="com.yxy.nova.elastic.job.TestJob"
+                registry-center-ref="regCenter" sharding-total-count="${apacheTestJob.shardingTotalCount}"
+                cron="${apacheTestJob.cron}"
+                monitor-execution="${apacheTestJob.monitorExecution}"
+                failover="${apacheTestJob.failover}" description="${apacheTestJob.description}"
+                disabled="${apacheTestJob.disabled}"
+                overwrite="${apacheTestJob.overwrite}"/>
+
+    <bean id="apacheTestJob" class="com.yxy.nova.elastic.job.ApacheTestJob" />
+
+
+
+</beans>
