@@ -15,7 +15,7 @@
 
 
     <elasticjob:job id="apacheTestJob"
-                job-ref="com.yxy.nova.elastic.job.TestJob"
+                job-ref="apacheTestJob"
                 registry-center-ref="regCenter2" sharding-total-count="${apacheTestJob.shardingTotalCount}"
                 cron="${apacheTestJob.cron}"
                 monitor-execution="${apacheTestJob.monitorExecution}"
