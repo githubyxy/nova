@@ -17,4 +17,5 @@ public class ApacheTestJob implements SimpleJob {
     public void execute(ShardingContext shardingContext) {
         log.info(JSON.toJSONString(shardingContext));
     }
+
 }
