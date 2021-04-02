@@ -9,14 +9,14 @@
                         ">
 
 
-    <elasticjob:zookeeper id="regCenter" server-lists="${zkHost}" namespace="${elastic.job.namespace}"
+    <elasticjob:zookeeper id="regCenter2" server-lists="${zkHost}" namespace="${elastic.job.namespace}"
                    base-sleep-time-milliseconds="${elastic.job.baseSleepTimeMilliseconds}"
                    max-sleep-time-milliseconds="${elastic.job.maxSleepTimeMilliseconds}" max-retries="${elastic.job.maxRetries}"/>
 
 
     <elasticjob:job id="apacheTestJob"
                 job-ref="com.yxy.nova.elastic.job.TestJob"
-                registry-center-ref="regCenter" sharding-total-count="${apacheTestJob.shardingTotalCount}"
+                registry-center-ref="regCenter2" sharding-total-count="${apacheTestJob.shardingTotalCount}"
                 cron="${apacheTestJob.cron}"
                 monitor-execution="${apacheTestJob.monitorExecution}"
                 failover="${apacheTestJob.failover}" description="${apacheTestJob.description}"
