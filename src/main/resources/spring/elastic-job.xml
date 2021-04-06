@@ -1,34 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:reg="http://www.dangdang.com/schema/ddframe/reg"
-       xmlns:job="http://www.dangdang.com/schema/ddframe/job"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-                        http://www.springframework.org/schema/beans/spring-beans.xsd
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xmlns:reg="http://www.dangdang.com/schema/ddframe/reg"-->
+<!--       xmlns:job="http://www.dangdang.com/schema/ddframe/job"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+<!--                        http://www.springframework.org/schema/beans/spring-beans.xsd-->
 
 
-                           http://www.dangdang.com/schema/ddframe/reg
-                        http://www.dangdang.com/schema/ddframe/reg/reg.xsd
-                        http://www.dangdang.com/schema/ddframe/job
-                        http://www.dangdang.com/schema/ddframe/job/job.xsd">
+<!--                           http://www.dangdang.com/schema/ddframe/reg-->
+<!--                        http://www.dangdang.com/schema/ddframe/reg/reg.xsd-->
+<!--                        http://www.dangdang.com/schema/ddframe/job-->
+<!--                        http://www.dangdang.com/schema/ddframe/job/job.xsd">-->
 
-    <reg:zookeeper id="regCenter" server-lists="${zkHost}" namespace="${elastic.job.namespace}"
-                   base-sleep-time-milliseconds="${elastic.job.baseSleepTimeMilliseconds}"
-                   max-sleep-time-milliseconds="${elastic.job.maxSleepTimeMilliseconds}" max-retries="${elastic.job.maxRetries}"/>
-
-
-    <job:simple id="testJob"
-                class="com.yxy.nova.elastic.job.TestJob"
-                registry-center-ref="regCenter" sharding-total-count="${testJob.shardingTotalCount}"
-                cron="${testJob.cron}"
-                monitor-execution="${testJob.monitorExecution}"
-                monitor-port="${testJob.monitorPort}"
-                failover="${testJob.failover}" description="${testJob.description}"
-                disabled="${testJob.disabled}"
-                overwrite="${testJob.overwrite}"/>
-
-    <bean id="testJob" class="com.yxy.nova.elastic.job.TestJob" />
+<!--    <reg:zookeeper id="regCenter" server-lists="${zkHost}" namespace="${elastic.job.namespace}"-->
+<!--                   base-sleep-time-milliseconds="${elastic.job.baseSleepTimeMilliseconds}"-->
+<!--                   max-sleep-time-milliseconds="${elastic.job.maxSleepTimeMilliseconds}" max-retries="${elastic.job.maxRetries}"/>-->
 
 
+<!--    <job:simple id="testJob"-->
+<!--                class="com.yxy.nova.elastic.job.TestJob"-->
+<!--                registry-center-ref="regCenter" sharding-total-count="${testJob.shardingTotalCount}"-->
+<!--                cron="${testJob.cron}"-->
+<!--                monitor-execution="${testJob.monitorExecution}"-->
+<!--                monitor-port="${testJob.monitorPort}"-->
+<!--                failover="${testJob.failover}" description="${testJob.description}"-->
+<!--                disabled="${testJob.disabled}"-->
+<!--                overwrite="${testJob.overwrite}"/>-->
 
-</beans>
+<!--    <bean id="testJob" class="com.yxy.nova.elastic.job.TestJob" />-->
+
+
+
+<!--</beans>-->

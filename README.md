@@ -39,9 +39,9 @@ docker run -p 3308:3306 --name mysql_slave2 --net mynetwork --ip 172.18.0.38 -e 
 
 
 #zookeeper
-docker pull zookeeper:3.4.14
+docker pull zookeeper:3.6
 
-docker run -d --name zookeeper -p 2181:2181 --net mynetwork --ip 172.18.0.37 -v /home/data/docker/zookeeper/logs:/datalog -v /home/data/docker/zookeeper/data:/data -v /home/data/docker/zookeeper/conf/zoo.cfg:/conf/zoo.cfg --restart=always -t  zookeeper:3.4.14
+docker run -d --name zookeeper-3.6 -p 2181:2181 --net mynetwork --ip 172.18.0.37 -v /home/data/docker/zookeeper/logs:/datalog -v /home/data/docker/zookeeper/data:/data -v /home/data/docker/zookeeper/conf/zoo.cfg:/conf/zoo.cfg --restart=always -t  zookeeper:3.6
 
 # kafka
 docker pull wurstmeister/kafka
