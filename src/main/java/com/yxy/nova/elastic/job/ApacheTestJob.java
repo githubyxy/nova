@@ -15,7 +15,9 @@ public class ApacheTestJob implements SimpleJob {
 
     @Override
     public void execute(ShardingContext shardingContext) {
-        log.info(JSON.toJSONString(shardingContext));
+        log.info("ApacheTestJob begin");
+        log.info(shardingContext.toString());
+        log.info("ApacheTestJob end");
     }
 
 }
