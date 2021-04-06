@@ -18,7 +18,6 @@
                 job-ref="apacheTestJob"
                 registry-center-ref="regCenter2" sharding-total-count="${apacheTestJob.shardingTotalCount}"
                 cron="${apacheTestJob.cron}"
-                monitor-execution="${apacheTestJob.monitorExecution}"
                 failover="${apacheTestJob.failover}" description="${apacheTestJob.description}"
                 disabled="${apacheTestJob.disabled}"
                 overwrite="${apacheTestJob.overwrite}"/>
