@@ -262,9 +262,14 @@
 <!--        </dependency>-->
         <dependency>
             <groupId>org.apache.shardingsphere.elasticjob</groupId>
-            <artifactId>elasticjob-lite-spring-boot-starter</artifactId>
+            <artifactId>elasticjob-lite-core</artifactId>
             <version>3.0.0-beta</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.shardingsphere.elasticjob</groupId>-->
+<!--            <artifactId>elasticjob-lite-spring-boot-starter</artifactId>-->
+<!--            <version>3.0.0-beta</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.apache.shardingsphere.elasticjob</groupId>
             <artifactId>elasticjob-lite-spring-namespace</artifactId>
