@@ -20,7 +20,8 @@
                 cron="${apacheTestJob.cron}"
                 failover="${apacheTestJob.failover}" description="${apacheTestJob.description}"
                 disabled="${apacheTestJob.disabled}"
-                overwrite="${apacheTestJob.overwrite}"/>
+                overwrite="${apacheTestJob.overwrite}"
+                job-executor-service-handler-type="SINGLE_THREAD"/>
 
     <bean id="apacheTestJob" class="com.yxy.nova.elastic.job.ApacheTestJob" />
 
