@@ -19,8 +19,8 @@
         </plugin>
     </plugins>
 
-    <mappers>
-        <mapper resource="mybatis/mapper/RetryTaskV2.xml" />
-    </mappers>
+<!--    <mappers>-->
+<!--        <mapper resource="mybatis/mapper/RetryTaskV2.xml" />-->
+<!--    </mappers>-->
 
 </configuration>
