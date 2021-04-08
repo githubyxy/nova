@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.guixi.common.retry.entity.RetryTask" >
+    <resultMap id="BaseResultMap" type="com.yxy.nova.mwh.retry.entity.RetryTask" >
+        <result column="id" property="id" jdbcType="DECIMAL" />
+        <result column="task_type" property="taskType" jdbcType="VARCHAR" />
+        <result column="task_id" property="taskId" jdbcType="VARCHAR" />
+        <result column="backoff_policy" property="backoffPolicy" jdbcType="VARCHAR" />
+        <result column="max_attempt" property="maxAttempt" jdbcType="DECIMAL" />
+        <result column="current_attempt" property="currentAttempt" jdbcType="DECIMAL" />
+        <result column="earliest_execution_time" property="earliestExecutionTime" jdbcType="TIMESTAMP" />
+        <result column="task_deadline" property="taskDeadline" jdbcType="TIMESTAMP" />
+        <result column="fixed_backoff_period" property="fixedBackoffPeriod" jdbcType="DECIMAL" />
+        <result column="state" property="state" jdbcType="VARCHAR" />
+        <result column="message" property="message" jdbcType="VARCHAR" />
+        <result column="data" property="data" jdbcType="VARCHAR" />
+        <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+        <result column="gmt_modify" property="gmtModify" jdbcType="TIMESTAMP" />
+        <result column="business_transaction_version" property="businessTransactionVersion" jdbcType="VARCHAR" />
+        <result column="process_timeout" property="processTimeout" jdbcType="DECIMAL" />
+        <result column="finished" property="finished" jdbcType="BIT" />
+        <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+        <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+        <result column="sharding_number" property="shardingNumber" jdbcType="DECIMAL" />
+        <result column="idc" property="idc" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        id, task_type, task_id, backoff_policy, max_attempt, current_attempt, earliest_execution_time,
+        task_deadline, fixed_backoff_period, state, message, data, gmt_create, gmt_modify,
+        business_transaction_version, process_timeout, finished,
+        start_time, end_time, sharding_number, idc
+    </sql>
+
+    <select id="getByTaskTypeAndTaskId" resultMap="BaseResultMap" parameterType="java.util.Map" >
+        select
+        <include refid="Base_Column_List" />
+        from ${prefix}retry_task
+        where task_type = #{taskType}
+        and task_id = #{taskId}
+        <if test="shardingNumber != null" >
+            and sharding_number=#{shardingNumber}
+        </if>
+    </select>
+
+    <select id="lockByTaskTypeAndTaskId" resultMap="BaseResultMap" parameterType="java.util.Map" >
+        select
+        <include refid="Base_Column_List" />
+        from ${prefix}retry_task
+        where task_type = #{taskType}
+        and task_id = #{taskId}
+        <if test="shardingNumber != null" >
+            and sharding_number=#{shardingNumber}
+        </if>
+        for update
+    </select>
+
+    <select id="fetchReadyRetryTasks" resultMap="BaseResultMap" parameterType="java.util.Map" >
+        select
+        <include refid="Base_Column_List" />
+        from ${prefix}retry_task
+        where finished = false
+        and (state in ( 'NOT_BEGIN', 'FAIL') or (state = 'PROCESSING' and process_timeout > 0 and TIMESTAMPDIFF(SECOND,start_time,now()) > process_timeout))
+        and (max_attempt != 0 or task_deadline is not null)
+        and now() >= earliest_execution_time
+        and (end_time is null or TIMESTAMPDIFF(SECOND,end_time,now()) >= fixed_backoff_period)
+        and task_type in
+        <foreach collection="taskTypes" item="taskType" open="(" close=")" separator="," >
+            #{taskType}
+        </foreach>
+        and sharding_number in
+        <foreach collection="shardingItems" item="shardingItem" open="(" close=")" separator="," >
+            #{shardingItem}
+        </foreach>
+        <if test="idcList != null" >
+            and (idc in
+                    <foreach collection="idcList" item="idc" open="(" close=")" separator=",">
+                        #{idc}
+                    </foreach>
+                <if test="includeIdcMissing != null" >
+                    or idc is null or idc=''
+                </if>
+            )
+        </if>
+        order by end_time limit #{top}
+    </select>
+
+
+    <insert id="insertSelective" parameterType="com.yxy.nova.mwh.retry.entity.RetryTask" >
+        insert into ${prefix}retry_task
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="task.taskType != null" >
+                task_type,
+            </if>
+            <if test="task.taskId != null" >
+                task_id,
+            </if>
+            <if test="task.backoffPolicy != null" >
+                backoff_policy,
+            </if>
+            <if test="task.maxAttempt != null" >
+                max_attempt,
+            </if>
+            <if test="task.currentAttempt != null" >
+                current_attempt,
+            </if>
+            <if test="task.earliestExecutionTime != null" >
+                earliest_execution_time,
+            </if>
+            <if test="task.taskDeadline != null" >
+                task_deadline,
+            </if>
+            <if test="task.fixedBackoffPeriod != null" >
+                fixed_backoff_period,
+            </if>
+            <if test="task.state != null" >
+                state,
+            </if>
+            <if test="task.message != null" >
+                message,
+            </if>
+            <if test="task.data != null" >
+                data,
+            </if>
+            <if test="task.gmtCreate != null" >
+                gmt_create,
+            </if>
+            <if test="task.gmtModify != null" >
+                gmt_modify,
+            </if>
+            <if test="task.businessTransactionVersion != null" >
+                business_transaction_version,
+            </if>
+            <if test="task.processTimeout != null" >
+                process_timeout,
+            </if>
+            <if test="task.finished != null" >
+                finished,
+            </if>
+            <if test="task.startTime != null" >
+                start_time,
+            </if>
+            <if test="task.endTime != null" >
+                end_time,
+            </if>
+            <if test="task.shardingNumber != null" >
+                sharding_number,
+            </if>
+            <if test="task.idc != null" >
+                idc,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="task.taskType != null" >
+                #{task.taskType,jdbcType=VARCHAR},
+            </if>
+            <if test="task.taskId != null" >
+                #{task.taskId,jdbcType=VARCHAR},
+            </if>
+            <if test="task.backoffPolicy != null" >
+                #{task.backoffPolicy,jdbcType=VARCHAR},
+            </if>
+            <if test="task.maxAttempt != null" >
+                #{task.maxAttempt,jdbcType=DECIMAL},
+            </if>
+            <if test="task.currentAttempt != null" >
+                #{task.currentAttempt,jdbcType=DECIMAL},
+            </if>
+            <if test="task.earliestExecutionTime != null" >
+                #{task.earliestExecutionTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="task.taskDeadline != null" >
+                #{task.taskDeadline,jdbcType=TIMESTAMP},
+            </if>
+            <if test="task.fixedBackoffPeriod != null" >
+                #{task.fixedBackoffPeriod,jdbcType=DECIMAL},
+            </if>
+            <if test="task.state != null" >
+                #{task.state,jdbcType=VARCHAR},
+            </if>
+            <if test="task.message != null" >
+                #{task.message,jdbcType=VARCHAR},
+            </if>
+            <if test="task.data != null" >
+                #{task.data,jdbcType=VARCHAR},
+            </if>
+            <if test="task.gmtCreate != null" >
+                #{task.gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="task.gmtModify != null" >
+                #{task.gmtModify,jdbcType=TIMESTAMP},
+            </if>
+            <if test="task.businessTransactionVersion != null" >
+                #{task.businessTransactionVersion,jdbcType=VARCHAR},
+            </if>
+            <if test="task.processTimeout != null" >
+                #{task.processTimeout,jdbcType=DECIMAL},
+            </if>
+            <if test="task.finished != null" >
+                #{task.finished,jdbcType=BIT},
+            </if>
+            <if test="task.startTime != null" >
+                #{task.startTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="task.endTime != null" >
+                #{task.endTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="task.shardingNumber != null" >
+                #{task.shardingNumber,jdbcType=DECIMAL},
+            </if>
+            <if test="task.idc != null" >
+                #{task.idc,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="setTaskStart" parameterType="map" >
+        update ${prefix}retry_task
+        set state=#{newState}, start_time=#{startTime}, business_transaction_version=#{newVersion}
+        where sharding_number=#{shardingNumber} and id=#{id} and business_transaction_version=#{oldVersion}
+    </update>
+
+    <update id="terminateTaskAbruptly" parameterType="map" >
+        update ${prefix}retry_task
+        set state=#{newState}, finished=1, message=#{message}
+        where sharding_number=#{shardingNumber} and id=#{id}
+    </update>
+
+    <update id="updateState" parameterType="map" >
+        update ${prefix}retry_task
+        set state=#{state}
+        where sharding_number=#{shardingNumber} and id=#{id}
+    </update>
+
+    <update id="endTaskExcution" parameterType="map" >
+        update ${prefix}retry_task
+        set state=#{newState}, finished=#{finished}, end_time=#{endTime}, message=#{message}, current_attempt=#{currentAttempt}
+        where sharding_number=#{shardingNumber} and id=#{id}
+    </update>
+
+    <delete id="deleteHistoryTasksByShardingItem" parameterType="map" >
+        delete from ${prefix}retry_task
+        where sharding_number=#{shardingNumber} and task_type=#{taskType} and finished=1 and <![CDATA[ gmt_create<#{retentionEarliestTime} ]]>
+        limit 100
+    </delete>
+
+    <delete id="deleteHistoryTasks" parameterType="map" >
+        delete from ${prefix}retry_task
+        where task_type=#{taskType} and finished=1 and <![CDATA[ gmt_create<#{retentionEarliestTime} ]]>
+        <if test="shardingNumber != null" >
+            and sharding_number=#{shardingNumber}
+        </if>
+        limit 100
+    </delete>
+
+    <update id="cancelRetryTask" parameterType="map" >
+        update ${prefix}retry_task
+        set state='CANCELLED', finished=1
+        where sharding_number=#{shardingNumber} and id=#{id} and finished=0
+    </update>
+
+</mapper>
