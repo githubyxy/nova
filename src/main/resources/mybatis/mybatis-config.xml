@@ -8,6 +8,10 @@
         <property name="pageSqlId" value=".*Page$" />
     </properties>
 
+    <settings>
+        <setting name="lazyLoadingEnabled" value="false" />
+    </settings>
+
     <plugins>
         <plugin interceptor="com.github.pagehelper.PageInterceptor">
             <property name="helperDialect" value="mysql"/>
