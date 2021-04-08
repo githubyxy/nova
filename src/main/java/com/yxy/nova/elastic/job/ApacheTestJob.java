@@ -27,8 +27,8 @@ public class ApacheTestJob implements SimpleJob {
         log.info(shardingContext.toString());
 //        log.info("ApacheTestJob end");
 
-        submitNewRetryTask(RetryTaskTypeEnum.MULTITHREAD);
-        submitNewRetryTask(RetryTaskTypeEnum.SINGLETHREAD);
+//        submitNewRetryTask(RetryTaskTypeEnum.MULTITHREAD);
+//        submitNewRetryTask(RetryTaskTypeEnum.SINGLETHREAD);
     }
 
     private void submitNewRetryTask(RetryTaskTypeEnum taskTypeEnum) {
