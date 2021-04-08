@@ -179,6 +179,7 @@ public class RetryTaskScheduler implements BeanNameAware {
 //        }
 
         JobConfiguration.Builder builder = JobConfiguration.newBuilder(jobName, configuration.getShardingTotalCount());
+        builder.cron(cron);
         builder.disabled(disabled);
         builder.overwrite(overwrite);
         if (StringUtils.isNotBlank(shardingItemParameters)) {
