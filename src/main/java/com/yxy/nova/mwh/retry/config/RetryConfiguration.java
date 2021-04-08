@@ -23,7 +23,7 @@ import java.util.Properties;
 
 public class RetryConfiguration {
 
-    public static final String DEFAULT_MYBATIS_MAPPING_FILE = "/mybatis/mybatis-config.xml";
+    public static final String DEFAULT_MYBATIS_MAPPING_FILE = "/retry/mybatis/retry-sqlmap-config-v2.xml";
 
     /**
      * 事务管理器
