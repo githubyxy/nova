@@ -12,7 +12,7 @@
 		<!-- retry_task表是否是分片表 -->
 		<property name="tableSharding" value="false"/>
 		<!-- 对于分片表来说，这个参数既决定了分片表的个数又决定了elastic-job的最大分片。对于非分片表来说，这个参数只决定elastic-job的最大分片 -->
-		<property name="shardingTotalCount" value="10"/>
+		<property name="shardingTotalCount" value="1"/>
 	</bean>
 
 	<!-- 业务层使用retryTaskService提交重试任务 -->
