@@ -14,10 +14,6 @@ import java.util.Map;
  */
 public class MyJobShardingStrategy implements JobShardingStrategy {
 
-    public MyJobShardingStrategy() {
-
-    }
-
     /**
      * Sharding job.
      *
