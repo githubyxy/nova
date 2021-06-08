@@ -4,6 +4,7 @@ import org.apache.shardingsphere.elasticjob.infra.handler.sharding.JobInstance;
 import org.apache.shardingsphere.elasticjob.infra.handler.sharding.JobShardingStrategy;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -25,7 +26,7 @@ public class MyJobShardingStrategy implements JobShardingStrategy {
     @Override
     public Map<JobInstance, List<Integer>> sharding(List<JobInstance> jobInstances, String jobName, int shardingTotalCount) {
 
-        Map<JobInstance, List<Integer>> result = null;
+        Map<JobInstance, List<Integer>> result = new HashMap<>();
         List<Integer> shardingItems = new ArrayList<>(shardingTotalCount + 1);
         for (int i=0; i<shardingTotalCount; i++) {
             shardingItems.add(i);
