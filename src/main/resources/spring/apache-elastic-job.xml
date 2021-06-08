@@ -21,10 +21,9 @@
                 failover="${apacheTestJob.failover}" description="${apacheTestJob.description}"
                 disabled="${apacheTestJob.disabled}"
                 overwrite="${apacheTestJob.overwrite}"
+                job-sharding-strategy-type="MY_TEST"
                 job-executor-service-handler-type="SINGLE_THREAD"/>
 
     <bean id="apacheTestJob" class="com.yxy.nova.elastic.job.ApacheTestJob" />
-
-
 
 </beans>
