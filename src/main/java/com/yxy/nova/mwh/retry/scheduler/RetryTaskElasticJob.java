@@ -21,7 +21,7 @@ public class RetryTaskElasticJob implements SimpleJob {
     @Override
     public void execute (ShardingContext shardingContext) {
 
-        logger.info("{}处理重试任务开始,shardingItem:{}", shardingContext.getJobName(), shardingContext.getShardingItem());
+        logger.info("{}处理重试任务开始,shardingItem:{}", Thread.currentThread().getName() + shardingContext.getJobName(), shardingContext.getShardingItem());
 
         try {
 
