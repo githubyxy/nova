@@ -14,7 +14,7 @@
                    max-sleep-time-milliseconds="${elastic.job.maxSleepTimeMilliseconds}" max-retries="${elastic.job.maxRetries}"/>
 
 
-    <elasticjob:job id="apacheTestJob-no-repeat"
+    <elasticjob:job id="elasticTestJob-no-repeat"
                 job-ref="elasticTestJob"
                 registry-center-ref="regCenter2" sharding-total-count="${apacheTestJob.shardingTotalCount}"
                 cron="${apacheTestJob.cron}"
