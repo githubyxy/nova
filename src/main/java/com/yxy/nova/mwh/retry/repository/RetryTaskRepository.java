@@ -40,12 +40,12 @@ public interface RetryTaskRepository {
 
     /**
      * 获取准备就绪的任务。为了避免就绪的任务太多导致内存溢出，建议实现时加limit。
-     * @param shardingItems
+     * @param shardingItem
      * @param taskTypes
      * @param idcList。 如果为null代表查询时不考虑机房因素。
      * @return
      */
-    List<RetryTask> fetchReadyRetryTasks(List<Integer> shardingItems, Set<String> taskTypes, List<String> idcList);
+    List<RetryTask> fetchReadyRetryTasks(Integer shardingItem, Set<String> taskTypes, List<String> idcList);
 
     /**
      * 以乐观锁的方式设置任务开始, 如果更新失败返回false

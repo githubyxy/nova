@@ -76,31 +76,26 @@ public class ShardingRetryTaskRepository extends AbstractRetryTaskRepository {
 
     /**
      * 获取准备就绪的任务
-     * @param shardingItems
+     * @param shardingItem
      * @param taskTypes
      * @return
      */
     @Override
-    public List<RetryTask> fetchReadyRetryTasks(List<Integer> shardingItems, Set<String> taskTypes, List<String> idcList) {
+    public List<RetryTask> fetchReadyRetryTasks(Integer shardingItem, Set<String> taskTypes, List<String> idcList) {
         List<RetryTask> resultList = new ArrayList<>(16);
 
-        List<Integer> shuffledShardingItems = new ArrayList<>(shardingItems);
-        Collections.shuffle(shuffledShardingItems);
-
-        for (Integer shardingItem : shuffledShardingItems) {
-            Map<String, Object> parameters = new HashMap<>();
-            parameters.put("prefix", databaseTablePrefix);
-            parameters.put("taskTypes", taskTypes);
-            parameters.put("shardingItems", Arrays.asList(shardingItem));
-            parameters.put("top", 50);
-            if (CollectionUtils.isNotEmpty(idcList)) {
-                parameters.put("idcList", idcList);
-                if (idcList.contains(IdcResolver.IDC_MISSING)) {
-                    parameters.put("includeIdcMissing", true);
-                }
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("prefix", databaseTablePrefix);
+        parameters.put("taskTypes", taskTypes);
+        parameters.put("shardingNumber", shardingItem);
+        parameters.put("top", 50);
+        if (CollectionUtils.isNotEmpty(idcList)) {
+            parameters.put("idcList", idcList);
+            if (idcList.contains(IdcResolver.IDC_MISSING)) {
+                parameters.put("includeIdcMissing", true);
             }
-            resultList.addAll(openSession().selectList(STATEMENT_PREFIX + ".fetchReadyRetryTasks", parameters));
         }
+        resultList.addAll(openSession().selectList(STATEMENT_PREFIX + ".fetchReadyRetryTasks", parameters));
 
         return resultList;
     }

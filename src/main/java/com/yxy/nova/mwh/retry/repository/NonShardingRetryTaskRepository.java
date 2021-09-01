@@ -51,12 +51,12 @@ public class NonShardingRetryTaskRepository extends AbstractRetryTaskRepository 
 
     /**
      * 获取准备就绪的任务
-     * @param shardingItems
+     * @param shardingItem
      * @param taskTypes
      * @return
      */
     @Override
-    public List<RetryTask> fetchReadyRetryTasks(List<Integer> shardingItems, Set<String> taskTypes, List<String> idcList) {
+    public List<RetryTask> fetchReadyRetryTasks(Integer shardingItem, Set<String> taskTypes, List<String> idcList) {
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("prefix", databaseTablePrefix);
         parameters.put("taskTypes", taskTypes);

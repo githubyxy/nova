@@ -42,7 +42,7 @@ public class RetryTaskElasticJob implements SimpleJob {
             }
 
             // 拉取准备就绪的任务。idcList为空，代表不考虑机房因素
-            List<RetryTask> tasks = scheduler.getConfiguration().getRetryTaskRepository().fetchReadyRetryTasks(Arrays.asList(shardingItem),
+            List<RetryTask> tasks = scheduler.getConfiguration().getRetryTaskRepository().fetchReadyRetryTasks(shardingItem,
                     scheduler.getHandlers().keySet(), idcList);
             logger.info("发现" + tasks.size() + "个任务");
             for (RetryTask task : tasks) {

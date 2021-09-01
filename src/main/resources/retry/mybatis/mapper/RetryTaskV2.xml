@@ -68,10 +68,9 @@
         <foreach collection="taskTypes" item="taskType" open="(" close=")" separator="," >
             #{taskType}
         </foreach>
-        and sharding_number in
-        <foreach collection="shardingItems" item="shardingItem" open="(" close=")" separator="," >
-            #{shardingItem}
-        </foreach>
+        <if test="shardingNumber != null">
+            and sharding_number = #{shardingNumber}
+        </if>
         <if test="idcList != null" >
             and (idc in
                     <foreach collection="idcList" item="idc" open="(" close=")" separator=",">
