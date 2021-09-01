@@ -71,6 +71,7 @@
 		<property name="disabled" value="${shardingTaskScheduler.disabled}" />
 		<!-- 跟elastic-job中的同名参数含义相同 -->
 		<property name="overwrite" value="${shardingTaskScheduler.overwrite}" />
+		<property name="jobShardingStrategyType" value="MY_TEST" />
 		<!-- 配置任务类型和任务处理器的映射关系 -->
 		<property name="handlers">
 			<map>

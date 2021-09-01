@@ -37,7 +37,7 @@ public class RetryTaskScheduler implements BeanNameAware {
     private Integer workerThreadPoolSize;
     private Boolean disabled;
     private Boolean overwrite;
-    private String jobShardingStrategyClass;
+    private String jobShardingStrategyType;
     private String shardingItemParameters;
     private Map<String, RetryTaskHandler> handlers;
     private Map<String, RetryTaskEventListener> typedEventListeners;
@@ -185,8 +185,8 @@ public class RetryTaskScheduler implements BeanNameAware {
         if (StringUtils.isNotBlank(shardingItemParameters)) {
             builder.shardingItemParameters(shardingItemParameters);
         }
-        if (StringUtils.isNotBlank(jobShardingStrategyClass)) {
-            builder.jobShardingStrategyType(jobShardingStrategyClass);
+        if (StringUtils.isNotBlank(jobShardingStrategyType)) {
+            builder.jobShardingStrategyType(jobShardingStrategyType);
         }
 
 
@@ -352,8 +352,8 @@ public class RetryTaskScheduler implements BeanNameAware {
         this.overwrite = overwrite;
     }
 
-    public void setJobShardingStrategyClass(String jobShardingStrategyClass) {
-        this.jobShardingStrategyClass = jobShardingStrategyClass;
+    public void setJobShardingStrategyType(String jobShardingStrategyType) {
+        this.jobShardingStrategyType = jobShardingStrategyType;
     }
 
     public void setShardingItemParameters(String shardingItemParameters) {
