@@ -1,6 +1,5 @@
 package com.yxy.nova.elastic.job;
 
-import com.alibaba.fastjson.JSON;
 import com.yxy.nova.mwh.retry.RetryTaskTypeEnum;
 import com.yxy.nova.mwh.retry.api.RetryTaskDTO;
 import com.yxy.nova.mwh.retry.service.RetryTaskService;
@@ -16,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @Description
  */
 @Slf4j
-public class ApacheTestJob implements SimpleJob {
+public class ElasticTestJob implements SimpleJob {
 
     @Autowired
     private RetryTaskService retryTaskService;

@@ -15,7 +15,7 @@
 
 
     <elasticjob:job id="apacheTestJob-no-repeat"
-                job-ref="apacheTestJob"
+                job-ref="elasticTestJob"
                 registry-center-ref="regCenter2" sharding-total-count="${apacheTestJob.shardingTotalCount}"
                 cron="${apacheTestJob.cron}"
                 failover="${apacheTestJob.failover}" description="${apacheTestJob.description}"
@@ -24,6 +24,6 @@
                 job-sharding-strategy-type="MY_TEST"
                 job-executor-service-handler-type="SINGLE_THREAD"/>
 
-    <bean id="apacheTestJob" class="com.yxy.nova.elastic.job.ApacheTestJob" />
+    <bean id="elasticTestJob" class="com.yxy.nova.elastic.job.ElasticTestJob" />
 
 </beans>

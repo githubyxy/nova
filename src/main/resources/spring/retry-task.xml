@@ -23,7 +23,7 @@
 
 
 	<!-- 重试任务调度器，本质上个elastic-job -->
-	<bean id="hertz-multithread-retryTaskScheduler" class="com.yxy.nova.mwh.retry.scheduler.RetryTaskScheduler">
+	<bean id="nova-multithread-retryTaskScheduler" class="com.yxy.nova.mwh.retry.scheduler.RetryTaskScheduler">
 		<property name="configuration" ref="retryConfiguration" />
 		<!-- elastic-job的注册中心 -->
 		<property name="regCenter" ref="regCenter2" />
@@ -59,7 +59,7 @@
 
 
 	<!-- 重试任务调度器，本质上个elastic-job -->
-	<bean id="hertz-singlethread-retryTaskScheduler" class="com.yxy.nova.mwh.retry.scheduler.RetryTaskScheduler">
+	<bean id="nova-singlethread-retryTaskScheduler" class="com.yxy.nova.mwh.retry.scheduler.RetryTaskScheduler">
 		<property name="configuration" ref="retryConfiguration" />
 		<!-- elastic-job的注册中心 -->
 		<property name="regCenter" ref="regCenter2" />
