@@ -50,7 +50,7 @@ public class InternalController {
     private TaskItemExecCallMapper taskItemExecCallMapper;
     @Autowired
     private SearchService searchService;
-    @Autowired
+    @Autowired(required = false)
     private AggregationClient aggregationClient;
 
     @PostMapping("/execCallTest")
