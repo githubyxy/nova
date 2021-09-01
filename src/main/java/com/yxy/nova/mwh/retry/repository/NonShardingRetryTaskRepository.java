@@ -60,7 +60,7 @@ public class NonShardingRetryTaskRepository extends AbstractRetryTaskRepository 
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("prefix", databaseTablePrefix);
         parameters.put("taskTypes", taskTypes);
-        parameters.put("shardingItems", shardingItems);
+//        parameters.put("shardingItems", shardingItems);
         parameters.put("top", 200);
         if (CollectionUtils.isNotEmpty(idcList)) {
             parameters.put("idcList", idcList);
