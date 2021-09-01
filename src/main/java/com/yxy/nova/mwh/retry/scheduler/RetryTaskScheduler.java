@@ -38,6 +38,10 @@ public class RetryTaskScheduler implements BeanNameAware {
     private Boolean disabled;
     private Boolean overwrite;
     private String jobShardingStrategyType;
+    /**
+     * 重试框架已经有自定义的线程池，默认将线程池策略-单线程
+     */
+    private String jobExecutorServiceHandlerType="SINGLE_THREAD";
     private String shardingItemParameters;
     private Map<String, RetryTaskHandler> handlers;
     private Map<String, RetryTaskEventListener> typedEventListeners;
@@ -192,7 +196,9 @@ public class RetryTaskScheduler implements BeanNameAware {
         if (StringUtils.isNotBlank(jobShardingStrategyType)) {
             builder.jobShardingStrategyType(jobShardingStrategyType);
         }
-
+        if (StringUtils.isNotBlank(jobExecutorServiceHandlerType)) {
+            builder.jobExecutorServiceHandlerType(jobExecutorServiceHandlerType);
+        }
 
 //        JobScheduler jobScheduler = new JobScheduler(regCenter, jobConfigurationBuilder.build(), new ElasticJobListener[0]);
 //        jobScheduler.init();
@@ -374,5 +380,9 @@ public class RetryTaskScheduler implements BeanNameAware {
 
     public void setIdcResolver(IdcResolver idcResolver) {
         this.idcResolver = idcResolver;
+    }
+
+    public void setJobExecutorServiceHandlerType(String jobExecutorServiceHandlerType) {
+        this.jobExecutorServiceHandlerType = jobExecutorServiceHandlerType;
     }
 }
