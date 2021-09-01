@@ -192,7 +192,7 @@ public class RetryTaskScheduler implements BeanNameAware {
 
 //        JobScheduler jobScheduler = new JobScheduler(regCenter, jobConfigurationBuilder.build(), new ElasticJobListener[0]);
 //        jobScheduler.init();
-        ScheduleJobBootstrap scheduleJobBootstrap = new ScheduleJobBootstrap(regCenter, beanName, builder.build());
+        ScheduleJobBootstrap scheduleJobBootstrap = new ScheduleJobBootstrap(regCenter, new RetryTaskElasticJob(), builder.build());
         scheduleJobBootstrap.schedule();
         // 注册此调度器
         RetryTaskSchedulerRegistry.register(jobName, this);
