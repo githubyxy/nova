@@ -48,7 +48,7 @@ public class InternalController {
     private WechatService wechatService;
     @Autowired
     private TaskItemExecCallMapper taskItemExecCallMapper;
-    @Autowired
+    @Autowired(required = false)
     private SearchService searchService;
     @Autowired(required = false)
     private AggregationClient aggregationClient;
