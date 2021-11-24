@@ -54,4 +54,19 @@ public class GenerateURL {
         }
         return result.toString();
     }
+
+    /**
+     * 创建索引url
+     * @param request
+     * @return
+     */
+    public static String buildIndexUrl(String index, String mappings) {
+//        Map<String, String> params = request.getQueryString();
+        String indexEncoded = AssistantUtil.urlEncode(index);
+//        String paramsString = encodeParams(params);
+//        if (request.getType() == null) {
+//            return String.format("/%s/_search%s", indexEncoded, paramsString);
+//        }
+        return String.format("/%s/%s", indexEncoded, mappings);
+    }
 }
