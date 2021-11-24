@@ -127,7 +127,7 @@ public class NovaController {
              String[] split = originalFilename.split("\\.");
              response.reset();
              response.addHeader("Content-Type", MediaType.APPLICATION_PDF_VALUE+";charset=UTF-8");
-             response.setHeader("Content-disposition", "attachment; filename=" + split[0] + ".pdf");
+             response.addHeader("Content-disposition", "attachment; filename=" + split[0] + ".pdf");
              response.setContentLength(pdf.length);
              response.setCharacterEncoding("utf-8");
 
