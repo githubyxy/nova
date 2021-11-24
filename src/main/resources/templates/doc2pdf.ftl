@@ -16,11 +16,16 @@
     <div class='sectionbody'>
         <input type='file' id='file'/>
     </div>
+    <form action="doc2pdf" id="doc2pdf" method="post">
+        <button type="submit">转pdf</button></br>
+        <input type='file' id='file'/>
+    </form>
 </div>
 
-<div>
-    <td><input type="button" onclick="doc2pdf()" value="转pdf"></input><br></td>
-</div>
+<#--<div>-->
+<#--    -->
+<#--    <td><input type="button" onclick="doc2pdf()" value="转pdf"></input><br></td>-->
+<#--</div>-->
 
 <script type="text/javascript">
     function doc2pdf(){
