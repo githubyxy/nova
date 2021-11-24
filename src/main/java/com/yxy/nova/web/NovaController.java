@@ -125,11 +125,15 @@ public class NovaController {
              response.addHeader("Content-Type", MediaType.APPLICATION_OCTET_STREAM_VALUE+";charset=UTF-8");
 
              String originalFilename = file.getOriginalFilename();
-             String[] split = originalFilename.split(",");
+             String[] split = originalFilename.split("\\.");
+             response.reset();
+             response.setContentType("application/vnd.ms-excel; charset=utf-8");
+             response.setCharacterEncoding("utf-8");
              response.setHeader("Content-disposition", "attachment; filename=" + split[0] + ".pdf");
              response.setContentLength(pdf.length);
 
              IOUtils.write(pdf, response.getOutputStream());
+
          } catch (Throwable thr) {
              log.error("doc2pdf异常", thr);
          }
