@@ -13,12 +13,12 @@
 <div id='main' class='section dark'>
     <div class='step'>choose an word file</div>
     <img id='preview' class='preview hide'/>
-    <div class='sectionbody'>
+<#--    <div class='sectionbody'>-->
+<#--        <input type='file' id='file'/>-->
+<#--    </div>-->
+    <form  id="doc2pdf" method="post" enctype="multipart/form-data">
         <input type='file' id='file'/>
-    </div>
-    <form action="doc2pdf" id="doc2pdf" method="post">
-        <button type="submit">转pdf</button></br>
-        <input type='file' id='file'/>
+        <td><input type="button" onclick="doc2pdf()" value="转pdf"></input></td>
     </form>
 </div>
 
@@ -29,13 +29,7 @@
 
 <script type="text/javascript">
     function doc2pdf(){
-        var file = document.getElementById("file").files[0];
-        // var data = {};
-        // data.file=file;
-        var formFile = new FormData();
-        formFile.append("file", file);
-
-        nova.upload("doc2pdf", formFile, encryptSuccess, encryptFail, null);
+        $("#doc2pdf").submit();
     }
 
     function encryptSuccess(data) {
