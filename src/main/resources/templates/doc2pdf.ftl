@@ -17,7 +17,7 @@
 <#--        <input type='file' id='file'/>-->
 <#--    </div>-->
     <form  id="doc2pdf" method="post" enctype="multipart/form-data">
-        <input type='file' id='file'/>
+        <input type='file' id='file' name="file"/>
         <td><input type="button" onclick="doc2pdf()" value="转pdf"></input></td>
     </form>
 </div>
