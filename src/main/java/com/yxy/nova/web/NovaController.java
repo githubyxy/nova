@@ -126,7 +126,7 @@ public class NovaController {
              String originalFilename = file.getOriginalFilename();
              String[] split = originalFilename.split("\\.");
              response.reset();
-             response.setHeader("Content-Type", MediaType.APPLICATION_PDF_VALUE+";charset=UTF-8");
+             response.setContentType("application/octet-stream; charset=utf-8");
              response.setHeader("Content-disposition", "attachment; filename=" + split[0] + ".pdf");
              response.addHeader("Content-Length", "" + pdf.length);
 
