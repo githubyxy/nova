@@ -127,7 +127,6 @@ public class NovaController {
              String originalFilename = file.getOriginalFilename();
              String[] split = originalFilename.split("\\.");
              response.reset();
-             response.setContentType("application/vnd.ms-excel; charset=utf-8");
              response.setCharacterEncoding("utf-8");
              response.setHeader("Content-disposition", "attachment; filename=" + split[0] + ".pdf");
              response.setContentLength(pdf.length);
