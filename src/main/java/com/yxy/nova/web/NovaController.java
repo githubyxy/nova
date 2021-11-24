@@ -123,7 +123,10 @@ public class NovaController {
             byte[] pdf = PDFUtil.toPDF(file.getBytes(), file.getOriginalFilename());
 
              response.addHeader("Content-Type", MediaType.APPLICATION_OCTET_STREAM_VALUE+";charset=UTF-8");
-             response.setHeader("Content-disposition", "attachment; filename=" + file.getOriginalFilename());
+
+             String originalFilename = file.getOriginalFilename();
+             String[] split = originalFilename.split(",");
+             response.setHeader("Content-disposition", "attachment; filename=" + split[0] + ".pdf");
              response.setContentLength(pdf.length);
 
              IOUtils.write(pdf, response.getOutputStream());
