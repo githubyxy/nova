@@ -7,7 +7,7 @@ nova.upload = function(url,data,success,error,complete){
 		type:'post',
 		data:data,
 		timeout : 15000,
-		dataType:'json',
+		// dataType:'text',
 		processData:false,
 		contentType:false,
 		traditional:true,
