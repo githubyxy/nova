@@ -30,7 +30,7 @@
         var formFile = new FormData();
         formFile.append("file", file);
 
-        nova.upload("doc2pdf", formFile, encryptSuccess, encryptFail, null);
+        nova.post("doc2pdf", formFile, encryptSuccess, encryptFail, null);
     }
 
     function encryptSuccess(data) {
