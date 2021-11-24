@@ -115,7 +115,7 @@ public class NovaController {
      * 用于接收前端上传文件
      * @param file
      */
-     @PostMapping(value = "doc2pdf")
+     @GetMapping(value = "doc2pdf")
     public void doc2pdf(MultipartFile file, HttpServletResponse response) throws Exception{
         // System.out.println(file.getSize());
 
