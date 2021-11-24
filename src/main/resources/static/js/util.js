@@ -4,7 +4,7 @@ var nova = {};
 nova.upload = function(url,data,success,error,complete){
 	$.ajax({
 		url:url,
-		type:'get',
+		type:'post',
 		data:data,
 		timeout : 15000,
 		dataType:'json',
