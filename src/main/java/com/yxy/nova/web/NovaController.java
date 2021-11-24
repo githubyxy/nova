@@ -19,6 +19,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -116,7 +117,7 @@ public class NovaController {
      * @param file
      */
      @PostMapping(value = "doc2pdf")
-    public void doc2pdf(MultipartFile file, HttpServletResponse response) throws Exception{
+    public void doc2pdf(MultipartFile file, HttpServletRequest request, HttpServletResponse response) throws Exception{
         // System.out.println(file.getSize());
 
          try {
@@ -125,12 +126,21 @@ public class NovaController {
 
              String originalFilename = file.getOriginalFilename();
              String[] split = originalFilename.split("\\.");
+             String fileName = split[0] + ".pdf";
+
+             String userAgent = request.getHeader("User-Agent").toUpperCase();
+             if (userAgent.contains("MSIE") || userAgent.contains("EDGE")) {
+                 fileName = URLEncoder.encode(fileName, "UTF-8");// IE浏览器
+             } else {
+                 fileName = new String(fileName.getBytes("UTF-8"), "ISO8859-1");
+             }
              response.reset();
              response.setContentType("application/octet-stream; charset=utf-8");
-             response.setHeader("Content-disposition", "attachment; filename=" + split[0] + ".pdf");
-             response.addHeader("Content-Length", "" + pdf.length);
+             response.addHeader("Content-Disposition", String.format(" attachment; filename=\"%s\"", fileName));
+             response.setCharacterEncoding("utf-8");
 
              IOUtils.write(pdf, response.getOutputStream());
+
 
          } catch (Throwable thr) {
              log.error("doc2pdf异常", thr);
