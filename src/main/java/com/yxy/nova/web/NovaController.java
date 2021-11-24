@@ -122,14 +122,14 @@ public class NovaController {
          try {
             byte[] pdf = PDFUtil.toPDF(file.getBytes(), file.getOriginalFilename());
 
-             response.addHeader("Content-Type", MediaType.APPLICATION_OCTET_STREAM_VALUE+";charset=UTF-8");
 
              String originalFilename = file.getOriginalFilename();
              String[] split = originalFilename.split("\\.");
              response.reset();
-             response.setCharacterEncoding("utf-8");
+             response.addHeader("Content-Type", MediaType.APPLICATION_PDF_VALUE+";charset=UTF-8");
              response.setHeader("Content-disposition", "attachment; filename=" + split[0] + ".pdf");
              response.setContentLength(pdf.length);
+             response.setCharacterEncoding("utf-8");
 
              IOUtils.write(pdf, response.getOutputStream());
 
