@@ -9,8 +9,7 @@ import reactor.util.function.Tuple3;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
@@ -74,15 +73,64 @@ public class ReactorTest {
     public void MonoTest() {
 
 
-        Mono<Tuple2<Integer, Integer>> zip = Mono.zip(Mono.just(1), Mono.just(2));
-        Mono<Integer> mono1 = zip.flatMap(i -> {
-            Integer t1 = i.getT1();
-            Integer t2 = i.getT2();
-            return Mono.just(t1 + t2);
-        });
-        mono1.doOnNext( i -> System.out.println(i)).subscribe();
+//        Mono<Tuple2<Integer, Integer>> zip = Mono.zip(Mono.just(1), Mono.just(2));
+//        Mono<Integer> mono1 = zip.flatMap(i -> {
+//            Integer t1 = i.getT1();
+//            Integer t2 = i.getT2();
+//            return Mono.just(t1 + t2);
+//        });
+//        mono1.doOnNext( i -> System.out.println(i)).subscribe();
 
 
+        List<A> list = new ArrayList<>();
+        list.add(new A("y",1));
+        list.add(new A("x",1));
+        list.add(new A("x",1));
+        Flux.fromIterable(list).collectList()
+                .flatMap(alist -> {
+            Map<String, List<ReactorTest.A>> map = new HashMap<>();
+                    alist.forEach(e -> {
+                        String key = e.getName();
+                        List<A> innerList = map.getOrDefault(key, new ArrayList<>());
+                        innerList.add(e);
+                        map.put(key, innerList);
+                    });
+                    return Mono.just(map);
+                }).flatMap(map ->{
+                    return Flux.fromIterable(map.entrySet())
+                            .flatMap(entry -> {
+                                System.out.println(entry.getKey());
+                                System.out.println(entry.getValue());
+                                return Mono.just(entry);
+                            }).collectList();
+                    }).subscribe();
+
+    }
+
+    public class A {
+        private A(String name, int value) {
+            this.name = name;
+            this.value = value;
+
+        }
+        private String name;
+        private int value;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getValue() {
+            return value;
+        }
+
+        public void setValue(int value) {
+            this.value = value;
+        }
     }
 
     @Test
