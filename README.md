@@ -1,4 +1,4 @@
-y x yyxy
+yxy
 # nova
 
 1：安装docker
