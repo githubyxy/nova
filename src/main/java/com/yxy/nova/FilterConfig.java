@@ -1,6 +1,7 @@
 package com.yxy.nova;
 
 import com.yxy.nova.interceptor.BaseFilter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,13 +12,14 @@ import org.springframework.context.annotation.Configuration;
  * @date 2019-10-28 13:50
  */
 @Configuration
+@ConditionalOnProperty(prefix = "filter", name = "loginFilter", havingValue = "true")
 public class FilterConfig {
 
-//    @Bean
-//    public FilterRegistrationBean filterRegistrationBean(){
-////        FilterRegistrationBean bean = new FilterRegistrationBean();
-//////        bean.setFilter(new BaseFilter());
-////        bean.addUrlPatterns("/auth/*", "/biz/*");
-////        return bean;
-//    }
+    @Bean
+    public FilterRegistrationBean filterRegistrationBean(){
+        FilterRegistrationBean bean = new FilterRegistrationBean();
+        bean.setFilter(new BaseFilter());
+        bean.addUrlPatterns("/auth/*", "/biz/*");
+        return bean;
+    }
 }
