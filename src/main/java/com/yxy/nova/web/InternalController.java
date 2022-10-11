@@ -5,6 +5,7 @@ package com.yxy.nova.web;
  */
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.yxy.nova.cmpp.CmppSmsClient;
 import com.yxy.nova.cmpp.pojo.SmsSendResult;
 import com.yxy.nova.dal.mysql.dataobject.TaskItemExecCallDO;
@@ -18,6 +19,8 @@ import com.yxy.nova.mwh.elasticsearch.exception.ElasticsearchClientException;
 import com.yxy.nova.mwh.elasticsearch.util.ESLogger;
 import com.yxy.nova.mwh.utils.exception.BizException;
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
+import com.yxy.nova.netty.udp.UdpServer;
+import com.yxy.nova.nio.UDPMessage;
 import com.yxy.nova.service.wechat.WechatService;
 import com.yxy.nova.util.SignUtil;
 import org.apache.commons.lang3.StringUtils;
@@ -52,6 +55,17 @@ public class InternalController {
     private SearchService searchService;
     @Autowired(required = false)
     private AggregationClient aggregationClient;
+    @Autowired
+    private UdpServer udpServer;
+
+
+    @GetMapping("udptest")
+    public void udptest() {
+        UDPMessage message = new UDPMessage();
+        message.setKey("test1");
+        message.setContent("于晓宇abc123@#￥");
+        udpServer.singleCast("127.0.0.1", JSONObject.toJSONString(message));
+    }
 
     @PostMapping("/execCallTest")
     @ResponseBody

@@ -1,15 +1,8 @@
-package com.yxy.nova.udp;
+package com.yxy.nova.nio;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
-import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
-import java.nio.channels.DatagramChannel;
-import java.nio.channels.SelectionKey;
-import java.nio.channels.Selector;
-import java.util.Iterator;
-import java.util.Set;
 
 public class UDPClient {
     private static   ByteBuffer buffer = null;
