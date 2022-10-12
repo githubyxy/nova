@@ -61,7 +61,12 @@ public class UdpServer {
         ByteBuf byteBuf1 = new UnpooledByteBufAllocator(false).buffer();
         byteBuf1.writeCharSequence(pushMsg, CharsetUtil.UTF_8);
         DatagramPacket packet = new DatagramPacket(byteBuf1, remoteAddress);
-        this.channel.writeAndFlush(packet);
+        this.channel.writeAndFlush(packet).addListener(new ChannelFutureListener() {
+            @Override
+            public void operationComplete(ChannelFuture channelFuture) throws Exception {
+
+            }
+        });
     }
 
     public int getPort() {

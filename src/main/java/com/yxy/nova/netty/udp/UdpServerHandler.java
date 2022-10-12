@@ -43,7 +43,7 @@ public class UdpServerHandler extends SimpleChannelInboundHandler<DatagramPacket
             ByteBuf byteBuf = packet.content();
             byteBuf.retain();       // byteBuf引用计数加1，避免报引用为0异常
             String response = new String(ByteBufUtil.getBytes(byteBuf));
-            log.info("得到来自 "+packet.sender()+" 的请求, response {}", response);
+            log.info("收到来自 "+ packet.sender() + " 的请求, response {}", response);
             // 业务逻辑
             UDPMessage message = JSONObject.parseObject(StringUtils.trimToEmpty(response), new TypeReference<UDPMessage>() {
             });
