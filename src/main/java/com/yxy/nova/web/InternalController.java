@@ -60,11 +60,11 @@ public class InternalController {
 
 
     @GetMapping("udptest")
-    public void udptest() {
+    public void udptest(String ip, String content) {
         UDPMessage message = new UDPMessage();
         message.setKey("test1");
-        message.setContent("于晓宇abc123@#￥");
-        udpServer.singleCast("127.0.0.1", JSONObject.toJSONString(message));
+        message.setContent(content);
+        udpServer.singleCast(ip, JSONObject.toJSONString(message));
     }
 
     @PostMapping("/execCallTest")
