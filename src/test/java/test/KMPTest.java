@@ -33,4 +33,16 @@ public class KMPTest {
             System.out.println(next[m]);
         }
     }
+
+    @Test
+    public void StringToHex16String() {
+        String s = " ";
+        String str = "";
+        for (int i = 0; i < s.length(); i++) {
+            int ch = (int) s.charAt(i);
+            String s4 = Integer.toHexString(ch);
+            str = str + s4;
+        }
+        System.out.println(str);
+    }
 }

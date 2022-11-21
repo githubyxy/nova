@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationListener;
@@ -25,6 +26,7 @@ import java.util.concurrent.TimeUnit;
 @Controller
 @SpringBootApplication
 @EnableWebMvc
+@ServletComponentScan
 @ImportResource(locations = {"classpath*:app.xml"})
 public class NovaApplication extends SpringBootServletInitializer {
 

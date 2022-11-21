@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:elasticjob="http://shardingsphere.apache.org/schema/elasticjob"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://shardingsphere.apache.org/schema/elasticjob
+                        http://shardingsphere.apache.org/schema/elasticjob/elasticjob.xsd
+                        ">
+
+
+    <elasticjob:zookeeper id="regCenter2" server-lists="${zkHost}" namespace="${elastic.job.namespace}"
+                   base-sleep-time-milliseconds="${elastic.job.baseSleepTimeMilliseconds}"
+                   max-sleep-time-milliseconds="${elastic.job.maxSleepTimeMilliseconds}" max-retries="${elastic.job.maxRetries}"/>
+
+
+    <elasticjob:job id="elasticTestJob-no-repeat"
+                job-ref="elasticTestJob"
+                registry-center-ref="regCenter2" sharding-total-count="${apacheTestJob.shardingTotalCount}"
+                cron="${apacheTestJob.cron}"
+                failover="${apacheTestJob.failover}" description="${apacheTestJob.description}"
+                disabled="${apacheTestJob.disabled}"
+                overwrite="${apacheTestJob.overwrite}"
+                job-sharding-strategy-type="MY_TEST"
+                job-executor-service-handler-type="SINGLE_THREAD"/>
+
+    <bean id="elasticTestJob" class="com.yxy.nova.elastic.job.ElasticTestJob" />
+
+</beans>

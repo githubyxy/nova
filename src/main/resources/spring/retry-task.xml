@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<!-- 重试框架的基本配置 -->
+	<bean id="retryConfiguration" class="com.yxy.nova.mwh.retry.config.RetryConfiguration">
+		<!-- 事务管理器-->
+		<property name="transactionManager" ref="novaTransactionManager" />
+		<!-- 数据源-->
+		<property name="dataSource" ref="novaDataSource"/>
+		<!-- retry_task表是否是分片表 -->
+		<property name="tableSharding" value="true"/>
+		<!-- 对于分片表来说，这个参数既决定了分片表的个数又决定了elastic-job的最大分片。对于非分片表来说，这个参数只决定elastic-job的最大分片 -->
+		<property name="shardingTotalCount" value="10"/>
+	</bean>
+
+	<!-- 业务层使用retryTaskService提交重试任务 -->
+	<bean id="retryTaskService" class="com.yxy.nova.mwh.retry.service.impl.RetryTaskServiceImpl">
+		<property name="configuration" ref="retryConfiguration" />
+	</bean>
+
+
+
+	<!-- 重试任务调度器，本质上个elastic-job -->
+	<bean id="nova-multithread-retryTaskScheduler" class="com.yxy.nova.mwh.retry.scheduler.RetryTaskScheduler">
+		<property name="configuration" ref="retryConfiguration" />
+		<!-- elastic-job的注册中心 -->
+		<property name="regCenter" ref="regCenter2" />
+		<!-- 待处理的重试任务是在线程池中执行的，这个参数配置了线程池的maxSize -->
+		<property name="workerThreadPoolSize" value="${retryTaskScheduler.workerThreadPoolSize}" />
+		<!-- 配置数据库拉取待处理任务的周期 -->
+		<property name="cron" value="${retryTaskScheduler.cron}" />
+		<!-- 跟elastic-job中的同名参数含义相同 -->
+		<property name="disabled" value="${retryTaskScheduler.disabled}" />
+		<!-- 跟elastic-job中的同名参数含义相同 -->
+		<property name="overwrite" value="${retryTaskScheduler.overwrite}" />
+		<!-- 配置任务类型和任务处理器的映射关系 -->
+		<property name="handlers">
+			<map>
+				<entry key="MULTITHREAD" value-ref="multiHandler" />
+			</map>
+		</property>
+		<!-- 配置事件监听器 -->
+<!--		<property name="typedEventListeners">-->
+<!--			<map>-->
+<!--				<entry key="SUCCESS,FAIL,EXPIRE" value-ref="retryTaskMetricEventListener" />-->
+<!--				<entry key="EXPIRE" value-ref="expiredTaskHandlerDispatcher" />-->
+<!--			</map>-->
+<!--		</property>-->
+		<!-- 配置retentionPolicy -->
+		<property name="retentionPolicies">
+			<map>
+				<entry key="default" value="15d" />
+			</map>
+		</property>
+
+	</bean>
+
+
+	<!-- 重试任务调度器，本质上个elastic-job -->
+	<bean id="nova-singlethread-retryTaskScheduler" class="com.yxy.nova.mwh.retry.scheduler.RetryTaskScheduler">
+		<property name="configuration" ref="retryConfiguration" />
+		<!-- elastic-job的注册中心 -->
+		<property name="regCenter" ref="regCenter2" />
+		<!-- 待处理的重试任务是在线程池中执行的，这个参数配置了线程池的maxSize -->
+		<property name="workerThreadPoolSize" value="${shardingTaskScheduler.workerThreadPoolSize}" />
+		<!-- 配置数据库拉取待处理任务的周期 -->
+		<property name="cron" value="${shardingTaskScheduler.cron}" />
+		<!-- 跟elastic-job中的同名参数含义相同 -->
+		<property name="disabled" value="${shardingTaskScheduler.disabled}" />
+		<!-- 跟elastic-job中的同名参数含义相同 -->
+		<property name="overwrite" value="${shardingTaskScheduler.overwrite}" />
+		<property name="jobShardingStrategyType" value="MY_TEST" />
+		<!-- 配置任务类型和任务处理器的映射关系 -->
+		<property name="handlers">
+			<map>
+				<entry key="SINGLETHREAD" value-ref="singleHandler" />
+			</map>
+		</property>
+		<!-- 配置事件监听器 -->
+<!--		<property name="typedEventListeners">-->
+<!--			<map>-->
+<!--				<entry key="SUCCESS,FAIL,EXPIRE" value-ref="retryTaskMetricEventListener" />-->
+<!--				<entry key="EXPIRE" value-ref="expiredTaskHandlerDispatcher" />-->
+<!--			</map>-->
+<!--		</property>-->
+		<!-- 配置retentionPolicy -->
+		<property name="retentionPolicies">
+			<map>
+				<entry key="default" value="15d" />
+			</map>
+		</property>
+
+	</bean>
+
+
+<!--	&lt;!&ndash; 分发过期未执行成功的任务 &ndash;&gt;-->
+<!--	<bean id="expiredTaskHandlerDispatcher" class="cn.guixi.hermes.mwh.retrytask.listener.ExpiredTaskHandlerDispatcher">-->
+<!--		<property name="typedHandlers">-->
+<!--			<map>-->
+<!--			</map>-->
+<!--		</property>-->
+<!--	</bean>-->
+
+	<bean id="multiHandler" class="com.yxy.nova.mwh.retry.handler.MultiHandler" />
+	<bean id="singleHandler" class="com.yxy.nova.mwh.retry.handler.SingleHandler" />
+</beans>
