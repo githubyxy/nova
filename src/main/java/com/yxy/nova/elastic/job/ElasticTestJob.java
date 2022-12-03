@@ -17,9 +17,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Slf4j
 public class ElasticTestJob implements SimpleJob {
 
-    @Autowired
+    @Autowired(required = false)
     private RetryTaskService retryTaskService;
 
+
+    /**
+     * 如果单机部署
+     * 当shardingTotalCount=2   会在触发时间点执行2次， shardingItem=0 和  shardingItem=1
+     *
+     * ShardingContext(jobName=elasticTestJob-no-repeat, taskId=elasticTestJob-no-repeat@-@0,1@-@READY@-@192.168.1.4@-@4369, shardingTotalCount=2, jobParameter=, shardingItem=1, shardingParameter=Shanghai)
+     *
+     * @param shardingContext
+     */
     @Override
     public void execute(ShardingContext shardingContext) {
 //        log.info("ApacheTestJob begin");

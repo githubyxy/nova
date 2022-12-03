@@ -17,12 +17,13 @@
     <elasticjob:job id="elasticTestJob-no-repeat"
                 job-ref="elasticTestJob"
                 registry-center-ref="regCenter2" sharding-total-count="${apacheTestJob.shardingTotalCount}"
+                sharding-item-parameters="${apacheTestJob.shardingItemParameters}"
                 cron="${apacheTestJob.cron}"
                 failover="${apacheTestJob.failover}" description="${apacheTestJob.description}"
                 disabled="${apacheTestJob.disabled}"
                 overwrite="${apacheTestJob.overwrite}"
-                job-sharding-strategy-type="MY_TEST"
                 job-executor-service-handler-type="SINGLE_THREAD"/>
+<!--                job-sharding-strategy-type="MY_TEST"-->
 
     <bean id="elasticTestJob" class="com.yxy.nova.elastic.job.ElasticTestJob" />
 
