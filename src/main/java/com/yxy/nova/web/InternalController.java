@@ -6,6 +6,7 @@ package com.yxy.nova.web;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.yxy.nova.canal.DebeziumHandler;
 import com.yxy.nova.cmpp.CmppSmsClient;
 import com.yxy.nova.cmpp.pojo.SmsSendResult;
 import com.yxy.nova.dal.mysql.dataobject.TaskItemExecCallDO;
@@ -23,6 +24,8 @@ import com.yxy.nova.netty.udp.UdpServer;
 import com.yxy.nova.nio.UDPMessage;
 import com.yxy.nova.service.wechat.WechatService;
 import com.yxy.nova.util.SignUtil;
+import org.apache.commons.codec.Charsets;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.elasticsearch.action.bulk.BulkResponse;
 import org.slf4j.Logger;
@@ -30,11 +33,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -57,6 +62,8 @@ public class InternalController {
     private AggregationClient aggregationClient;
     @Autowired
     private UdpServer udpServer;
+    @Autowired(required = false)
+    private DebeziumHandler debeziumHandler;
 
 
     @GetMapping("udptest")
@@ -217,6 +224,36 @@ public class InternalController {
         }finally{
             out.close();
         }
+    }
+
+
+
+    @RequestMapping(value = "recvDebezium", method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject recvDebezium( HttpServletRequest request) {
+//        LOGGER.info("recvDebezium");
+        Enumeration<String> headerNames = request.getHeaderNames();
+        while (headerNames.hasMoreElements()) {
+            String s = headerNames.nextElement();
+            LOGGER.info("header= key:{},value:{}", s,request.getHeader(s));
+        }
+        LOGGER.info("__debezium.newkey:{}", request.getHeader("__debezium.newkey"));
+        JSONObject result = new JSONObject();
+        String requestStr;
+        try (ServletInputStream servletInputStream = request.getInputStream()) {
+            requestStr = IOUtils.toString(servletInputStream, Charsets.UTF_8.name());
+
+            debeziumHandler.handler(requestStr);
+
+            LOGGER.info("recvDebezium,requestStr:{}", requestStr);
+        } catch (IOException e) {
+            LOGGER.error("recvCallResult error:", e);
+            result.put("code", "1");
+            result.put("success", false);
+            result.put("message", "请求入参格式有误，读取异常");
+            return result;
+        }
+        return result;
     }
 
 
