@@ -1,5 +1,6 @@
 package test.util;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpEntity;
@@ -16,14 +17,13 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.StringUtils;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 发送短信示例
@@ -74,10 +74,76 @@ public class HttpTest {
 	}
 
 	public static void main(String[] args) throws Exception {
-		listLineUnitCode();//调用获取可用的线路单元
-		doubleCall();//调用双呼接口
+//		listLineUnitCode();//调用获取可用的线路单元
+//		doubleCall();//调用双呼接口
+//		getCtwing();
+
+		ctwing();
 	}
-	
+
+	private static void getCtwing() throws IOException {
+
+		String s = get("https://ag-api.ctwing.cn/echo", new HashMap<>());
+		System.out.println(s);
+
+//		client.get()
+//				.uri("https://ag-api.ctwing.cn/echo")
+//				.exchange()
+//				.flatMap(response -> {
+//					long end = System.currentTimeMillis();
+//					long serverTime = response
+//							.headers()
+//							.header("x-ag-timestamp")
+//							.stream()
+//							.findAny()
+//							.map(Long::parseLong)
+//							.orElse(0L);
+//					timeOffset = serverTime - (start + end) / 2L;
+	}
+
+	private static void ctwing() throws IOException {
+		String imei = "861107058866303";
+		Map<String, Object> body = new TreeMap<>();
+		body.put("deviceName", "慧怡水表");
+		body.put("deviceSn", "");
+		body.put("imei", imei);
+		body.put("operator", "admin");
+
+		{
+			Map<String, Object> other = new TreeMap<>();
+			other.put("autoObserver", 0);
+			other.put("imsi", imei);
+			other.put("pskValue", "");
+			body.put("other", other);
+		}
+		body.put("productId", "15491716");
+
+		String bodyString = JSON.toJSONString(body);
+
+		HttpPost httpPost = new HttpPost("https://ag-api.ctwing.cn/aep_device_management/device");
+
+		Map<String, String> header = new HashMap<>();
+		header.put("application", "6TcOQsCETCi");
+		header.put("timestamp", String.valueOf(System.currentTimeMillis() + 100));
+		header.put("version", "20181031202117");
+		header.put("sdk", "0");
+
+		Map<String, List<String>> parameterCopy = new HashMap<>();
+		parameterCopy.put("MasterKey", Collections.singletonList("30c677fbc3d645df988bb8f50f3082f5"));
+		String sign = Signature.sign("9dmJt6M131",
+				header.get("application"),
+				header.get("timestamp"),
+				parameterCopy,
+				bodyString.getBytes());
+
+		header.put("signature", sign);
+		header.put("MasterKey", "30c677fbc3d645df988bb8f50f3082f5");
+		header.put("User-Agent", "JetLinks Iot Platform");
+
+		String s = postJsonString("https://ag-api.ctwing.cn/aep_device_management/device", bodyString, header);
+		System.out.println(s);
+	}
+
 	/**
 	 * 调用获取可用的线路单元 接口示例
 	 * @throws Exception
