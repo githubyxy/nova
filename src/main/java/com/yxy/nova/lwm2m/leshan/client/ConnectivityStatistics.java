@@ -13,7 +13,7 @@ public class ConnectivityStatistics extends BaseInstanceEnabler {
 
     @Override
     public ReadResponse read(ServerIdentity identity, int resourceid) {
-        System.out.println("client:" + JSON.toJSONString(resourceid));
+        System.out.println("client read:" + JSON.toJSONString(resourceid));
         switch (resourceid) {
             case 0:
                 return ReadResponse.success(resourceid, "getSmsTxCounter()");
@@ -22,7 +22,7 @@ public class ConnectivityStatistics extends BaseInstanceEnabler {
     }
 
     public WriteResponse write(ServerIdentity identity, boolean replace, LwM2mObjectInstance value) {
-        System.out.println(JSON.toJSONString(value.getResources()));
+        System.out.println("client write:" + JSON.toJSONString(value.getResources()));
         return WriteResponse.notFound();
     }
 //    @Override

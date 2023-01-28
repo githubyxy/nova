@@ -33,13 +33,17 @@ public class LeshanClientDemo {
         initializer.setInstancesForObject(LwM2mId.SERVER, new Server(12345, 5 * 60L));
 //        initializer.setInstancesForObject(LwM2mId.SERVER, new Server(12345, 5 * 60L, BindingMode.U, false));
         initializer.setInstancesForObject(LwM2mId.DEVICE, new Device("Eclipse Leshan", "model12345", "12345", EnumSet.of(BindingMode.U)));
-        initializer.setInstancesForObject(10242, new ConnectivityStatistics());
+        initializer.setInstancesForObject(7, new ConnectivityStatistics());
+
 
 
         String endpoint = "yxy_client" ; // choose an endpoint name
         LeshanClientBuilder builder = new LeshanClientBuilder(endpoint);
         // add it to the client
-        builder.setObjects(initializer.createAll());
+// DO NOT FORGET TO ASK TO CREATE THE NEW OBJECT "7"
+        builder.setObjects(initializer.create(7, LwM2mId.SECURITY,LwM2mId.SERVER, LwM2mId.DEVICE));
+        // add it to the client
+//        builder.setObjects(initializer.createAll());
         LeshanClient client = builder.build();
         client.start();
     }

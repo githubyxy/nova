@@ -65,13 +65,13 @@ public class SerializerUtil {
      * @return
      * @throws IOException
      */
-    @SneakyThrows
-    public static final <T> T jsonDeserialize(String content, TypeReference typeReference) {
-        if (StringUtils.isBlank(content)) {
-            return null;
-        }
-        return mapper.readValue(content, typeReference);
-    }
+//    @SneakyThrows
+//    public static final <T> T jsonDeserialize(String content, TypeReference typeReference) {
+//        if (StringUtils.isBlank(content)) {
+//            return null;
+//        }
+//        return mapper.readValue(content, typeReference);
+//    }
 
     /**
      * json列表反序列化-jackson

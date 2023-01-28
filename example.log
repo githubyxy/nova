@@ -1,3 +1,175 @@
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
 INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
 INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
 INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
@@ -38,6 +210,24 @@ INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X255
 INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
 INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
 INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M BS Server-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M BS Server-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:5683, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M BS Server-coap://] Started endpoint at coap://0.0.0.0:5683
+INFO main org.eclipse.leshan.server.californium.bootstrap.LeshanBootstrapServer - Bootstrap server started at coap://0.0.0.0/0.0.0.0:5683 
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
 INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
 INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
 INFO main org.eclipse.californium.ban - Started.
@@ -45,379 +235,189 @@ INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap
 INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
 INFO main org.eclipse.californium.core.CoapServer - Starting server
 INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
-INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:58931, recv buf = 65507, send buf = 65507, recv packet size = 2048
-INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:58931
-INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://127.0.0.1:5683 at coap://0.0.0.0:58931
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:52114, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:52114
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://127.0.0.1:5683 at coap://0.0.0.0:52114
 INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
 INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://127.0.0.1:5683 ...
-INFO main io.vertx.core.spi.resolver.ResolverProvider - Using the default address resolver as the dns resolver could not be loaded
-ERROR vert.x-eventloop-thread-1 io.vertx.mqtt.impl.MqttClientImpl - Can't connect to 127.0.0.1:18003
-io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /127.0.0.1:18003
-Caused by: java.net.ConnectException: Connection refused
-	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
-	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:715)
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.lang.Thread.run(Thread.java:750)
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration failed: Timeout.
+INFO CoapServer(main)#5 org.eclipse.californium.core.server.ServerMessageDeliverer - did not find resource /rd requested by 127.0.0.1:52114
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration failed: NOT_FOUND(404) .
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Try to register to coap://127.0.0.1:5683 again in 600s...
 INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://127.0.0.1:5683 ...
-INFO main io.vertx.core.spi.resolver.ResolverProvider - Using the default address resolver as the dns resolver could not be loaded
-ERROR vert.x-eventloop-thread-1 io.vertx.mqtt.impl.MqttClientImpl - Can't connect to 127.0.0.1:18003
-io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /127.0.0.1:18003
-Caused by: java.net.ConnectException: Connection refused
-	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
-	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:715)
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.lang.Thread.run(Thread.java:750)
-INFO main io.vertx.core.spi.resolver.ResolverProvider - Using the default address resolver as the dns resolver could not be loaded
-INFO main io.vertx.core.spi.resolver.ResolverProvider - Using the default address resolver as the dns resolver could not be loaded
-INFO vert.x-eventloop-thread-1 io.vertx.mqtt.impl.MqttClientImpl - Connection with 127.0.0.1:18003 established successfully
-INFO main io.vertx.core.spi.resolver.ResolverProvider - Using the default address resolver as the dns resolver could not be loaded
-INFO main io.vertx.core.spi.resolver.ResolverProvider - Using the default address resolver as the dns resolver could not be loaded
-INFO vert.x-eventloop-thread-1 io.vertx.mqtt.impl.MqttClientImpl - Connection with 127.0.0.1:18003 established successfully
-ERROR main com.alibaba.druid.pool.DruidDataSource - init datasource error, url: jdbc:mysql://127.0.0.1:3306/yxy?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&connectTimeout=5000&socketTimeout=5000&autoReconnect=true&maxReconnects=5&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
-java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 5 times. Giving up.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:905)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:830)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
-	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
-	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
-	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
-	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
-	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
-	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:734)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1904)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1846)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:303)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:110)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1681)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1433)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:303)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:110)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1681)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1433)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
-	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
-	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
-	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
-	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
-	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:251)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1124)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1097)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:504)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:240)
-	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:721)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:534)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
-	at com.yxy.nova.NovaApplication.main(NovaApplication.java:34)
-Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
-	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:152)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:849)
-	... 119 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
-	at java.net.Socket.connect(Socket.java:606)
-	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
-	... 121 more
-ERROR main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} init error
-java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 5 times. Giving up.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:905)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:830)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
-	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
-	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
-	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
-	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
-	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
-	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:734)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1904)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1846)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:303)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:110)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1681)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1433)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:303)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:110)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1681)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1433)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
-	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
-	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
-	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
-	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
-	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:251)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1124)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1097)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:504)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:240)
-	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:721)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:534)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
-	at com.yxy.nova.NovaApplication.main(NovaApplication.java:34)
-Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
-	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:152)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:849)
-	... 119 more
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
-	at java.net.Socket.connect(Socket.java:606)
-	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
-	... 121 more
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-14 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-14 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-14 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-14 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-14 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-15 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-14 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-14 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-14 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-14 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-15 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO CoapServer(main)#7 org.eclipse.californium.core.server.ServerMessageDeliverer - did not find resource /rd requested by 127.0.0.1:52114
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration failed: NOT_FOUND(404) .
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Try to register to coap://127.0.0.1:5683 again in 600s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M BS Server-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M BS Server-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+ERROR main com.yxy.nova.lwm2m.leshan.bootstrap.JSONFileBootstrapStore - Could not load bootstrap infos from file
+com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (InputStreamReader); line: 1, column: 0]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4821)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4723)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3698)
+	at com.yxy.nova.lwm2m.leshan.bootstrap.JSONFileBootstrapStore.loadFromFile(JSONFileBootstrapStore.java:112)
+	at com.yxy.nova.lwm2m.leshan.bootstrap.JSONFileBootstrapStore.<init>(JSONFileBootstrapStore.java:64)
+	at com.yxy.nova.lwm2m.leshan.bootstrap.JSONFileBootstrapStore.<init>(JSONFileBootstrapStore.java:42)
+	at com.yxy.nova.lwm2m.leshan.bootstrap.LeshanBootstrapDemo.main(LeshanBootstrapDemo.java:16)
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M BS Server-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M BS Server-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:5683, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M BS Server-coap://] Started endpoint at coap://0.0.0.0:5683
+INFO main org.eclipse.leshan.server.californium.bootstrap.LeshanBootstrapServer - Bootstrap server started at coap://0.0.0.0/0.0.0.0:5683 
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:60784, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:60784
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://127.0.0.1:5683 at coap://0.0.0.0:60784
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://127.0.0.1:5683 ...
+INFO CoapServer(main)#5 org.eclipse.californium.core.server.ServerMessageDeliverer - did not find resource /rd requested by 127.0.0.1:60784
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration failed: NOT_FOUND(404) .
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Try to register to coap://127.0.0.1:5683 again in 600s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Server-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Server-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+ERROR main org.eclipse.californium.core.CoapServer - cannot start server endpoint [0.0.0.0/0.0.0.0:5683]
+java.net.BindException: Address already in use (Bind failed)
+	at java.net.PlainDatagramSocketImpl.bind0(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.bind(AbstractPlainDatagramSocketImpl.java:99)
+	at java.net.DatagramSocket.bind(DatagramSocket.java:392)
+	at org.eclipse.californium.elements.UDPConnector.start(UDPConnector.java:214)
+	at org.eclipse.californium.core.network.CoapEndpoint.start(CoapEndpoint.java:499)
+	at org.eclipse.californium.core.CoapServer.start(CoapServer.java:330)
+	at org.eclipse.leshan.server.californium.LeshanServer.start(LeshanServer.java:375)
+	at com.yxy.nova.lwm2m.leshan.server.LeshanServerDemo.main(LeshanServerDemo.java:19)
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:51223, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:51223
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://127.0.0.1:5683 at coap://0.0.0.0:51223
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://127.0.0.1:5683 ...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M BS Server-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M BS Server-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:5683, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M BS Server-coap://] Started endpoint at coap://0.0.0.0:5683
+INFO main org.eclipse.leshan.server.californium.bootstrap.LeshanBootstrapServer - Bootstrap server started at coap://0.0.0.0/0.0.0.0:5683 
+INFO CoapServer(main)#5 org.eclipse.californium.core.server.ServerMessageDeliverer - did not find resource /rd requested by 127.0.0.1:51223
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration failed: NOT_FOUND(404) .
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Try to register to coap://127.0.0.1:5683 again in 600s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M BS Server-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M BS Server-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:5683, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M BS Server-coap://] Started endpoint at coap://0.0.0.0:5683
+INFO main org.eclipse.leshan.server.californium.bootstrap.LeshanBootstrapServer - Bootstrap server started at coap://0.0.0.0/0.0.0.0:5683 
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Server-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Server-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+ERROR main org.eclipse.californium.core.CoapServer - cannot start server endpoint [0.0.0.0/0.0.0.0:5683]
+java.net.BindException: Address already in use (Bind failed)
+	at java.net.PlainDatagramSocketImpl.bind0(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.bind(AbstractPlainDatagramSocketImpl.java:99)
+	at java.net.DatagramSocket.bind(DatagramSocket.java:392)
+	at org.eclipse.californium.elements.UDPConnector.start(UDPConnector.java:214)
+	at org.eclipse.californium.core.network.CoapEndpoint.start(CoapEndpoint.java:499)
+	at org.eclipse.californium.core.CoapServer.start(CoapServer.java:330)
+	at org.eclipse.leshan.server.californium.LeshanServer.start(LeshanServer.java:375)
+	at com.yxy.nova.lwm2m.leshan.server.LeshanServerDemo.main(LeshanServerDemo.java:19)

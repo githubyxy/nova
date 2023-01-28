@@ -102,9 +102,9 @@ public class HttpTest {
 	}
 
 	private static void ctwing() throws IOException {
-		String imei = "861107058866303";
+		String imei = "862149050624917";
 		Map<String, Object> body = new TreeMap<>();
-		body.put("deviceName", "慧怡水表");
+		body.put("deviceName", "智咏物联水表");
 		body.put("deviceSn", "");
 		body.put("imei", imei);
 		body.put("operator", "admin");
@@ -116,28 +116,28 @@ public class HttpTest {
 			other.put("pskValue", "");
 			body.put("other", other);
 		}
-		body.put("productId", "15491716");
+		body.put("productId", "15504462");
 
 		String bodyString = JSON.toJSONString(body);
 
 		HttpPost httpPost = new HttpPost("https://ag-api.ctwing.cn/aep_device_management/device");
 
 		Map<String, String> header = new HashMap<>();
-		header.put("application", "6TcOQsCETCi");
-		header.put("timestamp", String.valueOf(System.currentTimeMillis() + 100));
+		header.put("application", "M1tZvHZWssb");
+		header.put("timestamp", String.valueOf(1671761046751L));
 		header.put("version", "20181031202117");
 		header.put("sdk", "0");
 
 		Map<String, List<String>> parameterCopy = new HashMap<>();
-		parameterCopy.put("MasterKey", Collections.singletonList("30c677fbc3d645df988bb8f50f3082f5"));
-		String sign = Signature.sign("9dmJt6M131",
+		parameterCopy.put("MasterKey", Collections.singletonList("64727985015e4ec085fa8b15fa02254a"));
+		String sign = Signature.sign("cG6tP6uJ1d",
 				header.get("application"),
 				header.get("timestamp"),
 				parameterCopy,
 				bodyString.getBytes());
 
 		header.put("signature", sign);
-		header.put("MasterKey", "30c677fbc3d645df988bb8f50f3082f5");
+		header.put("MasterKey", "64727985015e4ec085fa8b15fa02254a");
 		header.put("User-Agent", "JetLinks Iot Platform");
 
 		String s = postJsonString("https://ag-api.ctwing.cn/aep_device_management/device", bodyString, header);
