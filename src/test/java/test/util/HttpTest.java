@@ -14,6 +14,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.util.EntityUtils;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -74,10 +75,32 @@ public class HttpTest {
 	}
 
 	public static void main(String[] args) throws Exception {
-		listLineUnitCode();//调用获取可用的线路单元
-		doubleCall();//调用双呼接口
+//		listLineUnitCode();//调用获取可用的线路单元
+//		doubleCall();//调用双呼接口
+//		download();
 	}
-	
+
+	@Test
+	public void download() throws IOException, InterruptedException {
+		String url ="http://47.99.72.114:8028/tdopenapi/voice/record/v1";
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("account", "xcjr_TD");
+		jsonObject.put("pwd", "0173d419a784bf98b7dd3dee2adecbd0");
+		jsonObject.put("fileCode", "http://47.99.72.114:8028/tdapi/downloadVoiceFile?fileId=/bssvoice/voice_file/voiking_ysb/ai/REC202301/20230107/8a3a8e43-6e0b-4096-9f7a-c77ce5b51d27.wav");
+
+		for (int i = 0; i < 20; i++) {
+			new Thread(()-> {
+				try {
+					String s = postJsonString(url, jsonObject.toJSONString(), null);
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+				}
+			}).start();
+//			System.out.println(s);
+		}
+		Thread.sleep(1000);
+	}
+
 	/**
 	 * 调用获取可用的线路单元 接口示例
 	 * @throws Exception
