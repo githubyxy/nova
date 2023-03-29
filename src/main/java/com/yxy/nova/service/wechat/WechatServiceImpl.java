@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.yxy.nova.bean.wechat.TextMessage;
 import com.yxy.nova.mwh.utils.DataUtil;
+import com.yxy.nova.mwh.utils.text.TextUtil;
+import com.yxy.nova.service.impl.MyOpenAiService;
 import com.yxy.nova.service.impl.MyPowerService;
 import com.yxy.nova.util.MessageUtil;
 import com.yxy.nova.util.SimpleHttpClient;
@@ -46,6 +48,8 @@ public class WechatServiceImpl implements WechatService {
     private MobileHelper mobileHelper;
     @Autowired
     private MyPowerService myPowerService;
+    @Autowired
+    private MyOpenAiService myOpenAiService;
 
 
 
@@ -88,16 +92,13 @@ public class WechatServiceImpl implements WechatService {
                     TianQiWeatherHelper tianQiWeatherHelper = new TianQiWeatherHelper();
                     tianQiWeatherHelper.setSimpleHttpClient(simpleHttpClient);
                     text.setContent(tianQiWeatherHelper.getWeatherReportByCityName(content));
-                }
-                if ("天气".equals(content)) {
+                } else if ("天气".equals(content)) {
                     TianQiWeatherHelper tianQiWeatherHelper = new TianQiWeatherHelper();
                     tianQiWeatherHelper.setSimpleHttpClient(simpleHttpClient);
                     text.setContent(tianQiWeatherHelper.getWeatherReportByIP(WebUtil.getRemoteAddr(request)));
-                }
-                if (DataUtil.strongValidateMobile(content)) {
+                } else if (DataUtil.strongValidateMobile(content)) {
                     text.setContent(mobileHelper.queryMobileInfo(content));
-                }
-                if (content.startsWith("mp")) {
+                } else if (content.startsWith("mp")) {
                     if (content.startsWith("mp+")) {
                         myPowerService.insert(content.substring(3));
                         text.setContent("添加成功");
@@ -106,6 +107,9 @@ public class WechatServiceImpl implements WechatService {
                     } else {
                         text.setContent(myPowerService.getAllPower());
                     }
+                } else {
+                    // 兜底走 chatgpt
+                    text.setContent(TextUtil.join(myOpenAiService.chat(content), "\\n"));
                 }
 
                 respMessage = MessageUtil.textMessageToXml(text);

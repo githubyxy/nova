@@ -5,8 +5,15 @@ package com.yxy.nova.web;
  */
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.base.Charsets;
+import com.theokanning.openai.completion.CompletionChoice;
+import com.theokanning.openai.completion.CompletionRequest;
+import com.theokanning.openai.completion.chat.ChatCompletionChoice;
+import com.theokanning.openai.completion.chat.ChatCompletionRequest;
+import com.theokanning.openai.completion.chat.ChatMessage;
+import com.theokanning.openai.service.OpenAiService;
 import com.yxy.nova.canal.DebeziumHandler;
 import com.yxy.nova.cmpp.CmppSmsClient;
 import com.yxy.nova.cmpp.pojo.SmsSendResult;
@@ -25,6 +32,7 @@ import com.yxy.nova.netty.udp.UdpServer;
 import com.yxy.nova.nio.UDPMessage;
 import com.yxy.nova.service.wechat.WechatService;
 import com.yxy.nova.util.SignUtil;
+import com.yxy.nova.util.SimpleHttpClient;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.elasticsearch.action.bulk.BulkResponse;
@@ -38,10 +46,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 
 @RestController
@@ -64,6 +69,8 @@ public class InternalController {
     private UdpServer udpServer;
     @Autowired(required = false)
     private DebeziumHandler debeziumHandler;
+    @Autowired
+    private SimpleHttpClient httpClient;
 
 
     @GetMapping("udptest")
@@ -277,5 +284,32 @@ public class InternalController {
 ////        return object;
 //        throw new RuntimeException();
 //    }
+
+
+    @RequestMapping(value = "/chat/completions", method = RequestMethod.GET)
+    @ResponseBody
+    public List<String> testChatgpt(String content) throws Exception {
+        // 消息列表
+        List<ChatMessage> list = new ArrayList<>();
+        // 定义一个用户身份，content是用户写的内容
+        ChatMessage userMessage = new ChatMessage();
+        userMessage.setRole("user");
+        userMessage.setContent(content);
+        list.add(userMessage);
+
+        OpenAiService service = new OpenAiService("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");
+        ChatCompletionRequest request = ChatCompletionRequest.builder()
+                .messages(list)
+                .model("gpt-3.5-turbo")
+                .build();
+        List<ChatCompletionChoice> choices = service.createChatCompletion(request).getChoices();
+
+        List<String> response = new ArrayList<>();
+        choices.forEach(item -> {
+            response.add(item.getMessage().getContent());
+        });
+        return response;
+    }
+
 
 }
