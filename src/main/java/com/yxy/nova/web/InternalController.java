@@ -6,6 +6,7 @@ package com.yxy.nova.web;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.google.common.base.Charsets;
 import com.yxy.nova.canal.DebeziumHandler;
 import com.yxy.nova.cmpp.CmppSmsClient;
 import com.yxy.nova.cmpp.pojo.SmsSendResult;
@@ -24,7 +25,6 @@ import com.yxy.nova.netty.udp.UdpServer;
 import com.yxy.nova.nio.UDPMessage;
 import com.yxy.nova.service.wechat.WechatService;
 import com.yxy.nova.util.SignUtil;
-import org.apache.commons.codec.Charsets;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.elasticsearch.action.bulk.BulkResponse;
@@ -256,5 +256,26 @@ public class InternalController {
         return result;
     }
 
+
+    @RequestMapping(value = "/api/callback", method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject callBack(HttpServletRequest request) throws Exception {
+        ServletInputStream servletInputStream = request.getInputStream();
+        String result = IOUtils.toString(servletInputStream, Charsets.UTF_8.name());
+        LOGGER.info("api callback:{}", JSON.toJSONString(result));
+        JSONObject object = new JSONObject();
+        object.put("success", true);
+        return object;
+    }
+
+//    @RequestMapping(value = "/api/callback", method = RequestMethod.POST)
+//    @ResponseBody
+//    public JSONObject callBack(Object payload) throws Exception {
+//        LOGGER.info("api callback:{}", JSON.toJSONString(payload));
+//        JSONObject object = new JSONObject();
+//        object.put("success", true);
+////        return object;
+//        throw new RuntimeException();
+//    }
 
 }

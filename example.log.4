@@ -1,0 +1,790 @@
+DEBUG main org.eclipse.leshan.core.model.ObjectLoader - Loading OMA standard object models for LWM2M 1.1
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/0-1_0.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/0-1_1.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/0.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/1-1_0.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/1-1_1.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/2-1_0.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/2.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/3-1_0.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/3-1_1.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/3.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/4-1_0.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/4-1_1.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/4-1_2.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/4.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/5-1_0.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/5.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/6.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/7.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/21.xml
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Loading net.i2p.crypto.eddsa.EdDSASecurityProvider failed!
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - AES: not restricted
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - EC: true
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - ECDSA not vulnerable.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [0]: SUN version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [1]: SunRsaSign version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [2]: SunEC version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [3]: SunJSSE version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [4]: SunJCE version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [5]: SunJGSS version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [6]: SunSASL version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [7]: XMLDSig version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [8]: SunPCSC version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [9]: Apple version 1.8.
+DEBUG main org.eclipse.californium.scandium.dtls.cipher.AeadBlockCipher - AES/CBC/NoPadding is not restricted!
+DEBUG main org.eclipse.californium.scandium.dtls.cipher.AeadBlockCipher - AES/CBC/NoPadding is not restricted!
+DEBUG main org.eclipse.californium.scandium.dtls.cipher.AeadBlockCipher - AES/CCM/NoPadding is not restricted!
+DEBUG main org.eclipse.californium.scandium.dtls.cipher.AeadBlockCipher - AES/CCM/NoPadding is not restricted!
+DEBUG main org.eclipse.californium.scandium.dtls.cipher.AeadBlockCipher - AES/CCM/NoPadding is not restricted!
+DEBUG main org.eclipse.californium.scandium.dtls.cipher.AeadBlockCipher - AES/CCM/NoPadding is not restricted!
+DEBUG main org.eclipse.californium.scandium.dtls.cipher.AeadBlockCipher - AES/GCM/NoPadding is not restricted!
+DEBUG main org.eclipse.californium.scandium.dtls.cipher.AeadBlockCipher - AES/GCM/NoPadding is not restricted!
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+DEBUG main org.eclipse.californium.core.network.InMemoryMessageExchangeStore - [LWM2M Client-coap://] using TokenProvider org.eclipse.californium.core.network.RandomTokenGenerator
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+DEBUG main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Starting endpoint at coap://0.0.0.0:0
+DEBUG main org.eclipse.californium.core.network.InMemoryMessageExchangeStore - [LWM2M Client-coap://] no MessageIdProvider set, using default org.eclipse.californium.core.network.InMemoryMessageIdProvider
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+DEBUG UDP-Receiver-0.0.0.0/0.0.0.0:0[0] org.eclipse.californium.elements.UDPConnector - Starting network stage thread [UDP-Receiver-0.0.0.0/0.0.0.0:0[0]]
+DEBUG UDP-Sender-0.0.0.0/0.0.0.0:0[1] org.eclipse.californium.elements.UDPConnector - Starting network stage thread [UDP-Sender-0.0.0.0/0.0.0.0:0[1]]
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:49993, recv buf = 65507, send buf = 65507, recv packet size = 2048
+DEBUG UDP-Sender-0.0.0.0/0.0.0.0:0[0] org.eclipse.californium.elements.UDPConnector - Starting network stage thread [UDP-Sender-0.0.0.0/0.0.0.0:0[0]]
+DEBUG UDP-Receiver-0.0.0.0/0.0.0.0:0[1] org.eclipse.californium.elements.UDPConnector - Starting network stage thread [UDP-Receiver-0.0.0.0/0.0.0.0:0[1]]
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:49993
+DEBUG main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Endpoint at coap://0.0.0.0:49993 is already started
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://leshan.eclipseprojects.io:5683 at coap://0.0.0.0:49993
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://leshan.eclipseprojects.io:5683 ...
+DEBUG RegistrationEngine#0 org.eclipse.californium.elements.util.NetworkInterfacesUtil - Found broadcast address /192.168.100.255 - en5.
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.stack.ReliabilityLayer - Exchange[L1, leshan.eclipseprojects.io:5683] send request
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.stack.ReliabilityLayer - Exchange[L1, leshan.eclipseprojects.io:5683] prepare retransmission for CON-POST   MID=   -1, Token=null, OptionSet={"Uri-Path":"rd", "Content-Format":"application/link-format", "Uri-Query":["b=U","lwm2m=1.1","lt=300","ep=yxy_client"]}, "</>;rt="oma.lwm2m";ct="60 110 11".. 86 bytes
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.InMemoryMessageExchangeStore - [LWM2M Client-coap://] Exchange[L1, leshan.eclipseprojects.io:5683] added with generated mid KeyMID[leshan.eclipseprojects.io/23.97.187.154:5683-51500], CON-POST   MID=51500, Token=null, OptionSet={"Uri-Path":"rd", "Content-Format":"application/link-format", "Uri-Query":["b=U","lwm2m=1.1","lt=300","ep=yxy_client"]}, "</>;rt="oma.lwm2m";ct="60 110 11".. 86 bytes
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.InMemoryMessageExchangeStore - [LWM2M Client-coap://] Exchange[L1, leshan.eclipseprojects.io:5683] added with generated token KeyToken[leshan.eclipseprojects.io/23.97.187.154:5683-DC0D6983AFA22B75], CON-POST   MID=51500, Token=DC0D6983AFA22B75, OptionSet={"Uri-Path":"rd", "Content-Format":"application/link-format", "Uri-Query":["b=U","lwm2m=1.1","lt=300","ep=yxy_client"]}, "</>;rt="oma.lwm2m";ct="60 110 11".. 86 bytes
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.UdpMatcher - tracking open request [KeyMID[leshan.eclipseprojects.io/23.97.187.154:5683-51500], KeyToken[leshan.eclipseprojects.io/23.97.187.154:5683-DC0D6983AFA22B75]]
+DEBUG UDP-Sender-0.0.0.0/0.0.0.0:0[1] org.eclipse.californium.elements.UDPConnector - UDPConnector (Thread[UDP-Sender-0.0.0.0/0.0.0.0:0[1],5,Californium/Elements]) sent 140 bytes to leshan.eclipseprojects.io/23.97.187.154:5683
+DEBUG UDP-Receiver-0.0.0.0/0.0.0.0:0[0] org.eclipse.californium.elements.UDPConnector - UDPConnector (0.0.0.0:49993) received 26 bytes from 23.97.187.154:5683
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.Exchange - Exchange[L1, leshan.eclipseprojects.io:5683, complete]!
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.InMemoryMessageExchangeStore - [LWM2M Client-coap://] removing Exchange[L1, leshan.eclipseprojects.io:5683, complete] for token KeyToken[leshan.eclipseprojects.io/23.97.187.154:5683-DC0D6983AFA22B75]
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.InMemoryMessageExchangeStore - [LWM2M Client-coap://] removing Exchange[L1, leshan.eclipseprojects.io:5683, complete] for MID KeyMID[leshan.eclipseprojects.io/23.97.187.154:5683-51500]
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.Exchange - local Exchange[L1, leshan.eclipseprojects.io:5683, complete] completed CON-POST   MID=51500, Token=DC0D6983AFA22B75, OptionSet={"Uri-Path":"rd", "Content-Format":"application/link-format", "Uri-Query":["b=U","lwm2m=1.1","lt=300","ep=yxy_client"]}, acked "</>;rt="oma.lwm2m";ct="60 110 11".. 86 bytes!
+DEBUG CoapServer(main)#1 org.eclipse.leshan.core.californium.CoapSyncRequestObserver - Received coap response: ACK-2.01   MID=51500, Token=DC0D6983AFA22B75, OptionSet={"Location-Path":["rd","hAe0s0Eiz5"]}, <empty data>
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/hAe0s0Eiz5'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+DEBUG main org.eclipse.leshan.core.model.ObjectLoader - Loading OMA standard object models for LWM2M 1.1
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/0-1_0.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/0-1_1.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/0.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/1-1_0.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/1-1_1.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/2-1_0.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/2.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/3-1_0.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/3-1_1.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/3.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/4-1_0.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/4-1_1.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/4-1_2.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/4.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/5-1_0.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/5.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/6.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/7.xml
+DEBUG main org.eclipse.leshan.core.model.DDFFileParser - Parsing DDF file /models/21.xml
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Loading net.i2p.crypto.eddsa.EdDSASecurityProvider failed!
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - AES: not restricted
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - EC: true
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - ECDSA not vulnerable.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [0]: SUN version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [1]: SunRsaSign version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [2]: SunEC version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [3]: SunJSSE version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [4]: SunJCE version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [5]: SunJGSS version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [6]: SunSASL version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [7]: XMLDSig version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [8]: SunPCSC version 1.8.
+DEBUG main org.eclipse.californium.elements.util.JceProviderUtil - Security Provider [9]: Apple version 1.8.
+DEBUG main org.eclipse.californium.scandium.dtls.cipher.AeadBlockCipher - AES/CBC/NoPadding is not restricted!
+DEBUG main org.eclipse.californium.scandium.dtls.cipher.AeadBlockCipher - AES/CBC/NoPadding is not restricted!
+DEBUG main org.eclipse.californium.scandium.dtls.cipher.AeadBlockCipher - AES/CCM/NoPadding is not restricted!
+DEBUG main org.eclipse.californium.scandium.dtls.cipher.AeadBlockCipher - AES/CCM/NoPadding is not restricted!
+DEBUG main org.eclipse.californium.scandium.dtls.cipher.AeadBlockCipher - AES/CCM/NoPadding is not restricted!
+DEBUG main org.eclipse.californium.scandium.dtls.cipher.AeadBlockCipher - AES/CCM/NoPadding is not restricted!
+DEBUG main org.eclipse.californium.scandium.dtls.cipher.AeadBlockCipher - AES/GCM/NoPadding is not restricted!
+DEBUG main org.eclipse.californium.scandium.dtls.cipher.AeadBlockCipher - AES/GCM/NoPadding is not restricted!
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+DEBUG main org.eclipse.californium.core.network.InMemoryMessageExchangeStore - [LWM2M Client-coap://] using TokenProvider org.eclipse.californium.core.network.RandomTokenGenerator
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+DEBUG main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Starting endpoint at coap://0.0.0.0:0
+DEBUG main org.eclipse.californium.core.network.InMemoryMessageExchangeStore - [LWM2M Client-coap://] no MessageIdProvider set, using default org.eclipse.californium.core.network.InMemoryMessageIdProvider
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+DEBUG UDP-Receiver-0.0.0.0/0.0.0.0:0[0] org.eclipse.californium.elements.UDPConnector - Starting network stage thread [UDP-Receiver-0.0.0.0/0.0.0.0:0[0]]
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:50928, recv buf = 65507, send buf = 65507, recv packet size = 2048
+DEBUG UDP-Receiver-0.0.0.0/0.0.0.0:0[1] org.eclipse.californium.elements.UDPConnector - Starting network stage thread [UDP-Receiver-0.0.0.0/0.0.0.0:0[1]]
+DEBUG UDP-Sender-0.0.0.0/0.0.0.0:0[1] org.eclipse.californium.elements.UDPConnector - Starting network stage thread [UDP-Sender-0.0.0.0/0.0.0.0:0[1]]
+DEBUG UDP-Sender-0.0.0.0/0.0.0.0:0[0] org.eclipse.californium.elements.UDPConnector - Starting network stage thread [UDP-Sender-0.0.0.0/0.0.0.0:0[0]]
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:50928
+DEBUG main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Endpoint at coap://0.0.0.0:50928 is already started
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://leshan.eclipseprojects.io:5683 at coap://0.0.0.0:50928
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://leshan.eclipseprojects.io:5683 ...
+DEBUG RegistrationEngine#0 org.eclipse.californium.elements.util.NetworkInterfacesUtil - Found broadcast address /192.168.100.255 - en5.
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.stack.ReliabilityLayer - Exchange[L1, leshan.eclipseprojects.io:5683] send request
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.stack.ReliabilityLayer - Exchange[L1, leshan.eclipseprojects.io:5683] prepare retransmission for CON-POST   MID=   -1, Token=null, OptionSet={"Uri-Path":"rd", "Content-Format":"application/link-format", "Uri-Query":["b=U","lwm2m=1.1","lt=300","ep=yxy_client"]}, "</>;rt="oma.lwm2m";ct="60 110 11".. 86 bytes
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.InMemoryMessageExchangeStore - [LWM2M Client-coap://] Exchange[L1, leshan.eclipseprojects.io:5683] added with generated mid KeyMID[leshan.eclipseprojects.io/23.97.187.154:5683-9398], CON-POST   MID= 9398, Token=null, OptionSet={"Uri-Path":"rd", "Content-Format":"application/link-format", "Uri-Query":["b=U","lwm2m=1.1","lt=300","ep=yxy_client"]}, "</>;rt="oma.lwm2m";ct="60 110 11".. 86 bytes
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.InMemoryMessageExchangeStore - [LWM2M Client-coap://] Exchange[L1, leshan.eclipseprojects.io:5683] added with generated token KeyToken[leshan.eclipseprojects.io/23.97.187.154:5683-087B53080DD44378], CON-POST   MID= 9398, Token=087B53080DD44378, OptionSet={"Uri-Path":"rd", "Content-Format":"application/link-format", "Uri-Query":["b=U","lwm2m=1.1","lt=300","ep=yxy_client"]}, "</>;rt="oma.lwm2m";ct="60 110 11".. 86 bytes
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.UdpMatcher - tracking open request [KeyMID[leshan.eclipseprojects.io/23.97.187.154:5683-9398], KeyToken[leshan.eclipseprojects.io/23.97.187.154:5683-087B53080DD44378]]
+DEBUG UDP-Sender-0.0.0.0/0.0.0.0:0[1] org.eclipse.californium.elements.UDPConnector - UDPConnector (Thread[UDP-Sender-0.0.0.0/0.0.0.0:0[1],5,Californium/Elements]) sent 140 bytes to leshan.eclipseprojects.io/23.97.187.154:5683
+DEBUG UDP-Receiver-0.0.0.0/0.0.0.0:0[0] org.eclipse.californium.elements.UDPConnector - UDPConnector (0.0.0.0:50928) received 26 bytes from 23.97.187.154:5683
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.Exchange - Exchange[L1, leshan.eclipseprojects.io:5683, complete]!
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.InMemoryMessageExchangeStore - [LWM2M Client-coap://] removing Exchange[L1, leshan.eclipseprojects.io:5683, complete] for token KeyToken[leshan.eclipseprojects.io/23.97.187.154:5683-087B53080DD44378]
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.InMemoryMessageExchangeStore - [LWM2M Client-coap://] removing Exchange[L1, leshan.eclipseprojects.io:5683, complete] for MID KeyMID[leshan.eclipseprojects.io/23.97.187.154:5683-9398]
+DEBUG CoapServer(main)#1 org.eclipse.californium.core.network.Exchange - local Exchange[L1, leshan.eclipseprojects.io:5683, complete] completed CON-POST   MID= 9398, Token=087B53080DD44378, OptionSet={"Uri-Path":"rd", "Content-Format":"application/link-format", "Uri-Query":["b=U","lwm2m=1.1","lt=300","ep=yxy_client"]}, acked "</>;rt="oma.lwm2m";ct="60 110 11".. 86 bytes!
+DEBUG CoapServer(main)#1 org.eclipse.leshan.core.californium.CoapSyncRequestObserver - Received coap response: ACK-2.01   MID= 9398, Token=087B53080DD44378, OptionSet={"Location-Path":["rd","MEocX3sfXs"]}, <empty data>
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/MEocX3sfXs'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:52590, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:52590
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://leshan.eclipseprojects.io:5683 at coap://0.0.0.0:52590
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://leshan.eclipseprojects.io:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/CxaOB9yioa'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:59595, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:59595
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://leshan.eclipseprojects.io:5683 at coap://0.0.0.0:59595
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://leshan.eclipseprojects.io:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/4hX75U8815'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:60309, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:60309
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://leshan.eclipseprojects.io:5683 at coap://0.0.0.0:60309
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://leshan.eclipseprojects.io:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/aEcmNyhntu'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Server-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Server-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:5683, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Server-coap://] Started endpoint at coap://0.0.0.0:5683
+INFO main org.eclipse.leshan.server.californium.LeshanServer - LWM2M server started at coap://0.0.0.0/0.0.0.0:5683 
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:64874, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:64874
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://leshan.eclipseprojects.io:5683 at coap://0.0.0.0:64874
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://leshan.eclipseprojects.io:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/oU29XCpbeb'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Server-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Server-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:5683, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Server-coap://] Started endpoint at coap://0.0.0.0:5683
+INFO main org.eclipse.leshan.server.californium.LeshanServer - LWM2M server started at coap://0.0.0.0/0.0.0.0:5683 
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:50278, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:50278
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://leshan.eclipseprojects.io:5683 at coap://0.0.0.0:50278
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://leshan.eclipseprojects.io:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/0fZHezw5gD'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:65525, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:65525
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://leshan.eclipseprojects.io:5683 at coap://0.0.0.0:65525
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://leshan.eclipseprojects.io:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/skmaIGBTOo'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Server-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Server-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:5683, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Server-coap://] Started endpoint at coap://0.0.0.0:5683
+INFO main org.eclipse.leshan.server.californium.LeshanServer - LWM2M server started at coap://0.0.0.0/0.0.0.0:5683 
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:65244, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:65244
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://leshan.eclipseprojects.io:5683 at coap://0.0.0.0:65244
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://leshan.eclipseprojects.io:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/XMJ9hESBAH'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO CoapServer(main)#7 org.eclipse.californium.core.server.ServerMessageDeliverer - did not find resource /magiclink/devInfo requested by 192.168.20.42:41507
+INFO CoapServer(main)#1 org.eclipse.californium.core.server.ServerMessageDeliverer - did not find resource /magiclink/devInfo requested by 192.168.20.42:41507
+INFO CoapServer(main)#2 org.eclipse.californium.core.server.ServerMessageDeliverer - did not find resource /magiclink/devInfo requested by 192.168.20.42:41507
+INFO CoapServer(main)#8 org.eclipse.californium.core.server.ServerMessageDeliverer - did not find resource /magiclink/devInfo requested by 192.168.20.42:41507
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:55357, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:55357
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://leshan.eclipseprojects.io:5683 at coap://0.0.0.0:55357
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://leshan.eclipseprojects.io:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/d5vT5dKSaT'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Server-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Server-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:5683, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Server-coap://] Started endpoint at coap://0.0.0.0:5683
+INFO main org.eclipse.leshan.server.californium.LeshanServer - LWM2M server started at coap://0.0.0.0/0.0.0.0:5683 
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:53877, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:53877
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://127.0.0.1:5683 at coap://0.0.0.0:53877
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://127.0.0.1:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/B0SDRaTOmA'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:52590, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:52590
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://127.0.0.1:5683 at coap://0.0.0.0:52590
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://127.0.0.1:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/sUUfG6qhfg'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:54274, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:54274
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://127.0.0.1:5683 at coap://0.0.0.0:54274
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://127.0.0.1:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/jWpoPfdukj'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update failed: NOT_FOUND(404) .
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://127.0.0.1:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/Ykve1KWhgS'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update failed: NOT_FOUND(404) .
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://127.0.0.1:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/OVdwpAV6V0'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update failed: NOT_FOUND(404) .
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://127.0.0.1:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/d4oO56PGVZ'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update failed: NOT_FOUND(404) .
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://127.0.0.1:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/hADzoorrA5'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update failed: NOT_FOUND(404) .
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://127.0.0.1:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/n5cmyx2Dlz'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO CoapServer(main)#8 org.eclipse.californium.core.server.ServerMessageDeliverer - did not find resource /magiclink/devInfo requested by 192.168.20.42:41117
+INFO CoapServer(main)#1 org.eclipse.californium.core.server.ServerMessageDeliverer - did not find resource /magiclink/devInfo requested by 192.168.20.42:41117
+INFO CoapServer(main)#4 org.eclipse.californium.core.server.ServerMessageDeliverer - did not find resource /magiclink/devInfo requested by 192.168.20.42:41117
+INFO CoapServer(main)#6 org.eclipse.californium.core.server.ServerMessageDeliverer - did not find resource /magiclink/devInfo requested by 192.168.20.42:41117
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://127.0.0.1:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://127.0.0.1:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
