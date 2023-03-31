@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChatGptTest {
+
     @Test
     public void test() {
         // 消息列表
@@ -33,5 +34,6 @@ public class ChatGptTest {
                     System.out.println(JSONObject.toJSONString(item));
                 }
         );
+
     }
 }
