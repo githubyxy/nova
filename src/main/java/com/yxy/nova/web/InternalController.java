@@ -28,6 +28,7 @@ import com.yxy.nova.mwh.elasticsearch.exception.ElasticsearchClientException;
 import com.yxy.nova.mwh.elasticsearch.util.ESLogger;
 import com.yxy.nova.mwh.utils.exception.BizException;
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
+import com.yxy.nova.netty.tcp.TcpServer;
 import com.yxy.nova.netty.udp.UdpServer;
 import com.yxy.nova.nio.UDPMessage;
 import com.yxy.nova.service.wechat.WechatService;
@@ -67,6 +68,8 @@ public class InternalController {
     private AggregationClient aggregationClient;
     @Autowired
     private UdpServer udpServer;
+    @Autowired
+    private TcpServer tcpServer;
     @Autowired(required = false)
     private DebeziumHandler debeziumHandler;
     @Autowired
@@ -79,6 +82,14 @@ public class InternalController {
         message.setKey("test1");
         message.setContent(content);
         udpServer.singleCast(ip, JSONObject.toJSONString(message));
+    }
+
+    @GetMapping("tcptest")
+    public void tcptest(String ip, String content) throws InterruptedException {
+        UDPMessage message = new UDPMessage();
+        message.setKey("test1");
+        message.setContent(content);
+        tcpServer.singleCast(ip, JSONObject.toJSONString(message));
     }
 
     @PostMapping("/execCallTest")
