@@ -1,17 +1,17 @@
 package test;
 
+import com.yxy.nova.mwh.utils.text.TextUtil;
+import org.apache.commons.codec.DecoderException;
+import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import reactor.test.StepVerifier;
-import reactor.util.function.Tuple2;
-import reactor.util.function.Tuple3;
 
-import java.time.Duration;
-import java.time.temporal.ChronoUnit;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.util.*;
-import java.util.function.BiFunction;
-import java.util.function.Function;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author yuxiaoyu
@@ -152,25 +152,52 @@ public class ReactorTest {
 
 
     @Test
-    public void splitTest() {
-        Flux<Integer> flux = Flux.range(1, 39);
-
-        flux.window(4).map(i -> {
-            i.map(j -> {
-                System.out.print(j + " ");
-                return j;
-            }).subscribe();
-            System.out.println();
-            return i;
-        }).subscribe();
-
-        flux.buffer(4).map(i -> {
-            i.forEach(System.out::print);
-
-            System.out.println();
-            return i;
-        }).subscribe();
+    public void splitTest() throws DecoderException {
+//        byte[] a= new byte[]{76, 32, 57, -64, 3, -14, -69, 69};
+        char[] a= new char[]{89, 111, 159, 94, 29, 32, 206, 173};
+        byte[] bytes = Hex.decodeHex(a);
+        System.out.println(bytes);
+        //                  4c2039c03f2b b45
 
     }
+
+
+
+    private static String bytesToHexStr(byte[] b) {
+        if (b == null) return "";
+        StringBuffer strBuffer = new StringBuffer(b.length * 3);
+        for (int i = 0; i < b.length; i++) {
+            strBuffer.append(Integer.toHexString(b[i] & 0xff));
+        }
+        return strBuffer.toString();
+    }
+
+
+    @Test
+    public void test4() throws UnsupportedEncodingException {
+        String meterId = "37646";
+        while (meterId.length() < 6) {
+            meterId = "0" + meterId;
+        }
+        System.out.println(meterId);
+    }
+
+
+    @Test
+    public void testR() {
+//         String[] regex = {
+//                ".*\\d+.*", //数字
+//                ".*[A-Z]+.*", //大写字母
+//                ".*[a-z]+.*", //小写字母
+//                ".*[^x00-xff]+.*", //2位字符(中文?)
+//                ".*[~!@#$%^&*()_+|<>,.?/:;'\\[\\]{}\"]+.*", //特殊符号
+//        };
+
+         String regex = "^[0-9a-zA-Z_\\-]+$";
+
+        System.out.println("12314234".matches(regex));
+
+    }
+
 
 }

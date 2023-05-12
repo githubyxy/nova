@@ -643,7 +643,7 @@ POSSIBILITY OF SUCH DAMAGE.
             </Item>
             <Item ID="50">
                 <Name>Neutral Current</Name>
-                <Operations>R</Operations>
+                <Operations>RW</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Optional</Mandatory>
                 <Type>Float</Type>
