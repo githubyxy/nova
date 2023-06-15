@@ -3,6 +3,7 @@ package test;
 import com.sun.tools.javac.util.Convert;
 import org.junit.Test;
 
+import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;

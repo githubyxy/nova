@@ -1,10 +1,12 @@
 package test;
 
+import com.alibaba.fastjson.JSON;
 import com.yxy.nova.mwh.utils.text.TextUtil;
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
+import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -199,5 +201,27 @@ public class ReactorTest {
 
     }
 
+    @Test
+    public void sorttest() {
+        List<String> list = new ArrayList<>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        list.add("d");
+        list.add("e");
+        list.add("f");
+        list.add("g");
+
+         Flux.fromIterable(list)
+                .flatMap((item) -> {
+                    return Mono.just(item);
+                }).collectList()
+                .flatMap((list1) -> {
+                    return Mono.just(list1);
+                }).flatMap(obj -> {
+                    System.out.println(JSON.toJSONString(obj));
+                    return Mono.just(obj);
+                }).subscribe();
+    }
 
 }
