@@ -14,6 +14,7 @@ import com.theokanning.openai.completion.chat.ChatCompletionChoice;
 import com.theokanning.openai.completion.chat.ChatCompletionRequest;
 import com.theokanning.openai.completion.chat.ChatMessage;
 import com.theokanning.openai.service.OpenAiService;
+import com.yxy.nova.bean.WebResponse;
 import com.yxy.nova.canal.DebeziumHandler;
 import com.yxy.nova.cmpp.CmppSmsClient;
 import com.yxy.nova.cmpp.pojo.SmsSendResult;
@@ -31,6 +32,8 @@ import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import com.yxy.nova.netty.tcp.TcpServer;
 import com.yxy.nova.netty.udp.UdpServer;
 import com.yxy.nova.nio.UDPMessage;
+import com.yxy.nova.phoneinfo.PhoneNumberInfo;
+import com.yxy.nova.phoneinfo.PhoneNumberLookup;
 import com.yxy.nova.service.wechat.WechatService;
 import com.yxy.nova.util.SignUtil;
 import com.yxy.nova.util.SimpleHttpClient;
@@ -323,4 +326,16 @@ public class InternalController {
     }
 
 
+    /**
+     * curl -XGET http://127.0.0.1/innerapi/phoneInfo
+     * @return
+     */
+    @GetMapping("phoneInfo")
+    @ResponseBody
+    public WebResponse phoneInfo() {
+        PhoneNumberLookup phoneNumberLookup = new PhoneNumberLookup();
+        phoneNumberLookup.initAllByte();
+        List<PhoneNumberInfo> all = phoneNumberLookup.getAll();
+        return WebResponse.successData(all.size());
+    }
 }
