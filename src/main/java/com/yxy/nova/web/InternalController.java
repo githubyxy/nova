@@ -7,6 +7,7 @@ package com.yxy.nova.web;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+<<<<<<< HEAD
 import com.google.common.base.Charsets;
 import com.theokanning.openai.completion.CompletionChoice;
 import com.theokanning.openai.completion.CompletionRequest;
@@ -15,6 +16,7 @@ import com.theokanning.openai.completion.chat.ChatCompletionRequest;
 import com.theokanning.openai.completion.chat.ChatMessage;
 import com.theokanning.openai.service.OpenAiService;
 import com.yxy.nova.bean.WebResponse;
+import com.yxy.nova.bean.EncryModeEnum;
 import com.yxy.nova.canal.DebeziumHandler;
 import com.yxy.nova.cmpp.CmppSmsClient;
 import com.yxy.nova.cmpp.pojo.SmsSendResult;
@@ -34,6 +36,7 @@ import com.yxy.nova.netty.udp.UdpServer;
 import com.yxy.nova.nio.UDPMessage;
 import com.yxy.nova.phoneinfo.PhoneNumberInfo;
 import com.yxy.nova.phoneinfo.PhoneNumberLookup;
+import com.yxy.nova.service.encryption.EncryptFactory;
 import com.yxy.nova.service.wechat.WechatService;
 import com.yxy.nova.util.SignUtil;
 import com.yxy.nova.util.SimpleHttpClient;
@@ -77,6 +80,8 @@ public class InternalController {
     private DebeziumHandler debeziumHandler;
     @Autowired
     private SimpleHttpClient httpClient;
+    @Autowired
+    private EncryptFactory encryptFactory;
 
 
     @GetMapping("udptest")
@@ -87,12 +92,20 @@ public class InternalController {
         udpServer.singleCast(ip, JSONObject.toJSONString(message));
     }
 
+<<<<<<< HEAD
     @GetMapping("tcptest")
     public void tcptest(String ip, String content) throws InterruptedException {
         UDPMessage message = new UDPMessage();
         message.setKey("test1");
         message.setContent(content);
         tcpServer.singleCast(ip, JSONObject.toJSONString(message));
+    }
+
+    @GetMapping("md5")
+    @ResponseBody
+    public String md5(String content) {
+        String encrypt = encryptFactory.createInstance(EncryModeEnum.MD5).encrypt(content);
+        return encrypt;
     }
 
     @PostMapping("/execCallTest")
