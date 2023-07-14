@@ -27,10 +27,7 @@ import org.eclipse.leshan.core.response.SendResponse;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.util.Arrays;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ThreadPoolExecutor;
 
 public class LeshanClientDemo {
@@ -46,12 +43,14 @@ public class LeshanClientDemo {
 
         // create objects
         ObjectsInitializer initializer = new ObjectsInitializer(new StaticModel(models));
-        initializer.setInstancesForObject(LwM2mId.SECURITY, Security.noSec("coap://localhost:5683", 12345));
-//        initializer.setInstancesForObject(LwM2mId.SECURITY, Security.noSec("coap://leshan.eclipseprojects.io:5683", 12345));
-        initializer.setInstancesForObject(LwM2mId.SERVER, new Server(12345, 5 * 60L));
+//        initializer.setInstancesForObject(LwM2mId.SECURITY, Security.noSec("coap://localhost:5683", 12345));
+        initializer.setInstancesForObject(LwM2mId.SECURITY, Security.noSec("coap://leshan.eclipseprojects.io:5683", 12345));
+        Server server = new Server(12345, 5 * 60L);
+        initializer.setInstancesForObject(LwM2mId.SERVER, server);
 //        initializer.setInstancesForObject(LwM2mId.SERVER, new Server(12345, 5 * 60L, BindingMode.U, false));
         initializer.setInstancesForObject(LwM2mId.DEVICE, new Device("Eclipse Leshan yxy", "model12345", "12345", EnumSet.of(BindingMode.U)));
 //        initializer.setInstancesForObject(LwM2mId.CONNECTIVITY_STATISTICS, new ConnectivityStatistics());
+
         RandomTemperatureSensor randomTemperatureSensor = new RandomTemperatureSensor();
         initializer.setInstancesForObject(3303, randomTemperatureSensor);
 
@@ -64,7 +63,8 @@ public class LeshanClientDemo {
 //        builder.setObjects(initializer.create(3303));
         // add it to the client
         builder.setObjects(initializer.createAll());
-//        builder.setDataSenders(new ManualDataSender());
+        builder.setDataSenders(new ManualDataSender());
+//        builder.setLocalAddress("127.0.0.1", 5683);
         LeshanClient client = builder.build();
 
         client.start();
@@ -77,8 +77,8 @@ public class LeshanClientDemo {
 //            randomTemperatureSensor.fireResourceChange(5700);
 //        });
 
-        randomTemperatureSensor.adjustTemperature(10f);
-        randomTemperatureSensor.adjustTemperature(30f);
+//        randomTemperatureSensor.adjustTemperature(10f);
+//        randomTemperatureSensor.adjustTemperature(30f);
 
 //        randomTemperatureSensor.addResourceListener(new ResourceListener() {
 //            @Override
@@ -87,28 +87,33 @@ public class LeshanClientDemo {
 //            }
 //        });
 
-        new Thread(() -> {
-            while (true) {
-                try {
-                    Thread.sleep(5000L);
-                    randomTemperatureSensor.fireResourceChange(5700);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
+//        new Thread(() -> {
+//            while (true) {
+//                try {
+//                    Thread.sleep(5000L);
+//                    randomTemperatureSensor.fireResourceChange(5700);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }).start();
 
-//        Identity unsecure = Identity.unsecure(new InetSocketAddress(5683));
-//        ServerIdentity serverIdentity = new ServerIdentity(unsecure, 12345L);
+//        ServerIdentity serverIdentity = client.getRegisteredServers().values().iterator().next();
+//        client.getSendService().sendData(serverIdentity, ContentFormat.JSON,
+//                Arrays.asList("/3/0/1", "/3/0/2"), 1234L); // 关联自定义的发送服务
+
+
+//        ServerIdentity serverIdentity = client.getRegisteredServers().values().iterator().next();
 //        List<String> list = Arrays.asList("3303/0/5700");
-//
 //
 //        SendService sendService = client.getSendService();
 //
-//
 //        ManualDataSender manualSender = (ManualDataSender) sendService.getDataSender("MANUAL_SENDER");
+//        List<LwM2mPath> paths = new ArrayList<>();
+//        paths.add(new LwM2mPath("3303/0/5700"));
+//        manualSender.collectData(paths);
 //        manualSender.sendCollectedData(serverIdentity, ContentFormat.SENML_CBOR, 5000L,true);
-
+//
 //        SendResponse sendResponse = sendService.sendData(serverIdentity, ContentFormat.SENML_CBOR, list, 5000L);
 //        System.out.println("sendResponse = " + JSON.toJSONString(sendResponse));
 //        sendService.getDataSender()

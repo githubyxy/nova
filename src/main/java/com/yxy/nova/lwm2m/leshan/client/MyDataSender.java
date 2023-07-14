@@ -16,7 +16,7 @@
 //    public void sendCollectedData(ServerIdentity server, ContentFormat format, long timeoutInMs, boolean noFlush) throws NoDataException {
 //        TimestampedLwM2mNodes data = null;
 //
-//        this.dataSenderManager.sendData(server, format, data, (response) -> {
+//        this.dataSenderManager.sendData(server, format, (TimestampedLwM2mNodes) null, (response) -> {
 //            if (response.isFailure()) {
 //                this.restoreData(data);
 //            }

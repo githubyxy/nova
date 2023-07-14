@@ -1,115 +1,86 @@
 package com.yxy.nova.netty.tcp;
 
-import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.UnpooledByteBufAllocator;
+import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.DatagramPacket;
+import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.util.CharsetUtil;
-import lombok.extern.slf4j.Slf4j;
+import io.netty.handler.codec.string.StringDecoder;
+import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
+import io.netty.handler.timeout.IdleStateEvent;
 
 import javax.annotation.PostConstruct;
-import java.net.InetSocketAddress;
-import java.util.Map;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
-@Slf4j
 public class TcpServer {
     private int port;
-    private Map<String, TcpHandler> handlers;
-
-    private Channel channel;
-
+    private EventLoopGroup bossGroup;
+    private EventLoopGroup workerGroup;
 
     @PostConstruct
-    public void startTcpServer(){
-        new Thread(() -> {
-            EventLoopGroup group = new NioEventLoopGroup(1);
-            EventLoopGroup workerGroup = new NioEventLoopGroup();
-            try {
-                ServerBootstrap bootstrap = new ServerBootstrap();
-                bootstrap.group(group, workerGroup)  //配置一个线程组
-                        .channel(NioServerSocketChannel.class)  //设置channel类型为UPD
-                        .option(ChannelOption.SO_BROADCAST, true)   //支持广播
-                        .option(ChannelOption.SO_RCVBUF, 2048 * 1024)// 设置channel读缓冲区大小
-                        .option(ChannelOption.SO_SNDBUF, 2048 * 1024)// 设置channel写缓冲区大小
-                        .childHandler(new ChannelInitializer<Channel>() {
-                            @Override
-                            protected void initChannel(Channel ch) throws Exception {       //装配handler流水线
-                                ChannelPipeline pipeline = ch.pipeline();    //Handler将按pipeline中添加的顺序执行
-                                pipeline.addLast(new TcpServerHandler(handlers));   //自定义的处理器
-                            }
-                        });
-                //绑定端口（默认是异步的，可以加ChannelFuture的监听事件），sync()同步阻塞等待连接成功；客户端使用.connect(host, port)连接
-                ChannelFuture channelFuture = bootstrap.bind(port).sync();
-                log.info("tcp服务器启动，端口为{}", port);
-//                channel = channelFuture.channel();
-                //sync()同步阻塞等待channel关闭
-                channelFuture.channel().closeFuture().sync();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }finally{
-                //关闭资源
-                group.shutdownGracefully();
-                workerGroup.shutdownGracefully();
-            }
-        }).start();
+    public void start() throws InterruptedException {
+        bossGroup = new NioEventLoopGroup();
+        workerGroup = new NioEventLoopGroup();
 
-        new Thread(() -> {
-            EventLoopGroup group = new NioEventLoopGroup();
+        try {
+            ServerBootstrap b = new ServerBootstrap();
+            b.group(bossGroup, workerGroup)
+                    .channel(NioServerSocketChannel.class)
+                    .handler(new LoggingHandler(LogLevel.INFO))
+                    .childHandler(new ChannelInitializer<SocketChannel>() {
+                        @Override
+                        protected void initChannel(SocketChannel ch) {
+//                            ch.pipeline().addLast(new IdleStateHandler(0, 0, 10, TimeUnit.SECONDS));
+                            ch.pipeline().addLast(new StringDecoder(StandardCharsets.UTF_8));
+                            ch.pipeline().addLast(new StringEncoder(StandardCharsets.UTF_8));
+                            ch.pipeline().addLast(new TcpServerHandler());
+                        }
+                    })
+                    .childOption(ChannelOption.SO_KEEPALIVE, true);
 
-            try{
-                Bootstrap bootstrap = new Bootstrap();
-                bootstrap.group(group)
-                        .channel(NioSocketChannel.class)
-                        .handler(new ChannelInitializer<Channel>() {
-                            @Override
-                            protected void initChannel(Channel ch) throws Exception {
-                                ChannelPipeline pipeline = ch.pipeline();
-                                pipeline.addLast(new TcpClientHandler());
-                            }
-                        });
+            ChannelFuture f = b.bind(port).sync();
+            System.out.println("Server started on port " + port);
 
-                ChannelFuture channelFuture = bootstrap.connect("localhost", port).sync();
-                channel = channelFuture.channel();
-                channelFuture.channel().closeFuture().sync();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            } finally {
-                group.shutdownGracefully();
-            }
-        }).start();
-
-    }
-
-
-    public void singleCast(String host, String pushMsg){
-        ByteBuf byteBuf1 = new UnpooledByteBufAllocator(false).buffer();
-        byteBuf1.writeCharSequence(pushMsg, CharsetUtil.UTF_8);
-        this.channel.writeAndFlush(byteBuf1).addListener(new ChannelFutureListener() {
-            @Override
-            public void operationComplete(ChannelFuture channelFuture) throws Exception {
-
-            }
-        });
-    }
-
-    public int getPort() {
-        return port;
+            f.channel().closeFuture().sync();
+        } finally {
+            workerGroup.shutdownGracefully();
+            bossGroup.shutdownGracefully();
+        }
     }
 
     public void setPort(int port) {
         this.port = port;
     }
 
-    public Map<String, TcpHandler> getHandlers() {
-        return handlers;
+    private class TcpServerHandler extends io.netty.channel.SimpleChannelInboundHandler<String> {
+        @Override
+        protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
+            System.out.println("Received request: " + msg);
+
+            // 处理请求并返回响应
+            String response = "Hello, client!";
+            ctx.writeAndFlush(Unpooled.copiedBuffer(response, Charset.forName("utf-8")));
+        }
+
+        @Override
+        public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+            if (evt instanceof IdleStateEvent) {
+                System.out.println("Connection idle. Closing channel.");
+                ctx.close();
+            }
+
+            super.userEventTriggered(ctx, evt);
+        }
+
+        @Override
+        public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
+            cause.printStackTrace();
+            ctx.close();
+        }
     }
 
-    public void setHandlers(Map<String, TcpHandler> handlers) {
-        this.handlers = handlers;
-    }
 }

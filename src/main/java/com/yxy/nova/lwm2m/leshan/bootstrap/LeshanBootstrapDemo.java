@@ -13,6 +13,7 @@ public class LeshanBootstrapDemo {
     public static void main(String[] args) throws InvalidConfigurationException {
         // Create Bootstrap Server
         LeshanBootstrapServerBuilder builder = new LeshanBootstrapServerBuilder();
+        builder.setLocalAddress(null, 5685);
         JSONFileBootstrapStore configStore = new JSONFileBootstrapStore();
         builder.setConfigStore(configStore);
 
@@ -28,7 +29,8 @@ public class LeshanBootstrapDemo {
 // here we will use the leshan sandbox at : https://leshan.eclipseprojects.io/
         BootstrapConfig.ServerSecurity dmSecurity = new BootstrapConfig.ServerSecurity();
         dmSecurity.uri = "coap://leshan.eclipseprojects.io";
-        dmSecurity.serverId = 2222;
+//        dmSecurity.uri = "coap://localhost:5683";
+        dmSecurity.serverId = 12345;
         dmSecurity.securityMode = SecurityMode.NO_SEC;
         config.security.put(1, dmSecurity); // O is reserved for bootstrap server
 
@@ -40,7 +42,7 @@ public class LeshanBootstrapDemo {
 
 // Add the config to the store for your device.
 //        JSONFileBootstrapStore configStore = new JSONFileBootstrapStore();
-        configStore.add("myDevice", config);
+        configStore.add("yxy_client", config);
 
 // Start server
         bootstrapServer.start();
