@@ -16,18 +16,18 @@
     <bean id="myTestUdpHandler" class="com.yxy.nova.netty.udp.MyTestUdpHandler"/>
 
 
-    <bean id="tcpServer" class="com.yxy.nova.netty.tcp.TcpServer">
-        <property name="port" value="8899" />
-        <!-- 配置任务类型和任务处理器的映射关系 -->
-<!--        <property name="handlers">-->
-<!--            <map>-->
-<!--                <entry key="test1" value-ref="myTestTcpHandler" />-->
-<!--            </map>-->
-<!--        </property>-->
-    </bean>
+<!--    <bean id="tcpServer" class="com.yxy.nova.netty.tcp.TcpServer">-->
+<!--        <property name="port" value="8899" />-->
+<!--        &lt;!&ndash; 配置任务类型和任务处理器的映射关系 &ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="handlers">&ndash;&gt;-->
+<!--&lt;!&ndash;            <map>&ndash;&gt;-->
+<!--&lt;!&ndash;                <entry key="test1" value-ref="myTestTcpHandler" />&ndash;&gt;-->
+<!--&lt;!&ndash;            </map>&ndash;&gt;-->
+<!--&lt;!&ndash;        </property>&ndash;&gt;-->
+<!--    </bean>-->
     <bean id="tcpClient" class="com.yxy.nova.netty.tcp.TcpClient">
-        <property name="host" value="127.0.0.1" />
-        <property name="port" value="8899" />
+        <property name="host" value="111.51.123.129" />
+        <property name="port" value="9088" />
     </bean>
 
     <bean id="myTestTcpHandler" class="com.yxy.nova.netty.tcp.MyTestTcpHandler"/>

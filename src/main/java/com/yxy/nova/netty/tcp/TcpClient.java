@@ -59,6 +59,7 @@ public class TcpClient {
         future.addListener((ChannelFuture cf) -> {
             if (cf.isSuccess()) {
                 channel = cf.channel();
+                log.info("connect to server success");
             } else {
                 log.error("Failed to connect to server. Retrying in 5 seconds...");
                 cf.channel().eventLoop().schedule(this::doConnect, 5, TimeUnit.SECONDS);

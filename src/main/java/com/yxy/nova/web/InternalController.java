@@ -12,6 +12,7 @@ import com.theokanning.openai.completion.chat.ChatCompletionRequest;
 import com.theokanning.openai.completion.chat.ChatMessage;
 import com.theokanning.openai.service.OpenAiService;
 import com.yxy.nova.bean.EncryModeEnum;
+import com.yxy.nova.bean.HazardRealDataMessage;
 import com.yxy.nova.bean.WebResponse;
 import com.yxy.nova.canal.DebeziumHandler;
 import com.yxy.nova.cmpp.CmppSmsClient;
@@ -25,6 +26,7 @@ import com.yxy.nova.mwh.elasticsearch.dto.InsertAction;
 import com.yxy.nova.mwh.elasticsearch.dto.SearchResult;
 import com.yxy.nova.mwh.elasticsearch.exception.ElasticsearchClientException;
 import com.yxy.nova.mwh.elasticsearch.util.ESLogger;
+import com.yxy.nova.mwh.utils.UUIDGenerator;
 import com.yxy.nova.mwh.utils.exception.BizException;
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import com.yxy.nova.netty.tcp.TcpClient;
@@ -35,8 +37,10 @@ import com.yxy.nova.phoneinfo.PhoneNumberInfo;
 import com.yxy.nova.phoneinfo.PhoneNumberLookup;
 import com.yxy.nova.service.encryption.EncryptFactory;
 import com.yxy.nova.service.wechat.WechatService;
+import com.yxy.nova.util.AESUtil32;
 import com.yxy.nova.util.SignUtil;
 import com.yxy.nova.util.SimpleHttpClient;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.elasticsearch.action.bulk.BulkResponse;
@@ -52,7 +56,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
 
-
+@Slf4j
 @RestController
 @RequestMapping(value="/innerapi")
 public class InternalController {
@@ -90,8 +94,31 @@ public class InternalController {
     }
 
     @GetMapping("tcptest")
-    public void tcptest(String ip, String content) throws InterruptedException {
-        tcpClient.sendRequest(content);
+    public void tcptest(String gatewayId, String quotaId, String value) throws InterruptedException {
+
+        HazardRealDataMessage hazardRealDataMessage = new HazardRealDataMessage();
+        hazardRealDataMessage.setDataId(UUIDGenerator.generate());
+        hazardRealDataMessage.setDataType("energy_data");
+
+        hazardRealDataMessage.setEnterpriseId(gatewayId.substring(0, gatewayId.length() - 2));
+        hazardRealDataMessage.setGatewayId(gatewayId);
+        hazardRealDataMessage.setCollectTime(DateTimeUtil.datetime14());
+        hazardRealDataMessage.setIsConnectDataSource(true);
+        hazardRealDataMessage.setReportType("report");
+
+        List<HazardRealDataMessage.RealData> datas = new ArrayList<>();
+        HazardRealDataMessage.RealData realData = new HazardRealDataMessage.RealData();
+        realData.setQuotaId(quotaId);
+        realData.setValue(Float.valueOf(value));
+        realData.setIsValid(true);
+        datas.add(realData);
+        hazardRealDataMessage.setDatas(datas);
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("enterpriseId", hazardRealDataMessage.getEnterpriseId());
+        jsonObject.put("report", AESUtil32.encrypt("7fd2e257a128435b8b6574e5753d825d", JSONObject.toJSONString(hazardRealDataMessage)));
+        log.info("sendRequest:{}", JSONObject.toJSONString(hazardRealDataMessage));
+        tcpClient.sendRequest(jsonObject.toJSONString() + "@@");
     }
 
     @GetMapping("md5")
