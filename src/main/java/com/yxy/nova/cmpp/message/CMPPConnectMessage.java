@@ -10,6 +10,7 @@ import com.yxy.nova.cmpp.CMPPConstant;
 import com.yxy.nova.cmpp.common.SecurityTools;
 import com.yxy.nova.cmpp.common.TypeConvert;
 import com.google.common.base.Charsets;
+import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 
 import java.util.Date;
 
@@ -46,11 +47,11 @@ public class CMPPConnectMessage extends CMPPMessage
             System.arraycopy(shared_Secret.getBytes(Charsets.UTF_8), 0, tmpbuf, tmploc, shared_Secret.length());
             tmploc += shared_Secret.length();
         }
-        String tmptime = "0008080808";
+        String tmptime = DateTimeUtil.datetime14(timestamp).substring(4);
         System.arraycopy(tmptime.getBytes(Charsets.UTF_8), 0, tmpbuf, tmploc, 10);
         SecurityTools.md5(tmpbuf, 0, len, super.buf, 18);
         super.buf[34] = (byte)version;
-        TypeConvert.int2byte(0x7b4da8, super.buf, 35);
+        TypeConvert.int2byte(Integer.valueOf(tmptime), super.buf, 35);
         outStr = ",source_Addr=".concat(String.valueOf(String.valueOf(source_Addr)));
         outStr = String.valueOf(String.valueOf((new StringBuffer(String.valueOf(String.valueOf(outStr)))).append(",version=").append(version)));
         outStr = String.valueOf(String.valueOf((new StringBuffer(String.valueOf(String.valueOf(outStr)))).append(",shared_Secret=").append(shared_Secret)));

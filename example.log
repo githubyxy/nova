@@ -298,3 +298,10 @@ INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
 INFO Thread-15 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
 INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
 INFO Thread-15 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO Thread-15 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO Thread-14 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO Thread-13 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
