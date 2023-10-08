@@ -2,10 +2,13 @@ package test.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import lombok.SneakyThrows;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -14,6 +17,7 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +28,8 @@ import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 发送短信示例
@@ -78,8 +84,52 @@ public class HttpTest {
 //		doubleCall();//调用双呼接口
 //		getCtwing();
 
-		ctwing();
+//		ctwing();
+		String s = GetIngList();
+		System.out.println(s);
 	}
+
+
+	@SneakyThrows
+	public static void publish() {
+		List<NameValuePair> nameValuePairs = new ArrayList<>();
+		nameValuePairs.add(new BasicNameValuePair("content", "java测试接口"));
+		nameValuePairs.add(new BasicNameValuePair("publicFlag", "1"));
+		String post = post("https://ing.cnblogs.com/ajax/ing/Publish", nameValuePairs, null);
+		JSONObject publish = JSONObject.parseObject(post);
+
+
+	}
+
+	@SneakyThrows
+	public static String GetIngList() {
+		String getStr = get("https://ing.cnblogs.com/ajax/ing/GetIngList?IngListType=my&PageIndex=1&PageSize=1&Tag=&_=" + System.currentTimeMillis(), null);
+
+		// 创建正则表达式模式
+		Pattern pattern = Pattern.compile("onclick='return DelIng\\((\\d+)\\)'");
+
+		// 创建匹配器
+		Matcher matcher = pattern.matcher(getStr);
+
+		if (matcher.find()) {
+			// 提取匹配的数字
+			String number = matcher.group(1);
+			return number + "";
+		} else {
+			return null;
+		}
+	}
+
+
+	@SneakyThrows
+	public static boolean del(String id) {
+		List<NameValuePair> nameValuePairs = new ArrayList<>();
+		nameValuePairs.add(new BasicNameValuePair("ingId", id));
+		String post = post("https://ing.cnblogs.com/ajax/ing/del", nameValuePairs, null);
+
+		return "删除成功".equals(post);
+	}
+
 
 	private static void getCtwing() throws IOException {
 
@@ -208,6 +258,51 @@ public class HttpTest {
 			e.printStackTrace();
 		}
 		return s;
+	}
+
+
+	public static String post(String url, List<NameValuePair> nameValuePairs, Map<String, String> headerMap) throws IOException {
+		logger.info("请求的url:{}, nameValuePairs: {}", Arrays.asList(url, JSON.toJSONString(nameValuePairs)), "httpPost");
+		String result = null;
+		CloseableHttpResponse response = null;
+
+		try {
+			HttpPost httpPost = new HttpPost(url);
+			httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
+			if (headerMap != null) {
+				Iterator var7 = headerMap.entrySet().iterator();
+
+				while(var7.hasNext()) {
+					Map.Entry<String, String> entry = (Map.Entry)var7.next();
+					httpPost.setHeader((String)entry.getKey(), (String)entry.getValue());
+				}
+			}
+
+			httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs, "UTF-8"));
+			response = client.execute(httpPost);
+			int statusCode = response.getStatusLine().getStatusCode();
+			if (200 != statusCode) {
+				logger.error("请求URL {} 时返回的statusCode为 {}", Arrays.asList(url, statusCode), "httpPost");
+			}
+
+			result = EntityUtils.toString(response.getEntity(), "UTF-8");
+			logger.info( "服务端返回的response: {}", Arrays.asList(result), "httpPost");
+			EntityUtils.consume(response.getEntity());
+		} catch (IOException var16) {
+			logger.error("请求URL {} 时发生错误", Arrays.asList(url, var16), "httpPost");
+			throw var16;
+		} finally {
+			if (response != null) {
+				try {
+					response.close();
+				} catch (IOException var15) {
+					logger.error("关闭响应流出现错误: {} ", Arrays.asList(var15.getMessage(), var15), "httpPost");
+				}
+			}
+
+		}
+
+		return result;
 	}
 
 	/**

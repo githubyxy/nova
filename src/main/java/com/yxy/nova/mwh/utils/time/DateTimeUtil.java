@@ -7,7 +7,9 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.time.temporal.WeekFields;
 import java.util.Date;
+import java.util.Locale;
 
 public class DateTimeUtil {
 
@@ -572,5 +574,23 @@ public class DateTimeUtil {
      */
     public static Date atHour(int hour) {
         return atHour(new Date(), hour);
+    }
+
+    /**
+     * 计算日期属于一年中的第几周
+     * @param date10
+     * @return
+     */
+    public static int getWeekNumber(String date10) {
+        try {
+            LocalDate date = LocalDate.parse(date10, DATE10_FORMATTER);
+
+            WeekFields weekFields = WeekFields.of(Locale.getDefault());
+            int weekNumber = date.get(weekFields.weekOfWeekBasedYear());
+            return weekNumber;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
     }
 }

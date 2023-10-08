@@ -5,12 +5,16 @@ import com.alibaba.fastjson.JSONObject;
 import com.sun.tools.javac.util.Convert;
 import com.yxy.nova.util.DateTimeUtils;
 import com.yxy.nova.util.QRCode;
+import lombok.SneakyThrows;
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
+import java.net.NetworkInterface;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -101,4 +105,55 @@ public class CodeTest {
         System.out.println(cleanedPhoneNumber);
     }
 
+
+    @Test
+    public void testMacAddress() {
+        System.out.println(getMacAddress());
+    }
+
+    // 获取MAC地址的实用方法
+    private static String getMacAddress() {
+        try {
+            NetworkInterface networkInterface = NetworkInterface.getByInetAddress(java.net.InetAddress.getLocalHost());
+            byte[] mac = networkInterface.getHardwareAddress();
+
+            if (mac != null) {
+                StringBuilder macAddressBuilder = new StringBuilder();
+                for (byte b : mac) {
+                    macAddressBuilder.append(String.format("%02X:", b));
+                }
+                if (macAddressBuilder.length() > 0) {
+                    macAddressBuilder.deleteCharAt(macAddressBuilder.length() - 1);
+                }
+                return macAddressBuilder.toString();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Test
+    public void test6() {
+//        String result = linuxCommand("ps", "-ef|grep", "hxiot-standalone", "|grep", "-v", "grep", "|awk", "'{print", "$2}'", "|xargs", "kill", "-9");
+//        String result = linuxCommand("bash", "-c", "ps -ef | grep hxiot-standalone | grep -v grep | awk '{ print $2}' | xargs kill -9");
+        String macAddress = linuxCommand("/bin/sh", "-c", "cat /sys/class/net/$(ip route show default |awk 'NR==1' | awk '/default/ {print $5}')/address");
+        System.out.println(macAddress);
+    }
+
+    @SneakyThrows
+    public static String linuxCommand(String ... commands) {
+        Process proc = new ProcessBuilder(commands)
+                .redirectErrorStream(true)
+                .start();
+
+        ArrayList<String> output = new ArrayList<>();
+        BufferedReader br = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+        String line;
+        while ((line = br.readLine()) != null){
+            output.add(line);
+        }
+
+        return StringUtils.join(output, System.lineSeparator());
+    }
 }
