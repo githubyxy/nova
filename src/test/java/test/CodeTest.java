@@ -72,9 +72,9 @@ public class CodeTest {
     @Test
     public void test2() {
         QRCode handler = new QRCode();
-        String text = "肯德基疯狂星期四，V我50";
+        String text = "陌生的二维码你都敢扫？反诈app下载了没";
 //        handler.encoderQRCode(text, "/Users/yuxiaoyu/Downloads/a.png", "png");
-        handler.encoderQRCode(text, "/Users/yuxiaoyu/Downloads/b.png", "png", 5);
+        handler.encoderQRCode(text, "/Users/yuxiaoyu/Downloads/c.png", "png", 5);
 
 
     }
