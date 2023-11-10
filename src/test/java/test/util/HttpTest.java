@@ -85,8 +85,9 @@ public class HttpTest {
 //		getCtwing();
 
 //		ctwing();
-		String s = GetIngList();
-		System.out.println(s);
+//		String s = GetIngList();
+//		System.out.println(s);
+		publish();
 	}
 
 
@@ -97,7 +98,7 @@ public class HttpTest {
 		nameValuePairs.add(new BasicNameValuePair("publicFlag", "1"));
 		String post = post("https://ing.cnblogs.com/ajax/ing/Publish", nameValuePairs, null);
 		JSONObject publish = JSONObject.parseObject(post);
-
+		System.out.println(publish.toJSONString());
 
 	}
 
