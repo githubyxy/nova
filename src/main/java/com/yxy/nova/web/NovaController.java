@@ -1,10 +1,14 @@
 package com.yxy.nova.web;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.yxy.nova.bean.EncryModeEnum;
 import com.yxy.nova.bean.EncryptRequest;
 import com.yxy.nova.bean.TestVo;
 import com.yxy.nova.bean.WebResponse;
+import com.yxy.nova.bean.doris.CallRecordFlattenedDTO;
+import com.yxy.nova.doris.DorisTableStreamLoader;
+import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import com.yxy.nova.service.encryption.EncryptFactory;
 import com.yxy.nova.util.LinuxUtil;
 import com.yxy.nova.util.PDFUtil;
@@ -19,6 +23,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,6 +45,10 @@ public class NovaController {
 
     @Autowired
     private EncryptFactory encryptFactory;
+
+    @Resource(name = "callRecordDorisTableStreamLoader")
+    private DorisTableStreamLoader dorisTableStreamLoader;
+
 
     @GetMapping(value = "index")
     public String gotoPage(Model model){
@@ -146,5 +155,13 @@ public class NovaController {
              log.error("doc2pdf异常", thr);
          }
      }
+
+    @GetMapping(value = "doris")
+    public String doris(){
+        CallRecordFlattenedDTO callRecordFlattenedDTO = new CallRecordFlattenedDTO();
+        callRecordFlattenedDTO.setDs(DateTimeUtil.date10());
+        dorisTableStreamLoader.addData(callRecordFlattenedDTO);
+         return JSONObject.toJSONString(callRecordFlattenedDTO);
+    }
 
 }
