@@ -96,5 +96,8 @@ CREATE DATABASE "sms" WITH DURATION 2w REPLICATION 1 NAME "default";
 
 访问：http://ip:8086 用户名/密码随意
 
+# doris
+https://doris.apache.org/zh-CN/docs/dev/install/standard-deployment/
+
 
 
