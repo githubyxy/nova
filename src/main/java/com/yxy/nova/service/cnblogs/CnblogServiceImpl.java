@@ -3,10 +3,14 @@ package com.yxy.nova.service.cnblogs;
 import com.alibaba.fastjson.JSONObject;
 import com.yxy.nova.util.SimpleHttpClient;
 import lombok.SneakyThrows;
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class CnblogServiceImpl implements CnblogService{
@@ -42,11 +46,12 @@ public class CnblogServiceImpl implements CnblogService{
 
     @SneakyThrows
     public void refreshToken() {
-        JSONObject request = new JSONObject();
-        request.put("client_id",client_id);
-        request.put("client_secret",client_secret);
-        request.put("grant_type",grant_type);
-        String result = httpClient.postJson("https://api.cnblogs.com/token", request);
+        List<NameValuePair> request = new ArrayList();
+        request.add(new BasicNameValuePair("client_id", client_id));
+        request.add(new BasicNameValuePair("client_secret", client_secret));
+        request.add(new BasicNameValuePair("grant_type", grant_type));
+
+        String result = httpClient.post("https://api.cnblogs.com/token", request);
         JSONObject data = JSONObject.parseObject(result);
         accessToken = data.getString("access_token");
         expiresAt = data.getLong("expires_in") * 1000;
