@@ -24,6 +24,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -39,6 +41,10 @@ import java.util.regex.Pattern;
 public class HttpTest {
 
 	private static final Logger logger = LoggerFactory.getLogger(HttpTest.class);
+	private static final String client_id = "02f98ed2-3c85-43ac-b4cb-bce89cac192f";
+
+	private  static final String client_secret = "-UspyAK-8gg8hmChm_89J_EPSdlnfI0zdahn10i0WCNqdO3NHnBA82zQfp98Dz2TWeeO7q88J4EfNZbG";
+
 
 	/**
 	 * 连接到某台主机的最大连接数
@@ -87,7 +93,8 @@ public class HttpTest {
 //		ctwing();
 //		String s = GetIngList();
 //		System.out.println(s);
-		publish();
+//		publish();
+		authorize();
 	}
 
 
@@ -103,8 +110,23 @@ public class HttpTest {
 	}
 
 	@SneakyThrows
+	public static void authorize() {
+		List<NameValuePair> request = new ArrayList();
+		request.add(new BasicNameValuePair("client_id", client_id));
+		request.add(new BasicNameValuePair("scope", "openid profile CnBlogsApi offline_access"));
+		request.add(new BasicNameValuePair("response_type", "code id_token"));
+		request.add(new BasicNameValuePair("redirect_uri", "https://oauth.cnblogs.com/auth/callback"));
+		request.add(new BasicNameValuePair("state", "q12w2aj8627hd7"));
+		request.add(new BasicNameValuePair("nonce", "u17j3g73hh3hg3jh3"));
+
+		String result = get("https://oauth.cnblogs.com/connect/authorize", request);
+		System.out.println(result);
+
+	}
+
+	@SneakyThrows
 	public static String GetIngList() {
-		String getStr = get("https://ing.cnblogs.com/ajax/ing/GetIngList?IngListType=my&PageIndex=1&PageSize=1&Tag=&_=" + System.currentTimeMillis(), null);
+		String getStr = get("https://ing.cnblogs.com/ajax/ing/GetIngList?IngListType=my&PageIndex=1&PageSize=1&Tag=&_=" + System.currentTimeMillis(), new HashMap<>());
 
 		// 创建正则表达式模式
 		Pattern pattern = Pattern.compile("onclick='return DelIng\\((\\d+)\\)'");
@@ -353,6 +375,39 @@ public class HttpTest {
 			}
 		}
 		return result;
+	}
+
+
+	/**
+	 * 执行get请求
+	 * @param url
+	 * @param nameValuePairs
+	 * @return
+	 */
+	public static String get(String url, List<NameValuePair> nameValuePairs) throws IOException {
+		return get(url, nameValuePairs, null);
+	}
+
+	/**
+	 * 执行get请求
+	 * @param url
+	 * @param nameValuePairs
+	 * @param headerMap
+	 * @return
+	 */
+	public static String get(String url, List<NameValuePair> nameValuePairs, Map<String, String> headerMap) throws IOException {
+		StringBuffer buf = new StringBuffer();
+		for (int i = 0; i < nameValuePairs.size(); i++) {
+			buf.append(i == 0 ? "?" : "&");
+			try {
+				buf.append(nameValuePairs.get(i).getName()).append("=")
+						.append(URLEncoder.encode(nameValuePairs.get(i).getValue(), "UTF-8"));
+			} catch (UnsupportedEncodingException e) {
+				logger.error( "URL {} 编码时发生错误", Arrays.asList(url, e), "urlEncode");
+				return null;
+			}
+		}
+		return get(url + buf.toString(), headerMap);
 	}
 
 	/**
