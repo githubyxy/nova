@@ -99,5 +99,12 @@ CREATE DATABASE "sms" WITH DURATION 2w REPLICATION 1 NAME "default";
 # doris
 https://doris.apache.org/zh-CN/docs/dev/install/standard-deployment/
 
+# debezium
+### 设置权限
+chmod 777 /root/data/docker/debezium/data
+### 启动debezium 注意 --link pgsql
+docker run -d --name debezium -p 8020:8080 --net docker_default --ip 172.18.0.20 -v /root/data/docker/debezium/conf:/debezium/conf -v /root/data/docker/debezium/data:/debezium/data --link pgsql --restart=always debezium/server:2.0
+
+
 
 
