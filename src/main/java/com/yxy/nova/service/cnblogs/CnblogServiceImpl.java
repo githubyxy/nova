@@ -18,8 +18,8 @@ public class CnblogServiceImpl implements CnblogService{
     @Autowired
     private SimpleHttpClient httpClient;
 
-    private String client_id = "02f98ed2-3c85-43ac-b4cb-bce89cac192f";
-    private String client_secret = "-UspyAK-8gg8hmChm_89J_EPSdlnfI0zdahn10i0WCNqdO3NHnBA82zQfp98Dz2TWeeO7q88J4EfNZbG";
+    private String client_id = "02f98ed2-3c85-43ac-b4cb-bce89cac192fy";
+    private String client_secret = "-UspyAK-8gg8hmChm_89J_EPSdlnfI0zdahn10i0WCNqdO3NHnBA82zQfp98Dz2TWeeO7q88J4EfNZbGxy";
     private String grant_type = "client_credentials";
 
     private String accessToken;
