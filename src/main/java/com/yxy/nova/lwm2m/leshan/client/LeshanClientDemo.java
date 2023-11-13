@@ -43,8 +43,8 @@ public class LeshanClientDemo {
 
         // create objects
         ObjectsInitializer initializer = new ObjectsInitializer(new StaticModel(models));
-//        initializer.setInstancesForObject(LwM2mId.SECURITY, Security.noSec("coap://localhost:5683", 12345));
-        initializer.setInstancesForObject(LwM2mId.SECURITY, Security.noSec("coap://leshan.eclipseprojects.io:5683", 12345));
+        initializer.setInstancesForObject(LwM2mId.SECURITY, Security.noSec("coap://localhost:5683", 12345));
+//        initializer.setInstancesForObject(LwM2mId.SECURITY, Security.noSec("coap://leshan.eclipseprojects.io:5683", 12345));
         Server server = new Server(12345, 5 * 60L);
         initializer.setInstancesForObject(LwM2mId.SERVER, server);
 //        initializer.setInstancesForObject(LwM2mId.SERVER, new Server(12345, 5 * 60L, BindingMode.U, false));
