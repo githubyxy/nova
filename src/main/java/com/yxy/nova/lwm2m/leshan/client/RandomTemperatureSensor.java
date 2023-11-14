@@ -41,13 +41,13 @@ public class RandomTemperatureSensor extends BaseInstanceEnabler {
 
     public RandomTemperatureSensor() {
         this.scheduler = Executors.newSingleThreadScheduledExecutor(new NamedThreadFactory("Temperature Sensor"));
-//        scheduler.scheduleAtFixedRate(new Runnable() {
-//
-//            @Override
-//            public void run() {
-//                adjustTemperature();
-//            }
-//        }, 2, 2, TimeUnit.SECONDS);
+        scheduler.scheduleAtFixedRate(new Runnable() {
+
+            @Override
+            public void run() {
+                adjustTemperature();
+            }
+        }, 2, 2, TimeUnit.SECONDS);
     }
 
     @Override
@@ -84,8 +84,10 @@ public class RandomTemperatureSensor extends BaseInstanceEnabler {
         return toBeTruncated.setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 
-    public void adjustTemperature(float f) {
-        currentTemp = f;
+    public void adjustTemperature() {
+//        currentTemp = f;
+        float delta = (rng.nextInt(20) - 10) / 10f;
+        currentTemp += delta;
         Integer changedResource = adjustMinMaxMeasuredValue(currentTemp);
         if (changedResource != null) {
             fireResourcesChange(getResourcePath(SENSOR_VALUE), getResourcePath(changedResource));

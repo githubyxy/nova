@@ -1,389 +1,583 @@
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://leshan.eclipseprojects.io:5683 (response timeout 120000ms)...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://leshan.eclipseprojects.io:5683 in 53s...
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-17 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-16 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-17 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-15 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-15 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-17 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-16 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-15 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-17 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-16 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-15 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-15 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-16 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-15 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-15 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-15 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-15 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-15 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-14 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-INFO Thread-13 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-<<<<<<< HEAD
-INFO Thread-12 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-=======
-INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
-INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
-INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
-INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
-INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
-INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
-INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
-INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
-INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
-INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
-INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
-INFO main org.eclipse.californium.ban - Started.
-INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
-INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
-INFO main org.eclipse.californium.core.CoapServer - Starting server
-INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
-INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:60949, recv buf = 65507, send buf = 65507, recv packet size = 2048
-INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:60949
-INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://192.168.100.40:5683 at coap://0.0.0.0:60949
-INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://192.168.100.40:5683 ...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration failed: NOT_FOUND(404) .
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Try to register to coap://192.168.100.40:5683 again in 600s...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://192.168.100.40:5683 ...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration failed: NOT_FOUND(404) .
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Try to register to coap://192.168.100.40:5683 again in 600s...
-INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
-INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
-INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
-INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
-INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
-INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
-INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
-INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
-INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
-INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
-INFO main org.eclipse.californium.ban - Started.
-INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Server-coap://] CoapEndpoint uses udp context
-INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Server-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
-INFO main org.eclipse.californium.core.CoapServer - Starting server
-INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
-INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:5683, recv buf = 65507, send buf = 65507, recv packet size = 2048
-INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Server-coap://] Started endpoint at coap://0.0.0.0:5683
-INFO main org.eclipse.leshan.server.californium.LeshanServer - LWM2M server started at coap://0.0.0.0/0.0.0.0:5683 
-INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
-INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
-INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
-INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
-INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
-INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
-INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
-INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
-INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
-INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
-INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
-INFO main org.eclipse.californium.ban - Started.
-INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
-INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
-INFO main org.eclipse.californium.core.CoapServer - Starting server
-INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
-INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:49718, recv buf = 65507, send buf = 65507, recv packet size = 2048
-INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:49718
-INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://localhost:5683 at coap://0.0.0.0:49718
-INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://localhost:5683 ...
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/gn3xI1DMtN'.
-INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
-INFO CoapServer(main)#1 com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
-INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-4FCE319FE507AD3D] and resource /3303 (Exchange[R2, 127.0.0.1:5683], size 1)
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
 INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
 INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
 INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
 INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
 INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
 INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
 INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
 INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
 INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
->>>>>>> a970d7c (leshan client)
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700

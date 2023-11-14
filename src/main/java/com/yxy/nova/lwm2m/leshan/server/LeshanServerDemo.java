@@ -6,22 +6,24 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import org.eclipse.leshan.core.node.LwM2mNode;
-import org.eclipse.leshan.core.node.LwM2mResource;
-import org.eclipse.leshan.core.node.LwM2mSingleResource;
-import org.eclipse.leshan.core.node.TimestampedLwM2mNodes;
+import lombok.SneakyThrows;
+import org.eclipse.leshan.client.californium.object.ObjectResource;
+import org.eclipse.leshan.client.resource.listener.ResourceListener;
+import org.eclipse.leshan.core.model.ObjectLoader;
+import org.eclipse.leshan.core.model.ObjectModel;
+import org.eclipse.leshan.core.node.*;
 import org.eclipse.leshan.core.observation.CompositeObservation;
 import org.eclipse.leshan.core.observation.Observation;
 import org.eclipse.leshan.core.observation.SingleObservation;
-import org.eclipse.leshan.core.request.ObserveRequest;
-import org.eclipse.leshan.core.request.ReadRequest;
-import org.eclipse.leshan.core.request.SendRequest;
-import org.eclipse.leshan.core.request.WriteRequest;
+import org.eclipse.leshan.core.request.*;
 import org.eclipse.leshan.core.response.*;
 import org.eclipse.leshan.core.util.Hex;
 import org.eclipse.leshan.server.californium.LeshanServer;
 import org.eclipse.leshan.server.californium.LeshanServerBuilder;
+import org.eclipse.leshan.server.model.LwM2mModelProvider;
+import org.eclipse.leshan.server.model.VersionedModelProvider;
 import org.eclipse.leshan.server.observation.ObservationListener;
+import org.eclipse.leshan.server.queue.PresenceListener;
 import org.eclipse.leshan.server.registration.Registration;
 import org.eclipse.leshan.server.registration.RegistrationListener;
 import org.eclipse.leshan.server.registration.RegistrationService;
@@ -30,15 +32,26 @@ import org.eclipse.leshan.server.send.SendListener;
 
 import java.util.Base64;
 import java.util.Collection;
+import java.util.List;
 
 public class LeshanServerDemo {
+    @SneakyThrows
     public static void main(String[] args) {
         LeshanServerBuilder builder = new LeshanServerBuilder();
+
+        // Define model provider
+        List<ObjectModel> models = ObjectLoader.loadAllDefault();
+        String[] modelPaths = new String[] {"3303.xml"};
+        models.addAll(ObjectLoader.loadDdfResources("/models/", modelPaths));
+        LwM2mModelProvider modelProvider = new VersionedModelProvider(models);
+        builder.setObjectModelProvider(modelProvider);
+
         LeshanServer server = builder.build();
         server.start();
 
         server.getRegistrationService().addListener(new RegistrationListener() {
 
+            @SneakyThrows
             public void registered(Registration registration, Registration previousReg,
                                    Collection<Observation> previousObsersations) {
                 System.out.println("LeshanServerDemo new device: " + registration.getEndpoint());
@@ -72,6 +85,12 @@ public class LeshanServerDemo {
 //                }
 
                 //
+//                String contentFormatParam = "TLV";//req.getParameter(FORMAT_PARAM);
+//                ContentFormat contentFormat = contentFormatParam != null
+//                        ? ContentFormat.fromName(contentFormatParam.toUpperCase())
+//                        : null;
+//                ObserveRequest request = new ObserveRequest(contentFormat, "/3303/0/5700");
+//                ObserveResponse cResponse = server.send(registration, request, 5 * 1000);
 
                 ObserveRequest observeRequest = new ObserveRequest(3303, 0, 5700);
                 server.send(registration, observeRequest, new ResponseCallback<ObserveResponse>() {
@@ -88,7 +107,7 @@ public class LeshanServerDemo {
             }
 
             public void updated(RegistrationUpdate update, Registration updatedReg, Registration previousReg) {
-                System.out.println("LeshanServerDemo device is still here: " + updatedReg.getEndpoint());
+                System.out.println("LeshanServerDemo device updated: " + updatedReg.getEndpoint());
             }
 
             public void unregistered(Registration registration, Collection<Observation> observations, boolean expired,
@@ -111,13 +130,13 @@ public class LeshanServerDemo {
 
             @Override
             public void onResponse(SingleObservation observation, Registration registration, ObserveResponse response) {
-                System.out.println("LeshanServerDemo SingleObservation onResponse: " + JSON.toJSONString(observation));
-                try {
-                    ReadResponse readResponse = server.send(registration, new ReadRequest(3303, 0, 5700));
-                    System.out.println("LeshanServerDemo SingleObservation ReadResponse: " + JSON.toJSONString(readResponse.isSuccess()));
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+                System.out.println("LeshanServerDemo SingleObservation onResponse: " + response.toString());
+//                try {
+//                    ReadResponse readResponse = server.send(registration, new ReadRequest(3303, 0, 5700));
+//                    System.out.println("LeshanServerDemo SingleObservation ReadResponse: " + JSON.toJSONString(readResponse));
+//                } catch (InterruptedException e) {
+//                    throw new RuntimeException(e);
+//                }
             }
 
             @Override
@@ -142,6 +161,7 @@ public class LeshanServerDemo {
 
             }
         });
+
 
     }
 
