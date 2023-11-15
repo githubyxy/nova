@@ -7,6 +7,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import lombok.SneakyThrows;
+import org.apache.commons.collections.MapUtils;
 import org.eclipse.leshan.client.californium.object.ObjectResource;
 import org.eclipse.leshan.client.resource.listener.ResourceListener;
 import org.eclipse.leshan.core.model.ObjectLoader;
@@ -85,25 +86,40 @@ public class LeshanServerDemo {
 //                }
 
                 //
-//                String contentFormatParam = "TLV";//req.getParameter(FORMAT_PARAM);
-//                ContentFormat contentFormat = contentFormatParam != null
-//                        ? ContentFormat.fromName(contentFormatParam.toUpperCase())
-//                        : null;
+                String contentFormatParam = "TLV";//req.getParameter(FORMAT_PARAM);
+                ContentFormat contentFormat = contentFormatParam != null
+                        ? ContentFormat.fromName(contentFormatParam.toUpperCase())
+                        : null;
 //                ObserveRequest request = new ObserveRequest(contentFormat, "/3303/0/5700");
 //                ObserveResponse cResponse = server.send(registration, request, 5 * 1000);
 
-                ObserveRequest observeRequest = new ObserveRequest(3303, 0, 5700);
-                server.send(registration, observeRequest, new ResponseCallback<ObserveResponse>() {
-                    @Override
-                    public void onResponse(ObserveResponse observeResponse) {
-                        System.out.println("LeshanServerDemo observeResponse:" + observeResponse.toString());
-                    }
-                }, new ErrorCallback() {
-                    @Override
-                    public void onError(Exception e) {
-                        System.out.println("LeshanServerDemo observeResponse:" + e.getMessage());
-                    }
+                modelProvider.getObjectModel(registration).getObjectModels().stream().filter(objectModel -> MapUtils.isNotEmpty(objectModel.resources)).forEach(objectModel -> {
+                    int objectInstanceId = objectModel.id;
+                    int resourceId = 0;
+                    objectModel.resources.entrySet().forEach(entry -> {
+                        Integer resourceInstanceId = entry.getKey();
+                        ObserveRequest request = new ObserveRequest(contentFormat, "/" + objectInstanceId + "/" + resourceId + "/" + resourceInstanceId);
+                        try {
+                            ObserveResponse cResponse = server.send(registration, request, 5 * 1000);
+                            System.out.println("LWM2M server ObserveResponse: " + cResponse.toString());
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+                    });
                 });
+
+//                ObserveRequest observeRequest = new ObserveRequest(3303, 0, 5700);
+//                server.send(registration, observeRequest, new ResponseCallback<ObserveResponse>() {
+//                    @Override
+//                    public void onResponse(ObserveResponse observeResponse) {
+//                        System.out.println("LeshanServerDemo observeResponse:" + observeResponse.toString());
+//                    }
+//                }, new ErrorCallback() {
+//                    @Override
+//                    public void onError(Exception e) {
+//                        System.out.println("LeshanServerDemo observeResponse:" + e.getMessage());
+//                    }
+//                });
             }
 
             public void updated(RegistrationUpdate update, Registration updatedReg, Registration previousReg) {
