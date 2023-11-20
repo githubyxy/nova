@@ -8,8 +8,8 @@ import com.yxy.nova.service.impl.MyPowerServiceImpl;
 
 public class SingletonFactory {
 
-    public static Object createProcessor(Object proto) {
-        switch ("proto.getRequest().getProtoType()") {
+    public static Object createProcessor(String proto) {
+        switch (proto) {
             case "HTTP":
                 return SingletonEnum.INSTANCE.getMyOpenAiService();
             case "CMPP":
@@ -19,10 +19,9 @@ public class SingletonFactory {
         }
     }
 
-    public enum SingletonEnum {
+    private enum SingletonEnum {
 
         INSTANCE;
-
 
         private  MyOpenAiService myOpenAiService;
         private  MyPowerService myPowerService;
@@ -42,7 +41,7 @@ public class SingletonFactory {
     }
 
 //    public static void main(String[] args) {
-//        System.out.println(SingletonEnum.INSTANCE.getMyOpenAiService() == SingletonEnum.INSTANCE.getMyOpenAiService());
+//        System.out.println(createProcessor("CMPP") == createProcessor("CMPP"));
 //    }
 
 }
