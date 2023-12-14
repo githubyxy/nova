@@ -43,9 +43,9 @@ public class LeshanClientDemo {
 
         // create objects
         ObjectsInitializer initializer = new ObjectsInitializer(new StaticModel(models));
-        initializer.setInstancesForObject(LwM2mId.SECURITY, Security.noSec("coap://localhost:5683", 12345));
+        initializer.setInstancesForObject(LwM2mId.SECURITY, Security.noSec("coap://localhost:5683", 123));
 //        initializer.setInstancesForObject(LwM2mId.SECURITY, Security.noSec("coap://leshan.eclipseprojects.io:5683", 12345));
-        Server server = new Server(12345, 5 * 60L);
+        Server server = new Server(123, 5 * 60L);
         initializer.setInstancesForObject(LwM2mId.SERVER, server);
 //        initializer.setInstancesForObject(LwM2mId.SERVER, new Server(12345, 5 * 60L, BindingMode.U, false));
         initializer.setInstancesForObject(LwM2mId.DEVICE, new Device("Eclipse Leshan yxy", "model12345", "12345", EnumSet.of(BindingMode.U)));
@@ -68,7 +68,6 @@ public class LeshanClientDemo {
         LeshanClient client = builder.build();
 
         client.start();
-
 
 //        Map<String, ServerIdentity> registeredServers = client.getRegisteredServers();
 //        System.out.println(registeredServers.toString());

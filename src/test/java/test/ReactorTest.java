@@ -7,7 +7,9 @@ import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import reactor.core.Disposable;
+import reactor.core.publisher.EmitterProcessor;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.FluxSink;
 import reactor.core.publisher.Mono;
 
 import java.io.UnsupportedEncodingException;
@@ -222,6 +224,19 @@ public class ReactorTest {
                     System.out.println(JSON.toJSONString(obj));
                     return Mono.just(obj);
                 }).subscribe();
+    }
+
+       EmitterProcessor<String> myexchangeProcessor = EmitterProcessor.create(false);
+        FluxSink<String> mysink = myexchangeProcessor.sink();
+    @Test
+    public void test1() {
+        Disposable subscribe = myexchangeProcessor.subscribe(s -> {
+            System.out.println(s + ":");
+        });
+        mysink.next("1");
+        mysink.next("2");
+        mysink.next("3");
+
     }
 
 }

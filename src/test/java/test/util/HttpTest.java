@@ -2,6 +2,7 @@ package test.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.yxy.nova.util.SimpleHttpClient;
 import lombok.SneakyThrows;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpEntity;

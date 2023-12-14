@@ -32,15 +32,24 @@ public class YxyTest {
     @Test
     public void optest() {
         Optional<Object> empty = Optional.empty();
-        Optional<String> s = Optional.of("123");
+//        Optional<String> s = Optional.of("123");
         Optional<Object> o = Optional.ofNullable(null);
 
-        System.out.println(s.get());
+//        System.out.println(s.get());
         System.out.println(o.isPresent());
 
         o.ifPresent(s1 -> {
             System.out.println(s1);
         });
+    }
+
+    @Test
+    public void test3() {
+        String strA = new String();
+        String strB = new String();
+        strA = "java";
+        strB = "java";
+        System.out.println(strA == strB);
     }
 
 }

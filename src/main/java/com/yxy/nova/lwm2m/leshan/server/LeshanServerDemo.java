@@ -50,6 +50,7 @@ public class LeshanServerDemo {
         LeshanServer server = builder.build();
         server.start();
 
+
         server.getRegistrationService().addListener(new RegistrationListener() {
 
             @SneakyThrows
@@ -57,7 +58,7 @@ public class LeshanServerDemo {
                                    Collection<Observation> previousObsersations) {
                 System.out.println("LeshanServerDemo new device: " + registration.getEndpoint());
 //                try {
-////                    WriteResponse response = server.send(registration, new WriteRequest( 3303,0,5700, 23));
+                    WriteResponse response = server.send(registration, new WriteRequest( 3303,0,5700, 23));
 //                    ReadResponse response = server.send(registration, new ReadRequest(3303,0,5700));
 //                    if (response.isSuccess()) {
 ////                        LwM2mSingleResource content = (LwM2mSingleResource)response.getContent();

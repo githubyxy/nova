@@ -165,3 +165,232 @@ INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEn
 INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
 INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
 INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:64104, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:64104
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://192.168.100.18:5683 at coap://0.0.0.0:64104
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://192.168.100.18:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration failed: FORBIDDEN(403) .
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Try to register to coap://192.168.100.18:5683 again in 600s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://192.168.100.18:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration failed: FORBIDDEN(403) .
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Try to register to coap://192.168.100.18:5683 again in 600s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:49206, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:49206
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://192.168.100.18:5683 at coap://0.0.0.0:49206
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://192.168.100.18:5683 ...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Server-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Server-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:5683, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Server-coap://] Started endpoint at coap://0.0.0.0:5683
+INFO main org.eclipse.leshan.server.californium.LeshanServer - LWM2M server started at coap://0.0.0.0/0.0.0.0:5683 
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration failed: Timeout.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://192.168.100.18:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration failed: Timeout.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Try to register to coap://192.168.100.18:5683 again in 600s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://192.168.100.18:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration failed: Timeout.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://192.168.100.18:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration failed: Timeout.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Try to register to coap://192.168.100.18:5683 again in 600s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://192.168.100.18:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration failed: Timeout.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://192.168.100.18:5683 ...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Server-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Server-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:5683, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Server-coap://] Started endpoint at coap://0.0.0.0:5683
+INFO main org.eclipse.leshan.server.californium.LeshanServer - LWM2M server started at coap://0.0.0.0/0.0.0.0:5683 
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:57622, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:57622
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://localhost:5683 at coap://0.0.0.0:57622
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://localhost:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/tYQtewH8Z8'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-D5FDDE63826015E0] and resource /1 (Exchange[R2, 127.0.0.1:5683], size 1)
+INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-BBB1C3BC10C00087] and resource /1 (Exchange[R3, 127.0.0.1:5683], size 2)
+INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-41CCCF54E9292103] and resource /1 (Exchange[R8, 127.0.0.1:5683], size 3)
+INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-393BF25AA78971A8] and resource /1 (Exchange[R9, 127.0.0.1:5683], size 4)
+INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-FBB578F7827BEE6A] and resource /1 (Exchange[R24, 127.0.0.1:5683], size 5)
+INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-5960F512BEC7CB20] and resource /3 (Exchange[R26, 127.0.0.1:5683], size 1)
+INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-D75D35357D5AC151] and resource /3 (Exchange[R27, 127.0.0.1:5683], size 2)
+INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-BFC9087B468E900E] and resource /3 (Exchange[R28, 127.0.0.1:5683], size 3)
+INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-A5B5A214442CA663] and resource /3 (Exchange[R37, 127.0.0.1:5683], size 4)
+INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-E11462AE337A12BC] and resource /3 (Exchange[R40, 127.0.0.1:5683], size 5)
+INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-F12A8ACDBF70A6B8] and resource /3 (Exchange[R41, 127.0.0.1:5683], size 6)
+INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-DBB503FA08EE3A7C] and resource /3 (Exchange[R42, 127.0.0.1:5683], size 7)
+INFO CoapServer(main)#1 com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-C7BF9ECF573D35B5] and resource /3303 (Exchange[R49, 127.0.0.1:5683], size 1)
+INFO CoapServer(main)#1 com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5601
+INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-1377B655E5DB50DC] and resource /3303 (Exchange[R50, 127.0.0.1:5683], size 2)
+INFO CoapServer(main)#1 com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5602
+INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-8F82D32639D50150] and resource /3303 (Exchange[R51, 127.0.0.1:5683], size 3)
+INFO CoapServer(main)#1 com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5603
+INFO CoapServer(main)#1 com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5604
+INFO CoapServer(main)#1 com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5701
+INFO CoapServer(main)#1 org.eclipse.californium.core.CoapResource - successfully established observe relation between KeyToken[127.0.0.1:5683-417A7573DAA6DFAE] and resource /3303 (Exchange[R54, 127.0.0.1:5683], size 4)
+INFO CoapServer(main)#1 com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5750
+INFO CoapServer(main)#1 com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5518
+INFO CoapServer(main)#1 com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/6050
+INFO CoapServer(main)#1 com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/6042
+INFO CoapServer(main)#1 com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/6049
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5601
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5601
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5601
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5700
+INFO Temperature Sensor com.yxy.nova.lwm2m.leshan.client.RandomTemperatureSensor - Read on Temperature resource /3303/0/5601
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:51038, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:51038
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://192.168.100.18:5683 at coap://0.0.0.0:51038
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://192.168.100.18:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration failed: Timeout.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://192.168.100.18:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration failed: Timeout.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Try to register to coap://192.168.100.18:5683 again in 600s...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:59122, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:59122
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://192.168.100.18:61890 at coap://0.0.0.0:59122
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://192.168.100.18:61890 ...
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE default setup
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - RSA: true, EC: true, AES: not restricted
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - EdDSA not supported!
+INFO main org.eclipse.californium.elements.util.JceProviderUtil - JCE setup: null, ready.
+INFO main org.eclipse.californium.scandium.dtls.cipher.XECDHECryptography - X25519/X448 not supported!
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added DTLS.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+INFO main org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Starting Leshan client ...
+INFO main org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+INFO main org.eclipse.californium.ban - Started.
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] CoapEndpoint uses udp context
+INFO main org.eclipse.californium.core.network.stack.BlockwiseLayer - [LWM2M Client-coap://] BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+INFO main org.eclipse.californium.core.CoapServer - Starting server
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+INFO main org.eclipse.californium.elements.UDPConnector - UDPConnector listening on 0.0.0.0/0.0.0.0:49920, recv buf = 65507, send buf = 65507, recv packet size = 2048
+INFO main org.eclipse.californium.core.network.CoapEndpoint - [LWM2M Client-coap://] Started endpoint at coap://0.0.0.0:49920
+INFO main org.eclipse.leshan.client.californium.CaliforniumEndpointsManager - New endpoint created for server coap://localhost:5683 at coap://0.0.0.0:49920
+INFO main org.eclipse.leshan.client.californium.LeshanClient - Leshan client[endpoint:yxy_client] started.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to register to coap://localhost:5683 ...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registered with location '/rd/0WKXXTmL9U'.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Trying to update registration to coap://localhost:5683 (response timeout 120000ms)...
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Registration update succeed.
+INFO RegistrationEngine#0 org.eclipse.leshan.client.engine.DefaultRegistrationEngine - Next registration update to coap://localhost:5683 in 53s...
