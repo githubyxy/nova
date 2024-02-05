@@ -1,5 +1,6 @@
 package test.util;
 
+import com.yxy.nova.mwh.utils.text.TextUtil;
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import org.junit.Test;
 
@@ -8,6 +9,8 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -38,5 +41,21 @@ public class DateTimeTest {
         System.out.println(compile.matcher("-12.388").matches());
 
         System.out.println(DateTimeUtil.getHour());
+    }
+
+    @Test
+    public void tset3() {
+        int minute = DateTimeUtil.asLocalDateTIme(new Date()).getMinute();
+//        System.out.println(minute);
+//        if (minute % 10 == 0) {
+//            System.out.println("触发");
+//        } else {
+//            System.out.println("不触发");
+//        }
+
+        BigDecimal divide = new BigDecimal(3209).divide(new BigDecimal(3467), 4, BigDecimal.ROUND_HALF_UP);
+        System.out.println(divide.toPlainString());
+        System.out.println(divide.compareTo(new BigDecimal(0.9)) < 0);
+
     }
 }

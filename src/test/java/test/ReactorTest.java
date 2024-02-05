@@ -16,6 +16,7 @@ import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 /**
  * @author yuxiaoyu
@@ -237,6 +238,26 @@ public class ReactorTest {
         mysink.next("2");
         mysink.next("3");
 
+    }
+
+    @Test
+    public void test2() {
+        List<String> list = new ArrayList<>();
+        list.add("a");
+        list.add("a");
+        list.add("b");
+        list.add("b");
+        list.add("d");
+        list.add("e");
+        list.add("e");
+        list.add("");
+        list.add("g");
+
+//        List<String> collect = list.stream().distinct().collect(Collectors.toList());
+        list = list.stream().filter(l -> {
+            return !l.equals("a");
+        }).collect(Collectors.toList());
+        System.out.println(JSON.toJSONString(list));
     }
 
 }
