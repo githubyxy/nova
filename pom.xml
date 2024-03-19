@@ -599,6 +599,12 @@
             <version>0.11.1</version>
         </dependency>
 
+        <!--resilience4j https://resilience4j.readme.io/v1.7.0/docs/getting-started  -->
+        <dependency>
+            <groupId>io.github.resilience4j</groupId>
+            <artifactId>resilience4j-all</artifactId>
+            <version>1.7.1</version>
+        </dependency>
 
     </dependencies>
 
