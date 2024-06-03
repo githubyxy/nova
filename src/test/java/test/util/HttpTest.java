@@ -66,7 +66,7 @@ public class HttpTest {
 	/**
 	 * 读超时时间
 	 */
-	private static int socketTimeout = 30000;
+	private static int socketTimeout = 3000000;
 
 	private static CloseableHttpClient client = null;
 
@@ -95,7 +95,13 @@ public class HttpTest {
 //		String s = GetIngList();
 //		System.out.println(s);
 //		publish();
-		authorize();
+//		authorize();
+
+		System.out.println(get("http://47.99.72.114:8028/innerapi/executeResultPush?taskBatchUuid=2837091,2837101&push=true", new HashMap<>()));
+		System.out.println(get("http://47.99.72.114:8028/innerapi/executeResultPush?taskBatchUuid=2837111,2837171&push=true", new HashMap<>()));
+
+
+
 	}
 
 
@@ -417,7 +423,7 @@ public class HttpTest {
 	 * @param headerMap
 	 * @return
 	 */
-	private static String get(String url, Map<String,String> headerMap) throws IOException {
+	public static String get(String url, Map<String,String> headerMap) throws IOException {
 
 		logger.info( "请求的url: {}", Arrays.asList(url), "httpGet");
 
