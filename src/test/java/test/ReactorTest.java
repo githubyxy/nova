@@ -1,9 +1,11 @@
 package test;
 
 import com.alibaba.fastjson.JSON;
+import com.yxy.nova.mwh.utils.ListUtil;
 import com.yxy.nova.mwh.utils.text.TextUtil;
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.collections.ListUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import reactor.core.Disposable;
@@ -260,4 +262,42 @@ public class ReactorTest {
         System.out.println(JSON.toJSONString(list));
     }
 
+    @Test
+    public void test3() {
+        List<BlacklistUploadParamDTO> list = new ArrayList<>();
+        BlacklistUploadParamDTO info = new BlacklistUploadParamDTO();
+        info.setGroupUuid("1");
+        info.setPartnerCode("1");
+        info.setExpireDate("2024-02-11");
+        list.add(info);
+
+        BlacklistUploadParamDTO info2 = new BlacklistUploadParamDTO();
+        info2.setGroupUuid("1");
+        info2.setPartnerCode("1");
+        info2.setExpireDate("2024-02-12");
+        list.add(info2);
+
+        BlacklistUploadParamDTO info3 = new BlacklistUploadParamDTO();
+        info3.setGroupUuid("3");
+        info3.setPartnerCode("3");
+        info3.setExpireDate("2024-02-13");
+        list.add(info3);
+
+        BlacklistUploadParamDTO query = new BlacklistUploadParamDTO();
+        query.setGroupUuid("1");
+        query.setPartnerCode("1");
+        query.setExpireDate("2024-02-12");
+
+        List<BlacklistUploadParamDTO> waitTaskBatchDOS = list.stream().filter(taskBatchDO -> {
+            return StringUtils.isBlank(query.getGroupUuid()) ? true : query.getGroupUuid().equals(taskBatchDO.getGroupUuid());
+        }).filter(taskBatchDO -> {
+            return StringUtils.isBlank(query.getPartnerCode()) ? true : query.getPartnerCode().equals(taskBatchDO.getPartnerCode());
+        }).filter(taskBatchDO -> {
+            return StringUtils.isBlank(query.getExpireDate()) ? true : query.getExpireDate().equals(taskBatchDO.getExpireDate());
+        }).collect(Collectors.toList());
+
+        System.out.println(waitTaskBatchDOS.size());
+        System.out.println(JSON.toJSONString(waitTaskBatchDOS));
+
+    }
 }

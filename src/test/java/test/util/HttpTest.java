@@ -2,6 +2,7 @@ package test.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.yxy.nova.mwh.utils.log.LogUtil;
 import com.yxy.nova.util.SimpleHttpClient;
 import lombok.SneakyThrows;
 import org.apache.commons.codec.binary.Base64;
@@ -10,9 +11,7 @@ import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.*;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -96,12 +95,22 @@ public class HttpTest {
 //		System.out.println(s);
 //		publish();
 //		authorize();
+		es();
 
-		System.out.println(get("http://47.99.72.114:8028/innerapi/executeResultPush?taskBatchUuid=2837091,2837101&push=true", new HashMap<>()));
-		System.out.println(get("http://47.99.72.114:8028/innerapi/executeResultPush?taskBatchUuid=2837111,2837171&push=true", new HashMap<>()));
+	}
 
 
+	@SneakyThrows
+	private static void es() {
+		String encoded = java.util.Base64.getEncoder().encodeToString(("elastic" + ":" + "hxkj@123").getBytes("UTF-8"));
+		Map<String, String> headers = new HashMap<>();
+		headers.put("Authorization", "Basic " + encoded);
+		String s = get("http://127.0.0.1:9200/_cat/indices?format=json&s=store.size:asc", headers);
+		System.out.println(s);
 
+
+//		String s1 = deleteJsonString("http://127.0.0.1:9200/" + "device_log_wlwmqtt_2024-3", headers);
+//		System.out.println(s1);
 	}
 
 
@@ -464,6 +473,46 @@ public class HttpTest {
 			}
 		}
 
+		return result;
+	}
+
+
+	public static String deleteJsonString(String url, Map<String, String> headerMap) throws IOException {
+		LogUtil.info(logger, "请求的url: {}", Arrays.asList(url), "httpPutJson");
+
+		String result = null;
+		CloseableHttpResponse response = null;
+		try {
+			HttpDelete httpDelete = new HttpDelete(url);
+			httpDelete.setHeader("Content-Type", "application/json;charset=UTF-8");
+			if (headerMap != null) {
+				for (Map.Entry<String, String> entry : headerMap.entrySet()) {
+					httpDelete.setHeader(entry.getKey(), entry.getValue());
+				}
+			}
+			response = client.execute(httpDelete);
+
+			int statusCode = response.getStatusLine().getStatusCode();
+			if (HttpStatus.SC_OK != statusCode) {
+				LogUtil.error(logger, "请求URL {} 时返回的statusCode为 {}", Arrays.asList(url, statusCode), "httpPostJson");
+			}
+
+			result = EntityUtils.toString(response.getEntity(), "UTF-8");
+			LogUtil.info(logger, "服务端返回的response: {}", Arrays.asList(result), "httpPutJson");
+
+			EntityUtils.consume(response.getEntity());
+		} catch (IOException e) {
+			logger.error("请求URL{}时发生错误", url, e);
+			throw e;
+		} finally {
+			if(response != null) {
+				try {
+					response.close();
+				} catch (IOException e) {
+					LogUtil.error(logger, "关闭响应流出现错误: {} ", Arrays.asList(e.getMessage(), e), "httpPutJson");
+				}
+			}
+		}
 		return result;
 	}
 }

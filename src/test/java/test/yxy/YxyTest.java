@@ -1,5 +1,9 @@
 package test.yxy;
 
+import com.alibaba.fastjson.JSONObject;
+import com.yxy.nova.mwh.utils.serialization.SerializerUtil;
+import com.yxy.nova.mwh.utils.text.TextUtil;
+import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.tomcat.util.buf.HexUtils;
 import org.junit.Test;
@@ -45,11 +49,18 @@ public class YxyTest {
 
     @Test
     public void test3() {
-        String strA = new String();
-        String strB = new String();
-        strA = "java";
-        strB = "java";
-        System.out.println(strA == strB);
+//        List<String> split = TextUtil.split("");
+//        List<String> split1 = TextUtil.split("1");
+//        System.out.println(split.size());
+//        System.out.println(JSONObject.toJSONString(split));
+//        System.out.println(split.containsAll(split1));
+//        System.out.println(SerializerUtil.jsonSerialize(split));
+//        String indices = "11[{123}]";
+//        indices = indices.substring(indices.indexOf("["));
+//        System.out.println(indices);
+
+        int thresholdSize = DateTimeUtil.time8().compareTo("08:30:00") >= 0 ? 200 : 500;
+        System.out.println(thresholdSize);
     }
 
 }
