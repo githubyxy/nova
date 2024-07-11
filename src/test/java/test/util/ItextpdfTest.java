@@ -16,6 +16,8 @@ import com.itextpdf.kernel.geom.AffineTransform;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.geom.Matrix;
 import java.io.IOException;
+
+import com.itextpdf.layout.property.VerticalAlignment;
 import org.junit.Test;
 
 public class ItextpdfTest {
@@ -42,17 +44,30 @@ public class ItextpdfTest {
                 // 设置水印内容
                 Paragraph paragraph = new Paragraph("仅供****使用")
                         .setFont(chineseFont)
-                        .setFontSize(20)
+                        .setFontSize(40)
                         .setFontColor(ColorConstants.GRAY)
-                        .setOpacity(0.5f)
-                        .setRotationAngle(Math.toRadians(45))
-                        .setTextAlignment(TextAlignment.CENTER);
+//                        .setOpacity(15f)
+                        .setRotationAngle(Math.toRadians(0))
+                        .setTextAlignment(TextAlignment.CENTER)
+                        ;
 
                 float x = pageSize.getWidth() / 2;
                 float y = pageSize.getHeight() / 2;
 
                 // 添加水印到页面
-                document.showTextAligned(paragraph, x, y, TextAlignment.CENTER);
+//                document.showTextAligned(paragraph, x, y, TextAlignment.JUSTIFIED);
+
+                document.showTextAligned(paragraph,
+                        pdfDoc.getPage(i).getPageSize().getWidth() / 2,
+                        pdfDoc.getPage(i).getPageSize().getHeight() / 2,
+                        i,
+                        TextAlignment.CENTER,
+                        VerticalAlignment.MIDDLE,
+                        0   // 水印选择弧度
+//                        (float) -Math.toDegrees(Math.atan(pdfDoc.getPage(i).getPageSize().getHeight() / pdfDoc.getPage(i).getPageSize().getWidth()))
+                        );
+
+
             }
 
             // 关闭文档
