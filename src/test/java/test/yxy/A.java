@@ -2,7 +2,7 @@ package test.yxy;
 
 import org.springframework.beans.factory.InitializingBean;
 
-public class A implements InitializingBean {
+public class A  {
 
     private String a;
 
@@ -13,9 +13,12 @@ public class A implements InitializingBean {
         this.a = a;
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("afterPropertiesSet");
+
+    public String getA() {
+        return a;
     }
 
+    public void setA(String a) {
+        this.a = a;
+    }
 }

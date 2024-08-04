@@ -42,7 +42,7 @@ public class ItextpdfTest {
                 Rectangle pageSize = pdfDoc.getPage(i).getPageSize();
 
                 // 设置水印内容
-                Paragraph paragraph = new Paragraph("仅供****使用")
+                Paragraph paragraph = new Paragraph("仅供业委会申请使用")
                         .setFont(chineseFont)
                         .setFontSize(40)
                         .setFontColor(ColorConstants.GRAY)
@@ -63,7 +63,7 @@ public class ItextpdfTest {
                         i,
                         TextAlignment.CENTER,
                         VerticalAlignment.MIDDLE,
-                        0   // 水印选择弧度
+                        -90   // 水印选择弧度
 //                        (float) -Math.toDegrees(Math.atan(pdfDoc.getPage(i).getPageSize().getHeight() / pdfDoc.getPage(i).getPageSize().getWidth()))
                         );
 

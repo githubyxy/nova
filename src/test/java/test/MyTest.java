@@ -5,9 +5,11 @@ import com.sun.tools.internal.ws.wsdl.document.soap.SOAPUse;
 import com.yxy.nova.mwh.utils.serialization.SerializerUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
+import test.yxy.A;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -96,10 +98,21 @@ public class MyTest extends Thread {
 //                System.out.println("true");
 //            }
 
-            List<String> backupList = SerializerUtil.jsonListDeserializeNullAsEmptyList("[\"T_02\",\"T_03\"]", String.class);
+//            List<String> backupList = SerializerUtil.jsonListDeserializeNullAsEmptyList("[\"T_02\",\"T_03\"]", String.class);
+//
+//            System.out.println(JSONObject.toJSONString(backupList));
 
-            System.out.println(JSONObject.toJSONString(backupList));
+            Map<Integer, List<A>> taskBatchEsMap = new HashMap<>();
+//            for (int i = 1; i < 10; i++) {
+//                taskBatchEsMap.put(i, new ArrayList<>());
+//            }
+            for (int i = 1; i < 10; i++) {
+                List<A> taskItemEsDTOList = taskBatchEsMap.getOrDefault(i, new ArrayList<>());
+                taskItemEsDTOList.add(new A(i+"值"));
+//                taskBatchEsMap.put(i, taskItemEsDTOList);
+            }
 
-
+            System.out.println(JSONObject.toJSONString(taskBatchEsMap));
+            System.out.println(JSONObject.toJSONString(new A("呵呵")));
         }
 }
