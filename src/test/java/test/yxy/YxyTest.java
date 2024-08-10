@@ -1,5 +1,7 @@
 package test.yxy;
 
+import cn.hutool.core.date.DatePattern;
+import cn.hutool.core.date.DateUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.yxy.nova.mwh.utils.serialization.SerializerUtil;
 import com.yxy.nova.mwh.utils.text.TextUtil;
@@ -8,9 +10,9 @@ import org.apache.commons.codec.binary.Hex;
 import org.apache.tomcat.util.buf.HexUtils;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.time.LocalDateTime;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class YxyTest {
     @Test
@@ -61,6 +63,98 @@ public class YxyTest {
 
         int thresholdSize = DateTimeUtil.time8().compareTo("08:30:00") >= 0 ? 200 : 500;
         System.out.println(thresholdSize);
+    }
+
+    @Test
+    public void OptionalExample() {
+        // 创建一个包含 Person 对象的 Optional
+        Optional<Person> optionalPerson = Optional.ofNullable(new Person("Alice", 30));
+
+        // 使用 ifPresent() 打印 Person 详细信息
+        optionalPerson.ifPresent(person -> System.out.println("Name: " + person.getName() + ", Age: " + person.getAge()));
+
+        optionalPerson.ifPresent(person -> {
+            person.getAge();
+        });
+
+
+
+
+        // 使用 ifPresent() 调用 Person 对象的方法
+        optionalPerson.ifPresent(Person::printPerson);
+
+        // 创建一个空的 Optional
+        Optional<Person> emptyOptional = Optional.ofNullable(null);
+
+        // 使用 ifPresent() 处理空 Optional，不会执行任何操作
+        emptyOptional.ifPresent(person -> System.out.println("This will not be printed"));
+
+
+        String s = emptyOptional.map(Person::getName).orElse("null");
+
+        Optional<String> emptyOptionalStr = Optional.of("123");
+
+            System.out.println("s1=" + emptyOptionalStr.orElse(""));
+            System.out.println("s2=" + emptyOptionalStr.orElseGet(() -> ""));
+
+    }
+
+    @Test
+    public void test4() {
+        String minDs = "2024-06-01";
+        LocalDateTime localDateTime = DateUtil.parseLocalDateTime(minDs, DatePattern.NORM_DATE_PATTERN).plusMonths(1).plusDays(-1);
+        String maxDs = DateUtil.format(localDateTime, DatePattern.NORM_DATE_PATTERN);
+        System.out.println(maxDs);
+    }
+    @Test
+    public void test5() {
+
+        List<String> list = Arrays.asList("1", "2", "2", "5", "5", "5", "7", "8", "9");
+
+        Map<String, Integer> map = new HashMap<>();
+
+        list.forEach(id -> {
+            Integer count = map.getOrDefault(id, 0);
+            count = count + 1;
+            map.put(id, count);
+        });
+        System.out.println(JSONObject.toJSONString(map));
+
+        Map<String, Integer> map2 = new HashMap<>();
+        list.forEach(id -> {
+            map2.compute(id, (k, v) -> v == null ? 1 : v + 1);
+        });
+        System.out.println(JSONObject.toJSONString(map2));
+
+    }
+    @Test
+    public void test6() {
+        List<Person> list = new ArrayList<>();
+//        list.add(new Person("a", 1));
+//        list.add(new Person("b", 1));
+//        list.add(new Person("1", 1));
+//        list.add(new Person("a", 1));
+
+        LinkedHashMap<String, List<Person>> collect = list.stream().collect(Collectors.groupingBy(person -> {
+            return person.getName();
+        }, LinkedHashMap::new, Collectors.toList()));
+
+        System.out.println(JSONObject.toJSONString(collect));
+        System.out.println(collect.size());
+
+    }
+
+    @Test
+    public void test7() {
+        StatDimensionEnum day = StatDimensionEnum.DAY;
+        System.out.println(day.convertDate("2024-06-01"));
+        System.out.println(day.getMinDate10("2024-06-01"));
+        System.out.println(day.getMaxDate10("2024-06-01"));
+
+        StatDimensionEnum month = StatDimensionEnum.MONTH;
+        System.out.println(month.convertDate("2024-06-01"));
+        System.out.println(month.getMinDate10("2024-06"));
+        System.out.println(month.getMaxDate10("2024-06"));
     }
 
 }
