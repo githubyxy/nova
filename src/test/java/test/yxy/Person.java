@@ -4,6 +4,11 @@ public class Person {
     private String name;
     private int age;
 
+    private CheckModeEnum  checkModeEnum;
+
+    public Person() {
+    }
+
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
@@ -19,6 +24,14 @@ public class Person {
 
     public void printPerson() {
         System.out.println("Name: " + name + ", Age: " + age);
+    }
+
+    public CheckModeEnum getCheckModeEnum() {
+        return checkModeEnum;
+    }
+
+    public void setCheckModeEnum(CheckModeEnum checkModeEnum) {
+        this.checkModeEnum = checkModeEnum;
     }
 }
 

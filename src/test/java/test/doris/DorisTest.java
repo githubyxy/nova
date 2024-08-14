@@ -23,6 +23,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -197,6 +198,10 @@ public class DorisTest {
         String sql2 = "SELECT json_extract(jsonDetail, '$.key1') as key1 FROM test_json";
         List<Map<String, Object>> maps2 = jdbcTemplate.queryForList(sql2);
         System.out.println(JSONObject.toJSONString(maps2));
+
+
+        String s = new BigDecimal(769).divide(new BigDecimal(1000), 2, BigDecimal.ROUND_HALF_UP).toPlainString();
+        System.out.println(s);
     }
 
 }

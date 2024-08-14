@@ -12,7 +12,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 
+import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -24,6 +29,8 @@ public class MysqlTest {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     private JdbcTemplate jdbcTemplate;
+
+    private DataSourceTransactionManager dataSourceTransactionManager;
 
     private LinkedBlockingQueue<TestJsonDorisDTO> queue = new LinkedBlockingQueue<>(10000);
 
@@ -40,7 +47,7 @@ public class MysqlTest {
     /**
      * 表名
      */
-    private String tableName="area_code";
+    private String tableName = "area_code";
 
 
     private static CloseableHttpClient client;
@@ -48,7 +55,7 @@ public class MysqlTest {
     @Before
     public void init() throws SQLException {
         DruidDataSource druidDataSource = new DruidDataSource();
-        druidDataSource.setUrl("jdbc:mysql://127.0.0.1:3307/basic_data?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&connectTimeout=5000&socketTimeout=5000&autoReconnect=true&maxReconnects=5&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false");
+        druidDataSource.setUrl("jdbc:mysql://127.0.0.1:3307/test1?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&connectTimeout=5000&socketTimeout=5000&autoReconnect=true&maxReconnects=5&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false");
         druidDataSource.setUsername("root");
         druidDataSource.setPassword("Abcd12345");
         druidDataSource.setDriverClassName("com.mysql.jdbc.Driver");
@@ -69,7 +76,7 @@ public class MysqlTest {
         jdbcTemplate = new JdbcTemplate(druidDataSource);
 //        jdbcTemplate = new NamedParameterJdbcTemplate(druidDataSource);
 
-
+        dataSourceTransactionManager = new DataSourceTransactionManager(druidDataSource);
     }
 
 
@@ -113,7 +120,7 @@ public class MysqlTest {
                 provinceAreaDTO.setCities(cityAreaDTOS);
             }
             return null;
-        },params);
+        }, params);
 
         List<ProvinceAreaDTO> collect = provinceAreaDTOMap.entrySet().stream().map(entry -> entry.getValue()).collect(Collectors.toList());
 
@@ -129,17 +136,23 @@ public class MysqlTest {
 
     @Test
     public void test2() {
-//        DateTime dateTime = DateUtil.date(3000);
-//
-//        FastDateFormat timeFormat = FastDateFormat.getInstance("HH:mm:ss");
-//        String dateStr = dateTime.toString(timeFormat);
+        DefaultTransactionDefinition def = new DefaultTransactionDefinition();
+        def.setName("YourTransaction");
+        def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
 
-        String format = DateUtil.format(new Date(), "yyyy-MM-dd HH:mm:ss");
-        for (int i =0; i< 63; i++) {
-        int ceil = (int) Math.ceil(i / 60D);
-        System.out.println(ceil);
+        TransactionStatus transaction = dataSourceTransactionManager.getTransaction(def);
+        try {
+            String sql = "INSERT INTO `test` (`value`) VALUES (3);";
+            System.out.println("execute sql:" + sql);
+            jdbcTemplate.execute(sql);
+            int i = 1 / 0;
+            dataSourceTransactionManager.commit(transaction);
+            System.out.println("execute commit");
+        } catch (Exception e) {
+            dataSourceTransactionManager.rollback(transaction);
+            System.out.println("execute rollback");
+
         }
-
     }
 
 }

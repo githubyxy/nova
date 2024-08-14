@@ -3,6 +3,7 @@ package test.yxy;
 import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateUtil;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.yxy.nova.mwh.utils.serialization.SerializerUtil;
 import com.yxy.nova.mwh.utils.text.TextUtil;
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
@@ -155,6 +156,21 @@ public class YxyTest {
         System.out.println(month.convertDate("2024-06-01"));
         System.out.println(month.getMinDate10("2024-06"));
         System.out.println(month.getMaxDate10("2024-06"));
+    }
+
+    @Test
+    public void test8() {
+        SerializerFeature[] openApiFeatures = new SerializerFeature[] {
+                SerializerFeature.WriteMapNullValue,
+                SerializerFeature.WriteEnumUsingToString,
+                // 输出为null的字段 为空串
+                // 循环引用
+                };
+        Person p = new Person("1",1);
+        p.setCheckModeEnum(null);
+        String jsonString = JSONObject.toJSONString(p, openApiFeatures);
+        System.out.println(jsonString);
+
     }
 
 }
