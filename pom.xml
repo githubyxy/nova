@@ -208,6 +208,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.vaadin.external.google</groupId>
+                    <artifactId>android-json</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -617,17 +623,37 @@
             <version>1.7.1</version>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>com.itextpdf</groupId>-->
+<!--            <artifactId>itext7-core</artifactId>-->
+<!--            <version>7.1.13</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-tx</artifactId>-->
+<!--            <version>5.3.27</version>-->
+<!--        </dependency>-->
+
+        <!-- Spring Transaction -->
         <dependency>
-            <groupId>com.itextpdf</groupId>
-            <artifactId>itext7-core</artifactId>
-            <version>7.1.13</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <version>2.6.13</version>
         </dependency>
 
+        <!-- turbo engine -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
-            <version>5.3.27</version>
+            <groupId>com.didiglobal.turbo</groupId>
+            <artifactId>engine</artifactId>
+            <version>1.1.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.didiglobal.turbo</groupId>
+            <artifactId>demo</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
 
     </dependencies>
 

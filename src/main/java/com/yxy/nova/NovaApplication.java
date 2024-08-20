@@ -1,11 +1,13 @@
 package com.yxy.nova;
 
-import com.alibaba.fastjson.JSON;
+import com.didiglobal.turbo.engine.annotation.EnableTurboEngine;
 import org.apache.catalina.connector.Connector;
 import org.apache.tomcat.util.threads.ThreadPoolExecutor;
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
@@ -15,6 +17,7 @@ import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.event.ContextClosedEvent;
 import org.springframework.stereotype.Controller;
@@ -28,6 +31,9 @@ import java.util.concurrent.TimeUnit;
 @EnableWebMvc
 @ServletComponentScan
 @ImportResource(locations = {"classpath*:app.xml"})
+@EnableTurboEngine
+@ComponentScan(basePackages = "com.yxy")
+@MapperScan("com.baomidou.mybatisplus.core.mapper")
 public class NovaApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {

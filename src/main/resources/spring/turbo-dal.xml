@@ -11,8 +11,8 @@
 >
 
 	<bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.yxy.nova.dal.mysql.mapper"/>
-		<property name="sqlSessionFactoryBeanName" value="novaSqlSessionFactory"/>
+		<property name="basePackage" value="com.didiglobal.turbo.engine.dao.mapper"/>
+		<property name="sqlSessionFactoryBeanName" value="turboSqlSessionFactory"/>
 		<property name="properties">
 			<value>
 				wrapKeyword=`{0}`
@@ -22,40 +22,40 @@
 
 	<!-- ======= 事务定义开始 ======= -->
 	<!-- Ibatis事务管理器 -->
-	<bean id="novaTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="novaDataSource" />
+	<bean id="turboTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="turboDataSource" />
 	</bean>
 
-	<!-- 按照包路径控制事务 -->
-	<tx:advice id="repeatedReadTxAdvice-REQUIRED" transaction-manager="novaTransactionManager">
-		<!-- the transactional semantics... -->
-		<tx:attributes>
-			<tx:method name="*" propagation="REQUIRED" isolation="REPEATABLE_READ" rollback-for="Throwable" />
-		</tx:attributes>
-	</tx:advice>
+<!--	&lt;!&ndash; 按照包路径控制事务 &ndash;&gt;-->
+<!--	<tx:advice id="repeatedReadTxAdvice-REQUIRED" transaction-manager="novaTransactionManager">-->
+<!--		&lt;!&ndash; the transactional semantics... &ndash;&gt;-->
+<!--		<tx:attributes>-->
+<!--			<tx:method name="*" propagation="REQUIRED" isolation="REPEATABLE_READ" rollback-for="Throwable" />-->
+<!--		</tx:attributes>-->
+<!--	</tx:advice>-->
 
-	<tx:advice id="readCommitedTxAdvice-REQUIRES_NEW" transaction-manager="novaTransactionManager">
-		<!-- the transactional semantics... -->
-		<tx:attributes>
-			<tx:method name="*" propagation="REQUIRES_NEW" isolation="REPEATABLE_READ" rollback-for="Throwable" />
-		</tx:attributes>
-	</tx:advice>
+<!--	<tx:advice id="readCommitedTxAdvice-REQUIRES_NEW" transaction-manager="novaTransactionManager">-->
+<!--		&lt;!&ndash; the transactional semantics... &ndash;&gt;-->
+<!--		<tx:attributes>-->
+<!--			<tx:method name="*" propagation="REQUIRES_NEW" isolation="REPEATABLE_READ" rollback-for="Throwable" />-->
+<!--		</tx:attributes>-->
+<!--	</tx:advice>-->
 
 
-	<aop:config>
-		<aop:advisor pointcut="execution(* com.yxy.nova.service..transaction..*.*(..))" advice-ref="repeatedReadTxAdvice-REQUIRED" />
-	</aop:config>
+<!--	<aop:config>-->
+<!--		<aop:advisor pointcut="execution(* com.yxy.nova.service..transaction..*.*(..))" advice-ref="repeatedReadTxAdvice-REQUIRED" />-->
+<!--	</aop:config>-->
 
 	<!-- ======================================================================== -->
 	<!-- DataSource定义 -->
 	<!-- ======================================================================== -->
-	<bean id="novaDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init"
+	<bean id="turboDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init"
 		  destroy-method="close">
 		<!-- 基本属性 url、user、password -->
 		<property name="driverClassName" value="${jdbc.database.driver}"/>
-		<property name="url" value="${jdbc.database.url}"/>
-		<property name="username" value="${jdbc.database.username}"/>
-		<property name="password" value="${jdbc.database.password}"/>
+		<property name="url" value="${spring.datasource.turbo.url}"/>
+		<property name="username" value="${spring.datasource.turbo.username}"/>
+		<property name="password" value="${spring.datasource.turbo.password}"/>
 		<property name="defaultAutoCommit" value="false"/>
 
 		<!-- 配置初始化大小、最小、最大 -->
@@ -90,14 +90,13 @@
 	</bean>
 
 
-	<bean id="novaSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<bean id="turboSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
 		<property name="mapperLocations">
 			<list>
 				<value>classpath*:mybatis/mapper/**/*.xml</value>
 			</list>
 		</property>
-		<property name="dataSource" ref="novaDataSource"/>
+		<property name="dataSource" ref="turboDataSource"/>
 	</bean>
-
 </beans>

@@ -1,0 +1,87 @@
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
