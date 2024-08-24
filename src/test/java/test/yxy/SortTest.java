@@ -1,8 +1,10 @@
 package test.yxy;
 
 import com.alibaba.fastjson.JSONObject;
+import org.junit.Test;
 
-import java.util.Arrays;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class SortTest {
 
@@ -98,4 +100,36 @@ public class SortTest {
         return result;
     }
 
+    @Test
+    public void test() {
+        List<Person> list = new ArrayList<>();
+
+        list.add(new Person("a", 3));
+        list.add(new Person("a", 4));
+//        list.add(new Person("a", 5));
+//        list.add(new Person("b", 3));
+//        list.add(new Person("b", 4));
+//        list.add(new Person("b", 5));
+//        List<Person> collect = list.stream()
+//                .sorted(Comparator.comparing(Person::getAge).reversed())
+//                .sorted(Comparator.comparing(Person::getName).reversed())
+//                .collect(Collectors.toList());
+        List<Person> collect = list.subList(1, list.size());
+        System.out.println(JSONObject.toJSONString(collect));
+    }
+
+    @Test
+    public void test2() {
+        List<TimeMetric> list = new ArrayList<>();
+
+        list.add(new TimeMetric("a",1));
+        list.add(new TimeMetric("a", 4));
+        list.add(new TimeMetric("a", 5));
+        list.add(new TimeMetric("b", 3));
+        list.add(new TimeMetric("b", 4));
+        list.add(new TimeMetric("b", 5));
+        Map<String, Long> collect = list.stream().collect(Collectors.toMap(TimeMetric::getTime, TimeMetric::getCount, (k1, k2) -> k1 + k2));
+
+        System.out.println(JSONObject.toJSONString(collect));
+    }
 }

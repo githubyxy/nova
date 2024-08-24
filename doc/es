@@ -1,0 +1,729 @@
+{
+  "query": {
+
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "case_batch_uuid": {
+              "value": "20180519143954041981"
+            }
+          }
+        },
+        {
+          "bool": {
+            "should": [
+              {
+                "term": {
+                  "case_uuid": {
+                    "value": "3"
+                  }
+                }
+              },
+              {
+                "term": {
+                  "case_uuid": {
+                    "value": "2"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+
+    }
+  }
+}
+
+@Test
+    public void test() throws ElasticsearchClientException {
+        ElasticsearchClient elasticsearchClient = new ElasticsearchClient();
+        SelectBuilder selectBuilder=elasticsearchClient.selectFrom("case_info");
+
+        selectBuilder.whereEquals("case_batch_uuid", "20180519143954041981");
+        selectBuilder.wildcardWhereLike("customer_name", "*张三*");
+        GroupWhere groupWhere = selectBuilder.whereOr();
+        groupWhere.whereEquals("collection_clerk_duration", 0);
+        groupWhere.whereNull("collection_clerk_duration");
+
+        selectBuilder.whereGreater("overdue_day", 1);
+        selectBuilder.whereLessOrEqual("overdue_day", 10);
+
+
+
+        // elasticsearchClient.get("", selectBuilder.getConditions());
+
+        GenerateSearchRequest request =new GenerateSearchRequest();
+        SearchRequest re1 = request.buildRequest(new String[]{"a"}, "", selectBuilder.getConditions());
+        JSONObject body = re1.getBody();
+        System.out.println(body.toJSONString());
+    }
+
+
+    POST /collectioncolud/case_info/_search?scroll=4m
+{
+   "query" : {
+     "bool": {
+       "must": [
+         {
+           "terms": {
+             "case_uuid": [
+               "1",
+               "2",
+               "3",
+               "4",
+               "5",
+               "6",
+               "7"
+             ]
+           }
+         }
+       ]
+     }
+   }
+}
+
+
+POST /_search/scroll
+{
+   "scroll":"4m",
+   "scroll_id":"DnF1ZXJ5VGhlbkZldGNoBQAAAAAAADAYFlB0ZEhxbWFOUjdpQTI1ZlU2WDNSWFEAAAAAAAAwGRZQdGRIcW1hTlI3aUEyNWZVNlgzUlhRAAAAAAAAMBoWUHRkSHFtYU5SN2lBMjVmVTZYM1JYUQAAAAAAADAbFlB0ZEhxbWFOUjdpQTI1ZlU2WDNSWFEAAAAAAAAwHBZQdGRIcW1hTlI3aUEyNWZVNlgzUlhR"
+}
+
+聚合查询语法本地测试
+1：以颜色分组
+GET /cars_demo/transactions/_search
+{
+    "size" : 10,
+    "aggs" : {
+        "popular_colors" : {
+            "terms" : {
+              "field" : "color"
+            }
+        }
+    }
+}
+2:以颜色分组 并算出平均价格
+{
+    "size" : 0,
+    "aggs" : {
+        "popular_colors" : {
+            "terms" : {
+              "field" : "color"
+            },
+            "aggs": {
+              "avg_price": {
+                 "avg": {
+                    "field": "price"
+                 }
+              }
+            }
+        }
+    }
+}
+
+
+##   es 集群
+elasticsearch.yml 文件中修改：
+cluster.name: elasticsearch_production
+node.name: elasticsearch_005_data
+
+
+path.data: /path/to/data1,/path/to/data2
+# Path to log files:
+path.logs: /path/to/logs
+# Path to where plugins are installed:
+path.plugins: /path/to/plugins
+
+discovery.zen.minimum_master_nodes: 2
+# 法定的master 候选节点个数
+
+gateway.recover_after_nodes: 8
+gateway.expected_nodes: 10
+gateway.recover_after_time: 5m
+#这意味着 Elasticsearch 会采取如下操作：
+等待集群至少存在 8 个节点
+等待 5 分钟，或者10 个节点上线后，才进行数据恢复，这取决于哪个条件先达到。
+
+discovery.zen.ping.unicast.hosts: ["host1", "host2:port"]
+#集群单播发现
+# 连接集群超时时间
+discovery.zen.ping_timeout: 120s
+# discovery.zen.fd合理的设置可以避免正常机器重启造成的数据迁移
+# 单次心跳检测ping超时时间
+discovery.zen.fd.ping_timeout: 60s
+# 多少次心跳检测失败才认为节点丢失
+discovery.zen.fd.ping_retries: 3
+# 集群机器间机器定时心跳检测时间
+discovery.zen.fd.ping_interval: 30s
+
+
+# 集群备份路径  chmod -R 777 /usr
+path.repo: ["/usr/share/elasticsearch/backup"]
+
+
+# es设置运行堆大小
+export ES_HEAP_SIZE=10g
+
+
+[1]: memory locking requested for elasticsearch process but memory is not locked
+[2]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+
+
+vim /etc/sysctl.conf
+
+添加下面配置：
+
+vm.max_map_count=655360
+
+并执行命令：sysctl -p
+
+
+修改文件/etc/security/limits.conf，最后添加以下内容。
+
+* soft nofile 65536
+* hard nofile 65536
+* soft nproc 32000
+* hard nproc 32000
+# allow user 'elasticsearch' mlockall
+  elasticsearch soft memlock unlimited
+  elasticsearch hard memlock unlimited
+修改文件 /etc/systemd/system.conf ，分别修改以下内容。
+
+DefaultLimitNOFILE=65536
+DefaultLimitNPROC=32000
+DefaultLimitMEMLOCK=infinity
+
+# elasticsearch.yml 优化配置
+
+
+
+es 常用命令：
+# 查询索引信息（nova-w-20210201）
+curl -XGET "127.0.0.1:9201/nova-w-20210201/_mapping?pretty"
+# 查询集群节点
+curl -XGET 127.0.0.1:9200/_cat/nodes?v
+#集群健康
+curl -XGET 127.0.0.1:9200/_cat/health?v
+# 节点索引
+curl -XGET 127.0.0.1:9200/_cat/indices?v
+# 分片信息查询
+curl -XGET 127.0.0.1:9201/_cat/shards?v
+# 查询索引模板
+curl -XGET 127.0.0.1:9201/_template?pretty
+# 删除索引 (sms-202103是索引名称)
+curl -XDELETE 127.0.0.1:9200/sms-202103
+# close不必要的index可以减少内存占用
+curl -XPOST http://127.0.0.1:9200/task_item/_close
+
+
+# 索引模板
+curl -XPUT "http://127.0.0.1:9201/_template/nova_template" -d '
+{
+  "template": "nova-*",
+  "order":"0",
+  "settings": {
+    "number_of_replicas": 1,
+    "number_of_shards": 1
+  },
+  "mappings": {
+      "task_item_exec_call" : {
+        "properties" : {
+          "appCode" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "gmtCreate" : {
+            "type" : "long"
+          },
+          "gmtModify" : {
+            "type" : "long"
+          },
+          "partnerCode" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "policyUuid" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 64
+              }
+            }
+          },
+          "status" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 64
+              }
+            }
+          },
+          "taskBatchUuid" : {
+            "type" : "long"
+          },
+          "taskItemExecUuid" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 64
+              }
+            }
+          },
+          "taskItemUuid" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 64
+              }
+            }
+          },
+          "taskUuid" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 64
+              }
+            }
+          }
+        }
+      }
+    }
+}'
+
+# es索引备份
+curl -XPUT http://127.0.0.1:9201/_snapshot/my_backup -d '{
+    "type": "fs",
+    "settings": {
+        "location": "/tmp/es_backup/my_backup"
+    }
+}'
+
+
+curl -XPUT "http://127.0.0.1:9201/_template/hermes_execcall_template" -d '
+{
+    "template": "hermes-execcall-w*",
+    "order": "9",
+    "settings": {
+        "number_of_replicas": 1,
+        "number_of_shards": 5
+    },
+    "mappings": {
+        "task_item_exec_call": {
+            "properties": {
+                "taskItemExecUuid": {
+                    "type": "keyword",
+                    "ignore_above": 64
+                },
+                "taskItemUuid": {
+                    "type": "keyword",
+                    "ignore_above": 64
+                },
+                "policyUuid": {
+                    "type": "keyword",
+                    "ignore_above": 64
+                },
+                "taskBatchUuid": {
+                    "type": "integer"
+                },
+                "taskUuid": {
+                    "type": "keyword",
+                    "ignore_above": 64
+                },
+                "partnerCode": {
+                    "type": "keyword",
+                    "ignore_above": 32
+                },
+                "appCode": {
+                    "type": "keyword",
+                    "ignore_above": 32
+                },
+                "callStartTime":{
+                  "type": "date",
+                "format": "yyyy-MM-dd HH:mm:ss"
+                },
+                "robotResultCode":{
+                  "type": "keyword",
+                    "ignore_above": 32
+                },
+                "customerResultCode":{
+                  "type": "keyword",
+                    "ignore_above": 32
+                },
+                "status": {
+                    "type": "keyword",
+                    "ignore_above": 64
+                },
+                "gmtCreate": {
+                    "type": "date",
+                "format": "yyyy-MM-dd HH:mm:ss"
+                }
+            }
+        }
+    }
+}'
+
+curl -XPUT "http://127.0.0.1:9201/_template/hermes_taskitem_template" -d '
+{
+    "template": "hermes-taskitem-w*",
+    "order": "9",
+    "settings": {
+        "number_of_replicas": 1,
+        "number_of_shards": 5
+    },
+    {
+    "mappings": {
+        "task_item": {
+            "properties": {
+                "taskItemUuid": {
+                    "type": "keyword",
+                    "ignore_above": 64
+                },
+                "taskUuid": {
+                    "type": "keyword",
+                    "ignore_above": 64
+                },
+                "policyUuid": {
+                    "type": "keyword",
+                    "ignore_above": 64
+                },
+                "taskBatchUuid": {
+                    "type": "integer"
+                },
+                "partnerCode": {
+                    "type": "keyword",
+                    "ignore_above": 32
+                },
+                "appCode": {
+                    "type": "keyword",
+                    "ignore_above": 32
+                },
+                "mobileNo": {
+                    "type": "keyword",
+                    "ignore_above": 11
+                },
+                "customerResultCode": {
+                    "type": "keyword",
+                    "ignore_above": 32
+                },
+                "tag_code": {
+                    "type": "keyword",
+                    "ignore_above": 32
+                },
+                "flowStatus": {
+                    "type": "keyword",
+                    "ignore_above": 64
+                },
+                "gmtCreate": {
+                    "type": "date",
+                    "format": "yyyy-MM-dd HH:mm:ss"
+                }
+            }
+        }
+    }
+}
+}'
+
+curl -XPUT "http://127.0.0.1:9201/_template/hermes_execcall_template" -d '
+{
+    "template": "hermes-execcall-w*",
+    "order": "9",
+    "settings": {
+        "number_of_replicas": 1,
+        "number_of_shards": 5
+    },
+    "mappings": {
+        "task_item_exec_sms": {
+            "properties": {
+                "taskItemExecUuid": {
+                    "type": "keyword",
+                    "ignore_above": 64
+                },
+                "taskItemUuid": {
+                    "type": "keyword",
+                    "ignore_above": 64
+                },
+                "policyUuid": {
+                    "type": "keyword",
+                    "ignore_above": 64
+                },
+                "taskBatchUuid": {
+                    "type": "integer"
+                },
+                "taskUuid": {
+                    "type": "keyword",
+                    "ignore_above": 64
+                },
+                "partnerCode": {
+                    "type": "keyword",
+                    "ignore_above": 32
+                },
+                "appCode": {
+                    "type": "keyword",
+                    "ignore_above": 32
+                },
+                "mobileNo":{
+                  "type": "keyword",
+                    "ignore_above": 11
+                },
+                "submitStatus":{
+                  "type": "keyword",
+                    "ignore_above": 32
+                },
+                "arrivalStatus":{
+                  "type": "keyword",
+                    "ignore_above": 32
+                },
+                "gmtCreate": {
+                    "type": "date",
+                "format": "yyyy-MM-dd HH:mm:ss"
+                }
+            }
+        }
+    }
+}'
+
+
+#  短信索引
+PUT /sms-202104
+{
+    "settings": {
+        "number_of_shards": 1,
+        "number_of_replicas": 0,
+        "index.mapping.total_fields.limit": 100000
+    },
+    "mappings": {
+        "sms_task_item": {
+            "_all": {
+                "enabled": false
+            },
+            "properties": {
+                "appCode": {
+                    "type": "keyword",
+                    "ignore_above": 64
+                },
+                "taskUuid": {
+                    "type": "long"
+                },
+                "sendBatchUuid": {
+                    "type": "keyword",
+                    "ignore_above": 32
+                },
+                "taskItemUuid": {
+                    "type": "keyword",
+                    "ignore_above": 32
+                },
+                "templateNo": {
+                    "type": "keyword",
+                    "ignore_above": 32
+                },
+                "mobile": {
+                    "type": "keyword",
+                    "ignore_above": 11
+                },
+                "sign": {
+                    "type": "keyword",
+                    "ignore_above": 255
+                },
+                "content": {
+                    "type": "text",
+                    "index": false
+                },
+                "channelNo": {
+                    "type": "keyword",
+                    "ignore_above": 54
+                },
+                "channelAccountUuid": {
+                    "type": "keyword",
+                    "ignore_above": 54
+                },
+                "outId": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                },
+                "submitStatus": {
+                    "type": "keyword",
+                    "ignore_above": 32
+                },
+                "arrivalStatus": {
+                    "type": "keyword",
+                    "ignore_above": 32
+                },
+                "gmtCreate": {
+                    "type": "long"
+                },
+                "submitTime": {
+                    "type": "date",
+                    "format": "yyyy-MM-dd HH:mm:ss"
+                },
+                "arrivalTime": {
+                    "type": "date",
+                    "format": "yyyy-MM-dd HH:mm:ss"
+                },
+                "ext": {
+                    "type": "keyword",
+                    "ignore_above": 32
+                },
+                "count": {
+                    "type": "integer"
+                },
+                "replyTime": {
+                    "type": "date",
+                    "format": "yyyy-MM-dd HH:mm:ss"
+                },
+                "partnerCode": {
+                    "type": "keyword",
+                    "ignore_above": 64
+                },
+                "replyContent": {
+                    "type": "text",
+                    "index": false
+                }
+            }
+        }
+    }
+}
+
+POST _aliases
+{
+    "actions": [
+        {
+            "add": {
+                "index": "sms-202104",
+                "alias": "sms-r-202104"
+            }
+        },
+        {
+            "add": {
+                "index": "sms-202104",
+                "alias": "sms-w-202104"
+            }
+        }
+    ]
+}
+
+# ES 备份
+#  集群备份路径  chmod -R 777 /root
+path.repo: ["/root/data/docker/es/backups"]
+
+# 创建一个备份仓库my_backup
+curl -XPUT 127.0.0.1:9200/_snapshot/my_backup -d '{
+  "type": "fs",
+    "settings": {
+        "location": "/root/data/docker/es/backups/my_backup"
+    }
+}'
+
+# 开始备份指定索引
+curl -XPUT 127.0.0.1:9200/_snapshot/my_backup/hermes-202104?wait_for_completion=true -d '{
+  "indices": "hermes-202104"
+}'
+
+curl -XGET 127.0.0.1:9200/_snapshot/my_backup/hermes-202104
+curl -XDELETE 127.0.0.1:9200/_snapshot/my_backup/hermes-202104
+# 从备份中恢复
+curl -XPOST 127.0.0.1:9200/_snapshot/my_backup/hermes-202104/_restore
+
+
+curl -XGET "http://127.0.0.1:9200/hermes-r-202405/task_item/_search" -d'
+{
+  "query": {
+    "match": {
+      "taskItemUuid": "e235b9dcef164c258303dd0fe1dfb153"
+    }
+  }
+}'
+
+curl -XGET "http://127.0.0.1:9200/hermes-r-*/task_item/_search" -d'
+{
+  "query": {
+    "match": {
+      "mobileNo": "17787053093"
+    }
+  }
+}'
+
+
+
+curl -XGET "http://127.0.0.1:9200/blacklist/blacklist/_search" -d'
+{
+  "query": {
+    "match": {
+      "groupUuid": "hermes_blacklist"
+    }
+  }
+}'
+
+
+curl -XGET "http://127.0.0.1:9200/hermes-r-202404/task_item/_search" -d'
+{
+  "query": {
+    "match": {
+      "taskItemUuid": "0057d148da3244878934834151862d48"
+    }
+  }
+}'
+
+
+curl -XGET "http://127.0.0.1:9200/hermes-r-202404/task_item/_search" -d'
+{
+  "_source": ["appCode", "billDuration", "smsArrivalStatus", "gmtCreate","mobileNo","taskItem"],
+  "query": {
+    "bool": {
+      "must": [
+        { "term": { "partnerCode": "zhengxin" } },
+        { "term": { "customerResultCode": "SUCCESS" } }
+      ]
+    }
+  },
+  "size": 1000000
+}' > /tmp/1.txt
+
+curl -XGET "http://127.0.0.1:9200/hermes-r-*/task_item/_search" -d'
+{
+  "_source": ["appCode", "billDuration", "smsArrivalStatus", "gmtCreate","mobileNo"],
+  "query": {
+    "bool": {
+      "must": [
+        { "term": { "partnerCode": "zhengxin" } },
+        { "term": { "customerResultCode": "SUCCESS" } },
+        { "term": { "taskItemUuid": "dcf108c3da0542dbb6025ff75dec4018" } },
+        {
+          "range": {
+            "ds": {
+              "gte": "2024-04-01"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "script_fields": {
+    "mobileNo": {
+      "script": {
+        "source": "def mobile = doc['mobileNo'].value; return mobile.substring(0, 3) + '****' + mobile.substring(7);"
+      }
+    },
+    "shortlink": {
+      "script": {
+        "source": "def taskItem = params._source['taskItem']; def variable = groovy.json.JsonSlurper().parseText(taskItem).variable; return groovy.json.JsonSlurper().parseText(variable).shortlink;"
+      }
+    }
+  }
+}'
