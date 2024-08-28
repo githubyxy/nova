@@ -727,3 +727,46 @@ curl -XGET "http://127.0.0.1:9200/hermes-r-*/task_item/_search" -d'
     }
   }
 }'
+
+
+
+curl -XGET "http://127.0.0.1:9200/blacklist/_count" -d '
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": { "groupUuid": "third_bill_blacklist" }
+        },
+        {
+          "range": {
+            "gmtCreate": {
+              "gte": "1724776230000"
+            }
+          }
+        }
+      ]
+    }
+  }
+}'
+
+# 删除三方计费黑名单
+curl -XPOST "http://127.0.0.1:9200/blacklist/_delete_by_query" -d '
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": { "groupUuid": "third_bill_blacklist" }
+        },
+        {
+          "range": {
+            "gmtCreate": {
+              "gte": "1724776230000"
+            }
+          }
+        }
+      ]
+    }
+  }
+}'

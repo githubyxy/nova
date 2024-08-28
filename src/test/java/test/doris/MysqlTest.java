@@ -4,6 +4,7 @@ import cn.hutool.core.date.DateUtil;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.fastjson.JSONObject;
 import com.yxy.nova.mwh.utils.text.TextUtil;
+import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.junit.Before;
 import org.junit.Test;
@@ -55,7 +56,7 @@ public class MysqlTest {
     @Before
     public void init() throws SQLException {
         DruidDataSource druidDataSource = new DruidDataSource();
-        druidDataSource.setUrl("jdbc:mysql://127.0.0.1:3307/test1?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&connectTimeout=5000&socketTimeout=5000&autoReconnect=true&maxReconnects=5&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false");
+        druidDataSource.setUrl("jdbc:mysql://127.0.0.1:3307/basic_data?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&connectTimeout=5000&socketTimeout=5000&autoReconnect=true&maxReconnects=5&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false");
         druidDataSource.setUsername("root");
         druidDataSource.setPassword("Abcd12345");
         druidDataSource.setDriverClassName("com.mysql.jdbc.Driver");
@@ -82,9 +83,12 @@ public class MysqlTest {
 
     @Test
     public void test() {
-        List<Integer> levels = new ArrayList<>();
-        levels.add(1);
-        levels.add(2);
+        List<Long> levels = new ArrayList<>();
+        levels.add(1L);
+        levels.add(2L);
+        List<Long> codes = new ArrayList<>();
+        codes.add(110000000000L);
+        codes.add(110100000000L);
 
         MapSqlParameterSource parameters = new MapSqlParameterSource();
         parameters.addValue("levels", levels);
@@ -92,8 +96,10 @@ public class MysqlTest {
         LinkedHashMap<Long, ProvinceAreaDTO> provinceAreaDTOMap = new LinkedHashMap<>();
 
         String placeholders = levels.stream().map(level -> "?").collect(Collectors.joining(","));
-        String sql = String.format("SELECT code, name, level, pcode FROM area_code WHERE level IN (%s)", placeholders);
+        String placeholders2 = codes.stream().map(level -> "?").collect(Collectors.joining(","));
+        String sql = String.format("SELECT code, name, level, pcode FROM area_code WHERE level IN (%s) and code IN (%s)", placeholders, placeholders2);
 
+        levels.addAll(codes);
         Object[] params = levels.toArray();
 //        String sql = "SELECT code, name, level,pcode FROM area_code WHERE level in (:levels) order by level, code";
         jdbcTemplate.query(sql, (rs, rowNum) -> {
@@ -153,6 +159,12 @@ public class MysqlTest {
             System.out.println("execute rollback");
 
         }
+    }
+
+    @Test
+    public void test3() {
+        String sql = "DELETE FROM acc WHERE created < ?";
+        jdbcTemplate.update(sql, DateTimeUtil.parseDatetime18("2024-08-05 22:24:53"));
     }
 
 }
