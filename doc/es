@@ -770,3 +770,25 @@ curl -XPOST "http://127.0.0.1:9200/blacklist/_delete_by_query" -d '
     }
   }
 }'
+
+
+# es 备份 hermes
+curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202405 -d '{
+    "type": "fs",
+    "settings": {
+        "location": "/usr/share/elasticsearch/backup/hermes-202405",
+        "max_snapshot_bytes_per_sec" : "200mb",
+        "max_restore_bytes_per_sec" : "200mb"
+    }
+}'
+
+# 去掉wait_for_completion=true，会后台执行备份
+curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202405/hermes-202405?wait_for_completion=true -d '{
+        "indices": "hermes-202405"
+}'
+# 压缩备份
+tar -czvf hermes-202405.tar.gz hermes-202405/
+
+# 生成es中task_item 的月份索引
+curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202308
+
