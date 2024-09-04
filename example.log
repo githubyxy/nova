@@ -259,3 +259,9 @@ INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
 INFO Druid-ConnectionPool-Log-1540374340 com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl - {"url":"jdbc:mysql://127.0.0.1:3307/basic_data?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&connectTimeout=5000&socketTimeout=5000&autoReconnect=true&maxReconnects=5&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false","dbType":"mysql","name":"DataSource-1540374340","activeCount":0,"poolingCount":3,"poolingPeak":3,"poolingPeakTime":"2024-08-27 16:18:34","connectCount":0,"closeCount":0,"physicalConnectCount":3}
 INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
 INFO Druid-ConnectionPool-Log-1540374340 com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl - {"url":"jdbc:mysql://127.0.0.1:3307/basic_data?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&connectTimeout=5000&socketTimeout=5000&autoReconnect=true&maxReconnects=5&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false","dbType":"mysql","name":"DataSource-1540374340","activeCount":0,"poolingCount":3,"poolingPeak":3,"poolingPeakTime":"2024-08-27 16:19:34","connectCount":0,"closeCount":0,"physicalConnectCount":3}
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-6 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+INFO main com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+ERROR main com.alibaba.druid.filter.FilterManager - load filter error, filter not found : sta
+INFO Thread-5 com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
