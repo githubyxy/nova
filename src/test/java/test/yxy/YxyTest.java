@@ -11,6 +11,7 @@ import org.apache.commons.codec.binary.Hex;
 import org.apache.tomcat.util.buf.HexUtils;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -171,6 +172,17 @@ public class YxyTest {
         String jsonString = JSONObject.toJSONString(p, openApiFeatures);
         System.out.println(jsonString);
 
+    }
+
+    @Test
+    public void test9() {
+        int N=0,t=20,b=10,n=381,T=100;
+        int s =(int) Math.ceil(new BigDecimal(N).multiply(new BigDecimal(20)).multiply(new BigDecimal(10))
+                .divide(new BigDecimal(n).multiply(new BigDecimal(T)), 4, BigDecimal.ROUND_HALF_UP).doubleValue());
+
+        System.out.println(s);
+
+        System.out.println((int) Math.ceil(new BigDecimal("0.00001").doubleValue()));
     }
 
 }
