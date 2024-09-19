@@ -22,6 +22,10 @@ public class YxyTest {
         A a = new A();
         A a1 = new A("a");
         A b = new A("b");
+
+        System.out.println(new BigDecimal(10).divide(new BigDecimal(3), 1, BigDecimal.ROUND_HALF_UP));
+        System.out.println(new BigDecimal(10).divide(new BigDecimal(3), 1, BigDecimal.ROUND_HALF_DOWN));
+        System.out.println(new BigDecimal(10).divide(new BigDecimal(3), 1, BigDecimal.ROUND_CEILING));
     }
 
 

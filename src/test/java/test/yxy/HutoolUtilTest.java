@@ -69,4 +69,16 @@ public class HutoolUtilTest {
 
         System.out.println(DateUtil.formatDate(DateUtil.endOfMonth(DateUtil.parseDate( "2024-09-01"))));
     }
+
+    @Test
+    public void test4() {
+        String startReportDate = "2024-09-18";
+        String endReportDate = "2024-09-18";
+        int betweenDays = (int) (DateUtil.betweenDay(DateUtil.parseDate(startReportDate), DateUtil.parseDate(endReportDate), true) + 1);
+        String prevStartReportDate = DateUtil.formatDate(DateUtil.offsetDay(DateUtil.parseDate(startReportDate), -betweenDays));
+        String prevEndReportDate = DateUtil.formatDate(DateUtil.offsetDay(DateUtil.parseDate(endReportDate), -betweenDays));
+
+        System.out.println(prevStartReportDate);
+        System.out.println(prevEndReportDate);
+    }
 }

@@ -772,6 +772,34 @@ curl -XPOST "http://127.0.0.1:9200/blacklist/_delete_by_query" -d '
 }'
 
 
+# 命中query条件的 按照billDuration做sum汇总查询
+curl -XPOST "http://127.0.0.1:9200/hermes-202409/_search" -d '
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": { "appCode": "xhb_mfrg8" }
+        },
+        {
+          "range": {
+            "gmtCreate": {
+              "gte": "1726588800000"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "aggs":{
+     "billDuration": {
+       "sum": {
+         "field": "billDuration"
+       }
+     }
+  }
+}'
+
 
 # 节点索引
 curl -XGET 127.0.0.1:9200/_cat/indices?v
