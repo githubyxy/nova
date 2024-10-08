@@ -45,7 +45,7 @@ public class HutoolUtilTest {
 
     @Test
     public void test3() {
-        String s = "2024-1-31";
+        String s = "2024-4-1";
         String s1 = "2024-1-30";
 
         int i = DateUtil.weekOfYear(DateUtil.parseDate(s));
@@ -68,6 +68,8 @@ public class HutoolUtilTest {
         System.out.println(DateUtil.dayOfMonth(DateUtil.endOfMonth(DateUtil.parseDate(s))));
 
         System.out.println(DateUtil.formatDate(DateUtil.endOfMonth(DateUtil.parseDate( "2024-09-01"))));
+
+        System.out.println(DateUtil.getLastDayOfMonth(DateUtil.parseDate(s)));
     }
 
     @Test
