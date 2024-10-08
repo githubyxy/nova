@@ -128,8 +128,11 @@ public class SortTest {
         list.add(new TimeMetric("b", 3));
         list.add(new TimeMetric("b", 4));
         list.add(new TimeMetric("b", 5));
-        Map<String, Long> collect = list.stream().collect(Collectors.toMap(TimeMetric::getTime, TimeMetric::getCount, (k1, k2) -> k1 + k2));
+        list.add(new TimeMetric(null, 5));
+//        Map<String, Long> collect = list.stream().collect(Collectors.toMap(TimeMetric::getTime, TimeMetric::getCount, (k1, k2) -> k1 + k2));
+//
+//        System.out.println(JSONObject.toJSONString(collect));
 
-        System.out.println(JSONObject.toJSONString(collect));
+        list.stream().sorted(Comparator.comparing(TimeMetric::getTime)).collect(Collectors.toList());
     }
 }

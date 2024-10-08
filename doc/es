@@ -804,22 +804,25 @@ curl -XPOST "http://127.0.0.1:9200/hermes-202409/_search" -d '
 # 节点索引
 curl -XGET 127.0.0.1:9200/_cat/indices?v
 
+# 删除索引 (sms-202103是索引名称)
+curl -XDELETE 127.0.0.1:9200/hermes-202406
+
 # es 备份 hermes
-curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202406 -d '{
+curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202407 -d '{
     "type": "fs",
     "settings": {
-        "location": "/usr/share/elasticsearch/backup/hermes-202406",
+        "location": "/usr/share/elasticsearch/backup/hermes-202407",
         "max_snapshot_bytes_per_sec" : "200mb",
         "max_restore_bytes_per_sec" : "200mb"
     }
 }'
 
 # 去掉wait_for_completion=true，会后台执行备份
-curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202406/hermes-202406?wait_for_completion=true -d '{
-        "indices": "hermes-202406"
+curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202407/hermes-202407?wait_for_completion=true -d '{
+        "indices": "hermes-202407"
 }'
 # 压缩备份
-tar -czvf hermes-202406.tar.gz hermes-202406/
+tar -czvf hermes-202407.tar.gz hermes-202407/
 
 # 生成es中task_item 的月份索引
-curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202410
+curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202411

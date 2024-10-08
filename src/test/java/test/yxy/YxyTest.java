@@ -8,6 +8,7 @@ import com.yxy.nova.mwh.utils.serialization.SerializerUtil;
 import com.yxy.nova.mwh.utils.text.TextUtil;
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import org.apache.commons.codec.binary.Hex;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.tomcat.util.buf.HexUtils;
 import org.junit.Test;
 
@@ -26,6 +27,20 @@ public class YxyTest {
         System.out.println(new BigDecimal(10).divide(new BigDecimal(3), 1, BigDecimal.ROUND_HALF_UP));
         System.out.println(new BigDecimal(10).divide(new BigDecimal(3), 1, BigDecimal.ROUND_HALF_DOWN));
         System.out.println(new BigDecimal(10).divide(new BigDecimal(3), 1, BigDecimal.ROUND_CEILING));
+    }
+
+    @Test
+    public void test11() {
+        String[][] headers = new String[1][45];
+        headers[0][14] = "数据信息";
+        headers[0][34] = "AI数据";
+        headers[0][44] = "人工数据";
+        for(int i = 0; i < headers.length; i++){
+            // 创建表头
+            for (int j = 0; j < headers[i].length; j++) {
+                System.out.println(headers[i][j]);
+            }
+        }
     }
 
 
