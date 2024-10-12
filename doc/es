@@ -671,11 +671,11 @@ curl -XGET "http://127.0.0.1:9200/blacklist/blacklist/_search" -d'
 }'
 
 
-curl -XGET "http://127.0.0.1:9200/hermes-r-202404/task_item/_search" -d'
+curl -XGET "http://127.0.0.1:9200/hermes-r-202409/task_item/_search" -d'
 {
   "query": {
     "match": {
-      "taskItemUuid": "0057d148da3244878934834151862d48"
+      "taskItemUuid": "3666151e238d493990bf913859601e7d"
     }
   }
 }'
@@ -826,3 +826,5 @@ tar -czvf hermes-202407.tar.gz hermes-202407/
 
 # 生成es中task_item 的月份索引
 curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202411
+
+
