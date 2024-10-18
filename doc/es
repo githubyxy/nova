@@ -671,11 +671,11 @@ curl -XGET "http://127.0.0.1:9200/blacklist/blacklist/_search" -d'
 }'
 
 
-curl -XGET "http://127.0.0.1:9200/hermes-r-202409/task_item/_search" -d'
+curl -XGET "http://127.0.0.1:9200/hermes-r-202410/task_item/_search" -d'
 {
   "query": {
     "match": {
-      "taskItemUuid": "3666151e238d493990bf913859601e7d"
+      "taskItemUuid": "f605a5544a114de5b613d8d195f303fb"
     }
   }
 }'

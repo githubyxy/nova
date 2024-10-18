@@ -82,5 +82,7 @@ public class HutoolUtilTest {
 
         System.out.println(prevStartReportDate);
         System.out.println(prevEndReportDate);
+
+        System.out.println((int)Math.ceil( 240 / 1000D));
     }
 }
