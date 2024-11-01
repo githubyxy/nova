@@ -1,128 +1,30 @@
-{
-  "query": {
 
-    "bool": {
-      "must": [
-        {
-          "term": {
-            "case_batch_uuid": {
-              "value": "20180519143954041981"
-            }
-          }
-        },
-        {
-          "bool": {
-            "should": [
-              {
-                "term": {
-                  "case_uuid": {
-                    "value": "3"
-                  }
-                }
-              },
-              {
-                "term": {
-                  "case_uuid": {
-                    "value": "2"
-                  }
-                }
-              }
-            ]
-          }
-        }
-      ]
+如果备份是后台执行的，下面命令可以查询备份的状态
+curl -XGET 127.0.0.1:9200/_snapshot/hermes-202102/hermes-202102/_status
+状态值有：
+INITIALIZING
+分片在检查集群状态看看自己是否可以被快照。这个一般是非常快的。
+STARTED
+数据正在被传输到仓库。
+FINALIZING
+数据传输完成；分片现在在发送快照元数据。
+DONE
+快照完成！
+FAILED
+快照处理的时候碰到了错误，这个分片/索引/快照不可能完成了。检查你的日志获取更多信息。
+# 取消备份
+curl -XDELETE 127.0.0.1:9200/_snapshot/hermes-202102/hermes-202102
 
-    }
-  }
-}
-
-@Test
-    public void test() throws ElasticsearchClientException {
-        ElasticsearchClient elasticsearchClient = new ElasticsearchClient();
-        SelectBuilder selectBuilder=elasticsearchClient.selectFrom("case_info");
-
-        selectBuilder.whereEquals("case_batch_uuid", "20180519143954041981");
-        selectBuilder.wildcardWhereLike("customer_name", "*张三*");
-        GroupWhere groupWhere = selectBuilder.whereOr();
-        groupWhere.whereEquals("collection_clerk_duration", 0);
-        groupWhere.whereNull("collection_clerk_duration");
-
-        selectBuilder.whereGreater("overdue_day", 1);
-        selectBuilder.whereLessOrEqual("overdue_day", 10);
-
-
-
-        // elasticsearchClient.get("", selectBuilder.getConditions());
-
-        GenerateSearchRequest request =new GenerateSearchRequest();
-        SearchRequest re1 = request.buildRequest(new String[]{"a"}, "", selectBuilder.getConditions());
-        JSONObject body = re1.getBody();
-        System.out.println(body.toJSONString());
-    }
-
-
-    POST /collectioncolud/case_info/_search?scroll=4m
-{
-   "query" : {
-     "bool": {
-       "must": [
-         {
-           "terms": {
-             "case_uuid": [
-               "1",
-               "2",
-               "3",
-               "4",
-               "5",
-               "6",
-               "7"
-             ]
-           }
-         }
-       ]
-     }
-   }
-}
-
+从备份中恢复
+curl -XPOST 127.0.0.1:9200/_snapshot/hermes-202102/hermes-202102/_restore
+#查询恢复的状态
+curl -XGET 127.0.0.1:9200/restored_hermes-202102/_recovery
 
 POST /_search/scroll
 {
    "scroll":"4m",
    "scroll_id":"DnF1ZXJ5VGhlbkZldGNoBQAAAAAAADAYFlB0ZEhxbWFOUjdpQTI1ZlU2WDNSWFEAAAAAAAAwGRZQdGRIcW1hTlI3aUEyNWZVNlgzUlhRAAAAAAAAMBoWUHRkSHFtYU5SN2lBMjVmVTZYM1JYUQAAAAAAADAbFlB0ZEhxbWFOUjdpQTI1ZlU2WDNSWFEAAAAAAAAwHBZQdGRIcW1hTlI3aUEyNWZVNlgzUlhR"
 }
-
-聚合查询语法本地测试
-1：以颜色分组
-GET /cars_demo/transactions/_search
-{
-    "size" : 10,
-    "aggs" : {
-        "popular_colors" : {
-            "terms" : {
-              "field" : "color"
-            }
-        }
-    }
-}
-2:以颜色分组 并算出平均价格
-{
-    "size" : 0,
-    "aggs" : {
-        "popular_colors" : {
-            "terms" : {
-              "field" : "color"
-            },
-            "aggs": {
-              "avg_price": {
-                 "avg": {
-                    "field": "price"
-                 }
-              }
-            }
-        }
-    }
-}
-
 
 ##   es 集群
 elasticsearch.yml 文件中修改：
@@ -218,95 +120,6 @@ curl -XDELETE 127.0.0.1:9200/sms-202103
 curl -XPOST http://127.0.0.1:9200/task_item/_close
 
 
-# 索引模板
-curl -XPUT "http://127.0.0.1:9201/_template/nova_template" -d '
-{
-  "template": "nova-*",
-  "order":"0",
-  "settings": {
-    "number_of_replicas": 1,
-    "number_of_shards": 1
-  },
-  "mappings": {
-      "task_item_exec_call" : {
-        "properties" : {
-          "appCode" : {
-            "type" : "text",
-            "fields" : {
-              "keyword" : {
-                "type" : "keyword",
-                "ignore_above" : 256
-              }
-            }
-          },
-          "gmtCreate" : {
-            "type" : "long"
-          },
-          "gmtModify" : {
-            "type" : "long"
-          },
-          "partnerCode" : {
-            "type" : "text",
-            "fields" : {
-              "keyword" : {
-                "type" : "keyword",
-                "ignore_above" : 256
-              }
-            }
-          },
-          "policyUuid" : {
-            "type" : "text",
-            "fields" : {
-              "keyword" : {
-                "type" : "keyword",
-                "ignore_above" : 64
-              }
-            }
-          },
-          "status" : {
-            "type" : "text",
-            "fields" : {
-              "keyword" : {
-                "type" : "keyword",
-                "ignore_above" : 64
-              }
-            }
-          },
-          "taskBatchUuid" : {
-            "type" : "long"
-          },
-          "taskItemExecUuid" : {
-            "type" : "text",
-            "fields" : {
-              "keyword" : {
-                "type" : "keyword",
-                "ignore_above" : 64
-              }
-            }
-          },
-          "taskItemUuid" : {
-            "type" : "text",
-            "fields" : {
-              "keyword" : {
-                "type" : "keyword",
-                "ignore_above" : 64
-              }
-            }
-          },
-          "taskUuid" : {
-            "type" : "text",
-            "fields" : {
-              "keyword" : {
-                "type" : "keyword",
-                "ignore_above" : 64
-              }
-            }
-          }
-        }
-      }
-    }
-}'
-
 # es索引备份
 curl -XPUT http://127.0.0.1:9201/_snapshot/my_backup -d '{
     "type": "fs",
@@ -316,307 +129,6 @@ curl -XPUT http://127.0.0.1:9201/_snapshot/my_backup -d '{
 }'
 
 
-curl -XPUT "http://127.0.0.1:9201/_template/hermes_execcall_template" -d '
-{
-    "template": "hermes-execcall-w*",
-    "order": "9",
-    "settings": {
-        "number_of_replicas": 1,
-        "number_of_shards": 5
-    },
-    "mappings": {
-        "task_item_exec_call": {
-            "properties": {
-                "taskItemExecUuid": {
-                    "type": "keyword",
-                    "ignore_above": 64
-                },
-                "taskItemUuid": {
-                    "type": "keyword",
-                    "ignore_above": 64
-                },
-                "policyUuid": {
-                    "type": "keyword",
-                    "ignore_above": 64
-                },
-                "taskBatchUuid": {
-                    "type": "integer"
-                },
-                "taskUuid": {
-                    "type": "keyword",
-                    "ignore_above": 64
-                },
-                "partnerCode": {
-                    "type": "keyword",
-                    "ignore_above": 32
-                },
-                "appCode": {
-                    "type": "keyword",
-                    "ignore_above": 32
-                },
-                "callStartTime":{
-                  "type": "date",
-                "format": "yyyy-MM-dd HH:mm:ss"
-                },
-                "robotResultCode":{
-                  "type": "keyword",
-                    "ignore_above": 32
-                },
-                "customerResultCode":{
-                  "type": "keyword",
-                    "ignore_above": 32
-                },
-                "status": {
-                    "type": "keyword",
-                    "ignore_above": 64
-                },
-                "gmtCreate": {
-                    "type": "date",
-                "format": "yyyy-MM-dd HH:mm:ss"
-                }
-            }
-        }
-    }
-}'
-
-curl -XPUT "http://127.0.0.1:9201/_template/hermes_taskitem_template" -d '
-{
-    "template": "hermes-taskitem-w*",
-    "order": "9",
-    "settings": {
-        "number_of_replicas": 1,
-        "number_of_shards": 5
-    },
-    {
-    "mappings": {
-        "task_item": {
-            "properties": {
-                "taskItemUuid": {
-                    "type": "keyword",
-                    "ignore_above": 64
-                },
-                "taskUuid": {
-                    "type": "keyword",
-                    "ignore_above": 64
-                },
-                "policyUuid": {
-                    "type": "keyword",
-                    "ignore_above": 64
-                },
-                "taskBatchUuid": {
-                    "type": "integer"
-                },
-                "partnerCode": {
-                    "type": "keyword",
-                    "ignore_above": 32
-                },
-                "appCode": {
-                    "type": "keyword",
-                    "ignore_above": 32
-                },
-                "mobileNo": {
-                    "type": "keyword",
-                    "ignore_above": 11
-                },
-                "customerResultCode": {
-                    "type": "keyword",
-                    "ignore_above": 32
-                },
-                "tag_code": {
-                    "type": "keyword",
-                    "ignore_above": 32
-                },
-                "flowStatus": {
-                    "type": "keyword",
-                    "ignore_above": 64
-                },
-                "gmtCreate": {
-                    "type": "date",
-                    "format": "yyyy-MM-dd HH:mm:ss"
-                }
-            }
-        }
-    }
-}
-}'
-
-curl -XPUT "http://127.0.0.1:9201/_template/hermes_execcall_template" -d '
-{
-    "template": "hermes-execcall-w*",
-    "order": "9",
-    "settings": {
-        "number_of_replicas": 1,
-        "number_of_shards": 5
-    },
-    "mappings": {
-        "task_item_exec_sms": {
-            "properties": {
-                "taskItemExecUuid": {
-                    "type": "keyword",
-                    "ignore_above": 64
-                },
-                "taskItemUuid": {
-                    "type": "keyword",
-                    "ignore_above": 64
-                },
-                "policyUuid": {
-                    "type": "keyword",
-                    "ignore_above": 64
-                },
-                "taskBatchUuid": {
-                    "type": "integer"
-                },
-                "taskUuid": {
-                    "type": "keyword",
-                    "ignore_above": 64
-                },
-                "partnerCode": {
-                    "type": "keyword",
-                    "ignore_above": 32
-                },
-                "appCode": {
-                    "type": "keyword",
-                    "ignore_above": 32
-                },
-                "mobileNo":{
-                  "type": "keyword",
-                    "ignore_above": 11
-                },
-                "submitStatus":{
-                  "type": "keyword",
-                    "ignore_above": 32
-                },
-                "arrivalStatus":{
-                  "type": "keyword",
-                    "ignore_above": 32
-                },
-                "gmtCreate": {
-                    "type": "date",
-                "format": "yyyy-MM-dd HH:mm:ss"
-                }
-            }
-        }
-    }
-}'
-
-
-#  短信索引
-PUT /sms-202104
-{
-    "settings": {
-        "number_of_shards": 1,
-        "number_of_replicas": 0,
-        "index.mapping.total_fields.limit": 100000
-    },
-    "mappings": {
-        "sms_task_item": {
-            "_all": {
-                "enabled": false
-            },
-            "properties": {
-                "appCode": {
-                    "type": "keyword",
-                    "ignore_above": 64
-                },
-                "taskUuid": {
-                    "type": "long"
-                },
-                "sendBatchUuid": {
-                    "type": "keyword",
-                    "ignore_above": 32
-                },
-                "taskItemUuid": {
-                    "type": "keyword",
-                    "ignore_above": 32
-                },
-                "templateNo": {
-                    "type": "keyword",
-                    "ignore_above": 32
-                },
-                "mobile": {
-                    "type": "keyword",
-                    "ignore_above": 11
-                },
-                "sign": {
-                    "type": "keyword",
-                    "ignore_above": 255
-                },
-                "content": {
-                    "type": "text",
-                    "index": false
-                },
-                "channelNo": {
-                    "type": "keyword",
-                    "ignore_above": 54
-                },
-                "channelAccountUuid": {
-                    "type": "keyword",
-                    "ignore_above": 54
-                },
-                "outId": {
-                    "type": "keyword",
-                    "ignore_above": 256
-                },
-                "submitStatus": {
-                    "type": "keyword",
-                    "ignore_above": 32
-                },
-                "arrivalStatus": {
-                    "type": "keyword",
-                    "ignore_above": 32
-                },
-                "gmtCreate": {
-                    "type": "long"
-                },
-                "submitTime": {
-                    "type": "date",
-                    "format": "yyyy-MM-dd HH:mm:ss"
-                },
-                "arrivalTime": {
-                    "type": "date",
-                    "format": "yyyy-MM-dd HH:mm:ss"
-                },
-                "ext": {
-                    "type": "keyword",
-                    "ignore_above": 32
-                },
-                "count": {
-                    "type": "integer"
-                },
-                "replyTime": {
-                    "type": "date",
-                    "format": "yyyy-MM-dd HH:mm:ss"
-                },
-                "partnerCode": {
-                    "type": "keyword",
-                    "ignore_above": 64
-                },
-                "replyContent": {
-                    "type": "text",
-                    "index": false
-                }
-            }
-        }
-    }
-}
-
-POST _aliases
-{
-    "actions": [
-        {
-            "add": {
-                "index": "sms-202104",
-                "alias": "sms-r-202104"
-            }
-        },
-        {
-            "add": {
-                "index": "sms-202104",
-                "alias": "sms-w-202104"
-            }
-        }
-    ]
-}
 
 # ES 备份
 #  集群备份路径  chmod -R 777 /root
@@ -675,7 +187,11 @@ curl -XGET "http://127.0.0.1:9200/hermes-r-202410/task_item/_search" -d'
 {
   "query": {
     "match": {
+<<<<<<< HEAD
       "taskItemUuid": "f605a5544a114de5b613d8d195f303fb"
+=======
+      "taskItemUuid": "8a485ed967d14540b43d0f5cf34f68af"
+>>>>>>> 3a0a824 (modify)
     }
   }
 }'
@@ -808,21 +324,22 @@ curl -XGET 127.0.0.1:9200/_cat/indices?v
 curl -XDELETE 127.0.0.1:9200/hermes-202406
 
 # es 备份 hermes
-curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202407 -d '{
+curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202408 -d '{
     "type": "fs",
     "settings": {
-        "location": "/usr/share/elasticsearch/backup/hermes-202407",
+        "location": "/usr/share/elasticsearch/backup/hermes-202408",
         "max_snapshot_bytes_per_sec" : "200mb",
         "max_restore_bytes_per_sec" : "200mb"
     }
 }'
 
 # 去掉wait_for_completion=true，会后台执行备份
-curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202407/hermes-202407?wait_for_completion=true -d '{
-        "indices": "hermes-202407"
+curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202408/hermes-202408?wait_for_completion=true -d '{
+        "indices": "hermes-202408"
 }'
+
 # 压缩备份
-tar -czvf hermes-202407.tar.gz hermes-202407/
+tar -czvf hermes-202408.tar.gz hermes-202408/
 
 # 生成es中task_item 的月份索引
 curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202411

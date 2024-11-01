@@ -8,6 +8,7 @@ import com.yxy.nova.mwh.utils.serialization.SerializerUtil;
 import com.yxy.nova.mwh.utils.text.TextUtil;
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.tomcat.util.buf.HexUtils;
 import org.junit.Test;
@@ -202,6 +203,30 @@ public class YxyTest {
         System.out.println(s);
 
         System.out.println((int) Math.ceil(new BigDecimal("0.00001").doubleValue()));
+    }
+
+    @Test
+    public void test10() {
+        int i=0;
+        while (true) {
+            i++;
+            if (i==5) {
+                break;
+            } else {
+                System.out.println(i);
+            }
+        }
+    }
+
+    @Test
+    public void test12() {
+        long i = 6000000L;
+        long l = i / 29;
+
+        System.out.println(l); //193548
+        System.out.println( new BigDecimal(i).divide(new BigDecimal(29), 0, BigDecimal.ROUND_HALF_UP).longValue() ); //193548
+
+        System.out.println(Integer.valueOf("09") - 1);
     }
 
 }
