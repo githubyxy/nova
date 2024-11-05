@@ -324,24 +324,27 @@ curl -XGET 127.0.0.1:9200/_cat/indices?v
 curl -XDELETE 127.0.0.1:9200/hermes-202406
 
 # es 备份 hermes
-curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202408 -d '{
+curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202409 -d '{
     "type": "fs",
     "settings": {
-        "location": "/usr/share/elasticsearch/backup/hermes-202408",
+        "location": "/usr/share/elasticsearch/backup/hermes-202409",
         "max_snapshot_bytes_per_sec" : "200mb",
         "max_restore_bytes_per_sec" : "200mb"
     }
 }'
 
-# 去掉wait_for_completion=true，会后台执行备份
-curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202408/hermes-202408?wait_for_completion=true -d '{
-        "indices": "hermes-202408"
+# 去掉wait_for_completion=true，会后台执行备份 (curl -XGET 127.0.0.1:9200/_snapshot/hermes-202409/hermes-202409/_status)
+curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202409/hermes-202409 -d '{
+        "indices": "hermes-202409"
+}'
+curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202409/hermes-202409?wait_for_completion=true -d '{
+        "indices": "hermes-202409"
 }'
 
 # 压缩备份
-tar -czvf hermes-202408.tar.gz hermes-202408/
+tar -czvf hermes-202409.tar.gz hermes-202409/
 
 # 生成es中task_item 的月份索引
-curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202411
+curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202412
 
 
