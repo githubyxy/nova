@@ -41,7 +41,6 @@ import com.yxy.nova.util.SimpleHttpClient;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.elasticsearch.action.bulk.BulkResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,8 +64,6 @@ public class InternalController {
 
     @Autowired
     private WechatService wechatService;
-    @Autowired
-    private TaskItemExecCallMapper taskItemExecCallMapper;
     @Autowired(required = false)
     private SearchService searchService;
     @Autowired(required = false)
@@ -126,19 +123,6 @@ public class InternalController {
         return encrypt;
     }
 
-    @PostMapping("/execCallTest")
-    @ResponseBody
-    public String test(@RequestBody TaskItemExecCallDO taskItemExecCallDO) {
-        taskItemExecCallMapper.insert(taskItemExecCallDO);
-        InsertAction insertAction = convertToInsertAction(taskItemExecCallDO);
-        try {
-            BulkResponse bulkItemResponses = searchService.bulkInsert(Arrays.asList(insertAction));
-            LOGGER.info("bulkItemResponses:{}", JSON.toJSONString(bulkItemResponses));
-        } catch (ElasticsearchClientException e) {
-            LOGGER.error("es bulkInsert error", e);
-        }
-        return "ok";
-    }
 
     @GetMapping("/esQuery")
     @ResponseBody
