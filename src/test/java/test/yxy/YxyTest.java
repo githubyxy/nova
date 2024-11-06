@@ -229,4 +229,25 @@ public class YxyTest {
         System.out.println(Integer.valueOf("09") - 1);
     }
 
+    @Test
+    public void test13() {
+        String s = "0.076";
+        double price = Double.parseDouble(s);
+        if (price < 0) {
+            System.out.println(false);
+        }
+
+        // 将字符串表示的元转换为 BigDecimal
+        BigDecimal yuanValue = new BigDecimal(s);
+
+        // 定义 1 元等于 1000 厘的常量
+        BigDecimal conversionFactor = new BigDecimal("1000");
+
+        // 将元转换为厘
+        BigDecimal liValue = yuanValue.multiply(conversionFactor);
+
+        // 将结果转换为 long 类型并返回
+        System.out.println(liValue.longValueExact());
+    }
+
 }
