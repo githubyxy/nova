@@ -8,11 +8,13 @@ import com.yxy.nova.mwh.utils.constant.ISPEnum;
 import com.yxy.nova.mwh.utils.serialization.SerializerUtil;
 import com.yxy.nova.mwh.utils.text.TextUtil;
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
+import lombok.SneakyThrows;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.tomcat.util.buf.HexUtils;
 import org.junit.Test;
+import test.SmsTaskItemSendProcessor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -269,6 +271,14 @@ public class YxyTest {
                 ));
         System.out.println(JSONObject.toJSONString(collect));
 
+    }
+
+    @SneakyThrows
+    @Test
+    public void test16() {
+        SmsTaskItemSendProcessor smsTaskItemSendProcessor = new SmsTaskItemSendProcessor("yxy");
+
+        Thread.sleep(5000);
     }
 
 }
