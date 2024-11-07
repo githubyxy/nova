@@ -4,6 +4,7 @@ import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.yxy.nova.mwh.utils.constant.ISPEnum;
 import com.yxy.nova.mwh.utils.serialization.SerializerUtil;
 import com.yxy.nova.mwh.utils.text.TextUtil;
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
@@ -231,7 +232,7 @@ public class YxyTest {
 
     @Test
     public void test13() {
-        String s = "0.076";
+        String s = "00.76";
         double price = Double.parseDouble(s);
         if (price < 0) {
             System.out.println(false);
@@ -248,6 +249,26 @@ public class YxyTest {
 
         // 将结果转换为 long 类型并返回
         System.out.println(liValue.longValueExact());
+    }
+
+    @Test
+    public void test14() {
+        Optional<String> s = Optional.ofNullable(null);
+        System.out.println(s.orElseGet(() -> "12"));
+        System.out.println(s.orElse("111"));
+    }
+
+    @Test
+    public void test15() {
+        String s = "{\"CMCC\":[{\"startTime\":\"2024-07-30\",\"price\":\"0.76\"}],\"CUCC\":[{\"startTime\":\"2024-07-30\",\"price\":\"0.76\"}]}";
+        Map<ISPEnum, List<PricePeriod>> collect = SerializerUtil.jsonMapDeserializeNullAsEmptyMap(s, ISPEnum.class, List.class)
+                .entrySet().stream()
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        entry -> SerializerUtil.jsonListDeserializeNullAsEmptyList(JSONObject.toJSONString(entry.getValue()), PricePeriod.class)
+                ));
+        System.out.println(JSONObject.toJSONString(collect));
+
     }
 
 }
