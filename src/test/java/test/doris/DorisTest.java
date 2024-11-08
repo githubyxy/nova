@@ -43,7 +43,7 @@ public class DorisTest {
 
     private LinkedBlockingQueue<TestJsonDorisDTO> queue = new LinkedBlockingQueue<>(10000);
 
-    private String host = "114.55.2.52";
+    private String host = "127.0.0.1";
 
     private int port = 8030;
 
@@ -68,7 +68,7 @@ public class DorisTest {
     @Before
     public void init() throws SQLException {
         DruidDataSource druidDataSource = new DruidDataSource();
-        druidDataSource.setUrl("jdbc:mysql://114.55.2.52:9030/test?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&connectTimeout=5000&socketTimeout=5000&autoReconnect=true&maxReconnects=5&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false");
+        druidDataSource.setUrl("jdbc:mysql://127.0.0.1:9030/test?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&connectTimeout=5000&socketTimeout=5000&autoReconnect=true&maxReconnects=5&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false");
         druidDataSource.setUsername("root");
         druidDataSource.setPassword("");
         druidDataSource.setDriverClassName("com.mysql.jdbc.Driver");
