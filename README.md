@@ -106,5 +106,5 @@ chmod 777 /root/data/docker/debezium/data
 docker run -d --name debezium -p 8020:8080 --net docker_default --ip 172.18.0.20 -v /root/data/docker/debezium/conf:/debezium/conf -v /root/data/docker/debezium/data:/debezium/data --link pgsql --restart=always debezium/server:2.0
 
 
-
+This is an open source java project, including mysql, redis, kafka, doris, rocketmq and other infrastructure to use the demo, as well as the best solution to use with spring, tcp, udp, cmpp, mqtt and other protocols to use the demo.
 
