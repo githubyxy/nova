@@ -15,33 +15,31 @@
  * limitations under the License.
  */
 
-package test.rocketmq.normal;
+package test.rocketmq;
 
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
-import lombok.SneakyThrows;
-import org.apache.rocketmq.client.apis.*;
+import org.apache.rocketmq.client.apis.ClientConfiguration;
+import org.apache.rocketmq.client.apis.ClientException;
+import org.apache.rocketmq.client.apis.ClientServiceProvider;
 import org.apache.rocketmq.client.apis.consumer.FilterExpression;
 import org.apache.rocketmq.client.apis.consumer.FilterExpressionType;
 import org.apache.rocketmq.client.apis.consumer.SimpleConsumer;
 import org.apache.rocketmq.client.apis.message.MessageId;
 import org.apache.rocketmq.client.apis.message.MessageView;
-import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.shaded.org.slf4j.Logger;
 import org.apache.rocketmq.shaded.org.slf4j.LoggerFactory;
 
-import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.List;
 
-public class SimpleConsumerExample {
-    private static final Logger log = LoggerFactory.getLogger(SimpleConsumerExample.class);
+public class DLQConsumerExample {
+    private static final Logger log = LoggerFactory.getLogger(DLQConsumerExample.class);
 
-    private SimpleConsumerExample() {
+    private DLQConsumerExample() {
     }
 
-    @SneakyThrows
     @SuppressWarnings({"resource", "InfiniteLoopStatement"})
     public static void main(String[] args) throws ClientException {
         final ClientServiceProvider provider = ClientServiceProvider.loadService();
@@ -60,14 +58,10 @@ public class SimpleConsumerExample {
             // .enableSsl(false)
 //            .setCredentialProvider(sessionCredentialsProvider)
             .build();
-        // sh mqadmin updateSubGroup -c DefaultCluster -g yourConsumerGroup -n localhost:9876
-        String consumerGroup = "yourConsumerGroup";
-        Duration awaitDuration = Duration.ofSeconds(30);
-        String tag = "tagB";
-        String topic = "TestTopic";
-        FilterExpression filterExpression = new FilterExpression(tag, FilterExpressionType.TAG);
+        String consumerGroup = "yourFifoMessageGroup";
+        Duration awaitDuration = Duration.ofSeconds(60);
+        String topic = "%DLQ%yourFifoMessageGroup";
         // In most case, you don't need to create too many consumers, singleton pattern is recommended.
-
         SimpleConsumer consumer = provider.newSimpleConsumerBuilder()
             .setClientConfiguration(clientConfiguration)
             // Set the consumer group name.
@@ -75,12 +69,12 @@ public class SimpleConsumerExample {
             // set await duration for long-polling.
             .setAwaitDuration(awaitDuration)
             // Set the subscription for the consumer.
-            .setSubscriptionExpressions(Collections.singletonMap(topic, filterExpression))
+            .setSubscriptionExpressions(Collections.singletonMap(topic, FilterExpression.SUB_ALL))
             .build();
         // Max message num for each long polling.
         int maxMessageNum = 16;
         // Set message invisible duration after it is received.
-        Duration invisibleDuration = Duration.ofSeconds(15);
+        Duration invisibleDuration = Duration.ofSeconds(13);
         // Receive message, multi-threading is more recommended.
         do {
             final List<MessageView> messages = consumer.receive(maxMessageNum, invisibleDuration);
@@ -89,11 +83,6 @@ public class SimpleConsumerExample {
                 try {
                     String body = StandardCharsets.UTF_8.decode(message.getBody()).toString();
                     System.out.println(DateTimeUtil.datetime18() + " Received message: " + body + ", tag" + message.getTag().get());
-                    if (body.endsWith("24")) {
-                        System.out.println("模拟失败:" + body);
-                        Thread.sleep(1000 * 10);
-                        System.out.println(1/0);
-                    }
                     MessageId messageId = message.getMessageId();
                     consumer.ack(message);
 //                    System.out.println("Message is acknowledged successfully, messageId={}" + messageId);
