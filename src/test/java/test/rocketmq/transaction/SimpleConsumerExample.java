@@ -15,13 +15,15 @@
  * limitations under the License.
  */
 
-package test.rocketmq;
+package test.rocketmq.transaction;
 
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import org.apache.rocketmq.client.apis.ClientConfiguration;
 import org.apache.rocketmq.client.apis.ClientException;
 import org.apache.rocketmq.client.apis.ClientServiceProvider;
-import org.apache.rocketmq.client.apis.consumer.*;
+import org.apache.rocketmq.client.apis.consumer.FilterExpression;
+import org.apache.rocketmq.client.apis.consumer.FilterExpressionType;
+import org.apache.rocketmq.client.apis.consumer.SimpleConsumer;
 import org.apache.rocketmq.client.apis.message.MessageId;
 import org.apache.rocketmq.client.apis.message.MessageView;
 import org.apache.rocketmq.shaded.org.slf4j.Logger;
@@ -32,10 +34,10 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.List;
 
-public class DLQConsumerExample {
-    private static final Logger log = LoggerFactory.getLogger(DLQConsumerExample.class);
+public class SimpleConsumerExample {
+    private static final Logger log = LoggerFactory.getLogger(SimpleConsumerExample.class);
 
-    private DLQConsumerExample() {
+    private SimpleConsumerExample() {
     }
 
     @SuppressWarnings({"resource", "InfiniteLoopStatement"})
@@ -56,36 +58,48 @@ public class DLQConsumerExample {
             // .enableSsl(false)
 //            .setCredentialProvider(sessionCredentialsProvider)
             .build();
-        String consumerGroup = "yourFifoMessageGroup";
-        String topic = "%DLQ%yourFifoMessageGroup";
+
+        // ./bin/mqadmin updateSubGroup -c DefaultCluster -g yourFifoMessageGroup -n localhost:9876 -o true
+        String consumerGroup = "yxyTransactionGroup";
+        Duration awaitDuration = Duration.ofSeconds(60);
+        String tag = "tagA";
+        String topic = "TestTransactionTopic";
+        FilterExpression filterExpression = new FilterExpression(tag, FilterExpressionType.TAG);
         // In most case, you don't need to create too many consumers, singleton pattern is recommended.
-//        SimpleConsumer consumer = provider.newSimpleConsumerBuilder()
-//            .setClientConfiguration(clientConfiguration)
-//            // Set the consumer group name.
-//            .setConsumerGroup(consumerGroup)
-//            // set await duration for long-polling.
-//            .setAwaitDuration(awaitDuration)
-//            // Set the subscription for the consumer.
-//            .setSubscriptionExpressions(Collections.singletonMap(topic, FilterExpression.SUB_ALL))
-//            .build();
-
-        PushConsumer consumer = provider.newPushConsumerBuilder()
-                .setClientConfiguration(clientConfiguration)
-                .setConsumerGroup(consumerGroup)
-                .setSubscriptionExpressions(Collections.singletonMap(topic, FilterExpression.SUB_ALL))
-                .setMessageListener(messageView -> {
-                    try {
-                        String body = StandardCharsets.UTF_8.decode(messageView.getBody()).toString();
-                        System.out.println(DateTimeUtil.datetime18() + " Received message: " + body + ", tag" + messageView.getTag().get());
-                        MessageId messageId = messageView.getMessageId();
+        SimpleConsumer consumer = provider.newSimpleConsumerBuilder()
+            .setClientConfiguration(clientConfiguration)
+            // Set the consumer group name.
+            .setConsumerGroup(consumerGroup)
+            // set await duration for long-polling.
+            .setAwaitDuration(awaitDuration)
+            // Set the subscription for the consumer.
+            .setSubscriptionExpressions(Collections.singletonMap(topic, filterExpression))
+            .build();
+        // Max message num for each long polling.
+        int maxMessageNum = 16;
+        // Set message invisible duration after it is received.
+        Duration invisibleDuration = Duration.ofSeconds(13);
+        // Receive message, multi-threading is more recommended.
+        do {
+            final List<MessageView> messages = consumer.receive(maxMessageNum, invisibleDuration);
+//            System.out.println("Received {} message(s)" + messages.size());
+            for (MessageView message : messages) {
+                try {
+                    String body = StandardCharsets.UTF_8.decode(message.getBody()).toString();
+                    System.out.println(DateTimeUtil.datetime18() + " Received message: " + body + ", tag" + message.getTag().get());
+//                    if (body.endsWith("22")) {
+//                        System.out.println("模拟失败:" + body);
+//                        System.out.println(1/0);
+//                    }
+                    MessageId messageId = message.getMessageId();
+                    consumer.ack(message);
 //                    System.out.println("Message is acknowledged successfully, messageId={}" + messageId);
-                    } catch (Throwable t) {
-                        System.out.println("Message is failed to be acknowledged, t={}" + t.getMessage());
-                    }
-                    return ConsumeResult.SUCCESS;
-                })
-                .build();
-
+                } catch (Throwable t) {
+                    System.out.println("Message is failed to be acknowledged, t={}" + t.getMessage());
+                }
+            }
+        } while (true);
+        // Close the simple consumer when you don't need it anymore.
         // You could close it manually or add this into the JVM shutdown hook.
         // consumer.close();
     }
