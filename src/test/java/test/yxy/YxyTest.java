@@ -10,7 +10,7 @@ import com.yxy.nova.mwh.utils.text.TextUtil;
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import lombok.SneakyThrows;
 import org.apache.commons.codec.binary.Hex;
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.tomcat.util.buf.HexUtils;
 import org.junit.Test;
@@ -270,6 +270,11 @@ public class YxyTest {
                         entry -> SerializerUtil.jsonListDeserializeNullAsEmptyList(JSONObject.toJSONString(entry.getValue()), PricePeriod.class)
                 ));
         System.out.println(JSONObject.toJSONString(collect));
+        List<String> collect1 = collect.entrySet().stream().filter(ispEnumListEntry -> CollectionUtils.isNotEmpty(ispEnumListEntry.getValue())).map(ispEnumListEntry -> ispEnumListEntry.getKey().name()).collect(Collectors.toList());
+        System.out.println(JSONObject.toJSONString(collect1));
+        List<String> list1 = new ArrayList<>(Arrays.asList("CMCC"));
+        boolean b = collect1.containsAll(list1);
+        System.out.println(b);
 
     }
 
@@ -279,6 +284,25 @@ public class YxyTest {
         SmsTaskItemSendProcessor smsTaskItemSendProcessor = new SmsTaskItemSendProcessor("yxy");
 
         Thread.sleep(5000);
+    }
+
+    @Test
+    public void test17() {
+        List<Map<String,Long>> list = new ArrayList<>();
+        Map<String, Long> map = new HashMap<>();
+        map.put("1", 1L);
+        map.put("2", 2L);
+        list.add(map);
+        Map<String, Long> map1 = new HashMap<>();
+        map1.put("1", 1L);
+        map1.put("2", 2L);
+        list.add(map1);
+
+        Map<String, Long> reduce = list.stream().reduce(new HashMap<>(), (map2, map3) -> {
+            map3.forEach((k, v) -> map2.merge(k, v, Long::sum));
+            return map2;
+        });
+        System.out.println(JSONObject.toJSONString(reduce));
     }
 
 }
