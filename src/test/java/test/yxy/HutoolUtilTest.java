@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -89,5 +90,12 @@ public class HutoolUtilTest {
 
         System.out.println("prevStartReportDate" + DateUtil.formatDate(DateUtil.offsetMonth(DateUtil.parseDate(startReportDate), -betweenMonths)));
         System.out.println("prevEndReportDate" + DateUtil.formatDate(DateUtil.offsetMonth(DateUtil.parseDate(endReportDate), -betweenMonths)));
+    }
+
+    @Test
+    public void test5() {
+        int i = DateUtil.dayOfMonth(new Date());
+
+        System.out.println(i);
     }
 }

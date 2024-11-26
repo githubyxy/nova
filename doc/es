@@ -183,15 +183,11 @@ curl -XGET "http://127.0.0.1:9200/blacklist/blacklist/_search" -d'
 }'
 
 
-curl -XGET "http://127.0.0.1:9200/hermes-r-202410/task_item/_search" -d'
+curl -XGET "http://127.0.0.1:9200/hermes-r-202411/task_item/_search" -d'
 {
   "query": {
     "match": {
-<<<<<<< HEAD
-      "taskItemUuid": "f605a5544a114de5b613d8d195f303fb"
-=======
-      "taskItemUuid": "8a485ed967d14540b43d0f5cf34f68af"
->>>>>>> 3a0a824 (modify)
+      "taskItemUuid": "855186fdee764c9e8471e81e189025cd"
     }
   }
 }'
