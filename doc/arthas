@@ -1,0 +1,14 @@
+# 启动 arthas
+java -jar arthas-boot.jar
+
+# 取消严格模式：
+options strict false
+
+# 获取类加载器的hash值：（AppMain的具体路径）
+sc -d cn.guixi.hermes.AppMain
+
+# bean里面一个缓存字段 失效，
+ognl -c 179d3b25 '@cn.guixi.sms.core.AppMain@context.getBean("smsSendApplicationServiceImpl").taskBatch4templateNoCache.invalidateAll()'
+
+# 一个类中获取实例后执行具体方法
+ognl -c 179d3b25 '@cn.guixi.sms.core.biz.handler.SingleProtoHandler@getInstance().tokenCache.invalidateAll()'

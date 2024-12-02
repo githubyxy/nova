@@ -1,6 +1,7 @@
 package test;
 
 import cn.hutool.core.date.DatePattern;
+import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -39,6 +40,20 @@ public class HuToolTest {
         System.out.println(s1.replaceFirst("^0*",""));
         System.out.println(s2.replaceFirst("^0*",""));
         System.out.println(s3.replaceFirst("^0*",""));
+
+    }
+
+    @Test
+    public void test3() {
+        DateTime dateTime = DateUtil.beginOfMonth(new Date());
+        String s = DateUtil.formatDateTime(dateTime);
+        System.out.println(s);
+
+
+        String s1 = DateUtil.formatDateTime(DateUtil.beginOfMonth(DateUtil.lastMonth()));
+        System.out.println(s1);
+        String s2 = DateUtil.formatDateTime(DateUtil.endOfMonth(DateUtil.lastMonth()));
+        System.out.println(s2);
 
     }
 
