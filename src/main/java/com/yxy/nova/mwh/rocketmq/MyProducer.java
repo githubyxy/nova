@@ -1,19 +1,9 @@
 package com.yxy.nova.mwh.rocketmq;
 
-import com.ctg.mq.api.CTGMQFactory;
-import com.ctg.mq.api.IMQProducer;
-import com.ctg.mq.api.PropertyKeyConst;
-import com.ctg.mq.api.bean.MQMessage;
-import com.ctg.mq.api.bean.MQSendResult;
-import com.ctg.mq.api.exception.MQException;
-import com.ctg.mq.api.exception.MQProducerException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.remoting.common.RemotingHelper;
-
-import javax.annotation.PostConstruct;
-import java.util.Properties;
 
 /**
  * @author yuxiaoyu

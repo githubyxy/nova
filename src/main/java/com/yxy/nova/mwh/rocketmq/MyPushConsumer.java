@@ -1,12 +1,5 @@
 package com.yxy.nova.mwh.rocketmq;
 
-import com.ctg.mq.api.CTGMQFactory;
-import com.ctg.mq.api.IMQPushConsumer;
-import com.ctg.mq.api.PropertyKeyConst;
-import com.ctg.mq.api.bean.MQResult;
-import com.ctg.mq.api.listener.ConsumerTopicListener;
-import com.ctg.mq.api.listener.ConsumerTopicStatus;
-import lombok.SneakyThrows;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
@@ -16,7 +9,6 @@ import org.apache.rocketmq.common.message.MessageExt;
 
 import java.io.UnsupportedEncodingException;
 import java.util.List;
-import java.util.Properties;
 
 /**
  * @author yuxiaoyu

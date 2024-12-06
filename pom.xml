@@ -437,37 +437,6 @@
         </dependency>
 
         <dependency>
-            <groupId>ctg.mq</groupId>
-            <artifactId>api</artifactId>
-            <version>2.7.6</version>
-        </dependency>
-        <dependency>
-            <groupId>ctg.mq</groupId>
-            <artifactId>client</artifactId>
-            <version>2.7.6</version>
-        </dependency>
-        <dependency>
-            <groupId>ctg.mq</groupId>
-            <artifactId>common</artifactId>
-            <version>2.7.6</version>
-        </dependency>
-        <dependency>
-            <groupId>ctg.mq</groupId>
-            <artifactId>remoting</artifactId>
-            <version>2.7.6</version>
-        </dependency>
-        <dependency>
-            <groupId>ctg.mq</groupId>
-            <artifactId>srvutil</artifactId>
-            <version>2.7.6</version>
-        </dependency>
-        <dependency>
-            <groupId>ctg.mq</groupId>
-            <artifactId>tools</artifactId>
-            <version>2.7.6</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>3.9</version>
