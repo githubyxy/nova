@@ -341,6 +341,6 @@ curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202409/hermes-202409?wait_for_complet
 tar -czvf hermes-202409.tar.gz hermes-202409/
 
 # 生成es中task_item 的月份索引
-curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202412
+curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202501
 
 
