@@ -55,6 +55,8 @@ public class HuToolTest {
         String s2 = DateUtil.formatDateTime(DateUtil.endOfMonth(DateUtil.lastMonth()));
         System.out.println(s2);
 
+        int i = DateUtil.dayOfMonth(new Date());
+        System.out.printf(i + "");
     }
 
 }

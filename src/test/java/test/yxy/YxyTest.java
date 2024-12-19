@@ -24,13 +24,12 @@ import java.util.stream.Collectors;
 public class YxyTest {
     @Test
     public void test() throws Exception {
-        A a = new A();
-        A a1 = new A("a");
-        A b = new A("b");
+        String str = ":";
+        List<String> split = TextUtil.split(str, ":");
+        System.out.printf(split.size() + "");
+        System.out.printf(split.get(0) + "");
+//        System.out.printf(split.get(1) + "");
 
-        System.out.println(new BigDecimal(10).divide(new BigDecimal(3), 1, BigDecimal.ROUND_HALF_UP));
-        System.out.println(new BigDecimal(10).divide(new BigDecimal(3), 1, BigDecimal.ROUND_HALF_DOWN));
-        System.out.println(new BigDecimal(10).divide(new BigDecimal(3), 1, BigDecimal.ROUND_CEILING));
     }
 
     @Test
@@ -288,21 +287,17 @@ public class YxyTest {
 
     @Test
     public void test17() {
-        List<Map<String,Long>> list = new ArrayList<>();
-        Map<String, Long> map = new HashMap<>();
-        map.put("1", 1L);
-        map.put("2", 2L);
-        list.add(map);
-        Map<String, Long> map1 = new HashMap<>();
-        map1.put("1", 1L);
-        map1.put("2", 2L);
-        list.add(map1);
+        List<String> oldPartnerCodeList = new ArrayList<>();
+        oldPartnerCodeList.add("yxy");
+        List<String> newPartnerCodeList = new ArrayList<>();
+        newPartnerCodeList.add("yxy");
+        newPartnerCodeList.add("sjtong");
 
-        Map<String, Long> reduce = list.stream().reduce(new HashMap<>(), (map2, map3) -> {
-            map3.forEach((k, v) -> map2.merge(k, v, Long::sum));
-            return map2;
+        oldPartnerCodeList.forEach(oldPartnerCode -> {
+            if (org.apache.commons.collections.CollectionUtils.isEmpty(newPartnerCodeList) || !newPartnerCodeList.contains(oldPartnerCode)) {
+                System.out.println(oldPartnerCode);
+            }
         });
-        System.out.println(JSONObject.toJSONString(reduce));
     }
 
 }
