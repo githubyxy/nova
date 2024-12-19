@@ -187,7 +187,7 @@ curl -XGET "http://127.0.0.1:9200/hermes-r-202412/task_item/_search" -d'
 {
   "query": {
     "match": {
-      "taskItemUuid": "dd12d707fd44446197963feecebf5b5b"
+      "taskItemUuid": "bb0eb8304bcb42b4905fea130aba2296"
     }
   }
 }'
