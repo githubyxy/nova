@@ -187,7 +187,7 @@ curl -XGET "http://127.0.0.1:9200/hermes-r-202412/task_item/_search" -d'
 {
   "query": {
     "match": {
-      "taskItemUuid": "bb0eb8304bcb42b4905fea130aba2296"
+      "taskItemUuid": "1c8d04b8c5354069a21555d32d9cbfd4"
     }
   }
 }'
@@ -339,6 +339,9 @@ curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202409/hermes-202409?wait_for_complet
 
 # 压缩备份
 nohup tar -czvf hermes-202410.tar.gz hermes-202410/
+
+# 备份存在 /mnt/data01/es_backup
+scp hermes-202410.tar.gz root@bot:/mnt/data01/es_backup/
 
 # 生成es中task_item 的月份索引
 curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202501
