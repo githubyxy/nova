@@ -33,7 +33,7 @@ public class ProducerNormalMessageExample {
         final ClientServiceProvider provider = ClientServiceProvider.loadService();
 
         // sh bin/mqadmin updatetopic -n localhost:9876 -t TestTopic -c DefaultCluster
-        String topic = "TestTopic";
+        String topic = "sms-batch-send";
         final Producer producer = YxyProducerSingleton.getInstance(topic);
 
         while (true) {
@@ -43,7 +43,7 @@ public class ProducerNormalMessageExample {
             String msg = "测试rocketmq消息" + DateTimeUtil.datetime18();
             byte[] body = msg.getBytes(StandardCharsets.UTF_8);
 //            String tag = Math.random() > 0.5D ? "tagA" : "tagB";
-            String tag = "tagB";
+            String tag = "tag";
             final Message message = provider.newMessageBuilder()
                     // Set topic for the current message.
                     .setTopic(topic)

@@ -33,7 +33,7 @@ public class YxyProducerSingleton {
     private static volatile Producer TRANSACTIONAL_PRODUCER;
     private static final String ACCESS_KEY = "yourAccessKey";
     private static final String SECRET_KEY = "yourSecretKey";
-    private static final String ENDPOINTS = "127.0.0.1:8080";
+    private static final String ENDPOINTS = "114.55.2.52:28081";
 
     private YxyProducerSingleton() {
     }

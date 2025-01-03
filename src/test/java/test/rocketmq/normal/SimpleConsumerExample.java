@@ -52,7 +52,7 @@ public class SimpleConsumerExample {
 //        SessionCredentialsProvider sessionCredentialsProvider =
 //            new StaticSessionCredentialsProvider(accessKey, secretKey);
 
-        String endpoints = "127.0.0.1:8080";
+        String endpoints = "114.55.2.52:28080";
         ClientConfiguration clientConfiguration = ClientConfiguration.newBuilder()
             .setEndpoints(endpoints)
             // On some Windows platforms, you may encounter SSL compatibility issues. Try turning off the SSL option in
@@ -63,8 +63,8 @@ public class SimpleConsumerExample {
         // sh mqadmin updateSubGroup -c DefaultCluster -g yourConsumerGroup -n localhost:9876
         String consumerGroup = "yourConsumerGroup";
         Duration awaitDuration = Duration.ofSeconds(30);
-        String tag = "tagB";
-        String topic = "TestTopic";
+        String tag = "tag";
+        String topic = "sms-batch-send";
         FilterExpression filterExpression = new FilterExpression(tag, FilterExpressionType.TAG);
         // In most case, you don't need to create too many consumers, singleton pattern is recommended.
 
@@ -89,11 +89,6 @@ public class SimpleConsumerExample {
                 try {
                     String body = StandardCharsets.UTF_8.decode(message.getBody()).toString();
                     System.out.println(DateTimeUtil.datetime18() + " Received message: " + body + ", tag" + message.getTag().get());
-                    if (body.endsWith("24")) {
-                        System.out.println("模拟失败:" + body);
-                        Thread.sleep(1000 * 10);
-                        System.out.println(1/0);
-                    }
                     MessageId messageId = message.getMessageId();
                     consumer.ack(message);
 //                    System.out.println("Message is acknowledged successfully, messageId={}" + messageId);
