@@ -13,7 +13,7 @@ import java.util.Base64;
  */
 public class AESTest {
 
-    private static final String key = "icekredit2sykey0yxy";
+    private static final String key = "icekredit2sykey0";
 
     private static String aesEncrypt(String key, String value) throws Exception {
         Cipher c = Cipher.getInstance("AES/ECB/PKCS5Padding");
@@ -33,14 +33,14 @@ public class AESTest {
 
     @Test
     public void test() throws Exception {
-        String mobile = "17826833106";
+        String mobile = "18857106494";
         String s = aesEncrypt(key, mobile);
         System.out.println(s);
     }
 
     @Test
     public void test2() throws Exception {
-        String s = "Kud67/Iopd2nj3+gRUXeOg==";
+        String s = "UpNMOC5CIjID4gteg0CBew==";
         String s1 = aesDecrypt(key, s);
         System.out.println(s1);
     }

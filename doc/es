@@ -162,11 +162,11 @@ curl -XGET "http://127.0.0.1:9200/hermes-r-202405/task_item/_search" -d'
   }
 }'
 
-curl -XGET "http://127.0.0.1:9200/hermes-r-*/task_item/_search" -d'
+curl -XGET "http://127.0.0.1:9200/hermes-r-202501/task_item/_search" -d'
 {
   "query": {
     "match": {
-      "mobileNo": "17787053093"
+      "mobileNo": "15840508028"
     }
   }
 }'
@@ -317,7 +317,7 @@ curl -XPOST "http://127.0.0.1:9200/hermes-202409/_search" -d '
 curl -XGET 127.0.0.1:9200/_cat/indices?v
 
 # 删除索引 (sms-202103是索引名称)
-curl -XDELETE 127.0.0.1:9200/hermes-202408
+curl -XDELETE 127.0.0.1:9200/hermes-202409
 
 # es 备份 hermes
 curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202410 -d '{
@@ -344,6 +344,6 @@ nohup tar -czvf hermes-202410.tar.gz hermes-202410/
 scp hermes-202410.tar.gz root@bot:/mnt/data01/es_backup/
 
 # 生成es中task_item 的月份索引
-curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202501
+curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202502
 
 
