@@ -52,7 +52,7 @@ public class SimpleConsumerExample {
 //        SessionCredentialsProvider sessionCredentialsProvider =
 //            new StaticSessionCredentialsProvider(accessKey, secretKey);
 
-        String endpoints = "114.55.2.52:28080";
+        String endpoints = "114.55.2.52:28081";
         ClientConfiguration clientConfiguration = ClientConfiguration.newBuilder()
             .setEndpoints(endpoints)
             // On some Windows platforms, you may encounter SSL compatibility issues. Try turning off the SSL option in

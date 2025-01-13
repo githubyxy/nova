@@ -280,9 +280,11 @@ public class YxyTest {
     @SneakyThrows
     @Test
     public void test16() {
-        SmsTaskItemSendProcessor smsTaskItemSendProcessor = new SmsTaskItemSendProcessor("yxy");
+        Optional<String> a = Optional.empty();
+        Optional<String> b = Optional.ofNullable(null);
 
-        Thread.sleep(5000);
+        System.out.println(a.isPresent());
+        System.out.println(b.isPresent());
 
     }
 
