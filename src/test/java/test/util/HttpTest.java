@@ -95,8 +95,24 @@ public class HttpTest {
 //		System.out.println(s);
 //		publish();
 //		authorize();
-		es();
+//		es();
+		sendDingding();
 
+	}
+
+	@SneakyThrows
+    private static void sendDingding() {
+		JSONObject sendInfo = new JSONObject();
+		sendInfo.put("msgtype", "markdown");
+		JSONObject markdown = new JSONObject();
+		markdown.put("title", "Test测试消息");
+		markdown.put("text", "#### 杭州天气 @150XXXXXXXX \n > 9度，西北风1级，空气良89，相对温度73%\n > ![screenshot](https://img.alicdn.com/tfs/TB1NwmBEL9TBuNjy1zbXXXpepXa-2400-1218.png)\n");
+		sendInfo.put("markdown", markdown);
+
+		JSONObject atJSon = new JSONObject();
+		atJSon.put("isAtAll", false); // 是否通知所有人
+		sendInfo.put("at", atJSon);
+		postJsonString("", sendInfo.toJSONString(), null);
 	}
 
 

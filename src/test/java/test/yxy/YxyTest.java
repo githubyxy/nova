@@ -11,6 +11,7 @@ import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import lombok.SneakyThrows;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.tomcat.util.buf.HexUtils;
 import org.junit.Test;
@@ -22,14 +23,24 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class YxyTest {
+
+    private Person person;
     @Test
     public void test() throws Exception {
-        String str = ":";
-        List<String> split = TextUtil.split(str, ":");
-        System.out.printf(split.size() + "");
-        System.out.printf(split.get(0) + "");
-//        System.out.printf(split.get(1) + "");
+//        MyThread myThread = new MyThread();
+//        myThread.start();
+//
+//        Thread.sleep(5000);
+//        myThread.kill();
+//        myThread = null;
+//        System.out.println("myThread = null");
+//        Thread.sleep(10000);
 
+        try {
+            person = new Person(null, 1);
+        } catch (Exception e) {
+        }
+        System.out.println(JSONObject.toJSONString(person));
     }
 
     @Test

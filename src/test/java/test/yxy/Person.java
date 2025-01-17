@@ -10,6 +10,9 @@ public class Person {
     }
 
     public Person(String name, int age) {
+        if (name == null) {
+            throw new RuntimeException("name is null");
+        }
         this.name = name;
         this.age = age;
     }

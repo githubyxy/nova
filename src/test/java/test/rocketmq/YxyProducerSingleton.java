@@ -22,6 +22,8 @@ import org.apache.rocketmq.client.apis.producer.Producer;
 import org.apache.rocketmq.client.apis.producer.ProducerBuilder;
 import org.apache.rocketmq.client.apis.producer.TransactionChecker;
 
+import java.time.Duration;
+
 import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
 
 /**

@@ -241,6 +241,21 @@ curl -XGET "http://127.0.0.1:9200/hermes-r-*/task_item/_search" -d'
 }'
 
 
+curl -XGET "http://127.0.0.1:9200/blacklist/_count" -d '
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": { "groupUuid": "a667879d9d424163bc61bfb023716dcb" }
+        },
+        {
+          "term": { "expireDate": "2025-01-16" }
+        }
+      ]
+    }
+  }
+}'
 
 curl -XGET "http://127.0.0.1:9200/blacklist/_count" -d '
 {
@@ -248,7 +263,7 @@ curl -XGET "http://127.0.0.1:9200/blacklist/_count" -d '
     "bool": {
       "must": [
         {
-          "term": { "groupUuid": "third_bill_blacklist" }
+          "term": { "groupUuid": "a667879d9d424163bc61bfb023716dcb" }
         },
         {
           "range": {
