@@ -33,7 +33,7 @@ public class AESTest {
 
     @Test
     public void test() throws Exception {
-        String mobile = "18857106494";
+        String mobile = "12121212121";
         String s = aesEncrypt(key, mobile);
         System.out.println(s);
     }

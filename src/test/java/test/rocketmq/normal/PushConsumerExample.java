@@ -29,6 +29,7 @@ public class PushConsumerExample {
                 new StaticSessionCredentialsProvider(accessKey, secretKey);
 
         String endpoints = "114.55.2.52:28081";
+//        String endpoints = "127.0.0.1:8081";
         ClientConfiguration clientConfiguration = ClientConfiguration.newBuilder()
                 .setEndpoints(endpoints)
                 // On some Windows platforms, you may encounter SSL compatibility issues. Try turning off the SSL option in
@@ -39,7 +40,7 @@ public class PushConsumerExample {
         String tag = "tagA";
         FilterExpression filterExpression = new FilterExpression(tag, FilterExpressionType.TAG);
         String consumerGroup = "smsNormalTopic-group";
-        String topic = "smsNormalTopic";
+        String topic = "TestTopic";
 
             // In most case, you don't need to create too many consumers, singleton pattern is recommended.
             PushConsumer pushConsumer = provider.newPushConsumerBuilder()
@@ -53,7 +54,7 @@ public class PushConsumerExample {
                         // Handle the received message and return consume result.
                         String body = StandardCharsets.UTF_8.decode(messageView.getBody()).toString();
                         System.out.println(DateTimeUtil.datetime18() + " Received message: " + body + ", tag" + messageView.getTag().get());
-                        return ConsumeResult.FAILURE;
+                        return ConsumeResult.SUCCESS;
                     })
                     .build();
 

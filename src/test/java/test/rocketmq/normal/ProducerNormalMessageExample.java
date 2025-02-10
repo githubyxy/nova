@@ -33,11 +33,10 @@ public class ProducerNormalMessageExample {
         final ClientServiceProvider provider = ClientServiceProvider.loadService();
 
         // sh mqadmin updatetopic -n rmqnamesrv:9876 -t smsNormalTopic -c DefaultCluster -a +message.type=NORMAL
-        String topic = "smsNormalTopic";
+        String topic = "TestTopic";
         final Producer producer = YxyProducerSingleton.getInstance(topic);
 
         while (true) {
-            Thread.sleep(10000);
             // Define your message body.
             String msg = "测试rocketmq消息" + DateTimeUtil.datetime18();
             byte[] body = msg.getBytes(StandardCharsets.UTF_8);
@@ -59,6 +58,7 @@ public class ProducerNormalMessageExample {
             } catch (Throwable t) {
                 log.error("Failed to send message", t);
             }
+            Thread.sleep(1000);
             // Close the producer when you don't need it anymore.
             // You could close it manually or add this into the JVM shutdown hook.
             // producer.close();

@@ -52,8 +52,8 @@ public class SimpleConsumerExample {
 //        SessionCredentialsProvider sessionCredentialsProvider =
 //            new StaticSessionCredentialsProvider(accessKey, secretKey);
 
-        String endpoints = "114.55.2.52:28081";
-//        String endpoints = "127.0.0.1:8081";
+//        String endpoints = "114.55.2.52:28081";
+        String endpoints = "127.0.0.1:8081";
         ClientConfiguration clientConfiguration = ClientConfiguration.newBuilder()
             .setEndpoints(endpoints)
             // On some Windows platforms, you may encounter SSL compatibility issues. Try turning off the SSL option in
@@ -65,7 +65,7 @@ public class SimpleConsumerExample {
         String consumerGroup = "smsNormalTopic-group";
         Duration awaitDuration = Duration.ofSeconds(30);
         String tag = "tagA";
-        String topic = "smsNormalTopic";
+        String topic = "TestTopic";
         FilterExpression filterExpression = new FilterExpression(tag, FilterExpressionType.TAG);
         // In most case, you don't need to create too many consumers, singleton pattern is recommended.
 
@@ -90,7 +90,6 @@ public class SimpleConsumerExample {
                 try {
                     String body = StandardCharsets.UTF_8.decode(message.getBody()).toString();
                     System.out.println(DateTimeUtil.datetime18() + " Received message: " + body + ", tag" + message.getTag().get());
-                    int i = 1 / 0;
                     MessageId messageId = message.getMessageId();
                     consumer.ack(message);
 //                    System.out.println("Message is acknowledged successfully, messageId={}" + messageId);
