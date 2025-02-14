@@ -277,6 +277,22 @@ curl -XGET "http://127.0.0.1:9200/blacklist/_count" -d '
   }
 }'
 
+curl -XGET "http://127.0.0.1:9200/blacklist/_count" -d '
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": { "groupUuid": "d1ca34a94093490c92db1ce4379a969e" }
+        },
+        {
+          "term": { "mobile": "11111111111" }
+        }
+      ]
+    }
+  }
+}'
+
 # 删除三方计费黑名单
 curl -XPOST "http://127.0.0.1:9200/blacklist/_delete_by_query" -d '
 {

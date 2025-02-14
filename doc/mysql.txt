@@ -1,0 +1,16 @@
+
+# 数据表根据phoneNum字段新增phoneNumLast4字段
+UPDATE
+  temp_task_item
+SET
+  variable = JSON_SET(
+    variable,
+    '$.phoneNumLast4',
+    RIGHT(JSON_UNQUOTE(JSON_EXTRACT(variable, '$.phoneNum')), 4)
+  )
+WHERE
+  task_batch_uuid in (select task_batch_uuid  from temp_task_batch where task_uuid='24281' and gmt_create>='2025-02-14 04:07:06') and flags=0;
+
+# item表新增字段时，需要更新数据批次的variable_node
+update temp_task_batch set variable_node='[{"dataValidate":"format(MOBILE,False,ALL)","describe":"手机号码","displayName":"手机号码","example":"13812341234","name":"phoneNum"},{"dataValidate":"","describe":"手机号后四位","displayName":"手机号后四位","example":"","name":"phoneNumLast4"},{"dataValidate":"format(RADIX_POINT,True,ALL)","describe":"必须包含小数点，如果不传，默认以任务配置的挂短短链接填入，如果任务没有配置导入会报错","displayName":"挂短短链接","example":"","name":"shortlink"}]'  WHERE
+  task_batch_uuid in (更改的批次uuid) and flags=0
