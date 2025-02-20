@@ -3,6 +3,7 @@ package test;
 import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
+import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
@@ -57,6 +58,20 @@ public class HuToolTest {
 
         int i = DateUtil.dayOfMonth(new Date());
         System.out.printf(i + "");
+    }
+
+    @Test
+    public void test4() {
+        int minute = DateTimeUtil.asLocalDateTIme(new Date()).getMinute();
+        int minute2 = DateTimeUtil.asLocalDateTIme(DateTimeUtil.parseDatetime18("2025-02-18 09:01:59")).getMinute();
+        System.out.println(minute);
+        System.out.println(minute2);
+
+
+        String s = "【闪应科技】1.业务名称:你我贷;任务id:23201/23191,当天存在23945数据未分配。\n" +
+                "2.业务名称:宜享花;任务id:21271/20791/20631/20411/16951,当天存在95491数据未分配。\n" +
+                "3.业务名称:测试专用;任务id:23061,当天存在2数据未分配。\n";
+        System.out.println(s.replaceAll("】.*", "】"));
     }
 
 }

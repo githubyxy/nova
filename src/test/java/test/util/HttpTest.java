@@ -1,11 +1,14 @@
 package test.util;
 
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.io.FileUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.yxy.nova.mwh.utils.log.LogUtil;
 import com.yxy.nova.util.SimpleHttpClient;
 import lombok.SneakyThrows;
 import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
@@ -21,8 +24,9 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.util.StringUtils;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -96,8 +100,13 @@ public class HttpTest {
 //		publish();
 //		authorize();
 //		es();
-		sendDingding();
+//		sendDingding();
+		testGetByteArray();
+	}
 
+	private static void testGetByteArray() {
+		byte[] byteArray = getByteArray("https://shanying-engine5.oss-cn-hangzhou.aliyuncs.com/bssvoice/voice_file/voiking_shanying/ai/REC202502/20250210/ed52a8b539b04fffb6c40c4fe2b6187f.wav", null);
+		FileUtil.writeBytes(byteArray, "/Users/yuxiaoyu/Downloads/4.wav");
 	}
 
 	@SneakyThrows
@@ -530,5 +539,62 @@ public class HttpTest {
 			}
 		}
 		return result;
+	}
+
+	public static byte[] getByteArray(String url, Map<String, String> headerMap) {
+		logger.info("请求的url: {}", url);
+		HttpGet getMethod = new HttpGet(url);
+		if (headerMap != null) {
+			for(Map.Entry<String, String> entry : headerMap.entrySet()) {
+				getMethod.setHeader((String)entry.getKey(), (String)entry.getValue());
+			}
+		}
+
+		try (CloseableHttpResponse response = client.execute(getMethod)) {
+			int statusCode = response.getStatusLine().getStatusCode();
+			if (200 != statusCode) {
+				logger.error("请求URL {} 时返回的statusCode为 {}", url, statusCode);
+				Object var44 = null;
+				return (byte[])var44;
+			} else {
+				HttpEntity entity = response.getEntity();
+				if (entity == null) {
+					logger.error("请求URL {} 时返回的entity为null", url);
+					Object var45 = null;
+					return (byte[])var45;
+				} else {
+					ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+					Throwable var9 = null;
+
+					Object var10;
+					try {
+						entity.writeTo(outputStream);
+						var10 = outputStream.toByteArray();
+					} catch (Throwable var37) {
+						var10 = var37;
+						var9 = var37;
+						throw var37;
+					} finally {
+						if (outputStream != null) {
+							if (var9 != null) {
+								try {
+									outputStream.close();
+								} catch (Throwable var36) {
+									var9.addSuppressed(var36);
+								}
+							} else {
+								outputStream.close();
+							}
+						}
+
+					}
+
+					return (byte[])var10;
+				}
+			}
+		} catch (IOException e) {
+			logger.error("请求URL {} 时发生错误", url, e);
+			return null;
+		}
 	}
 }
