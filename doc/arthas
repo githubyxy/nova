@@ -12,3 +12,10 @@ ognl -c 179d3b25 '@cn.guixi.sms.core.AppMain@context.getBean("smsSendApplication
 
 # 一个类中获取实例后执行具体方法
 ognl -c 179d3b25 '@cn.guixi.sms.core.biz.handler.SingleProtoHandler@getInstance().tokenCache.invalidateAll()'
+
+
+
+# 启动 profiler
+  profiler start
+# 停止 profiler
+  profiler stop
