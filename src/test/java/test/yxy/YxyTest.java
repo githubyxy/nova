@@ -291,12 +291,11 @@ public class YxyTest {
     @SneakyThrows
     @Test
     public void test16() {
-        Optional<String> a = Optional.empty();
-        Optional<String> b = Optional.ofNullable(null);
+        long minute = DateTimeUtil.diffInMinute(DateTimeUtil.parseDatetime18(DateTimeUtil.date10() + " 17:00:00") ,new Date());
 
-        System.out.println(a.isPresent());
-        System.out.println(b.isPresent());
-
+        System.out.println(minute);
+        System.out.println(minute%20);
+        System.out.println(40%20);
     }
 
     @Test

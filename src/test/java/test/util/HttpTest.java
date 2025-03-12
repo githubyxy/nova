@@ -100,8 +100,8 @@ public class HttpTest {
 //		publish();
 //		authorize();
 //		es();
-//		sendDingding();
-		testGetByteArray();
+		sendDingding();
+//		testGetByteArray();
 	}
 
 	private static void testGetByteArray() {
@@ -114,12 +114,13 @@ public class HttpTest {
 		JSONObject sendInfo = new JSONObject();
 		sendInfo.put("msgtype", "markdown");
 		JSONObject markdown = new JSONObject();
-		markdown.put("title", "Test测试消息");
-		markdown.put("text", "#### 杭州天气 @150XXXXXXXX \n > 9度，西北风1级，空气良89，相对温度73%\n > ![screenshot](https://img.alicdn.com/tfs/TB1NwmBEL9TBuNjy1zbXXXpepXa-2400-1218.png)\n");
+		markdown.put("title", "进件统计");
+		markdown.put("text", "- 演示测试\n - 测试测试\n @19155137319");
 		sendInfo.put("markdown", markdown);
 
 		JSONObject atJSon = new JSONObject();
 		atJSon.put("isAtAll", false); // 是否通知所有人
+		atJSon.put("atMobiles", Arrays.asList("19155137319"));
 		sendInfo.put("at", atJSon);
 		postJsonString("", sendInfo.toJSONString(), null);
 	}
