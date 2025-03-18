@@ -14,3 +14,15 @@ WHERE
 # item表新增字段时，需要更新数据批次的variable_node
 update temp_task_batch set variable_node='[{"dataValidate":"format(MOBILE,False,ALL)","describe":"手机号码","displayName":"手机号码","example":"13812341234","name":"phoneNum"},{"dataValidate":"","describe":"手机号后四位","displayName":"手机号后四位","example":"","name":"phoneNumLast4"},{"dataValidate":"format(RADIX_POINT,True,ALL)","describe":"必须包含小数点，如果不传，默认以任务配置的挂短短链接填入，如果任务没有配置导入会报错","displayName":"挂短短链接","example":"","name":"shortlink"}]'  WHERE
   task_batch_uuid in (更改的批次uuid) and flags=0
+
+
+# 根据properties中的taskItemExecUuid，截取批次uuid
+UPDATE sms_task_item
+SET hermes_task_batch_uuid =
+            TRIM(LEADING '0' FROM SUBSTRING(JSON_UNQUOTE(JSON_EXTRACT(properties, '$.taskItemExecUuid')), 1, 8))
+
+# 根据task_item_uuid关联sms_task_item表，更新sms_send_detail表中的hermes_task_item_uuid和hermes_task_batch_uuid
+UPDATE sms_send_detail sd
+JOIN sms_task_item ti ON sd.task_item_uuid = ti.task_item_uuid
+SET sd.hermes_task_item_uuid = ti.hermes_task_item_uuid,
+    sd.hermes_task_batch_uuid = ti.hermes_task_batch_uuid;
