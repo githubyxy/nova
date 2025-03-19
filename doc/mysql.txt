@@ -25,4 +25,7 @@ SET hermes_task_batch_uuid =
 UPDATE sms_send_detail sd
 JOIN sms_task_item ti ON sd.task_item_uuid = ti.task_item_uuid
 SET sd.hermes_task_item_uuid = ti.hermes_task_item_uuid,
-    sd.hermes_task_batch_uuid = ti.hermes_task_batch_uuid;
+    sd.hermes_task_batch_uuid = ti.hermes_task_batch_uuid
+where task_uuid in(4042450694215899463,8321741007342439772,497379604922354909)
+
+update sms_task_item set version=version+1 where task_uuid in(4042450694215899463,8321741007342439772,497379604922354909);
