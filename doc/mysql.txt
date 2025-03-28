@@ -16,6 +16,18 @@ update temp_task_batch set variable_node='[{"dataValidate":"format(MOBILE,False,
   task_batch_uuid in (更改的批次uuid) and flags=0
 
 
+
+
+ # mysqldump 根据指定的sql执行导出数据到文件的命令，并压缩
+ mysqldump -u root -p hermes mytable --where="created_at >= '2024-01-01'" | gzip > mydb_backup.sql.gz
+ mysql -uroot -p -e "SELECT MD5(mobile_no), variable FROM hermes.temp_task_item WHERE task_uuid = '51'" > 1.sql
+ mysql -uroot -p -e "SELECT JSON_SET(variable, '$.phoneNum', MD5(JSON_UNQUOTE(JSON_EXTRACT(variable, '$.phoneNum')))) AS modified_json FROM hermes.temp_task_item WHERE task_uuid = '25451'" > 3.sql
+
+ mysql -uroot -p -e "SELECT JSON_SET(variable, '$.phoneNum', MD5(JSON_UNQUOTE(JSON_EXTRACT(variable, '$.phoneNum')))) AS modified_json FROM hermes.temp_task_item WHERE task_uuid = '25451'" | gzip > 2025_03-05.sql.gz
+
+
+
+
 # 根据properties中的taskItemExecUuid，截取批次uuid
 UPDATE sms_task_item
 SET hermes_task_batch_uuid =
