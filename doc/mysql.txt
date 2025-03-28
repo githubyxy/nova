@@ -1,3 +1,4 @@
+select count(*),task_type,state from retry_task group by task_type,state;
 
 # 数据表根据phoneNum字段新增phoneNumLast4字段
 UPDATE
