@@ -24,7 +24,7 @@ update temp_task_batch set variable_node='[{"dataValidate":"format(MOBILE,False,
  mysql -uroot -p -e "SELECT MD5(mobile_no), variable FROM hermes.temp_task_item WHERE task_uuid = '51'" > 1.sql
  mysql -uroot -p -e "SELECT JSON_SET(variable, '$.phoneNum', MD5(JSON_UNQUOTE(JSON_EXTRACT(variable, '$.phoneNum')))) AS modified_json FROM hermes.temp_task_item WHERE task_uuid = '25451'" > 3.sql
 
- mysql -uroot -p -e "SELECT JSON_SET(variable, '$.phoneNum', MD5(JSON_UNQUOTE(JSON_EXTRACT(variable, '$.phoneNum')))) AS modified_json FROM hermes.temp_task_item WHERE task_uuid = '25451'" | gzip > 2025_03-05.sql.gz
+ mysql -uroot -p -e "SELECT JSON_SET(variable, '$.phoneNum', MD5(JSON_UNQUOTE(JSON_EXTRACT(variable, '$.phoneNum')))) AS modified_json FROM hermes.temp_task_item WHERE task_uuid = '27131'" | gzip > 2025_04-01.sql.gz
 
 
 

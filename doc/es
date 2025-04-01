@@ -348,7 +348,7 @@ curl -XPOST "http://127.0.0.1:9200/hermes-202409/_search" -d '
 curl -XGET 127.0.0.1:9200/_cat/indices?v
 
 # 删除索引 (sms-202103是索引名称)
-curl -XDELETE 127.0.0.1:9200/hermes-202411
+curl -XDELETE 127.0.0.1:9200/hermes-202412
 
 # es 备份 hermes
 curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202502 -d '{
@@ -375,6 +375,6 @@ nohup tar -czvf hermes-202502.tar.gz hermes-202502/
 scp hermes-202502.tar.gz root@bot:/mnt/data01/es_backup/
 
 # 生成es中task_item 的月份索引
-curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202504
+curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202505
 
 
