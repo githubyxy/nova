@@ -11,7 +11,7 @@ import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import lombok.SneakyThrows;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.tomcat.util.buf.HexUtils;
 import org.junit.Test;
@@ -291,11 +291,14 @@ public class YxyTest {
     @SneakyThrows
     @Test
     public void test16() {
-        long minute = DateTimeUtil.diffInMinute(DateTimeUtil.parseDatetime18(DateTimeUtil.date10() + " 17:00:00") ,new Date());
+        String VAR_PREFIX = "${";
+        String VAR_SUFFIX = "}";
+        String content ="您好，${1a }，这里是测试短信模板02。  ";
 
-        System.out.println(minute);
-        System.out.println(minute%20);
-        System.out.println(40%20);
+        String var = content.substring(content.indexOf(VAR_PREFIX) + VAR_PREFIX.length(), content.indexOf(VAR_SUFFIX));
+
+        System.out.println(var.length() == StringUtils.trimToEmpty(var).length());
+
     }
 
     @Test
