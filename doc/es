@@ -117,7 +117,9 @@ curl -XGET 127.0.0.1:9201/_template?pretty
 # 删除索引 (sms-202103是索引名称)
 curl -XDELETE 127.0.0.1:9200/sms-202103
 # close不必要的index可以减少内存占用
-curl -XPOST http://127.0.0.1:9200/task_item/_close
+curl -XPOST http://127.0.0.1:9200/hermes-202501/_close
+curl -XPOST http://127.0.0.1:9200/hermes-202501/_open
+
 
 
 # es索引备份
