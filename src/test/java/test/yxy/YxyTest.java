@@ -1,24 +1,17 @@
 package test.yxy;
 
-import cn.hutool.core.date.DatePattern;
-import cn.hutool.core.date.DateUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.yxy.nova.mwh.utils.constant.ISPEnum;
 import com.yxy.nova.mwh.utils.serialization.SerializerUtil;
-import com.yxy.nova.mwh.utils.text.TextUtil;
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import lombok.SneakyThrows;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.tomcat.util.buf.HexUtils;
 import org.junit.Test;
-import test.SmsTaskItemSendProcessor;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -136,10 +129,8 @@ public class YxyTest {
 
     @Test
     public void test4() {
-        String minDs = "2024-06-01";
-        LocalDateTime localDateTime = DateUtil.parseLocalDateTime(minDs, DatePattern.NORM_DATE_PATTERN).plusMonths(1).plusDays(-1);
-        String maxDs = DateUtil.format(localDateTime, DatePattern.NORM_DATE_PATTERN);
-        System.out.println(maxDs);
+        Date date = DateTimeUtil.minusDays(DateTimeUtil.parseDate10("2025-05-31"), 59);
+        System.out.println(DateTimeUtil.datetime18(date));
     }
     @Test
     public void test5() {
