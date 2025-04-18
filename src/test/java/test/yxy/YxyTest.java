@@ -155,18 +155,17 @@ public class YxyTest {
     }
     @Test
     public void test6() {
-        List<Person> list = new ArrayList<>();
-//        list.add(new Person("a", 1));
-//        list.add(new Person("b", 1));
-//        list.add(new Person("1", 1));
-//        list.add(new Person("a", 1));
-
-        LinkedHashMap<String, List<Person>> collect = list.stream().collect(Collectors.groupingBy(person -> {
-            return person.getName();
-        }, LinkedHashMap::new, Collectors.toList()));
-
-        System.out.println(JSONObject.toJSONString(collect));
-        System.out.println(collect.size());
+        for (int i = 0; i < 10; i++) {
+            double random = Math.random();
+            System.out.println(random);
+            if (random >= 0.3D) {
+                // 使用doris
+                System.out.println("doris");
+            } else {
+                // 使用es
+                System.out.println("es");
+            }
+        }
 
     }
 

@@ -100,7 +100,7 @@ public class HttpTest {
 //		publish();
 //		authorize();
 //		es();
-		sendDingding();
+		sendDingdingmarkdown();
 //		testGetByteArray();
 	}
 
@@ -110,19 +110,35 @@ public class HttpTest {
 	}
 
 	@SneakyThrows
-    private static void sendDingding() {
+    private static void sendDingdingLink() {
+		JSONObject sendInfo = new JSONObject();
+		sendInfo.put("msgtype", "link");
+		JSONObject link = new JSONObject();
+		link.put("title", "【短信预警】");
+		link.put("text", "任务id:告警内容\n 任务id2：告警内容2");
+		link.put("messageUrl", "http://114.55.2.52:8028/route/aiCall/task");
+		sendInfo.put("link", link);
+
+		JSONObject atJSon = new JSONObject();
+		atJSon.put("isAtAll", false); // 是否通知所有人
+//		atJSon.put("atMobiles", Arrays.asList("19155137319"));
+		sendInfo.put("at", atJSon);
+		postJsonString("https://oapi.dingtalk.com/robot/send?access_token=62c2cb112a50c7ab72ca98d23363c294bb81acddb2b6eb662d4278bf2bf22cda", sendInfo.toJSONString(), null);
+	}
+	@SneakyThrows
+    private static void sendDingdingmarkdown() {
 		JSONObject sendInfo = new JSONObject();
 		sendInfo.put("msgtype", "markdown");
 		JSONObject markdown = new JSONObject();
-		markdown.put("title", "进件统计");
-		markdown.put("text", "- 演示测试\n - 测试测试\n @19155137319");
+		markdown.put("title", "【短信预警】闪应分公司-测试测试");
+		markdown.put("text", "【短信预警】闪应分公司-测试测试 \\\n [91：yxy普通短信1，2025-04-17 05:50:00到2025-04-17 15:50:00，短信发送量：2010，成功率0.0000%。](http://114.55.2.52:8028/route/sms/templateStat?partnerCode=syfgs&appCode=syceshi2&beginSendTime=2025-04-17%2005:50:00&endSendTime=2025-04-17%2015:50:00) \\\n [101：yxy普通短信2，2025-04-17 05:50:00到2025-04-17 15:50:00，短信发送量：2010，成功率0.0000%。](http://114.55.2.52:8028/route/sms/templateStat?partnerCode=syfgs&appCode=syceshi2&beginSendTime=2025-04-17%2005:50:00&endSendTime=2025-04-17%2015:50:00)\n");
 		sendInfo.put("markdown", markdown);
 
 		JSONObject atJSon = new JSONObject();
 		atJSon.put("isAtAll", false); // 是否通知所有人
-		atJSon.put("atMobiles", Arrays.asList("19155137319"));
+//		atJSon.put("atMobiles", Arrays.asList("19155137319"));
 		sendInfo.put("at", atJSon);
-		postJsonString("", sendInfo.toJSONString(), null);
+		postJsonString("https://oapi.dingtalk.com/robot/send?access_token=62c2cb112a50c7ab72ca98d23363c294bb81acddb2b6eb662d4278bf2bf22cda", sendInfo.toJSONString(), null);
 	}
 
 
