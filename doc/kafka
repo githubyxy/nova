@@ -1,0 +1,8 @@
+# 查询consumer group消费情况
+docker exec -it kafka /opt/kafka/bin/kafka-consumer-groups.sh --bootstrap-server 172.18.0.38:19092 --describe --all-groups
+
+# 查询所有的consumer group
+docker exec -it kafka /opt/kafka/bin/kafka-consumer-groups.sh --bootstrap-server 172.18.0.38:19092 --list
+
+# 查询主题下生产情况
+docker exec -it kafka /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server 172.18.0.38:9092 --topic doris_task_item --from-beginning

@@ -20,20 +20,8 @@ public class YxyTest {
     private Person person;
     @Test
     public void test() throws Exception {
-//        MyThread myThread = new MyThread();
-//        myThread.start();
-//
-//        Thread.sleep(5000);
-//        myThread.kill();
-//        myThread = null;
-//        System.out.println("myThread = null");
-//        Thread.sleep(10000);
-
-        try {
-            person = new Person(null, 1);
-        } catch (Exception e) {
-        }
-        System.out.println(JSONObject.toJSONString(person));
+        long l = DateTimeUtil.diffInHour(new Date(), DateTimeUtil.plusDays(DateTimeUtil.parseDate10("2025-04-24"), 1));
+        System.out.println(l);
     }
 
     @Test
