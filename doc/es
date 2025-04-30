@@ -376,10 +376,10 @@ nohup tar -czvf hermes-202502.tar.gz hermes-202502/
 # 备份存在 /mnt/data01/es_backup
 scp hermes-202502.tar.gz root@bot:/mnt/data01/es_backup/
 
-scp hermes-202503 root@bot:/mnt/data01/es_backup/
+scp -r hermes-202503 root@bot:/mnt/data01/es_backup/
 
 
 # 生成es中task_item 的月份索引
-curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202505
+curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202506
 
 
