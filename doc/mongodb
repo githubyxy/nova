@@ -1,0 +1,20 @@
+db.supplier_payment_info.find()
+
+# 供应商付款单 按照_id like查询
+db.supplier_payment_info.find({
+  _id: /20250507/
+})
+# 删除符合条件的供应商付款单
+db.supplier_payment_info.deleteMany({
+  _id: /20250507/
+})
+
+
+db.supplier_bill_info.find({
+    paymentBillInfoId: /20250507/
+})
+# 删除关联供应商付款单的账单
+db.supplier_bill_info.updateMany(
+  { paymentBillInfoId: /20250507/ },
+  { $set: { paymentBillInfoId: null } }
+)
