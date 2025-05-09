@@ -350,21 +350,21 @@ curl -XPOST "http://127.0.0.1:9200/hermes-202409/_search" -d '
 curl -XGET 127.0.0.1:9200/_cat/indices?v
 
 # 删除索引 (sms-202103是索引名称)
-curl -XDELETE 127.0.0.1:9200/hermes-202502
+curl -XDELETE 127.0.0.1:9200/hermes-202503
 
 # es 备份 hermes
-curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202503 -d '{
+curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202504 -d '{
     "type": "fs",
     "settings": {
-        "location": "/usr/share/elasticsearch/backup/hermes-202503",
-        "max_snapshot_bytes_per_sec" : "400mb",
-        "max_restore_bytes_per_sec" : "400mb"
+        "location": "/usr/share/elasticsearch/backup/hermes-202504",
+        "max_snapshot_bytes_per_sec" : "100mb",
+        "max_restore_bytes_per_sec" : "100mb"
     }
 }'
 
 # 去掉wait_for_completion=true，会后台执行备份 (curl -XGET 127.0.0.1:9200/_snapshot/hermes-202503/hermes-202503/_status)
-curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202503/hermes-202503 -d '{
-        "indices": "hermes-202503"
+curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202504/hermes-202504 -d '{
+        "indices": "hermes-202504"
 }'
 curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202409/hermes-202409?wait_for_completion=true -d '{
         "indices": "hermes-202409"
