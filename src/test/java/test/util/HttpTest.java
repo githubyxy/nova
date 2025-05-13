@@ -1,9 +1,13 @@
 package test.util;
 
+import ch.qos.logback.classic.Level;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.thread.ThreadUtil;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.yxy.nova.mwh.utils.UUIDGenerator;
 import com.yxy.nova.mwh.utils.log.LogUtil;
 import com.yxy.nova.util.SimpleHttpClient;
 import lombok.SneakyThrows;
@@ -34,6 +38,7 @@ import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -69,7 +74,7 @@ public class HttpTest {
 	/**
 	 * 读超时时间
 	 */
-	private static int socketTimeout = 3000000;
+	private static int socketTimeout = 1500;
 
 	private static CloseableHttpClient client = null;
 
@@ -90,6 +95,8 @@ public class HttpTest {
 	}
 
 	public static void main(String[] args) throws Exception {
+		ch.qos.logback.classic.Logger httpLogger = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger("org.apache.http");
+		httpLogger.setLevel(Level.INFO);
 //		listLineUnitCode();//调用获取可用的线路单元
 //		doubleCall();//调用双呼接口
 //		getCtwing();
@@ -100,8 +107,107 @@ public class HttpTest {
 //		publish();
 //		authorize();
 //		es();
-		sendDingdingmarkdown();
+//		sendDingdingmarkdown();
 //		testGetByteArray();
+		antUpload();
+	}
+
+	private static void antUpload() {
+
+		ExecutorService executorService = ThreadUtil.newFixedExecutor(100, "蚂蚁测试", true);
+
+		for (int i = 0; i < 380; i++) {
+			executorService.submit(() -> {
+                try {
+//					antDevOpenapi();
+					antProOpenapi();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+		}
+//        try {
+//            Thread.sleep(4000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//        for (int i = 0; i < 200; i++) {
+//			executorService.submit(() -> {
+//                try {
+////					antDevOpenapi();
+//					antProOpenapi();
+//                } catch (IOException e) {
+//                    throw new RuntimeException(e);
+//                }
+//            });
+//		}
+	}
+
+	// 生成一个随机手机号
+	public static String generate() {
+		String prefix = "135";
+		StringBuilder sb = new StringBuilder(prefix);
+		for (int i = 0; i < 8; i++) {
+			sb.append(new Random().nextInt(10));
+		}
+		return sb.toString();
+	}
+
+	private static void antDevOpenapi() throws IOException {
+		JSONObject sendInfo = new JSONObject();
+		sendInfo.put("requestId", UUIDGenerator.generate());
+		sendInfo.put("taskId", 621);
+		sendInfo.put("importTransactionType", 0);
+
+		JSONArray jsonArray = new JSONArray();
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("tag", "tag");
+		jsonObject.put("keyTemplate", "MOBILE");
+		jsonObject.put("customerKey", generate());
+
+		JSONObject properties = new JSONObject();
+		properties.put("ant1", "1234");
+		jsonObject.put("properties", properties);
+		jsonArray.add(jsonObject);
+		sendInfo.put("customers", jsonArray);
+
+		Map<String,String> headerMap = new HashMap<>();
+		headerMap.put("appKey", "ant_test1");
+		headerMap.put("timestamp", "1741312345540");
+		headerMap.put("sign", "PreynKDr+4Svd4dbHMnmp1xazGo=");
+		long l = System.currentTimeMillis();
+		postJsonString("http://114.55.2.52:8028/api/v1/antopenapi/task/batchImport/v1", sendInfo.toJSONString(), headerMap);
+		System.out.println("蚂蚁请求耗时：" + (System.currentTimeMillis() - l));
+
+	}
+	private static void antProOpenapi() throws IOException {
+		JSONObject sendInfo = new JSONObject();
+		sendInfo.put("requestId", UUIDGenerator.generate());
+		sendInfo.put("taskId", 26381);
+		sendInfo.put("importTransactionType", 0);
+
+		JSONArray jsonArray = new JSONArray();
+		for (int i=0; i<100;i++) {
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("tag", "tag");
+			jsonObject.put("keyTemplate", "MOBILE");
+			jsonObject.put("customerKey", generate());
+
+			JSONObject properties = new JSONObject();
+			properties.put("ant1", "1234");
+			jsonObject.put("properties", properties);
+			jsonArray.add(jsonObject);
+		}
+		sendInfo.put("customers", jsonArray);
+
+		Map<String,String> headerMap = new HashMap<>();
+		headerMap.put("appKey", "forTest_ant");
+		headerMap.put("timestamp", "1747107231174");
+		headerMap.put("sign", "");
+		long l = System.currentTimeMillis();
+		postJsonString("https://hermes.shanyingtech.com/api/v1/antopenapi/task/batchImport/v1", sendInfo.toJSONString(), headerMap);
+		System.out.println("蚂蚁请求耗时：" + (System.currentTimeMillis() - l));
+
 	}
 
 	private static void testGetByteArray() {
