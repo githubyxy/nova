@@ -40,7 +40,7 @@ public class AESTest {
 
     @Test
     public void test2() throws Exception {
-        String s = "UpNMOC5CIjID4gteg0CBew==";
+        String s = "qDhUxv/QJMFci/FjNpzCFA==";
         String s1 = aesDecrypt(key, s);
         System.out.println(s1);
     }

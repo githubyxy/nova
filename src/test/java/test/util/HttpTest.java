@@ -1,7 +1,6 @@
 package test.util;
 
 import ch.qos.logback.classic.Level;
-import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.thread.ThreadUtil;
 import com.alibaba.fastjson.JSON;
@@ -9,10 +8,8 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.yxy.nova.mwh.utils.UUIDGenerator;
 import com.yxy.nova.mwh.utils.log.LogUtil;
-import com.yxy.nova.util.SimpleHttpClient;
 import lombok.SneakyThrows;
 import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
@@ -30,7 +27,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -39,6 +35,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -114,18 +112,26 @@ public class HttpTest {
 
 	private static void antUpload() {
 
-		ExecutorService executorService = ThreadUtil.newFixedExecutor(100, "蚂蚁测试", true);
-
-		for (int i = 0; i < 380; i++) {
-			executorService.submit(() -> {
-                try {
-//					antDevOpenapi();
-					antProOpenapi();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            });
+		ExecutorService executorService = ThreadUtil.newFixedExecutor(20, "蚂蚁测试", true);
+		AtomicLong rt = new AtomicLong(0L);
+		int batchSize = 1000;
+		for (int i = 0; i < batchSize; i++) {
+			Future<?> submit = executorService.submit(() -> {
+				try {
+//					long l = antDevOpenapi();
+					long l = antProOpenapi();
+					rt.set(rt.get() + l);
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+				}
+			});
 		}
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("平均耗时：" + (rt.get() / batchSize));
 //        try {
 //            Thread.sleep(4000);
 //        } catch (InterruptedException e) {
@@ -153,7 +159,7 @@ public class HttpTest {
 		return sb.toString();
 	}
 
-	private static void antDevOpenapi() throws IOException {
+	private static long antDevOpenapi() throws IOException {
 		JSONObject sendInfo = new JSONObject();
 		sendInfo.put("requestId", UUIDGenerator.generate());
 		sendInfo.put("taskId", 621);
@@ -177,10 +183,9 @@ public class HttpTest {
 		headerMap.put("sign", "PreynKDr+4Svd4dbHMnmp1xazGo=");
 		long l = System.currentTimeMillis();
 		postJsonString("http://114.55.2.52:8028/api/v1/antopenapi/task/batchImport/v1", sendInfo.toJSONString(), headerMap);
-		System.out.println("蚂蚁请求耗时：" + (System.currentTimeMillis() - l));
-
+		return System.currentTimeMillis() - l;
 	}
-	private static void antProOpenapi() throws IOException {
+	private static long antProOpenapi() throws IOException {
 		JSONObject sendInfo = new JSONObject();
 		sendInfo.put("requestId", UUIDGenerator.generate());
 		sendInfo.put("taskId", 26381);
@@ -203,10 +208,10 @@ public class HttpTest {
 		Map<String,String> headerMap = new HashMap<>();
 		headerMap.put("appKey", "forTest_ant");
 		headerMap.put("timestamp", "1747107231174");
-		headerMap.put("sign", "");
+		headerMap.put("sign", "d5NnJ67mBrbCkObuAhsqxtMNtAM=");
 		long l = System.currentTimeMillis();
 		postJsonString("https://hermes.shanyingtech.com/api/v1/antopenapi/task/batchImport/v1", sendInfo.toJSONString(), headerMap);
-		System.out.println("蚂蚁请求耗时：" + (System.currentTimeMillis() - l));
+		return System.currentTimeMillis() - l;
 
 	}
 

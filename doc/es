@@ -155,11 +155,11 @@ curl -XDELETE 127.0.0.1:9200/_snapshot/my_backup/hermes-202104
 curl -XPOST 127.0.0.1:9200/_snapshot/my_backup/hermes-202104/_restore
 
 
-curl -XGET "http://127.0.0.1:9200/hermes-r-202405/task_item/_search" -d'
+curl -XGET "http://127.0.0.1:9200/hermes-r-202505/task_item/_search" -d'
 {
   "query": {
     "match": {
-      "taskItemUuid": "e235b9dcef164c258303dd0fe1dfb153"
+      "taskItemUuid": "5cc0729623b1481ea3d5ae11fdc980c7"
     }
   }
 }'
