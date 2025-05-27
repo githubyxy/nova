@@ -72,7 +72,7 @@ public class HttpTest {
 	/**
 	 * 读超时时间
 	 */
-	private static int socketTimeout = 1500;
+	private static int socketTimeout = 15000;
 
 	private static CloseableHttpClient client = null;
 
@@ -107,8 +107,35 @@ public class HttpTest {
 //		es();
 //		sendDingdingmarkdown();
 //		testGetByteArray();
-		antUpload();
+//		antUpload();
+		antSmsUpload();
 	}
+
+
+	private static void antSmsUpload() {
+
+		ExecutorService executorService = ThreadUtil.newFixedExecutor(20, "蚂蚁测试", true);
+		AtomicLong rt = new AtomicLong(0L);
+		int batchSize = 2;
+		for (int i = 0; i < batchSize; i++) {
+			Future<?> submit = executorService.submit(() -> {
+				try {
+					long l = antDevSmsOpenapi();
+//					long l = antProOpenapi();
+					rt.set(rt.get() + l);
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+				}
+			});
+		}
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+		System.out.println("平均耗时：" + (rt.get() / batchSize));
+	}
+
 
 	private static void antUpload() {
 
@@ -159,6 +186,37 @@ public class HttpTest {
 		return sb.toString();
 	}
 
+	private static long antDevSmsOpenapi() throws IOException {
+		JSONObject sendInfo = new JSONObject();
+		sendInfo.put("requestId", UUIDGenerator.generate());
+		sendInfo.put("action", "SendBatchSms");
+		sendInfo.put("signName", "闪应");
+		sendInfo.put("templateCode", "sy_test5");
+
+		JSONArray jsonArray = new JSONArray();
+
+		for (int i=0; i<10;i++) {
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("phoneNumber", generate());
+			jsonObject.put("smsUpExtendCode", "1111");
+
+			JSONObject properties = new JSONObject();
+			properties.put("ant1", "1234");
+			jsonObject.put("templateParam", properties);
+			jsonObject.put("bizProperties", "{\"name\":\"name1\",\"age\":\"18\"}");
+			jsonArray.add(jsonObject);
+		}
+
+		sendInfo.put("customerInfo", jsonArray);
+
+		Map<String,String> headerMap = new HashMap<>();
+		headerMap.put("appKey", "ant_test1");
+		headerMap.put("timestamp", "1741312345540");
+		headerMap.put("sign", "PreynKDr+4Svd4dbHMnmp1xazGo=");
+		long l = System.currentTimeMillis();
+		postJsonString("http://114.55.2.52:8028/api/v1/antopenapi/task/smsImport/v1", sendInfo.toJSONString(), headerMap);
+		return System.currentTimeMillis() - l;
+	}
 	private static long antDevOpenapi() throws IOException {
 		JSONObject sendInfo = new JSONObject();
 		sendInfo.put("requestId", UUIDGenerator.generate());

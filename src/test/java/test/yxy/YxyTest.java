@@ -143,17 +143,16 @@ public class YxyTest {
     }
     @Test
     public void test6() {
-        for (int i = 0; i < 10; i++) {
-            double random = Math.random();
-            System.out.println(random);
-            if (random >= 0.3D) {
-                // 使用doris
-                System.out.println("doris");
-            } else {
-                // 使用es
-                System.out.println("es");
-            }
-        }
+        String s1 = "135585934620";
+        System.out.println(s1.replaceFirst("^(\\+?86|0086|\\+)?", ""));
+        String s2 = "+135585934620";
+        System.out.println(s2.replaceFirst("^(\\+?86|0086|\\+)?", ""));
+        String s3 = "+86135585934620";
+        System.out.println(s3.replaceFirst("^(\\+?86|0086|\\+)?", ""));
+        String s4 = "86135585934620";
+        System.out.println(s4.replaceFirst("^(\\+?86|0086|\\+)?", ""));
+        String s5 = "0086135585934620";
+        System.out.println(s5.replaceFirst("^(\\+?86|0086|\\+)?", ""));
 
     }
 
