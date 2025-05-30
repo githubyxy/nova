@@ -117,8 +117,13 @@ public class YxyTest {
 
     @Test
     public void test4() {
-        Date date = DateTimeUtil.minusDays(DateTimeUtil.parseDate10("2025-05-31"), 59);
-        System.out.println(DateTimeUtil.datetime18(date));
+        String s = "测试短信${customerName}, ${customer}";
+
+        String targetVar = "customer";
+        String newVar = "antName";
+        String replace = s.replaceAll("\\$\\{" + targetVar + "}", "\\${" + newVar + "}");
+
+        System.out.println(replace);
     }
     @Test
     public void test5() {
