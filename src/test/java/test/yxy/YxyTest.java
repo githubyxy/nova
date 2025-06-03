@@ -2,6 +2,7 @@ package test.yxy;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.google.common.base.Charsets;
 import com.yxy.nova.mwh.utils.constant.ISPEnum;
 import com.yxy.nova.mwh.utils.serialization.SerializerUtil;
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
@@ -20,8 +21,14 @@ public class YxyTest {
     private Person person;
     @Test
     public void test() throws Exception {
-        long l = DateTimeUtil.diffInHour(new Date(), DateTimeUtil.plusDays(DateTimeUtil.parseDate10("2025-04-24"), 1));
-        System.out.println(l);
+        String s = "上行测试p";
+
+        byte[] bytes = s.getBytes("UTF-16BE");
+
+//        String s1 = new String(bytes, "GB18030");
+        String s1 = new String(bytes, "UTF-16BE");
+        System.out.println(s1);
+
     }
 
     @Test
