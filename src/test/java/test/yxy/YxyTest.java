@@ -12,6 +12,8 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -74,18 +76,11 @@ public class YxyTest {
 
     @Test
     public void test3() {
-//        List<String> split = TextUtil.split("");
-//        List<String> split1 = TextUtil.split("1");
-//        System.out.println(split.size());
-//        System.out.println(JSONObject.toJSONString(split));
-//        System.out.println(split.containsAll(split1));
-//        System.out.println(SerializerUtil.jsonSerialize(split));
-//        String indices = "11[{123}]";
-//        indices = indices.substring(indices.indexOf("["));
-//        System.out.println(indices);
+        Set<String> set = new HashSet<>(Arrays.asList("1", "2", "8", "9"));
 
-        int thresholdSize = DateTimeUtil.time8().compareTo("08:30:00") >= 0 ? 200 : 500;
-        System.out.println(thresholdSize);
+        set.retainAll(Arrays.asList());
+
+        System.out.println(JSONObject.toJSONString(set));
     }
 
     @Test
@@ -155,18 +150,79 @@ public class YxyTest {
     }
     @Test
     public void test6() {
-        String s1 = "135585934620";
-        System.out.println(s1.replaceFirst("^(\\+?86|0086|\\+)?", ""));
-        String s2 = "+135585934620";
-        System.out.println(s2.replaceFirst("^(\\+?86|0086|\\+)?", ""));
-        String s3 = "+86135585934620";
-        System.out.println(s3.replaceFirst("^(\\+?86|0086|\\+)?", ""));
-        String s4 = "86135585934620";
-        System.out.println(s4.replaceFirst("^(\\+?86|0086|\\+)?", ""));
-        String s5 = "0086135585934620";
-        System.out.println(s5.replaceFirst("^(\\+?86|0086|\\+)?", ""));
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT mobileNo FROM task_item WHERE ds = '2025-06-13' AND ");
 
+        List<String> mobiles = new ArrayList<>();
+        for (int i = 0; i < 10000; i++) {
+            String mobile = String.format("135%08d", i);
+            mobiles.add(mobile);
+        }
+        String mobileNoSql = in("mobileNo", mobiles);
+        sb.append(mobileNoSql);
+
+        // 将 SQL 写入文件
+        try (FileWriter writer = new FileWriter("demo_mobile2.sql")) {
+            writer.write(sb.toString());
+            System.out.println("SQL 文件已生成：demo_mobile.sql");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
+    public static String in(String columnName, Iterable<String> values) {
+        if (values == null || !values.iterator().hasNext()) {
+            throw new IllegalArgumentException("Values for IN statement cannot be null or empty");
+        }
+        long valueSize = 0L;
+        StringJoiner joiner = new StringJoiner("', '", "'", "'");
+        for (String value : values) {
+            joiner.add(value);
+            valueSize++;
+        }
+        if (valueSize > 5000) {
+            StringBuilder inSql = new StringBuilder("(");
+            List<List<String>> splitList  = splitIterable(values, 5000);
+            for (int i = 0; i < splitList.size(); i++) {
+                List<String> splits = splitList.get(i);
+                StringJoiner splitJoiner = new StringJoiner("', '", "'", "'");
+                for (String value : splits) {
+                    splitJoiner.add(value);
+                }
+                inSql.append(columnName).append(" IN (").append(splitJoiner).append(")");
+                if (i != splitList.size() - 1) {
+                    inSql.append(" OR ");
+                }
+            }
+            return inSql.append(")").toString();
+        } else {
+            return columnName + " IN (" + joiner + ")";
+        }
+    }
+
+    public static <T> List<List<T>> splitIterable(Iterable<T> iterable, int batchSize) {
+        List<List<T>> batches = new ArrayList<>();
+        Iterator<T> iterator = iterable.iterator();
+
+        List<T> currentBatch = new ArrayList<>(batchSize);
+
+        while (iterator.hasNext()) {
+            currentBatch.add(iterator.next());
+
+            if (currentBatch.size() == batchSize) {
+                batches.add(new ArrayList<>(currentBatch));
+                currentBatch.clear();
+            }
+        }
+
+        // 加入最后一批（可能小于 batchSize）
+        if (!currentBatch.isEmpty()) {
+            batches.add(new ArrayList<>(currentBatch));
+        }
+
+        return batches;
+    }
+
 
     @Test
     public void test7() {
