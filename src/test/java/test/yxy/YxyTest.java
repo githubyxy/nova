@@ -76,11 +76,9 @@ public class YxyTest {
 
     @Test
     public void test3() {
-        Set<String> set = new HashSet<>(Arrays.asList("1", "2", "8", "9"));
+        String c = String.format("sum(ceil(%stalkDurationSeconds / %d)) AS sumTalkDurationSeconds_%d", "", 6, 6);
 
-        set.retainAll(Arrays.asList());
-
-        System.out.println(JSONObject.toJSONString(set));
+        System.out.println(c);
     }
 
     @Test
