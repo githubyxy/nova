@@ -350,38 +350,38 @@ curl -XPOST "http://127.0.0.1:9200/hermes-202409/_search" -d '
 curl -XGET 127.0.0.1:9200/_cat/indices?v
 
 # 删除索引 (sms-202103是索引名称)
-curl -XDELETE 127.0.0.1:9200/hermes-202504
+curl -XDELETE 127.0.0.1:9200/hermes-202505
 
 # es 备份 hermes
-curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202505 -d '{
+curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202506 -d '{
     "type": "fs",
     "settings": {
-        "location": "/usr/share/elasticsearch/backup/hermes-202505",
+        "location": "/usr/share/elasticsearch/backup/hermes-202506",
         "max_snapshot_bytes_per_sec" : "200mb",
         "max_restore_bytes_per_sec" : "200mb"
     }
 }'
 
-# 去掉wait_for_completion=true，会后台执行备份 (curl -XGET 127.0.0.1:9200/_snapshot/hermes-202505/hermes-202505/_status)
-curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202505/hermes-202505 -d '{
-        "indices": "hermes-202505"
+# 去掉wait_for_completion=true，会后台执行备份 (curl -XGET 127.0.0.1:9200/_snapshot/hermes-202506/hermes-202506/_status)
+curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202506/hermes-202506 -d '{
+        "indices": "hermes-202506"
 }'
 curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202409/hermes-202409?wait_for_completion=true -d '{
         "indices": "hermes-202409"
 }'
 
 # 压缩备份
-nohup tar -czvf hermes-202505.tar.gz hermes-202505/ &
+nohup tar -czvf hermes-202506.tar.gz hermes-202506/ &
 
 # 备份存在 /mnt/data01/es_backup
-scp hermes-202502.tar.gz root@bot:/mnt/data01/es_backup/
+scp hermes-202506.tar.gz root@bot:/mnt/data01/es_backup/
 
-scp -r hermes-202503 root@bot:/mnt/data01/es_backup/
+scp -r hermes-202506 root@bot:/mnt/data01/es_backup/
 
 scp -r hermes-202505 root@doris:/mnt/data03/es_backup/
 
 
 # 生成es中task_item 的月份索引
-curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202507
+curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202508
 
 
