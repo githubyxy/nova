@@ -359,4 +359,18 @@ public class YxyTest {
         });
     }
 
+    @Test
+    public void test18() {
+        String s= String.valueOf("0");
+
+        double speed;
+        try {
+            speed = Double.parseDouble(s);
+        } catch (Exception e) {
+            speed = 50; // 默认速度50条/秒
+        }
+        System.out.println(speed);
+
+    }
+
 }

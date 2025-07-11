@@ -72,7 +72,7 @@ public class HttpTest {
 	/**
 	 * 读超时时间
 	 */
-	private static int socketTimeout = 15000;
+	private static int socketTimeout = 30000;
 
 	private static CloseableHttpClient client = null;
 
@@ -108,7 +108,57 @@ public class HttpTest {
 //		sendDingdingmarkdown();
 //		testGetByteArray();
 //		antUpload();
-		antSmsUpload();
+//		antSmsUpload();
+		smsUpload();
+	}
+
+	private static void smsUpload() {
+
+		long l = devsmsUpload();
+//		long l = prosmsUpload();
+		System.out.println("请求耗时：" + l);
+	}
+
+	@SneakyThrows
+    private static long prosmsUpload() {
+		JSONObject sendInfo = new JSONObject();
+		sendInfo.put("mobile", getMobileList());
+		sendInfo.put("content", "【闪应】测试短信，测试短信，测试短信，测试短信，测试短信，测试短信，测试短信，测试短信，测试短信，测试短信，测试短信，测试短信，测试短信，测试短信公司名称，退订回复R");
+		sendInfo.put("appCode", "forTest");
+
+		Map<String,String> headerMap = new HashMap<>();
+		headerMap.put("x-access-key", "syfgs");
+		headerMap.put("x-access-sign", "c3lmZ3M3YzgzNDFmZWFkZDcxYjljMWUwMmRlZmU3MDdkYWRkNg==");
+
+		long l = System.currentTimeMillis();
+		postJsonString("http://47.99.72.114:8038/openapi/smsSend", sendInfo.toJSONString(), headerMap);
+		return System.currentTimeMillis() - l;
+	}
+
+	@SneakyThrows
+    private static long devsmsUpload() {
+
+		JSONObject sendInfo = new JSONObject();
+		sendInfo.put("mobile", getMobileList());
+		sendInfo.put("content", "【测试】测试短信测试短信测试短信测试短信测试短信测试短信测试短信测试短信测试短信测试短信测试短信测试短信测试短信测试短信测试短信测试短信测试短信测试短信测试短信测试短信测试短信测试短信");
+		sendInfo.put("appCode", "syceshi2");
+
+		Map<String,String> headerMap = new HashMap<>();
+		headerMap.put("x-access-key", "syfgs");
+		headerMap.put("x-access-sign", "c3lmZ3MzZGI0Y2I0YjE5YTQwMDJmMTExYjExNzg4ZjY1MmZhMA==");
+
+		long l = System.currentTimeMillis();
+		postJsonString("http://114.55.2.52:8068/openapi/smsSend", sendInfo.toJSONString(), headerMap);
+		return System.currentTimeMillis() - l;
+	}
+
+	private static String getMobileList() {
+		StringBuilder stringBuilder = new StringBuilder();
+		for (int i = 0; i < 10; i++) {
+			stringBuilder.append(generate());
+			stringBuilder.append(",");
+		}
+		return stringBuilder.substring(0, stringBuilder.length() - 1);
 	}
 
 
