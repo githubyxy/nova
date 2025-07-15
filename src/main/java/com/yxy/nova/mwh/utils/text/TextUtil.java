@@ -34,7 +34,7 @@ public class TextUtil {
         }
 
         StringSubstitutor substitutor = new StringSubstitutor(valueMap);
-        substitutor.setEnableUndefinedVariableException(true);
+        substitutor.setEnableUndefinedVariableException(false);
         return substitutor.replace(source);
     }
 
