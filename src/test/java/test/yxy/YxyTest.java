@@ -23,14 +23,9 @@ public class YxyTest {
     private Person person;
     @Test
     public void test() throws Exception {
-        String s = "上行测试p";
-
-        byte[] bytes = s.getBytes("UTF-16BE");
-
-//        String s1 = new String(bytes, "GB18030");
-        String s1 = new String(bytes, "UTF-16BE");
-        System.out.println(s1);
-
+        String s = "14:07";
+        String s2 = DateTimeUtil.time8();
+        System.out.println(s.compareTo(s2));
     }
 
     @Test
