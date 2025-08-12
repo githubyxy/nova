@@ -23,9 +23,12 @@ public class YxyTest {
     private Person person;
     @Test
     public void test() throws Exception {
-        String s = "14:07";
-        String s2 = DateTimeUtil.time8();
-        System.out.println(s.compareTo(s2));
+        JSONObject jsonObject = new JSONObject();
+
+        JSONObject a1 = jsonObject.getJSONObject("a");
+
+        String a = a1.getString("a");
+
     }
 
     @Test
