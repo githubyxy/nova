@@ -23,11 +23,10 @@ public class YxyTest {
     private Person person;
     @Test
     public void test() throws Exception {
-        JSONObject jsonObject = new JSONObject();
+        List<String> list = Arrays.asList("br10", "bn3", "lxr1", "lxr2", "bn1", "bn2");
+        Collections.sort(list);
 
-        JSONObject a1 = jsonObject.getJSONObject("a");
-
-        String a = a1.getString("a");
+        System.out.println(list);
 
     }
 

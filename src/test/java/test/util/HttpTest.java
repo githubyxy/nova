@@ -3,6 +3,8 @@ package test.util;
 import ch.qos.logback.classic.Level;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.thread.ThreadUtil;
+import cn.hutool.http.HttpUtil;
+import cn.hutool.json.JSONUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -10,6 +12,7 @@ import com.yxy.nova.mwh.utils.UUIDGenerator;
 import com.yxy.nova.mwh.utils.log.LogUtil;
 import lombok.SneakyThrows;
 import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
@@ -109,9 +112,63 @@ public class HttpTest {
 //		testGetByteArray();
 //		antUpload();
 //		antSmsUpload();
-		smsUpload();
+//		smsUpload();
+
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("customerAccount", "CT6377217821419769856");
+		jsonObject.put("productType", "001");
+		// 默认，双方约定好就行
+		jsonObject.put("callCompany", "shanying");
+		generateSign(jsonObject, "94robot", "797d525d942e2e130d6e0f9817fe44ee");
+
+		String response = postJsonString("https://gws-bilolgy-test.360-jr.com/gws-api/qihoo/finance/coll/getOverdueStatusOfThirdParties", jsonObject.toJSONString(), null);
+
+//		String json = HttpUtil.createPost("https://gws-bilolgy-test.360-jr.com/gws-api/qihoo/finance/coll/getOverdueStatusOfThirdParties").contentType("application/json").body(JSONUtil.toJsonStr(jsonObject)).setConnectionTimeout(3000).execute().body();
+//		System.out.println(json);
 	}
 
+	/**
+	 * 生成签名
+	 * @param params
+	 * @param account
+	 * @param secretKey
+	 */
+	public static void generateSign(Map<String, Object> params, String account, String secretKey) {
+		String timeStampKey = "timeStamp";
+		String accountKey = "account";
+		String signKey = "sign";
+		params.put(timeStampKey, String.valueOf(System.currentTimeMillis()));
+		params.put(accountKey, account);
+		//对map参数进行排序生成参数
+		Set<String> keysSet = params.keySet();
+		Object[] keys = keysSet.toArray();
+		Arrays.sort(keys);
+		StringBuilder temp = new StringBuilder();
+		boolean first = true;
+		for (Object key : keys) {
+			if (first) {
+				first = false;
+			} else {
+				temp.append("&");
+			}
+			temp.append(key).append("=");
+			Object value = params.get(key);
+			String valueString = "";
+			if (null != value) {
+				if (value instanceof String[]) {
+					String[] lytype = (String[]) value;
+					List<String> resultList = new ArrayList<>(Arrays.asList(lytype));
+					valueString = String.valueOf(resultList);
+				} else {
+					valueString = String.valueOf(value);
+				}
+			}
+			temp.append(valueString);
+		}
+		//根据参数生成签名
+		String sign = DigestUtils.md5Hex(temp.toString() + "&secretKey=" + secretKey).toUpperCase();
+		params.put(signKey, sign);
+	}
 	private static void smsUpload() {
 
 		long l = devsmsUpload();
@@ -566,6 +623,7 @@ public class HttpTest {
 		jsonObject.put("customerPhone","13811112222");
 
 		String res = postJsonString(url, jsonObject.toJSONString() ,headerMap);
+
 		System.out.println(res);
 	}
 
