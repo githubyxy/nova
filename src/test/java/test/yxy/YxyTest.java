@@ -23,10 +23,10 @@ public class YxyTest {
     private Person person;
     @Test
     public void test() throws Exception {
-        List<String> list = Arrays.asList("br10", "bn3", "lxr1", "lxr2", "bn1", "bn2");
-        Collections.sort(list);
+        int rTotalAvailableAmt = 2;
+        int amount = (rTotalAvailableAmt * 2 - 1) * 2000 / 2 + 500;
 
-        System.out.println(list);
+        System.out.println(amount);
 
     }
 

@@ -34,9 +34,21 @@ public class AESUtil {
 
     public static void main(String[] args) {
             // d5i0e4LLVcWE+PULz/FzJQ==
-        String encrypt = encrypt("15111235631", "fC8tzaLDItGjIjOr");
-        System.out.println(encrypt);
 
-        System.out.println(decrypt(Base64.getDecoder().decode(encrypt), "7fd2e257a128435b8b6574e5753d825d"));
+        aaa("张水");
+        aaa("18221302599");
+        aaa("18221302600");
+        aaa("18221302601");
+        aaa("18221302602");
+        aaa("18221302603");
+
+
+
+//        System.out.println(decrypt(Base64.getDecoder().decode(encrypt), "7fd2e257a128435b8b6574e5753d825d"));
+    }
+
+    private static void aaa(String text) {
+        String encrypt = encrypt(text, "fC8tzaLDItGjIjOr");
+        System.out.println(encrypt);
     }
 }
