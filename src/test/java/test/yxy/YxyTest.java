@@ -5,6 +5,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.google.common.base.Charsets;
 import com.yxy.nova.mwh.utils.constant.ISPEnum;
 import com.yxy.nova.mwh.utils.serialization.SerializerUtil;
+import com.yxy.nova.mwh.utils.text.TextUtil;
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import lombok.SneakyThrows;
 import org.apache.commons.codec.binary.Hex;
@@ -23,10 +24,9 @@ public class YxyTest {
     private Person person;
     @Test
     public void test() throws Exception {
-        int rTotalAvailableAmt = 2;
-        int amount = (rTotalAvailableAmt * 2 - 1) * 2000 / 2 + 500;
+        List<String> split = TextUtil.split(null);
 
-        System.out.println(amount);
+        System.out.println(split.size());
 
     }
 
