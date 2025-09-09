@@ -1,0 +1,6 @@
+# 添加mcp服务
+claude mcp add spec-workflow npx @pimzino/spec-workflow-mcp@latest --scope user
+
+# 打开 大盘
+npx -y @pimzino/spec-workflow-mcp@latest . --dashboard --port 3000
+
