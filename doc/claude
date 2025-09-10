@@ -4,3 +4,5 @@ claude mcp add spec-workflow npx @pimzino/spec-workflow-mcp@latest --scope user
 # 打开 大盘
 npx -y @pimzino/spec-workflow-mcp@latest . --dashboard --port 3000
 
+# 创建 项目相关文档
+create-steering-doc - Create project steering documents (product, tech, structure)
