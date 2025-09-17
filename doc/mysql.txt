@@ -60,3 +60,7 @@ update sms_task_item set version=version+1 where task_uuid in(404245069421589946
 
 # 查询短信变量条件
 select * from sms_task_item where sign='【花鸭借钱】' and JSON_EXTRACT_STRING(JSON_PARSE(properties), '$.shortlink')='rioj.cn/cnrHyP' and ds='2025-05-01'
+
+# 打开sql慢查询
+SET GLOBAL slow_query_log = 'ON';
+SET GLOBAL long_query_time = 1;
