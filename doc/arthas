@@ -12,7 +12,8 @@ ognl -c 179d3b25 '@cn.guixi.sms.core.AppMain@context.getBean("smsSendApplication
 
 # 获取 CMPPProtoProcessor 中 cmppChannelRateLimiterMap 的值
 ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@cmppChannelRateLimiterMap.get("3a597767bcc44f9282a71af4e92ae3c8")'
-ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@smsProxyMap.get("90cb75c97ee7402b9fa802ea619a1557").getConn().available()'
+ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@smsProxyMap.get("ff241e2c98be4e538009a3e3e181b788").getConn().available()'
+ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@smsProxyMap.get("ec0aef42d97946498e5063267658cc41").getConn()'
 ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@cmppChannelRateLimiterMap.remove("3a597767bcc44f9282a71af4e92ae3c8")'
 
 # 一个类中获取实例后执行具体方法
