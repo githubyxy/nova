@@ -455,7 +455,7 @@ public class HttpTest {
 	private static long antProOpenapi() throws IOException {
 		JSONObject sendInfo = new JSONObject();
 		sendInfo.put("requestId", UUIDGenerator.generate());
-		sendInfo.put("taskId", 26381);
+		sendInfo.put("taskId", 1);
 		sendInfo.put("importTransactionType", 0);
 
 		JSONArray jsonArray = new JSONArray();
