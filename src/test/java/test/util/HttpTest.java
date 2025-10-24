@@ -13,6 +13,7 @@ import com.yxy.nova.mwh.utils.log.LogUtil;
 import lombok.SneakyThrows;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.lang3.tuple.Pair;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
@@ -59,7 +60,7 @@ public class HttpTest {
 	/**
 	 * 连接到某台主机的最大连接数
 	 */
-	private static volatile int defaultMaxPerRoute = 30;
+	private static volatile int defaultMaxPerRoute = 150;
 	/**
 	 * 总的最大连接数
 	 */
@@ -113,18 +114,88 @@ public class HttpTest {
 //		antUpload();
 //		antSmsUpload();
 //		smsUpload();
+		didiUpload();
+	}
 
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("customerAccount", "CT6377217821419769856");
-		jsonObject.put("productType", "001");
-		// 默认，双方约定好就行
-		jsonObject.put("callCompany", "shanying");
-		generateSign(jsonObject, "94robot", "797d525d942e2e130d6e0f9817fe44ee");
+	// 滴滴 模拟上传  压测
+	private static void didiUpload() {
+		String secretaKey="";
+		String accessKey="=";
+		ExecutorService executorService = ThreadUtil.newFixedExecutor(150, "滴滴测试", true);
+		AtomicLong rt = new AtomicLong(0L);
+		List<Long> latencies =  new ArrayList<>();
+		int batchSize = 500;
+		for (int i = 0; i < batchSize; i++) {
+			Future<?> submit = executorService.submit(() -> {
+				try {
+					long l = upload(false, secretaKey, accessKey);
+					latencies.add(l);
+					rt.set(rt.get() + l);
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+				}
+			});
+		}
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+		System.out.print("平均耗时：" + (rt.get() / batchSize));
+		// 排序
+		Collections.sort(latencies);
 
-		String response = postJsonString("https://gws-bilolgy-test.360-jr.com/gws-api/qihoo/finance/coll/getOverdueStatusOfThirdParties", jsonObject.toJSONString(), null);
+		int n = latencies.size();
+		// 计算索引，注意数组下标从0开始
+		int index = (int) Math.ceil(0.99 * n) - 1;
 
-//		String json = HttpUtil.createPost("https://gws-bilolgy-test.360-jr.com/gws-api/qihoo/finance/coll/getOverdueStatusOfThirdParties").contentType("application/json").body(JSONUtil.toJsonStr(jsonObject)).setConnectionTimeout(3000).execute().body();
-//		System.out.println(json);
+		System.out.println("  TP99耗时：" + latencies.get(index));
+		System.out.println(JSON.toJSONString(latencies));
+	}
+
+	private static long upload(boolean dev, String secretaKey, String accessKey) throws IOException {
+		JSONObject sendInfo = new JSONObject();
+		sendInfo.put("requestId", UUIDGenerator.generate());
+		sendInfo.put("taskId", 44321);
+
+		JSONArray phoneList = new JSONArray();
+		for (int i=0; i<1;i++) {
+			JSONObject jsonObject = new JSONObject();
+			String phone = generate();
+			jsonObject.put("phone", phone);
+			jsonObject.put("userId", "userId_" + phone);
+			jsonObject.put("requestId", "requestId_" + phone);
+
+			JSONObject variable = new JSONObject();
+			variable.put("customerName", "customerName_" + phone);
+			jsonObject.put("variables", variable);
+
+			phoneList.add(jsonObject);
+		}
+		sendInfo.put("phoneList", phoneList);
+
+		DidiOpenApiRequest didiOpenApiRequest = geneDidiOpenApiRequest(secretaKey, accessKey, sendInfo);
+		Pair<Long, String> pair;
+		if (dev) {
+			pair = postJsonString("http://114.55.2.52:8028/api/v1/didiTask/outbound/requestCall", JSONObject.toJSONString(didiOpenApiRequest), null);
+		} else {
+			pair = postJsonString("https://hermes.shanyingtech.com/api/v1/didiTask/outbound/requestCall", JSONObject.toJSONString(didiOpenApiRequest), null);
+		}
+		if (pair.getLeft() > 500) {
+			System.out.println(sendInfo.toJSONString());
+		}
+		return pair.getLeft();
+	}
+
+	private static DidiOpenApiRequest geneDidiOpenApiRequest(String secretKey, String accessKey, JSONObject jsonBody) {
+		DidiOpenApiRequest request = new DidiOpenApiRequest();
+		request.setVersion("1");
+		request.setTraceId(UUIDGenerator.generate());
+		long timestamp = System.currentTimeMillis() / 1000;
+		request.setTimestamp(timestamp);
+		request.setBody(DidiSignUtil.bodyEncryptByAccessKey(jsonBody.toJSONString(), accessKey, timestamp));
+		request.setSign(DidiSignUtil.generateRequestSupplierSign(request.getBody(), secretKey, timestamp));
+		return  request;
 	}
 
 	/**
@@ -285,7 +356,7 @@ public class HttpTest {
 
 	// 生成一个随机手机号
 	public static String generate() {
-		String prefix = "135";
+		String prefix = "134";
 		StringBuilder sb = new StringBuilder(prefix);
 		for (int i = 0; i < 8; i++) {
 			sb.append(new Random().nextInt(10));
@@ -582,8 +653,8 @@ public class HttpTest {
 		header.put("MasterKey", MasterKey);
 		header.put("User-Agent", "JetLinks Iot Platform");
 
-		String s = postJsonString("https://ag-api.ctwing.cn/aep_device_management/device", bodyString, header);
-		System.out.println(s);
+		Pair<Long, String> pair = postJsonString("https://ag-api.ctwing.cn/aep_device_management/device", bodyString, header);
+		System.out.println(pair.getRight());
 	}
 
 	/**
@@ -603,29 +674,6 @@ public class HttpTest {
 		System.out.println(res);
 	}
 
-	/**
-	 * sendsmspkg 接口示例
-	 * @throws Exception
-	 */
-	public static void doubleCall()throws Exception{
-		String url = "http://120.48.8.74:8028/openapi/call/manualCall/v1";
-
-		String partnerCode = "dingsheng_main";
-		String openapiSecret = "11dbea52";
-		Map<String,String> headerMap = new HashMap<>();
-		headerMap.put("x-access-key", partnerCode);
-		headerMap.put("x-access-sign", Base64.encodeBase64String((partnerCode + getMD5(openapiSecret.getBytes("UTF-8"))).getBytes("UTF-8")));
-
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("callType", "WEBPHONE_DOUBLE_CALL");
-		jsonObject.put("lineUnitCode", "hangyun-gz");	// 线路单元结果返回的结果
-		jsonObject.put("phoneNo","77700000");
-		jsonObject.put("customerPhone","13811112222");
-
-		String res = postJsonString(url, jsonObject.toJSONString() ,headerMap);
-
-		System.out.println(res);
-	}
 
 	public static String getMD5(byte[] source) {
 		String s = null;
@@ -700,10 +748,11 @@ public class HttpTest {
 	 * @param jsonString
 	 * @return
 	 */
-	private static String postJsonString(String url, String jsonString, Map<String,String> headerMap) throws IOException {
+	private static Pair<Long, String> postJsonString(String url, String jsonString, Map<String,String> headerMap) throws IOException {
 		logger.info( "请求的url: {}, 报文体: {}", Arrays.asList(url, jsonString), "httpPostJson");
 
 		String result = null;
+		long rt = 0;
 		CloseableHttpResponse response = null;
 		try {
 			HttpEntity entity = new StringEntity(jsonString, Charset.forName("UTF-8"));
@@ -717,7 +766,9 @@ public class HttpTest {
 				}
 			}
 			httpPost.setEntity(entity);
+			long l = System.currentTimeMillis();
 			response = client.execute(httpPost);
+			rt = System.currentTimeMillis() - l;
 
 			int statusCode = response.getStatusLine().getStatusCode();
 			if (HttpStatus.SC_OK != statusCode) {
@@ -740,7 +791,7 @@ public class HttpTest {
 				}
 			}
 		}
-		return result;
+		return Pair.of(rt, result);
 	}
 
 
