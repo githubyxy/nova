@@ -121,6 +121,20 @@ curl -XPOST http://127.0.0.1:9200/hermes-202501/_close
 curl -XPOST http://127.0.0.1:9200/hermes-202501/_open
 
 
+#  mapping 新增字段
+curl -H "Content-Type:application/json" -XPUT "http://127.0.0.1:9200/hermes-202510/_mapping/task_item" -d '
+{
+  "properties":{
+    "altDownstreamGatewayId": {
+        "type": "keyword",
+        "ignore_above": 100
+    },
+    "upstreamGatewayId": {
+        "type": "keyword",
+        "ignore_above": 100
+    }
+  }
+}'
 
 # es索引备份
 curl -XPUT http://127.0.0.1:9201/_snapshot/my_backup -d '{

@@ -39,6 +39,23 @@ public class TextUtil {
     }
 
     /**
+     * 替换模板中的变量返回字符串。如果模板中含有没有传值的变量，会抛异常。
+     * @param source
+     * @param valueMap
+     * @param enableUndefinedVariableException 是否开启未定义变量异常
+     * @return
+     */
+    public static String replace(CharSequence source, Map<String, String> valueMap, boolean enableUndefinedVariableException) {
+        if (valueMap == null) {
+            valueMap = new HashMap<>(0);
+        }
+
+        StringSubstitutor substitutor = new StringSubstitutor(valueMap);
+        substitutor.setEnableUndefinedVariableException(enableUndefinedVariableException);
+        return substitutor.replace(source);
+    }
+
+    /**
      * 读取类路径文件内容
      * @param filePath
      * @return

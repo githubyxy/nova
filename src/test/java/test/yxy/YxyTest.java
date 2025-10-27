@@ -24,9 +24,12 @@ public class YxyTest {
     private Person person;
     @Test
     public void test() throws Exception {
-        List<String> split = TextUtil.split(null);
+        Map<String, String> valueMap = new HashMap<>();
+        valueMap.put("a", "A");
+        String replace = TextUtil.replace("${a}", valueMap, false);
 
-        System.out.println(split.size());
+        System.out.println(replace);
+        System.out.println("".replace("a", "A"));
 
     }
 
