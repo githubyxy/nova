@@ -1,5 +1,6 @@
 package test.yxy;
 
+import cn.hutool.core.date.DateUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.google.common.base.Charsets;
@@ -24,12 +25,11 @@ public class YxyTest {
     private Person person;
     @Test
     public void test() throws Exception {
-        Map<String, String> valueMap = new HashMap<>();
-        valueMap.put("a", "A");
-        String replace = TextUtil.replace("${a}", valueMap, false);
+        String[] split = "_".split("_");
 
-        System.out.println(replace);
-        System.out.println("".replace("a", "A"));
+        System.out.println(split.length);
+        System.out.println(split[0]);
+        System.out.println(split[1]);
 
     }
 

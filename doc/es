@@ -169,11 +169,11 @@ curl -XDELETE 127.0.0.1:9200/_snapshot/my_backup/hermes-202104
 curl -XPOST 127.0.0.1:9200/_snapshot/my_backup/hermes-202104/_restore
 
 
-curl -XGET "http://127.0.0.1:9200/hermes-r-202505/task_item/_search" -d'
+curl -XGET "http://127.0.0.1:9200/hermes-r-202511/task_item/_search" -d'
 {
   "query": {
     "match": {
-      "taskItemUuid": "5cc0729623b1481ea3d5ae11fdc980c7"
+      "taskItemUuid": "1c7d7be04da44720bd266ff252a9595e"
     }
   }
 }'
@@ -199,11 +199,11 @@ curl -XGET "http://127.0.0.1:9200/blacklist/blacklist/_search" -d'
 }'
 
 
-curl -XGET "http://127.0.0.1:9200/hermes-202509/task_item/_search" -d'
+curl -XGET "http://127.0.0.1:9200/hermes-202510/task_item/_search" -d'
 {
   "query": {
     "match": {
-      "taskItemUuid": "b27106212b73453a83cf89bcf3030834"
+      "taskItemUuid": "08a1218587704b3aa2e5261701c630e6"
     }
   }
 }'
@@ -364,40 +364,40 @@ curl -XPOST "http://127.0.0.1:9200/hermes-202409/_search" -d '
 curl -XGET 127.0.0.1:9200/_cat/indices?v
 
 # 删除索引 (sms-202103是索引名称)
-curl -XDELETE 127.0.0.1:9200/hermes-202506
+curl -XDELETE 127.0.0.1:9200/hermes-202507
 
 # es 备份 hermes
-curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202509 -d '{
+curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202510 -d '{
     "type": "fs",
     "settings": {
-        "location": "/usr/share/elasticsearch/backup/hermes-202509",
+        "location": "/usr/share/elasticsearch/backup/hermes-202510",
         "max_snapshot_bytes_per_sec" : "200mb",
         "max_restore_bytes_per_sec" : "200mb"
     }
 }'
 
-# 去掉wait_for_completion=true，会后台执行备份 (curl -XGET 127.0.0.1:9200/_snapshot/hermes-202509/hermes-202509/_status)
-curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202509/hermes-202509 -d '{
-        "indices": "hermes-202509"
+# 去掉wait_for_completion=true，会后台执行备份 (curl -XGET 127.0.0.1:9200/_snapshot/hermes-202510/hermes-202510/_status)
+curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202510/hermes-202510 -d '{
+        "indices": "hermes-202510"
 }'
 curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202409/hermes-202409?wait_for_completion=true -d '{
         "indices": "hermes-202409"
 }'
 
 # 压缩备份
-nohup tar -czvf hermes-202509.tar.gz hermes-202509/ &
+nohup tar -czvf hermes-202510.tar.gz hermes-202510/ &
 
 # 备份存在 /mnt/data01/es_backup
-scp hermes-202509.tar.gz root@bot:/mnt/data01/es_backup/
+scp hermes-202510.tar.gz root@bot:/mnt/data01/es_backup/
 
 scp -r hermes-202508 root@bot:/mnt/data01/es_backup/
 # 在bot服务器上执行上传到ali oss
-ossutil cp hermes-202509.tar.gz oss://shanying-file-backup/es_backup/hermes-202509.tar.gz
+ossutil cp hermes-202510.tar.gz oss://shanying-file-backup/es_backup/hermes-202510.tar.gz
 
 scp -r hermes-202505 root@doris:/mnt/data03/es_backup/
 
 
 # 生成es中task_item 的月份索引
-curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202511
+curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202512
 
 
