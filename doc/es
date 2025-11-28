@@ -203,7 +203,7 @@ curl -XGET "http://127.0.0.1:9200/hermes-202510/task_item/_search" -d'
 {
   "query": {
     "match": {
-      "taskItemUuid": "08a1218587704b3aa2e5261701c630e6"
+      "taskItemUuid": "680f8a4a473d4eba854483385aed4a0b"
     }
   }
 }'
@@ -273,6 +273,19 @@ curl -XGET "http://127.0.0.1:9200/blacklist/_count" -d '
   }
 }'
 
+curl -XGET "http://127.0.0.1:9200/hermes-202511/_count" -d '
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": { "taskBatchUuid": "6118661" }
+        }
+      ]
+    }
+  }
+}'
+
 curl -XGET "http://127.0.0.1:9200/blacklist/_count" -d '
 {
   "query": {
@@ -332,18 +345,25 @@ curl -XPOST "http://127.0.0.1:9200/blacklist/_delete_by_query" -d '
 
 
 # 命中query条件的 按照billDuration做sum汇总查询
-curl -XPOST "http://127.0.0.1:9200/hermes-202409/_search" -d '
+curl -XPOST "http://127.0.0.1:9200/hermes-202511/_search" -d '
 {
   "query": {
     "bool": {
       "must": [
         {
-          "term": { "appCode": "xhb_mfrg8" }
+          "term": { "taskUuid": "42011" }
         },
         {
           "range": {
             "gmtCreate": {
-              "gte": "1726588800000"
+              "gte": "1762099200000"
+            }
+          }
+        },
+        {
+          "range": {
+            "gmtCreate": {
+              "lte":"1762185600000"
             }
           }
         }
@@ -353,7 +373,7 @@ curl -XPOST "http://127.0.0.1:9200/hermes-202409/_search" -d '
   "aggs":{
      "billDuration": {
        "sum": {
-         "field": "billDuration"
+         "field": "smsSuccessBillCount"
        }
      }
   }
@@ -364,7 +384,7 @@ curl -XPOST "http://127.0.0.1:9200/hermes-202409/_search" -d '
 curl -XGET 127.0.0.1:9200/_cat/indices?v
 
 # 删除索引 (sms-202103是索引名称)
-curl -XDELETE 127.0.0.1:9200/hermes-202507
+curl -XDELETE 127.0.0.1:9200/hermes-202508
 
 # es 备份 hermes
 curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202510 -d '{

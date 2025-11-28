@@ -114,7 +114,19 @@ public class HttpTest {
 //		antUpload();
 //		antSmsUpload();
 //		smsUpload();
-		didiUpload();
+//		didiUpload();
+		blacklistApi();
+	}
+
+	private static void blacklistApi() throws IOException {
+		List<NameValuePair> request = new ArrayList();
+		request.add(new BasicNameValuePair("clientId", "yywl"));
+		request.add(new BasicNameValuePair("pname", "fa0da4fb5d17d6332be86eb8b01a24cf"));
+		request.add(new BasicNameValuePair("certiCode", "88c737c2b7366efaa39b2d624e5f6ca0c8dd1d91445a7396307cb8fa70e11d5a"));
+		request.add(new BasicNameValuePair("phone", "fdc4fdf7272bcfd9548fda43d67a913c"));
+		String s = post("", request, null);
+		// {"data":{"result":{"level":"505"}},"resDesc":"成功!","queryOrderNumber":"30008892202511171639132882793454","resCode":"0000","requestIp":"115.227.246.10"}
+		System.out.println(s);
 	}
 
 	// 滴滴 模拟上传  压测

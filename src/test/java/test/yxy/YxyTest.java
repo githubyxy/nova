@@ -4,6 +4,8 @@ import cn.hutool.core.date.DateUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.google.common.base.Charsets;
+import com.yxy.nova.mwh.utils.concurrent.BoundedExecutor;
+import com.yxy.nova.mwh.utils.concurrent.InJvmLockUtil;
 import com.yxy.nova.mwh.utils.constant.ISPEnum;
 import com.yxy.nova.mwh.utils.serialization.SerializerUtil;
 import com.yxy.nova.mwh.utils.text.TextUtil;
@@ -23,14 +25,51 @@ import java.util.stream.Collectors;
 public class YxyTest {
 
     private Person person;
+
     @Test
     public void test() throws Exception {
-        String[] split = "_".split("_");
+        BoundedExecutor boundedExecutor = new BoundedExecutor(2);
 
-        System.out.println(split.length);
-        System.out.println(split[0]);
-        System.out.println(split[1]);
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 1000; i++) {
+//            if (i < 50) {
+//            list.add("1");
+//            } else {
+//            list.add("2");
+//            }
 
+            if (i % 2 == 0) {
+                list.add("1");
+            } else {
+                list.add("2");
+            }
+        }
+
+        for (int i = 0; i < list.size(); i++) {
+            int finalI = i;
+            boundedExecutor.submitButBlockIfFull(() -> {
+                InJvmLockUtil.runInLock(list.get(finalI), () -> {
+                    System.out.println("处理 :" + list.get(finalI) + ":" + DateTimeUtil.datetime18());
+                    try {
+                        Thread.sleep(("1".equals(list.get(finalI)) ? 10 : 1) * 1000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+                return null;
+            });
+
+        }
+        Thread.sleep(100 * 1000);
+
+    }
+
+    @Test
+    public void test1() throws Exception {
+        for (int i = 2; i > 0; i--) {
+
+            System.out.println(i);
+        }
     }
 
     @Test
@@ -39,7 +78,7 @@ public class YxyTest {
         headers[0][14] = "数据信息";
         headers[0][34] = "AI数据";
         headers[0][44] = "人工数据";
-        for(int i = 0; i < headers.length; i++){
+        for (int i = 0; i < headers.length; i++) {
             // 创建表头
             for (int j = 0; j < headers[i].length; j++) {
                 System.out.println(headers[i][j]);
@@ -55,7 +94,7 @@ public class YxyTest {
         byte[] bytes = Hex.decodeHex("01030010000185CF");
 
         System.out.println(Hex.encodeHexString(bytes));
-        for (int i=0; i<bytes.length; i++) {
+        for (int i = 0; i < bytes.length; i++) {
             System.out.println(bytes[i]);
         }
     }
@@ -94,8 +133,6 @@ public class YxyTest {
         });
 
 
-
-
         // 使用 ifPresent() 调用 Person 对象的方法
         optionalPerson.ifPresent(Person::printPerson);
 
@@ -110,8 +147,8 @@ public class YxyTest {
 
         Optional<String> emptyOptionalStr = Optional.of("123");
 
-            System.out.println("s1=" + emptyOptionalStr.orElse(""));
-            System.out.println("s2=" + emptyOptionalStr.orElseGet(() -> ""));
+        System.out.println("s1=" + emptyOptionalStr.orElse(""));
+        System.out.println("s2=" + emptyOptionalStr.orElseGet(() -> ""));
 
     }
 
@@ -125,6 +162,7 @@ public class YxyTest {
 
         System.out.println(replace);
     }
+
     @Test
     public void test5() {
 
@@ -146,6 +184,7 @@ public class YxyTest {
         System.out.println(JSONObject.toJSONString(map2));
 
     }
+
     @Test
     public void test6() {
         StringBuilder sb = new StringBuilder();
@@ -180,7 +219,7 @@ public class YxyTest {
         }
         if (valueSize > 5000) {
             StringBuilder inSql = new StringBuilder("(");
-            List<List<String>> splitList  = splitIterable(values, 5000);
+            List<List<String>> splitList = splitIterable(values, 5000);
             for (int i = 0; i < splitList.size(); i++) {
                 List<String> splits = splitList.get(i);
                 StringJoiner splitJoiner = new StringJoiner("', '", "'", "'");
@@ -237,13 +276,13 @@ public class YxyTest {
 
     @Test
     public void test8() {
-        SerializerFeature[] openApiFeatures = new SerializerFeature[] {
+        SerializerFeature[] openApiFeatures = new SerializerFeature[]{
                 SerializerFeature.WriteMapNullValue,
                 SerializerFeature.WriteEnumUsingToString,
                 // 输出为null的字段 为空串
                 // 循环引用
-                };
-        Person p = new Person("1",1);
+        };
+        Person p = new Person("1", 1);
         p.setCheckModeEnum(null);
         String jsonString = JSONObject.toJSONString(p, openApiFeatures);
         System.out.println(jsonString);
@@ -252,8 +291,8 @@ public class YxyTest {
 
     @Test
     public void test9() {
-        int N=0,t=20,b=10,n=381,T=100;
-        int s =(int) Math.ceil(new BigDecimal(N).multiply(new BigDecimal(20)).multiply(new BigDecimal(10))
+        int N = 0, t = 20, b = 10, n = 381, T = 100;
+        int s = (int) Math.ceil(new BigDecimal(N).multiply(new BigDecimal(20)).multiply(new BigDecimal(10))
                 .divide(new BigDecimal(n).multiply(new BigDecimal(T)), 4, BigDecimal.ROUND_HALF_UP).doubleValue());
 
         System.out.println(s);
@@ -263,10 +302,10 @@ public class YxyTest {
 
     @Test
     public void test10() {
-        int i=0;
+        int i = 0;
         while (true) {
             i++;
-            if (i==5) {
+            if (i == 5) {
                 break;
             } else {
                 System.out.println(i);
@@ -280,7 +319,7 @@ public class YxyTest {
         long l = i / 29;
 
         System.out.println(l); //193548
-        System.out.println( new BigDecimal(i).divide(new BigDecimal(29), 0, BigDecimal.ROUND_HALF_UP).longValue() ); //193548
+        System.out.println(new BigDecimal(i).divide(new BigDecimal(29), 0, BigDecimal.ROUND_HALF_UP).longValue()); //193548
 
         System.out.println(Integer.valueOf("09") - 1);
     }
@@ -336,7 +375,7 @@ public class YxyTest {
     public void test16() {
         String VAR_PREFIX = "${";
         String VAR_SUFFIX = "}";
-        String content ="您好，${1a }，这里是测试短信模板02。  ";
+        String content = "您好，${1a }，这里是测试短信模板02。  ";
 
         String var = content.substring(content.indexOf(VAR_PREFIX) + VAR_PREFIX.length(), content.indexOf(VAR_SUFFIX));
 
