@@ -1,6 +1,7 @@
 package test.yxy;
 
 import cn.hutool.core.date.DateUtil;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.google.common.base.Charsets;
@@ -20,6 +21,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 public class YxyTest {
@@ -28,48 +30,29 @@ public class YxyTest {
 
     @Test
     public void test() throws Exception {
-        BoundedExecutor boundedExecutor = new BoundedExecutor(2);
+        Integer firstHitOverdueBlacklistCallRound = 0;
 
-        List<String> list = new ArrayList<>();
-        for (int i = 0; i < 1000; i++) {
-//            if (i < 50) {
-//            list.add("1");
-//            } else {
-//            list.add("2");
-//            }
+        firstHitOverdueBlacklistCallRound++;
+    }
 
-            if (i % 2 == 0) {
-                list.add("1");
-            } else {
-                list.add("2");
-            }
+    private void geneBatchName(AtomicInteger suffix) {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(suffix.getAndIncrement());
         }
-
-        for (int i = 0; i < list.size(); i++) {
-            int finalI = i;
-            boundedExecutor.submitButBlockIfFull(() -> {
-                InJvmLockUtil.runInLock(list.get(finalI), () -> {
-                    System.out.println("处理 :" + list.get(finalI) + ":" + DateTimeUtil.datetime18());
-                    try {
-                        Thread.sleep(("1".equals(list.get(finalI)) ? 10 : 1) * 1000);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
-                });
-                return null;
-            });
-
-        }
-        Thread.sleep(100 * 1000);
-
     }
 
     @Test
     public void test1() throws Exception {
-        for (int i = 2; i > 0; i--) {
-
-            System.out.println(i);
+        StringBuilder stringBuilder = new StringBuilder();
+        int j = 49365;
+        for (int i = 0; i < 10001; i++) {
+            stringBuilder.append("'");
+            stringBuilder.append(i+j);
+            stringBuilder.append("'");
+            stringBuilder.append(",");
         }
+
+        System.out.println(stringBuilder);
     }
 
     @Test

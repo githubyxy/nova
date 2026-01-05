@@ -35,12 +35,9 @@ public class AESUtil {
     public static void main(String[] args) {
             // d5i0e4LLVcWE+PULz/FzJQ==
 
-        aaa("张水");
-        aaa("18221302599");
-        aaa("18221302600");
-        aaa("18221302601");
-        aaa("18221302602");
-        aaa("18221302603");
+        aaa("13585934620");
+        aaa("林琳");
+        aaa("于晓宇");
 
 
 
