@@ -407,11 +407,7 @@ curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202409/hermes-202409?wait_for_complet
 # 压缩备份
 nohup tar -czvf hermes-202512.tar.gz hermes-202512/ &
 
-# 备份存在 /mnt/data01/es_backup
-scp hermes-202512.tar.gz root@bot:/mnt/data01/es_backup/
-
-scp -r hermes-202508 root@bot:/mnt/data01/es_backup/
-# 在bot服务器上执行上传到ali oss
+# 在hermes服务器上执行上传到ali oss
 ossutil cp hermes-202512.tar.gz oss://shanying-file-backup/es_backup/hermes-202512.tar.gz
 
 scp -r hermes-202505 root@doris:/mnt/data03/es_backup/
