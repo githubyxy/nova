@@ -410,8 +410,6 @@ nohup tar -czvf hermes-202512.tar.gz hermes-202512/ &
 # 在hermes服务器上执行上传到ali oss
 ossutil cp hermes-202512.tar.gz oss://shanying-file-backup/es_backup/hermes-202512.tar.gz
 
-scp -r hermes-202505 root@doris:/mnt/data03/es_backup/
-
 
 # 生成es中task_item 的月份索引
 curl -XGET 127.0.0.1:8028/innerapi/genEsIndex?index=hermes-202602
