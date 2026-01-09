@@ -1,5 +1,7 @@
 select count(*),task_type,state from retry_task group by task_type,state;
 
+select * from  task_batch where task_uuid in(select task_uuid from task where partner_code='qfjt_cs');
+
 # 数据表根据phoneNum字段新增phoneNumLast4字段
 UPDATE
   temp_task_item
