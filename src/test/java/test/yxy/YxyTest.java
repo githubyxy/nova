@@ -39,6 +39,7 @@ public class YxyTest {
                 2, 60, TimeUnit.SECONDS,
                 new SynchronousQueue<>(), new CustomPrefixThreadFactory("aa"), new CustomRejectedPolicy());
 
+        poolExecutor.allowCoreThreadTimeOut(true);
         for (int i = 0; i < 10; i++) {
             int finalI = i;
             poolExecutor.execute(() -> {
@@ -51,6 +52,7 @@ public class YxyTest {
             });
         }
 
+        Thread.sleep(10000);
     }
 
     private void geneBatchName(AtomicInteger suffix) {
