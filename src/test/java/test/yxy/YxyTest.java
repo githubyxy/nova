@@ -6,11 +6,13 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.google.common.base.Charsets;
 import com.yxy.nova.mwh.utils.concurrent.BoundedExecutor;
+import com.yxy.nova.mwh.utils.concurrent.CustomPrefixThreadFactory;
 import com.yxy.nova.mwh.utils.concurrent.InJvmLockUtil;
 import com.yxy.nova.mwh.utils.constant.ISPEnum;
 import com.yxy.nova.mwh.utils.serialization.SerializerUtil;
 import com.yxy.nova.mwh.utils.text.TextUtil;
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
+import com.yxy.nova.util.CustomRejectedPolicy;
 import lombok.SneakyThrows;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.collections4.CollectionUtils;
@@ -21,6 +23,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
@@ -30,9 +35,22 @@ public class YxyTest {
 
     @Test
     public void test() throws Exception {
-        Integer firstHitOverdueBlacklistCallRound = 0;
+        ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(1,
+                2, 60, TimeUnit.SECONDS,
+                new SynchronousQueue<>(), new CustomPrefixThreadFactory("aa"), new CustomRejectedPolicy());
 
-        firstHitOverdueBlacklistCallRound++;
+        for (int i = 0; i < 10; i++) {
+            int finalI = i;
+            poolExecutor.execute(() -> {
+                System.out.println(Thread.currentThread().getName() + ":" + finalI + "   " + DateTimeUtil.datetime18());
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+        }
+
     }
 
     private void geneBatchName(AtomicInteger suffix) {
