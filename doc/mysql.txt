@@ -66,3 +66,6 @@ select * from sms_task_item where sign='【花鸭借钱】' and JSON_EXTRACT_STR
 # 打开sql慢查询
 SET GLOBAL slow_query_log = 'ON';
 SET GLOBAL long_query_time = 1;
+
+# 客户端执行命令：清理binlog
+PURGE BINARY LOGS TO 'mysql-bin.007750';

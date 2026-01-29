@@ -35,24 +35,8 @@ public class YxyTest {
 
     @Test
     public void test() throws Exception {
-        ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(1,
-                2, 60, TimeUnit.SECONDS,
-                new SynchronousQueue<>(), new CustomPrefixThreadFactory("aa"), new CustomRejectedPolicy());
-
-        poolExecutor.allowCoreThreadTimeOut(true);
-        for (int i = 0; i < 10; i++) {
-            int finalI = i;
-            poolExecutor.execute(() -> {
-                System.out.println(Thread.currentThread().getName() + ":" + finalI + "   " + DateTimeUtil.datetime18());
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            });
-        }
-
-        Thread.sleep(10000);
+        JSONObject object = new JSONObject();
+        object.put("a", null);
     }
 
     private void geneBatchName(AtomicInteger suffix) {

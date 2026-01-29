@@ -11,7 +11,7 @@ sc -d cn.guixi.hermes.AppMain
 ognl -c 179d3b25 '@cn.guixi.sms.core.AppMain@context.getBean("smsSendApplicationServiceImpl").taskBatch4templateNoCache.invalidateAll()'
 
 # 获取 CMPPProtoProcessor 中 cmppChannelRateLimiterMap 的值
-ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@cmppChannelRateLimiterMap.get("23d9a53ef2e1430e8655f42e30834f78")'
+ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@cmppChannelRateLimiterMap.get("e083f14951804bc3acb321f9cc4ff795")'
 ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@smsProxyMap.get("ff241e2c98be4e538009a3e3e181b788").getConn().available()'
 ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@smsProxyMap.get("ec0aef42d97946498e5063267658cc41").getConn()'
 ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@cmppChannelRateLimiterMap.remove("23d9a53ef2e1430e8655f42e30834f78")'
