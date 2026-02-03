@@ -5,18 +5,20 @@ show partitions from sms_send_detail;  查出 partitionName
 一次删除多个分区的方法
 alter table sms_send_detail
 drop PARTITION p20250201000000,
-drop PARTITION p20250202000000
+drop PARTITION p20250202000000;
 
 
 alter table task_item
 drop PARTITION p20250201000000;
 
-
+alter table sms_task_item
+drop PARTITION p20250101000000,
+drop PARTITION p20250201000000;
 
 2.删除后执行 SHOW CATALOG RECYCLE BIN;
 此时数据会进入回收站
 
-3.执行show trash
+3.执行 show trash;
 
 4.执行 admin clean trash 完成删除
 

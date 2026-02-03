@@ -35,8 +35,10 @@ public class YxyTest {
 
     @Test
     public void test() throws Exception {
-        JSONObject object = new JSONObject();
-        object.put("a", null);
+        for (int i = 0; i < 10; i++) {
+            int replyNum =(int) Math.round(Math.random() /200 * 2000);
+            System.out.println(replyNum);
+        }
     }
 
     private void geneBatchName(AtomicInteger suffix) {
