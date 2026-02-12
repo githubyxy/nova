@@ -22,6 +22,7 @@ import org.junit.Test;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -35,10 +36,9 @@ public class YxyTest {
 
     @Test
     public void test() throws Exception {
-        for (int i = 0; i < 10; i++) {
-            int replyNum =(int) Math.round(Math.random() /200 * 2000);
-            System.out.println(replyNum);
-        }
+        BigDecimal divide = new BigDecimal(1 * 100).divide(new BigDecimal(300), 4, RoundingMode.HALF_UP);
+        System.out.println(divide);
+        System.out.println(divide.compareTo(new BigDecimal(0)) == 0);
     }
 
     private void geneBatchName(AtomicInteger suffix) {
