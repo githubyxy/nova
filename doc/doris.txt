@@ -9,7 +9,7 @@ drop PARTITION p20250202000000;
 
 
 alter table task_item
-drop PARTITION p20250201000000;
+drop PARTITION p20250401000000;
 
 alter table sms_task_item
 drop PARTITION p20250101000000,
