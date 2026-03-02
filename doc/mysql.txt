@@ -79,6 +79,9 @@ LATERAL VIEW explode_json_array_string(
     '$.couponName'
   ) from task_item where ds='2026-02-25' and taskUuid='55511';
 
+# 查询短信doris 的短信成功数和计费数
+select count(*),sum(count)
+from sms_task_item where arrivalStatus='ARRIVAL_SUCCESS' and  hermesAppCode='ym_jrclqd' and ds>='2026-02-01' and ds<='2026-02-28';
 
 
 # 打开sql慢查询

@@ -13,6 +13,7 @@ import com.yxy.nova.mwh.utils.serialization.SerializerUtil;
 import com.yxy.nova.mwh.utils.text.TextUtil;
 import com.yxy.nova.mwh.utils.time.DateTimeUtil;
 import com.yxy.nova.util.CustomRejectedPolicy;
+import com.yxy.nova.util.MoneyUtil;
 import lombok.SneakyThrows;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.collections4.CollectionUtils;
@@ -36,9 +37,10 @@ public class YxyTest {
 
     @Test
     public void test() throws Exception {
-        BigDecimal divide = new BigDecimal(1 * 100).divide(new BigDecimal(300), 4, RoundingMode.HALF_UP);
-        System.out.println(divide);
-        System.out.println(divide.compareTo(new BigDecimal(0)) == 0);
+
+
+        String s = MoneyUtil.convertRateToString(new BigDecimal(22000).divide(new BigDecimal(101500), 2, BigDecimal.ROUND_HALF_UP), 2);
+        System.out.println(s);
     }
 
     private void geneBatchName(AtomicInteger suffix) {
