@@ -29,18 +29,40 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class YxyTest {
 
     private Person person;
 
+    private static final Pattern P = Pattern.compile("(\\d+)(天内免息|天周转金)");
+
     @Test
     public void test() throws Exception {
+        List<String> coupons = Arrays.asList(
+                "【7天内12免息】","【我22天31内免息】","最高150元免息券",
+                "【7天周123转金】","【10天周123转金】","14天123周转金"
+        );
 
+        System.out.println(pickMax(coupons));
+    }
 
-        String s = MoneyUtil.convertRateToString(new BigDecimal(22000).divide(new BigDecimal(101500), 2, BigDecimal.ROUND_HALF_UP), 2);
-        System.out.println(s);
+    public static String pickMax(List<String> coupons) {
+        String best = null;
+        int maxDays = -1;
+
+        for (String c : coupons) {
+            Matcher m = P.matcher(c);
+            if (!m.find()) continue; // 不是“*天内免息 / *天周转金”，跳过
+            int days = Integer.parseInt(m.group(1));
+            if (days > maxDays) {
+                maxDays = days;
+                best = c;
+            }
+        }
+        return best; // 没有符合的返回 null
     }
 
     private void geneBatchName(AtomicInteger suffix) {
