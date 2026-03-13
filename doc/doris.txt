@@ -33,5 +33,19 @@ BACKUP SNAPSHOT task_item_202605 TO doris_oss_repo ON (task_item PARTITION (p202
 # 查询备份情况
 show BACKUP\G;
 
+# 备份恢复
+1：查询现有备份
+SHOW SNAPSHOT ON doris_oss_repo;
+2:从快照恢复分区和表
+RESTORE SNAPSHOT `task_item_202605` FROM `doris_oss_repo`
+ON
+(
+    `task_item` PARTITION (`p20250501000000`)
+)
+PROPERTIES
+(
+    "backup_timestamp"="2026-03-13-17-36-56",
+    "replication_num" = "1"
+);
 
 
