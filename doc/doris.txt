@@ -30,7 +30,8 @@ drop PARTITION p20250201000000;
 # 备份doris数据
 # task_item_202605:备份文件的名称   doris_oss_repo:备份的oss bucket名称   task_item:表名   p20250501000000:分区名称
 BACKUP SNAPSHOT task_item_202605 TO doris_oss_repo ON (task_item PARTITION (p20250501000000));
-
+# 查询备份情况
+show BACKUP\G;
 
 
 
