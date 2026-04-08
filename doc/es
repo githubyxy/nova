@@ -199,11 +199,11 @@ curl -XGET "http://127.0.0.1:9200/blacklist/blacklist/_search" -d'
 }'
 
 
-curl -XGET "http://127.0.0.1:9200/hermes-202511/task_item/_search" -d'
+curl -XGET "http://127.0.0.1:9200/hermes-202603/task_item/_search" -d'
 {
   "query": {
     "match": {
-      "taskItemUuid": "78b456e573ec4b7281f2c68c6abfaeb5"
+      "taskItemUuid": "014a5e856813438eb9814b7f58cb2693"
     }
   }
 }'
@@ -329,6 +329,22 @@ curl -XPOST "http://127.0.0.1:9200/blacklist/_delete_by_query" -d '
     "bool": {
       "must": [
         {
+          "term": { "groupUuid": "hermes_blacklist" }
+        },
+        {
+          "term": { "mobile": "" }
+        }
+      ]
+    }
+  }
+}'
+
+curl -XPOST "http://127.0.0.1:9200/blacklist/_delete_by_query" -d '
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
           "term": { "groupUuid": "third_bill_blacklist" }
         },
         {
@@ -379,6 +395,33 @@ curl -XPOST "http://127.0.0.1:9200/hermes-202511/_search" -d '
   }
 }'
 
+
+curl -XGET "http://127.0.0.1:9200/hermes-202603/_count" -d '
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": { "taskUuid": "43691" }
+        },
+        {
+          "range": {
+            "gmtCreate": {
+              "gte": "1774137600000"
+            }
+          }
+        },
+        {
+          "range": {
+            "gmtCreate": {
+              "lte":"1774224000000"
+            }
+          }
+        }
+      ]
+    }
+  }
+}'
 
 # 节点索引
 curl -XGET 127.0.0.1:9200/_cat/indices?v

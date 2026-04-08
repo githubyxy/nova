@@ -3,6 +3,9 @@ package test.yxy;
 public class Person {
     private String name;
     private int age;
+    private Boolean b;
+    private Integer ddd;
+
 
     private CheckModeEnum  checkModeEnum;
 
@@ -35,6 +38,22 @@ public class Person {
 
     public void setCheckModeEnum(CheckModeEnum checkModeEnum) {
         this.checkModeEnum = checkModeEnum;
+    }
+
+    public Boolean getB() {
+        return b;
+    }
+
+    public void setB(Boolean b) {
+        this.b = b;
+    }
+
+    public Integer getDdd() {
+        return ddd;
+    }
+
+    public void setDdd(Integer ddd) {
+        this.ddd = ddd;
     }
 }
 

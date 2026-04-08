@@ -41,12 +41,10 @@ public class YxyTest {
 
     @Test
     public void test() throws Exception {
-        List<String> coupons = Arrays.asList(
-                "【7天内12免息】","【我22天31内免息】","最高150元免息券",
-                "【7天周123转金】","【10天周123转金】","14天123周转金"
-        );
 
-        System.out.println(pickMax(coupons));
+        Person person = new Person();
+
+        System.out.println(person.getDdd().intValue() + 1);
     }
 
     public static String pickMax(List<String> coupons) {
