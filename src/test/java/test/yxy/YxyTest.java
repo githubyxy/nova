@@ -47,6 +47,7 @@ public class YxyTest {
 
         String r ="47981,60321,60331,60341,60601,60611,60621,48211,60361,60371,60381,60421,60431,60441,51021,60231,60241,60251,60631,60641,60651,52581,60281,60291,60301,60391,60401,60411";
         for (String r1 : TextUtil.split(r)) {
+            s = s.replaceAll(r1 + ",", "");
             s = s.replaceAll(r1, "");
         }
 
@@ -63,10 +64,10 @@ public class YxyTest {
 
         for (Map.Entry<String, String> entry : taskUuidMap.entrySet()) {
             if (StringUtils.isBlank(entry.getKey())) {
-                System.out.println(entry.getKey());
+                System.out.println("空："+ entry.getKey());
             }
             if (StringUtils.isBlank(entry.getValue())) {
-                System.out.println(entry.getValue());
+                System.out.println("空："+ entry.getValue());
             }
 
         }
