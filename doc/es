@@ -427,7 +427,7 @@ curl -XGET "http://127.0.0.1:9200/hermes-202603/_count" -d '
 curl -XGET 127.0.0.1:9200/_cat/indices?v
 
 # 删除索引 (sms-202103是索引名称)
-curl -XDELETE 127.0.0.1:9200/hermes-202601
+curl -XDELETE 127.0.0.1:9200/hermes-202603
 
 # es 备份 hermes
 curl -XPUT 127.0.0.1:9200/_snapshot/hermes-202602 -d '{
