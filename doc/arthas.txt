@@ -11,10 +11,21 @@ sc -d cn.guixi.hermes.AppMain
 ognl -c 179d3b25 '@cn.guixi.sms.core.AppMain@context.getBean("smsSendApplicationServiceImpl").taskBatch4templateNoCache.invalidateAll()'
 
 # 获取 CMPPProtoProcessor 中 cmppChannelRateLimiterMap 的值
-ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@cmppChannelRateLimiterMap.get("e083f14951804bc3acb321f9cc4ff795")'
-ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@smsProxyMap.get("ff241e2c98be4e538009a3e3e181b788").getConn().available()'
-ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@smsProxyMap.get("ec0aef42d97946498e5063267658cc41").getConn()'
-ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@cmppChannelRateLimiterMap.remove("23d9a53ef2e1430e8655f42e30834f78")'
+ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@cmppChannelRateLimiterMap.get("f8baa33ee9f54fadba024216c79747ea")'
+ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@smsProxyMap.get("f8baa33ee9f54fadba024216c79747ea").getConn().available()'
+ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@smsProxyMap.get("f8baa33ee9f54fadba024216c79747ea").getConn()'
+ognl -c 179d3b25 '@cn.guixi.common.proto.processor.CMPPProtoProcessor@cmppChannelRateLimiterMap.remove("f8baa33ee9f54fadba024216c79747ea")'
+
+ognl -c 179d3b25 '@cn.guixi.sms.core.AppMain@context.getBean("channelAccountConfig").channelAccountBOCache.invalidateAll()'
+
+ognl -c 179d3b25 '@cn.guixi.sms.core.AppMain@context.getBean("channelAccountConfig").channelAccountBOCache.invalidateAll()'
+
+ognl -c 179d3b25 '@cn.guixi.sms.core.AppMain@context.getBean("channelAccountConfig").channelAccountBOCache.getUnchecked("bd53f93eac3a4c8c9fb32d6d27b310a8")'
+
+
+
+ognl -c 179d3b25 -x 5 '#p=@cn.guixi.sms.core.AppMain@context.getBean("channelAccountConfig"),#t=#p.getTargetSource().getTarget(),#f=@org.springframework.util.ReflectionUtils@findField(#t.getClass(),"channelAccountBOCache"),#f.setAccessible(true),#cache=#f.get(#t),#op=#cache.asMap().get("f8baa33ee9f54fadba024216c79747ea"),#op == null ? null : #op.orElse(null)'
+
 
 # 一个类中获取实例后执行具体方法
 ognl -c 179d3b25 '@cn.guixi.sms.core.biz.handler.SingleProtoHandler@getInstance().tokenCache.invalidateAll()'
