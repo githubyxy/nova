@@ -37,7 +37,7 @@
         <targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
         <targetXMLPackage>mybatis/mapper</targetXMLPackage>
 
-        <shiro.version>1.9.1</shiro.version>
+        <shiro.version>1.10.0</shiro.version>
 
         <!-- 日志相关 -->
         <logback-version>1.2.3</logback-version>
