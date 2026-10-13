@@ -120,6 +120,45 @@ curl -XDELETE 127.0.0.1:9200/sms-202103
 curl -XPOST http://127.0.0.1:9200/hermes-202510/_close
 curl -XPOST http://127.0.0.1:9200/hermes-202501/_open
 
+curl -H "Content-Type:application/json" -XPUT "http://127.0.0.1:9200/phone_model" -d '
+{
+  "settings": {
+      "number_of_shards": 1,
+      "number_of_replicas": 0,
+      "index.mapping.total_fields.limit": 100000
+  },
+  "mappings": {
+    "phone_model": {
+      "_all": {
+          "enabled": false
+      },
+      "properties": {
+        "mobile": { "type": "keyword", "index": false, "doc_values": false },
+        "phoneModel": { "type": "keyword", "index": false, "doc_values": false },
+        "gmtCreate": { "type": "long", "index": true, "doc_values": false }
+      }
+    }
+  }
+}'
+
+curl -sS -X POST \
+  'http://127.0.0.1:9200/phone_model/phone_model/_mget?realtime=true&_source=phoneModel&filter_path=docs._id,docs.found,docs._source.phoneModel,docs.error,error&pretty' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "ids": [
+      "19155137173"
+    ]
+  }'
+
+
+curl -XGET "http://127.0.0.1:9200/phone_model/phone_model/_search" -d'
+{
+  "query": {
+    "match": {
+      "_id": "19155137173"
+    }
+  }
+}'
 
 #  mapping 新增字段
 curl -H "Content-Type:application/json" -XPUT "http://127.0.0.1:9200/hermes-202510/_mapping/task_item" -d '
@@ -193,20 +232,12 @@ curl -XGET "http://127.0.0.1:9200/blacklist/blacklist/_search" -d'
 {
   "query": {
     "match": {
-      "groupUuid": "hermes_blacklist"
+      "groupUuid": "96ff715defed475eb9082dd33e929b5c"
     }
   }
 }'
 
 
-curl -XGET "http://127.0.0.1:9200/hermes-202603/task_item/_search" -d'
-{
-  "query": {
-    "match": {
-      "taskItemUuid": "014a5e856813438eb9814b7f58cb2693"
-    }
-  }
-}'
 
 
 curl -XGET "http://127.0.0.1:9200/hermes-r-202404/task_item/_search" -d'
@@ -273,7 +304,7 @@ curl -XGET "http://127.0.0.1:9200/blacklist/_count" -d '
   }
 }'
 
-curl -XGET "http://127.0.0.1:9200/hermes-202512/_count" -d '
+curl -XGET "http://127.0.0.1:9200/hermes-202102/_count" -d '
 {
   "query": {
     "bool": {
