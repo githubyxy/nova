@@ -160,6 +160,21 @@ curl -XGET "http://127.0.0.1:9200/phone_model/phone_model/_search" -d'
   }
 }'
 
+curl -sS -X POST \
+  'http://127.0.0.1:9200/phone_model/phone_model/_search?pretty' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "size": 10,
+    "_source": ["mobile", "phoneModel", "gmtCreate"],
+    "sort": ["_doc"],
+    "query": {
+      "match_all": {}
+    }
+  }'
+
+curl -sS -X GET \
+  'http://127.0.0.1:9200/phone_model/_count?pretty'
+
 #  mapping 新增字段
 curl -H "Content-Type:application/json" -XPUT "http://127.0.0.1:9200/hermes-202510/_mapping/task_item" -d '
 {
